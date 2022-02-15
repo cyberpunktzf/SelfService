@@ -1,0 +1,93 @@
+<!-- 
+ * FileName: query.opinv.csp
+ * Creator: tangzf 
+ * Date: 2020-3-26
+ * Description: 移动收费-门诊费用查询
+-->
+<html>
+	<head>
+			<script type="text/javascript" src="/WebAPP/plugin/jquery1.8.3/jquery.min.js" ></script>
+			<script type="text/javascript" src="/WebAPP/plugin/jquery1.8.3/jquery.easyui.min.js" ></script>
+			
+			<link rel="stylesheet" type="text/css" href="/WebAPP/plugin/layim-v3.7.8/dist/css/layui.css"/>
+			<script type="text/javascript" src="/WebAPP/plugin/layim-v3.7.8/dist/layui.js" charset="utf-8"></script>
+			<link rel="stylesheet" type="text/css" href="/WebAPP/plugin/layim-v3.7.8/dist/css/global.css"/>
+	
+			<script type="text/javascript" src="/WebAPP/plugin/xml2json/xml2json.min.js" charset="utf-8"></script>
+	
+			<link rel="stylesheet" type="text/css" href="/WebAPP/plugin/hisui-0.1.0/dist/css/hisui.css"/>
+			<script type="text/javascript" src="/WebAPP/plugin/hisui-0.1.0/dist/js/jquery-1.11.3.min.js" charset="utf-8"></script>
+			<script type="text/javascript" src="/WebAPP/plugin/hisui-0.1.0/dist/js/jquery.hisui.min.js" charset="utf-8"></script>
+	
+			<link rel="stylesheet" type="text/css" href="/WebAPP/themes/css/charge.main.css"/>
+			<link rel="stylesheet" type="text/css" href="/WebAPP/themes/css/default.css"/>
+			<script type="text/javascript" src="/WebAPP/js/sys/layout.js" charset="utf-8"></script>
+			<script type="text/javascript" src="/WebAPP/js/sys/parsedata.js" charset="utf-8"></script>
+			<script type="text/javascript" src="/WebAPP/js/sys/webservices.js" charset="utf-8"></script>
+			<script type="text/javascript" src="/WebAPP/js/sys/adapter.js" charset="utf-8"></script>
+			<script type="text/javascript" src="/WebAPP/js/sys/common.js" charset="utf-8"></script>
+			<script type="text/javascript" src="/WebAPP/js/sys/card.js" charset="utf-8"></script>
+	
+			<link rel="stylesheet" type="text/css" href="/WebAPP/themes/css/icons.css"/>
+			<link rel="stylesheet" type="text/css" href="/WebAPP/themes/css/sysbtn.css"/>
+			<link rel="stylesheet" type="text/css" href="/WebAPP/themes/css/syswindow.css"/>
+	
+			<script type="text/javascript" src="/WebAPP/js/sys/syswindow.js" charset="utf-8"></script>
+			<script type="text/javascript" src="/WebAPP/js/common/payservice.js" charset="utf-8"></script>
+			<script type="text/javascript" src="/WebAPP/js/sys/print.js" charset="utf-8"></script>
+			<script type="text/javascript" src="/WebAPP/plugin/lodop/LodopFuncs.js"></script>
+			<script type="text/javascript" src="/WebAPP/js/sys/sysconfig.js" charset="utf-8"></script>
+			<script type="text/javascript" src="/WebAPP/js/sys/DHCInsuPort.js" charset="utf-8"></script>
+	<style>
+	  	#OrderList{
+			margin:0px	!important;
+		}
+		#RegList{
+			margin:0px	!important;
+		}
+		.layui-form{
+			margin:0px	!important;	
+		}
+		html body{margin-top: 0px;}
+		.layui-table-cell .layui-form-checkbox[lay-skin=primary] {
+		    margin-top: 12px !important;
+		}
+		.layui-card-body{
+			padding:10px 10px 10px 10px;
+			border-radius: 4px;
+    		box-shadow:inset 0 0 5px 5px rgb(60, 170, 221);
+			
+		}
+		.layui-card{
+			margin-bottom:0px;
+		}
+		.layui-table-tool-self{
+			display:none; /*列选项 打印选项*/	
+		}
+		/*表格处理*/
+		.layui-table,.layui-table-main,.layui-table-header,.layui-table thead tr{
+			background-color: rgb(60, 170, 221);
+		}
+		button{
+			border-radius: 30px !important;
+			color:rgb(60, 170, 221) !important;
+		}
+	</style>
+</head>
+
+<body class="layui-container ">
+	<div class="layui-row pagetitle " title="物价查询" style="padding-top:20px;padding-bottom:20px;" ></div>
+	<div class="layui-row" >
+		<div class="layui-card">
+			<div class="layui-card-body">
+				<table class="layui-table" id="OrderList" lay-filter="OrderList" ></table>
+			</div>
+		</div>	
+	</div>
+	<div class="layui-row" style="padding-top:20px;text-align: center">
+		<button class="layui-btn layui-btn-lg" lay-event="previousPage">上一页</button>
+		<button class="layui-btn layui-btn-lg" lay-event="nextPage">下一页</button>
+	</div>
+	<script type="text/javascript" src="/WebAPP/js/query/itemprice.js"></script>
+</body>
+</html>

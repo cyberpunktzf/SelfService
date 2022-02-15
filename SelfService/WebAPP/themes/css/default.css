@@ -1,0 +1,220 @@
+﻿/*html{
+	background:#6384EF !important;
+		
+}*/
+body{
+	overflow: hidden;
+}
+body:not(.main-body){
+	/*background: linear-gradient(180deg,rgb(14,53,189) 28%, rgb(66,116,232) 97%) !important;*/
+	background: linear-gradient(180deg,rgb(14,53,189) 28%, rgb(66,116,232) 97%) !important;
+	height:900px;
+	padding:0px;
+}
+html{
+	background:rgba(82,121,230) !important;
+}
+.fly-panel {
+	/* 患者信息 背景颜色*/
+	background:#FFF !important;
+}
+.osp-themes{
+	/* background:#557CE7 !important; 单独引用class背景色 */
+	background: none !important;
+}
+.font-color{
+	color:#557CE7 !important; /* 单独引用字体背景色 */
+}
+.TurnPlay{
+	background: linear-gradient(180deg,rgb(14,53,189) 28%, rgb(66,116,232) 97%) !important; /* 医生 科室轮播背景色*/	
+}
+
+.osp-3d-btn{
+	background:  #FFF; /*方块颜色*/
+}
+/*页码颜色*/
+.pagenum-c{
+	color:#ffffff;
+}
+.pagenum-t{
+	color:#ffffff;
+}
+/*统一修改以上颜色*/
+.content-body{
+	height:430px !important;
+}
+.layui-row{
+	text-align: center;
+}
+.layui-timeline-item{
+	font-size: 18px;
+}
+/* box button :dep font size*/
+.osp-3d-btn a{
+	font-size: 28px;
+}
+/*span font-size*/
+span{
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 24px;
+}
+label{
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 24px;
+}
+/*dg font-size*/
+.layui-table-cell{
+	font-size: 20px;
+}
+/*weektitle*/
+.layui-tab-title li{
+	font-size: 20px;
+}
+.osp-main-head{
+	padding:15px;
+}
+.osp-item-inner {
+	height: 80%;
+	/*  块块之间的间隔*/
+	width: calc(100% - 25px);
+	border-radius: 5px;
+	display: flex;
+}
+/*
+ 按钮方块
+ */
+.flex-1 .osp-item-inner {
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
+.flex-2 .osp-item-inner {
+	align-items: center;
+	justify-content: center;
+}
+
+.osp-item-inner span {
+	font-size: 28px;
+	color: white; /*按钮字体颜色*/
+}
+.flex-1 {
+	flex: 1;
+	padding:0 15px 20px 15px;
+}
+
+.flex-2 {
+	flex: 2;
+	padding: 0 15px 20px 15px;
+}
+.osp-box {
+	display: flex;
+	/* 每个块块的高度*/
+	/* 行与行之间的间隔 */
+}
+/*矫正checkbox边框*/
+.layui-table-cell .layui-form-checkbox[lay-skin=primary] {
+    margin: 12px 0 0 0  !important;
+}
+
+.layui-table-click{
+	background:#5FB878;	
+}
+/* button color*/
+
+
+.layui-btn{ /*按钮默认颜色*/
+	background: #FFF;	
+	font-size: 40px;	
+}
+.l-btn-left{
+	height:70px; /*字体显示不完整*/	
+}
+.layui-form-item{
+	margin-bottom:0px !important;	
+}
+/*button style*/
+.osp-3d-btn{
+ position: relative;
+ text-decoration: none;
+ font-weight: 700;
+ font-size: 3em;
+ width:300px;
+ border-radius: 8px;
+ /* let's use box shadows to make the button look more 3-dimensional */
+ /*box-shadow: 0px 9px 0px rgba(231, 233, 140,0.1), 0px 9px 25px rgba(0, 0, 0, .7);
+ text-align: center;
+ -webkit-transition: all .1s ease;
+ -moz-transition: all .1s ease;
+ transition: all .1s ease;*/
+} 
+.osp-3d-btn:active{
+ box-shadow: 0px 3px 0px rgba(231, 233, 140,0.1), 0px 3px 6px rgba(0, 0, 0, .9);
+ position: relative;
+ top: 6px;
+}
+.icon-doctor{
+	background: url('/WebAPP/images/doctor_adm.png') no-repeat center center;
+  }
+.icon-home{
+	background: url('/WebAPP/images/home.png') no-repeat center center;
+}
+.icon-pre{
+	background: url('/WebAPP/images/pre.png') no-repeat center center;
+}
+.icon-searchbox{
+	background: url('/WebAPP/images/paper_search.png') no-repeat center center;
+}
+.icon-search{
+	width:26px;height:26px;
+	background: url('/WebAPP/images/search.png') no-repeat center center;
+}
+.icon-clear{
+	width:26px;height:26px;
+	background: url('/WebAPP/images/clear.png') no-repeat center center;
+}
+.icon-left{
+	width:26px;height:26px;
+	background: url('/WebAPP/images/arrow_left.png') no-repeat center center;
+}
+
+/*end*/
+input{
+	padding-left:20px;
+}
+/*壁挂机CSS*/
+/*患者类型*/
+.bgj-menu-center-content{
+	display: flex;
+    text-align: center;
+    justify-content: center;
+}
+/*遮罩*/
+.main-loading:not(.main-loading-msg){
+	position:absolute;
+	z-index:10000;
+	top:0px;
+	left:0px;
+	width:2000px;
+	height:2000px;
+	background: rgba(0, 0, 0, 0.5);
+	text-align:center;
+	padding-top:25%;
+	pointer-events: all;
+}
+.main-loading-msg{
+	background-color: white;
+    border-radius: 48px;
+    width: 500px;
+    height: 250px;
+    position: fixed;
+	top: 900px;
+    left: 290px;
+	z-index: 10000;
+	pointer-events: none;
+}
+.panel.window.messager-window{
+	z-index: 20001 !important;
+}
+/*html{
+	overflow:hidden;	
+}*/

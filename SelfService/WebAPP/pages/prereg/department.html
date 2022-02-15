@@ -1,0 +1,245 @@
+﻿<!-- 
+ * FileName: prereg.department.html
+ * Creator: tangzf  
+ * Date: 2020-3-26
+ * Description: 移动收费-主页面
+-->
+<!DOCTYPE html>
+<html>
+<head>
+		<script type="text/javascript" src="/WebAPP/plugin/jquery1.8.3/jquery.min.js" ></script>
+		<script type="text/javascript" src="/WebAPP/plugin/jquery1.8.3/jquery.easyui.min.js" ></script>
+		
+		<link rel="stylesheet" type="text/css" href="/WebAPP/plugin/layim-v3.7.8/dist/css/layui.css"/>
+		<script type="text/javascript" src="/WebAPP/plugin/layim-v3.7.8/dist/layui.js" charset="utf-8"></script>
+		<link rel="stylesheet" type="text/css" href="/WebAPP/plugin/layim-v3.7.8/dist/css/global.css"/>
+
+		<script type="text/javascript" src="/WebAPP/plugin/xml2json/xml2json.min.js" charset="utf-8"></script>
+
+		<link rel="stylesheet" type="text/css" href="/WebAPP/plugin/hisui-0.1.0/dist/css/hisui.css"/>
+		<script type="text/javascript" src="/WebAPP/plugin/hisui-0.1.0/dist/js/jquery-1.11.3.min.js" charset="utf-8"></script>
+		<script type="text/javascript" src="/WebAPP/plugin/hisui-0.1.0/dist/js/jquery.hisui.min.js" charset="utf-8"></script>
+
+		<link rel="stylesheet" type="text/css" href="/WebAPP/themes/css/charge.main.css"/>
+		<link rel="stylesheet" type="text/css" href="/WebAPP/themes/css/default.css"/>
+		<script type="text/javascript" src="/WebAPP/js/sys/layout.js" charset="utf-8"></script>
+		<script type="text/javascript" src="/WebAPP/js/sys/parsedata.js" charset="utf-8"></script>
+		<script type="text/javascript" src="/WebAPP/js/sys/webservices.js" charset="utf-8"></script>
+		<script type="text/javascript" src="/WebAPP/js/sys/adapter.js" charset="utf-8"></script>
+		<script type="text/javascript" src="/WebAPP/js/sys/common.js" charset="utf-8"></script>
+		<script type="text/javascript" src="/WebAPP/js/sys/card.js" charset="utf-8"></script>
+
+		<link rel="stylesheet" type="text/css" href="/WebAPP/themes/css/icons.css"/>
+		<link rel="stylesheet" type="text/css" href="/WebAPP/themes/css/sysbtn.css"/>
+		<link rel="stylesheet" type="text/css" href="/WebAPP/themes/css/syswindow.css"/>
+
+		<script type="text/javascript" src="/WebAPP/js/sys/syswindow.js" charset="utf-8"></script>
+		<script type="text/javascript" src="/WebAPP/js/common/payservice.js" charset="utf-8"></script>
+		<script type="text/javascript" src="/WebAPP/plugin/lodop/LodopFuncs.js"></script>
+		<script type="text/javascript" src="/WebAPP/js/sys/print.js" charset="utf-8"></script>
+		
+		<script type="text/javascript" src="/WebAPP/js/sys/sysconfig.js" charset="utf-8"></script>
+		<script type="text/javascript" src="/WebAPP/js/sys/DHCInsuPort.js" charset="utf-8"></script>
+	<script type="text/javascript" src="/WebAPP/plugin/pinying.js" charset="utf-8"></script>
+	<style>
+		.TurnPlay .layui-row:not(:first-child){
+			margin-top:30px;
+		}
+		#TurnPlay{
+			height:550px !important	;
+		}
+		.layui-carousel-ind,.layui-carousel-arrow{
+			display:none;
+		}
+		.sys-white-defbutton-label{
+			font-size:30px;
+		}
+		.cardno,#CardNo{
+			width: 1000px;
+		}
+		#Query .sys-defbutton-label{
+			line-height:68px;
+		}
+		/*keybord 键盘*/
+		.keybord-region .sys-white-defbutton{
+			border-radius: 54px;
+			width: 920px;
+			height: 108px;
+			opacity: 1;
+			box-shadow: 0px 0px 16px 0px rgba(0,7,170,0.16); 
+		}
+		
+		.keybord-region .layui-row{
+			text-align: center;
+			justify-content:center;
+			display: flex;
+		}
+		.keybord-region .keybord:not(.confirm){
+			width:118px;
+			height:98px;
+			border:0px solid white;
+			background-color: white;
+			color:#2C5AB9;
+		}
+		.keybord-region .layui-btn-radius{
+			border-radius: 16px;
+		}
+		.keybord-region .sys-white-defbutton-label{
+			line-height: 108px;
+		}
+		/*keybord 键盘*/
+	</style>
+</head>
+<body>
+	<div style="height:900px;">
+		<div class="layui-row" style="text-align: center;padding-top:20px" >
+			<img style="padding-bottom: 20px;" onClick="FillSrvyList(0)" src="/WebAPP/themes/images/dbnext.png" />
+			<label style="
+			width: 400px;
+			height: 52px;
+			opacity: 1;
+			font-size: 40px;
+			font-family: MicrosoftYaHei;
+			text-align: left;
+			color: #FFFFFF;
+			line-height: 22px;">请选择二级科室</label>	
+			<img style="padding-bottom: 20px;" onClick="FillSrvyList(0)" src="/WebAPP/themes/images/dbprev.png" />
+		</div>
+		<div class="layui-row" style="text-align: center;padding-top:20px;">
+			<label id="level1Dep" style="
+			width: 192px;
+			height: 42px;
+			opacity: 1;
+			font-size: 32px;
+			font-family: MicrosoftYaHei;
+			text-align: left;
+			color: white;
+			line-height: 22px;"></label>	
+		</div>
+		<div class="layui-row search-box" style="margin-top:20px;margin-bottom:20px;" >
+			<div class='sys-white-defbutton cardno'>
+				<label  class='sys-white-defbutton-label' id="CardNo"></label>
+			</div>
+			<label class="tip-placeholder" style="height:60px;position:absolute;top:157px;left:100px;color:#cccccc">请单击并输入检索关键字</label>
+			<div class="sys-defbutton" style="width:148px;height:60px;position:absolute;top:142px;left:850px;" title='查询' id="Query">
+			</div>
+		</div>
+		<div class='layui-row depinfo' style="height:580px">
+			<div class="layui-col-md12" style="height:580px">
+				<div class="layui-carousel" id="TurnPlay">
+					<div carousel-item class="HISContent">
+					</div>
+				</div>	
+			</div>
+		</div>
+		<div class="layui-row depinfo changebtn bottom-change" style="text-align: center;border:none;" >
+			<img onClick = "ChangePage('sub')" id="BackButton" src="/WebAPP/themes/images/prev.png" />
+			<label  class="pagenum-c" id="currentPage">1</label>
+			<label  class="pagenum-t"id="pageNum"></label>	
+			<img onClick = "ChangePage('add')" id="NextButton" src="/WebAPP/themes/images/next.png" />
+		</div>
+	</div>
+	<div class="layui-container keybord-region" style="position: absolute;top:250px;left:50px;display: none" >
+		<div class="letter" >
+			<div class="layui-row">
+				<div class="layui-col-md2">
+					<button class="layui-btn layui-btn-lg layui-btn-radius keybord">A</button>
+				</div>
+				<div class="layui-col-md2">
+					<button class="layui-btn layui-btn-lg layui-btn-radius keybord">B</button>
+				</div>
+				<div class="layui-col-md2">
+					<button class="layui-btn layui-btn-lg layui-btn-radius keybord">C</button>
+				</div>
+				<div class="layui-col-md2">
+					<button class="layui-btn layui-btn-lg layui-btn-radius keybord">D</button>
+				</div>
+				<div class="layui-col-md2">
+					<button class="layui-btn layui-btn-lg layui-btn-radius keybord">E</button>
+				</div>
+				<div class="layui-col-md2">
+					<button class="layui-btn layui-btn-lg layui-btn-radius keybord">F</button>
+				</div>
+				<div class="layui-col-md2">
+					<button class="layui-btn layui-btn-lg layui-btn-radius keybord">G</button>
+				</div>
+			</div>
+			<div class="layui-row" style="padding-top:20px" >
+				<div class="layui-col-md2">
+					<button class="layui-btn layui-btn-lg layui-btn-radius keybord">H</button>
+				</div>
+				<div class="layui-col-md2">
+					<button class="layui-btn layui-btn-lg layui-btn-radius keybord">I</button>
+				</div>
+				<div class="layui-col-md2">
+					<button class="layui-btn layui-btn-lg layui-btn-radius keybord">J</button>
+				</div>
+				<div class="layui-col-md2">
+					<button class="layui-btn layui-btn-lg layui-btn-radius keybord">K</button>
+				</div>
+				<div class="layui-col-md2">
+					<button class="layui-btn layui-btn-lg layui-btn-radius keybord">L</button>
+				</div>
+				<div class="layui-col-md2">
+					<button class="layui-btn layui-btn-lg layui-btn-radius keybord">M</button>
+				</div>
+				<div class="layui-col-md2">
+					<button class="layui-btn layui-btn-lg layui-btn-radius keybord">N</button>
+				</div>
+			</div>
+			<div class="layui-row" style="padding-top:20px">
+				<div class="layui-col-md2">
+					<button class="layui-btn layui-btn-lg layui-btn-radius keybord">O</button>
+				</div>
+				<div class="layui-col-md2">
+					<button class="layui-btn layui-btn-lg layui-btn-radius keybord">P</button>
+				</div>
+				<div class="layui-col-md2">
+					<button class="layui-btn layui-btn-lg layui-btn-radius keybord">Q</button>
+				</div>
+				<div class="layui-col-md2">
+					<button class="layui-btn layui-btn-lg layui-btn-radius keybord">R</button>
+				</div>
+				<div class="layui-col-md2">
+					<button class="layui-btn layui-btn-lg layui-btn-radius keybord">S</button>
+				</div>
+				<div class="layui-col-md2">
+					<button class="layui-btn layui-btn-lg layui-btn-radius keybord">T</button>
+				</div>
+				<div class="layui-col-md2">
+					<button class="layui-btn layui-btn-lg layui-btn-radius keybord">U</button>
+				</div>
+			</div>
+			<div class="layui-row" style="padding-top:20px">
+				<div class="layui-col-md2">
+					<button class="layui-btn layui-btn-lg layui-btn-radius keybord">V</button>
+				</div>
+				<div class="layui-col-md2">
+					<button class="layui-btn layui-btn-lg layui-btn-radius keybord">W</button>
+				</div>
+				<div class="layui-col-md2">
+					<button class="layui-btn layui-btn-lg layui-btn-radius keybord">X</button>
+				</div>
+				<div class="layui-col-md2">
+					<button class="layui-btn layui-btn-lg layui-btn-radius keybord">Y</button>
+				</div>
+				<div class="layui-col-md2">
+					<button class="layui-btn layui-btn-lg layui-btn-radius keybord">Z</button>
+				</div>
+				<div class="layui-col-md2">
+					<button class="layui-btn layui-btn-lg layui-btn-radius keybord" data="back">退格</button>
+				</div>
+				<div class="layui-col-md2">
+					<button class="layui-btn layui-btn-lg layui-btn-radius keybord" data="clear">清空</button>
+				</div>
+			</div>
+		</div>
+		<!--确认-->
+		<div class="sys-defbutton modify-button confirm keybord" data="confirm" style="margin-top: 40px;" >
+			<label class="sys-defbutton-label confirm keybord" data="confirm" id='confirm' >确认</label>
+		</div>
+		<!--键盘-->
+	</div>
+	<script type="text/javascript" src="/WebAPP/js/prereg/department.js"></script>
+</body>
+</html>

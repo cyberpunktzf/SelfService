@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html>
+<head>
+<!--<script type="text/javascript" src="/WebAPP/js/sys/jshead.js" charset="utf-8"></script>-->
+<link rel="stylesheet" type="text/css" href="/WebAPP/plugin/layim-v3.7.8/dist/css/layui.css"/>
+<script type="text/javascript" src="/WebAPP/plugin/layim-v3.7.8/dist/layui.js" charset="utf-8"></script>
+<link rel="stylesheet" type="text/css" href="/WebAPP/plugin/layim-v3.7.8/dist/css/global.css"/>
+
+<link rel="stylesheet" type="text/css" href="/WebAPP/plugin/hisui-0.1.0/dist/css/hisui.css"/>
+<script type="text/javascript" src="/WebAPP/plugin/hisui-0.1.0/dist/js/jquery-1.11.3.min.js" charset="utf-8"></script>
+<script type="text/javascript" src="/WebAPP/plugin/hisui-0.1.0/dist/js/jquery.hisui.min.js" charset="utf-8"></script>
+<script type="text/javascript" src="/WebAPP/plugin/lodop/LodopFuncs.js"></script>
+<link rel="stylesheet" type="text/css" href="/WebAPP/themes/css/charge.main.css"/>
+<link rel="stylesheet" type="text/css" href="/WebAPP/themes/css/default.css"/>
+
+
+
+<script type="text/javascript" src="/WebAPP/js/common/payservice.js" charset="utf-8"></script>
+<script type="text/javascript" src="/WebAPP/js/sys/parsedata.js" charset="utf-8"></script>
+<script type="text/javascript" src="/WebAPP/js/sys/adapter.js" charset="utf-8"></script>
+<script type="text/javascript" src="/WebAPP/js/sys/common.js" charset="utf-8"></script>
+
+
+<link rel="stylesheet" type="text/css" href="/WebAPP/themes/css/icons.css"/>
+<link rel="stylesheet" type="text/css" href="/WebAPP/themes/css/sysbtn.css"/>
+<link rel="stylesheet" type="text/css" href="/WebAPP/themes/css/syswindow.css"/>
+<link rel="stylesheet" type="text/css" href="/WebAPP/themes/css/buttons.css"/>
+
+<script type="text/javascript" src="/WebAPP/js/sys/print.js" charset="utf-8"></script>
+<script type="text/javascript" src="/WebAPP/js/sys/sysconfig.js" charset="utf-8"></script>
+<script type="text/javascript" src="/WebAPP/js/sys/DHCInsuPort.js" charset="utf-8"></script>
+
+	<style>
+		*{
+			user-select: none;
+			-ms-user-select: none;
+		}
+		.sys-defbutton.home{
+			left: 600px;
+		}
+		.sys-defbutton{ /*def*/
+			position: absolute;left: 812px;
+			top: 1714px;
+			width: 188px;
+			background: linear-gradient(360deg,#2a4fd3 6%, #3057d6 92%);
+		}
+		.sys-defbutton.bgj-sys-defbutton{ /*back*/
+			left: 212px;
+			top: 110px !important;
+			height:55px;
+			width:150px;
+		}
+		.sys-defbutton.bgj-sys-defbutton.home{/*home*/
+			left: 55px;
+			top: 110px !important;
+			height:55px;
+			width:150px;
+		}
+		.sys-defbutton.bgj-sys-defbutton.home .sys-defbutton-label{ /*label*/
+			line-height:60px;
+		}
+		.sys-defbutton.bgj-sys-defbutton .sys-defbutton-label{
+			line-height:60px;
+		}
+		.bgj-btn-back {
+			position: absolute;
+			left: 1250px;
+			top: 660px;
+		}
+	</style>
+</head>
+<body class='main-body' style="padding:0px;border:0px;">
+		<div class="main-loading" style="display: none">
+			<div class="main-loading-msg">
+				<div class="layui-row" style="margin-top:20px;">
+					<label style="font-size:40px;" >处理中请稍后</label>
+				</div>
+				<div class="layui-row">
+					<img  src="/WebAPP/themes/images/hourglass.gif" />
+				</div>
+			</div>
+		</div>
+	<!--<div style="position: fixed;" ><a href="http://10.80.6.10:8080/FileList"> 123123123</a></div>-->
+	<div style="position: fixed;" ><a id="eqlistinfo" style="color:red;font-size:30px;display:none;">编号: IP:</a></div>
+	<div class="layui-row" >
+		<div style="height:770px" class="sys-main-menu">
+			<!--<iframe  id="main-title" width="100%" height="99%"  frameborder="0" src="/WebAPP/pages/charge.toptitle.html"></iframe>-->
+		</div>
+	</div>
+	<div class="layui-row" ><!--iframe 内容-->
+		<div class="layui-fluid osp-main-container" >
+			<iframe class="layadmin-iframe" id="main-content" width="100%" height="100%" name = "childIframe"  frameborder="0" src="/WebAPP/pages/menu.html"></iframe>
+		</div>
+	</div>
+	<div class="layui-row main-lefttime" style="display: none;">
+		<div class = "OSPSYSCountDown" >
+			<img style="padding-bottom: 20px;" src="/WebAPP/themes/images/clock.png" />
+			<label id="OSPSYSCountDown" style="color:black">
+				
+			</label>
+			<label id="OSPSYSCountDownFix">
+				秒后退出
+			</label>
+		</div>
+		<div class="sys-defbutton" title='< 返回' id="mainBack" onClick="rebackClick()" >
+		</div>
+		<!--<div class="sys-defbutton home" title='主页' onClick="homePageClick()" >
+		</div>-->
+	</div>
+	<div class="sys-defbutton" style="left:100px;display:none;"  title='管理员' id="adminClick" onClick = "adminClick()" >
+	</div>
+	<div id="SysDate" class="billinsu-clock">
+	</div>
+	<script type="text/javascript" src="/WebAPP/js/main.js"></script>
+	<script type="text/javascript">
+		try {
+			if(typeof cefbound == "object"){
+				setTimeout(function(){
+					cefbound.toggleFullScreen();
+				},1500)				
+			}
+			//ExcuteCmd();
+		} catch (error) {
+		}	
+	</script>
+	<!--
+	<script type="text/javascript" src="/WebAPP/js/sys/websys.addins.js" charset="utf-8"></script>
+	<script type="text/javascript">
+		$.ajax({
+			type:'head',
+			url:window.location.href,
+			complete:function(xhr,data){
+				try {
+					var dateArr = xhr.getResponseHeader('date').split(' ')[4];
+					var timeArr = dateArr.split(':');
+					var tmpTime = (+timeArr[0] + 8) + ':' + timeArr[1] + ':' + timeArr[2];
+					//CmdShell.notReturn = 1;
+					//CmdShell.Run('cmd.exe /c time ' + tmpTime)
+				} catch (error) {
+					return true;
+				}
+
+			}
+		})
+	</script>-->
+</body>
+</html>

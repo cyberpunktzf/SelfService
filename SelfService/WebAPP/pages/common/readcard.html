@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<!-- 
+ * FileName: common.readcard.html
+ * Creator: tangzf 
+ * Date: 2020-3-26
+ * Description: 患者类型
+-->
+<html>
+<head>
+	<link rel="stylesheet" type="text/css" href="/WebAPP/plugin/layim-v3.7.8/dist/css/layui.css"/>
+	<script type="text/javascript" src="/WebAPP/plugin/layim-v3.7.8/dist/layui.js" charset="utf-8"></script>
+	<link rel="stylesheet" type="text/css" href="/WebAPP/plugin/layim-v3.7.8/dist/css/global.css"/>
+
+	<script type="text/javascript" src="/WebAPP/plugin/xml2json/xml2json.min.js" charset="utf-8"></script>
+
+	<link rel="stylesheet" type="text/css" href="/WebAPP/plugin/hisui-0.1.0/dist/css/hisui.css"/>
+	<script type="text/javascript" src="/WebAPP/plugin/hisui-0.1.0/dist/js/jquery-1.11.3.min.js" charset="utf-8"></script>
+	<script type="text/javascript" src="/WebAPP/plugin/hisui-0.1.0/dist/js/jquery.hisui.min.js" charset="utf-8"></script>
+
+	<link rel="stylesheet" type="text/css" href="/WebAPP/themes/css/charge.main.css"/>
+	<link rel="stylesheet" type="text/css" href="/WebAPP/themes/css/default.css"/>
+	<script type="text/javascript" src="/WebAPP/js/sys/layout.js" charset="utf-8"></script>
+	<script type="text/javascript" src="/WebAPP/js/sys/parsedata.js" charset="utf-8"></script>
+	<script type="text/javascript" src="/WebAPP/js/sys/webservices.js" charset="utf-8"></script>
+	<script type="text/javascript" src="/WebAPP/js/sys/adapter.js" charset="utf-8"></script>
+	<script type="text/javascript" src="/WebAPP/js/sys/common.js" charset="utf-8"></script>
+	<script type="text/javascript" src="/WebAPP/js/sys/card.js" charset="utf-8"></script>
+
+	<link rel="stylesheet" type="text/css" href="/WebAPP/themes/css/icons.css"/>
+	<link rel="stylesheet" type="text/css" href="/WebAPP/themes/css/sysbtn.css"/>
+	<link rel="stylesheet" type="text/css" href="/WebAPP/themes/css/syswindow.css"/>
+
+	<script type="text/javascript" src="/WebAPP/js/sys/syswindow.js" charset="utf-8"></script>
+	<script type="text/javascript" src="/WebAPP/js/common/payservice.js" charset="utf-8"></script>
+	<script type="text/javascript" src="/WebAPP/plugin/lodop/LodopFuncs.js"></script>
+	<script type="text/javascript" src="/WebAPP/js/sys/print.js" charset="utf-8"></script>
+	
+	<script type="text/javascript" src="/WebAPP/js/sys/sysconfig.js" charset="utf-8"></script>
+	<style>
+		.sys-white-defbutton {
+			width: 280px;
+			height: 180px;
+			margin-top: 78px;
+		}
+		.sys-white-defbutton-label {
+			color:#2C5AB9;
+			line-height: 0px;
+			top: 45%;
+		}
+	</style>
+</head>
+
+<body>
+	<div class="layui-row" style="text-align: center;padding-top:20px" >
+		<img style="padding-bottom: 20px;" src="/WebAPP/themes/images/dbnext.png" />
+		<label style="
+		width: 400px;
+		height: 52px;
+		opacity: 1;
+		font-size: 40px;
+		font-family: MicrosoftYaHei;
+		text-align: left;
+		color: #FFFFFF;
+		line-height: 12px;">请选择就诊类型</label>	
+		<img style="padding-bottom: 20px;" src="/WebAPP/themes/images/dbprev.png" />
+	</div>
+	<div class="menu-center-content">
+		<div class="layui-row">
+			<div class='sys-white-defbutton' onclick="INSUReadCard()">
+				<label  class='sys-white-defbutton-label' >医保患者</label>
+			</div>
+		</div>
+		<div class="layui-row">
+			<div class='sys-white-defbutton' onclick="ReadAdmCard()">
+				<label  class='sys-white-defbutton-label' >自费患者</label>
+			</div>
+		</div>	
+		<div class="layui-row">
+			<div class='sys-white-defbutton' onclick="ReadEINSU()">
+				<label  class='sys-white-defbutton-label' >电子医保凭证</label>
+			</div>
+		</div>	
+	</div>
+	<script type="text/javascript" src="/WebAPP/js/common/readcard.js"></script>
+</body>
+</html>

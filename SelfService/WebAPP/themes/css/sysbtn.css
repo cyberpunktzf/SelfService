@@ -1,0 +1,87 @@
+/*按钮*/
+.sys-defbutton{
+    height: 80px;
+    opacity: 1;
+    text-align: center;
+    background: #12BAB9 ; /*linear-gradient(360deg,#2a4fd3 6%, #3057d6 92%);*/
+    border-radius: 40px;
+	margin:0 auto;
+}
+.sys-defbutton-label{
+    width: 80px;
+    height: 52px;
+    opacity: 1;
+    font-size: 40px;
+    font-family: MicrosoftYaHei;				
+    color: #ffffff;
+    line-height:78px;
+}
+/*禁用样式*/
+.sys-defbutton.disabled{
+    height: 80px;
+    opacity: 1;
+    text-align: center;
+    background: #ffffff;
+    border-radius: 40px;
+	margin:0 auto;
+	border: 1px solid #999999;
+}
+.sys-defbutton-label.disabled{
+    width: 80px;
+    height: 52px;
+    opacity: 1;
+    font-size: 40px;
+    font-family: MicrosoftYaHei;				
+    color: #999999;
+    line-height:78px;
+}
+/*white*/
+.sys-white-defbutton{
+    height: 80px;
+	width:300px;
+    opacity: 1;
+    text-align: center;
+    background:#ffffff;
+    border-radius: 40px;
+	border:2px solid #8cbcf9;
+	margin:0 auto;
+}
+.sys-white-defbutton-label{
+    width: 80px;
+    height: 52px;
+    opacity: 1;
+    font-size: 45px;
+    font-weight: bold;
+    font-family: MicrosoftYaHei;				
+    color: #326CD3;
+    line-height:78px;
+    position: relative;
+}
+/*
+    带图标，白色按钮
+*/
+.sys-white-defbutton-icon{
+    
+    width: 240px;
+    height: 240px;
+    opacity: 1;
+    text-align: center;
+    background:#ffffff;
+    border-radius: 40px;
+    border:2px solid #8cbcf9;
+    margin:0 auto;
+}
+.sys-white-defbutton-icon-label{
+    margin-top:18px;
+    opacity: 1;
+    border: 1px solid rgba(0,0,0,0.00);
+    font-size: 34px;
+    font-family: Source Han Sans CN, Source Han Sans CN-Regular;
+    font-weight: 400;
+    text-align: center;
+    color: #FFFFFF;
+}
+.sys-white-defbutton-icon-il{
+    vertical-align: middle;
+    display: inline-block;
+}

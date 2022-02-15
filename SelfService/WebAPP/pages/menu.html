@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<!-- 
+ * FileName: charge.menu.html
+ * Creator: tangzf 
+ * Date: 2020-3-26
+ * Description: 移动收费-主页面
+-->
+<html>
+<head>
+		<script type="text/javascript" src="/WebAPP/plugin/jquery1.8.3/jquery.min.js" ></script>
+		<script type="text/javascript" src="/WebAPP/plugin/jquery1.8.3/jquery.easyui.min.js" ></script>
+		
+		<link rel="stylesheet" type="text/css" href="/WebAPP/plugin/layim-v3.7.8/dist/css/layui.css"/>
+		<script type="text/javascript" src="/WebAPP/plugin/layim-v3.7.8/dist/layui.js" charset="utf-8"></script>
+		<link rel="stylesheet" type="text/css" href="/WebAPP/plugin/layim-v3.7.8/dist/css/global.css"/>
+
+		<script type="text/javascript" src="/WebAPP/plugin/xml2json/xml2json.min.js" charset="utf-8"></script>
+
+		<link rel="stylesheet" type="text/css" href="/WebAPP/plugin/hisui-0.1.0/dist/css/hisui.css"/>
+		<script type="text/javascript" src="/WebAPP/plugin/hisui-0.1.0/dist/js/jquery-1.11.3.min.js" charset="utf-8"></script>
+		<script type="text/javascript" src="/WebAPP/plugin/hisui-0.1.0/dist/js/jquery.hisui.min.js" charset="utf-8"></script>
+		<script type="text/javascript" src="/WebAPP/plugin/lodop/LodopFuncs.js"></script>
+		
+		<link rel="stylesheet" type="text/css" href="/WebAPP/themes/css/charge.main.css"/>
+		<link rel="stylesheet" type="text/css" href="/WebAPP/themes/css/default.css"/>
+		<script type="text/javascript" src="/WebAPP/js/sys/layout.js" charset="utf-8"></script>
+		<script type="text/javascript" src="/WebAPP/js/sys/parsedata.js" charset="utf-8"></script>
+		<script type="text/javascript" src="/WebAPP/js/sys/webservices.js" charset="utf-8"></script>
+		<script type="text/javascript" src="/WebAPP/js/sys/adapter.js" charset="utf-8"></script>
+		<script type="text/javascript" src="/WebAPP/js/sys/common.js" charset="utf-8"></script>
+		<script type="text/javascript" src="/WebAPP/js/sys/card.js" charset="utf-8"></script>
+
+		<link rel="stylesheet" type="text/css" href="/WebAPP/themes/css/icons.css"/>
+		<link rel="stylesheet" type="text/css" href="/WebAPP/themes/css/sysbtn.css"/>
+		<link rel="stylesheet" type="text/css" href="/WebAPP/themes/css/syswindow.css"/>
+
+		<script type="text/javascript" src="/WebAPP/js/sys/syswindow.js" charset="utf-8"></script>
+		<script type="text/javascript" src="/WebAPP/js/common/payservice.js" charset="utf-8"></script>
+		
+		<script type="text/javascript" src="/WebAPP/js/sys/print.js" charset="utf-8"></script>
+		
+		<script type="text/javascript" src="/WebAPP/js/sys/sysconfig.js" charset="utf-8"></script>
+		<script type="text/javascript" src="/WebAPP/js/sys/DHCInsuPort.js" charset="utf-8"></script>
+	<style>
+		/*.layui-row{
+			height:100px !important;
+		}*/
+		.container {
+			width: 100%;
+			height: 100%;
+		}
+		.box1{
+			width:280px;
+			height:198px;
+			margin: 0 auto;
+		}
+		.box1:not(.first-row){
+			margin-top: 30px;
+		}
+		.layui-col-md3{
+			margin-left: 40px;
+		}.first-col{
+			margin-left: 90px;
+		}
+		.sys-white-defbutton-icon-label{
+			opacity: 1;
+			font-size: 50px;
+			font-family: Source Han Sans CN, Source Han Sans CN-Regular;
+			font-weight: 400;
+			text-align: center;
+			color: #2c5ab9;
+		}
+		.icon-btn{
+			height:60px;
+			margin: 0 auto;
+		}
+		.for-icon-btn {
+			transform: scale(0.8);
+			-ms-transform: scale(0.8);
+			-webkit-transform: scale(0.8);
+			-o-transform: scale(0.8);
+			-moz-transform: scale(0.8);
+		}
+	</style>
+</head>
+<body style="overflow:hidden;">
+	<div class="container">
+		<div class="layui-row" style="text-align: center;" >
+			<div class="layui-col-md3 first-col">
+				<div class='sys-white-defbutton-icon box1 first-row' title="取号" data-options="icons:icon-1" onclick="gotoReadCard('OBTNO')"></div>			
+			</div>
+			<div class="layui-col-md3">
+				<div class='sys-white-defbutton-icon box1 first-row' title="预约" data-options="icons:icon-2" onclick="gotoReadCard('ORDR')"></div>
+			</div>
+			<div class="layui-col-md3">
+				<div class='sys-white-defbutton-icon box1 first-row' title="取消预约" data-options="icons:icon-3" onclick="gotoReadCard('CANCORDR')"></div>
+			</div>
+		</div>
+		<div class="layui-row">
+			<div class="layui-col-md3 first-col">
+				<div class='sys-white-defbutton-icon box1' title="当日挂号" data-options="icons:icon-5" onclick="gotoReadCard('Reg')"></div>
+			</div>
+			<div class="layui-col-md3">
+				<div class='sys-white-defbutton-icon box1'' title="门诊缴费" data-options="icons:icon-6" onclick="gotoReadCard('Charge')"></div>
+			</div>
+			<div class="layui-col-md3">
+				<div class='sys-white-defbutton-icon box1' title="医生加号" data-options="icons:icon-9" onclick="gotoReadCard('DRINCRNO')"></div>
+			</div>
+		</div>
+		<div class="layui-row">
+			<div class="layui-col-md3 first-col">
+				<div class='sys-white-defbutton-icon box1' title="凭条打印" data-options="icons:icon-7" onclick="gotoReadCard('CERTPRT')"></div>
+			</div>
+			<div class="layui-col-md3">
+				<div class='sys-white-defbutton-icon box1' title="联合门诊" data-options="icons:icon-10" onclick="gotoReadCard('UnionOP')"></div>
+			</div>
+			<div class="layui-col-md3">
+				<div class='sys-white-defbutton-icon box1' title="代取药登记" data-options="icons:icon-2" onclick="gotoReadCard('HLTJ')"></div>
+			</div>
+		</div>
+		<div class="layui-row">
+			<div class="layui-col-md3 first-col">
+				<div class='sys-white-defbutton-icon box1' title="查询" data-options="icons:icon-8" onclick="gotoReadCard('QURY')"></div>
+			</div>
+			<div class="layui-col-md3">
+				<div class='sys-white-defbutton-icon box1' title="健康天津" data-options="icons:icon-4" onclick="gotoReadCard('HLTJ')"></div>
+			</div>
+			<div class="layui-col-md3">
+				<div class='sys-white-defbutton-icon box1' title="核酸挂号" data-options="icons:icon-4" onclick="gotoReadCard('NAReg')"></div>
+			</div>
+		</div>
+	</div>
+	<script type="text/javascript" src="/WebAPP/js/menu.js"></script>
+</body>
+</html>

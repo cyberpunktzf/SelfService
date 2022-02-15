@@ -1,0 +1,140 @@
+<!-- 
+ * FileName: prereg.predetails.html
+ * Creator: tangzf 
+ * Date: 2020-3-26
+ * Description: 移动收费-取消预约
+-->
+<html>
+	<head>
+			<script type="text/javascript" src="/WebAPP/plugin/jquery1.8.3/jquery.min.js" ></script>
+			<script type="text/javascript" src="/WebAPP/plugin/jquery1.8.3/jquery.easyui.min.js" ></script>
+			
+			<link rel="stylesheet" type="text/css" href="/WebAPP/plugin/layim-v3.7.8/dist/css/layui.css"/>
+			<script type="text/javascript" src="/WebAPP/plugin/layim-v3.7.8/dist/layui.js" charset="utf-8"></script>
+			<link rel="stylesheet" type="text/css" href="/WebAPP/plugin/layim-v3.7.8/dist/css/global.css"/>
+	
+			<script type="text/javascript" src="/WebAPP/plugin/xml2json/xml2json.min.js" charset="utf-8"></script>
+	
+			<link rel="stylesheet" type="text/css" href="/WebAPP/plugin/hisui-0.1.0/dist/css/hisui.css"/>
+			<script type="text/javascript" src="/WebAPP/plugin/hisui-0.1.0/dist/js/jquery-1.11.3.min.js" charset="utf-8"></script>
+			<script type="text/javascript" src="/WebAPP/plugin/hisui-0.1.0/dist/js/jquery.hisui.min.js" charset="utf-8"></script>
+	
+			<link rel="stylesheet" type="text/css" href="/WebAPP/themes/css/charge.main.css"/>
+			<link rel="stylesheet" type="text/css" href="/WebAPP/themes/css/default.css"/>
+			<script type="text/javascript" src="/WebAPP/js/sys/layout.js" charset="utf-8"></script>
+			<script type="text/javascript" src="/WebAPP/js/sys/parsedata.js" charset="utf-8"></script>
+			<script type="text/javascript" src="/WebAPP/js/sys/webservices.js" charset="utf-8"></script>
+			<script type="text/javascript" src="/WebAPP/js/sys/adapter.js" charset="utf-8"></script>
+			<script type="text/javascript" src="/WebAPP/js/sys/common.js" charset="utf-8"></script>
+			<script type="text/javascript" src="/WebAPP/js/sys/card.js" charset="utf-8"></script>
+	
+			<link rel="stylesheet" type="text/css" href="/WebAPP/themes/css/icons.css"/>
+			<link rel="stylesheet" type="text/css" href="/WebAPP/themes/css/sysbtn.css"/>
+			<link rel="stylesheet" type="text/css" href="/WebAPP/themes/css/syswindow.css"/>
+	
+			<script type="text/javascript" src="/WebAPP/js/sys/syswindow.js" charset="utf-8"></script>
+			<script type="text/javascript" src="/WebAPP/js/common/payservice.js" charset="utf-8"></script>
+			<script type="text/javascript" src="/WebAPP/plugin/lodop/LodopFuncs.js"></script>
+			<script type="text/javascript" src="/WebAPP/js/sys/print.js" charset="utf-8"></script>
+			
+			<script type="text/javascript" src="/WebAPP/js/sys/sysconfig.js" charset="utf-8"></script>
+			<script type="text/javascript" src="/WebAPP/js/sys/DHCInsuPort.js" charset="utf-8"></script>
+	<style>
+		body{
+			overflow: hidden;
+		}
+		.layui-carousel-arrow{
+			top:100%;
+		}
+		.TurnPlay .layui-row:not(:first-child){
+			margin-top:20px;
+		}
+		#TurnPlay{
+			height:600px  !important;
+		}
+		/*doc div*/
+		.sys-white-defbutton{
+			height: 177px;
+			width:920px;
+			opacity: 1;
+			text-align: left;
+			border-radius: 40px;
+		}
+		.sys-white-defbutton.bgj{
+			height: 150px;
+			width: 920px;
+			opacity: 1;
+			text-align: left;
+			border-radius: 40px;
+		}
+		.sys-white-defbutton-label{
+			width: 156px;
+			height: 26px;
+			opacity: 1;
+			font-size: 26px;
+			font-family: Source Han Sans CN, Source Han Sans CN-Regular;
+			font-weight: 400;
+			text-align: left;
+			line-height:28px;
+			margin-left:27px;
+			color: black;
+		}
+		.bgj label:not(.sys-defbutton-label){
+			width: 150px;
+			height: 20px;
+			font-size: 20px;
+			line-height: 22px;
+			margin-left: 27px;
+		}
+		.sys-defbutton-label{
+			font-size: 30px;
+			font-family: MicrosoftYaHei;
+			line-height:70px;
+		}
+		.middle-label{
+			margin-top:17px;
+			margin-bottom:17px;
+		}
+		.row-col:not(:last-child){
+			margin-top: 32px;
+		}
+		.row-col:last-child{
+			margin-top: 20px;
+		}
+		.layui-carousel-ind,.layui-carousel-arrow{
+			display:none;
+		}
+		.pagetitle label{
+			line-height: 174px;
+		}
+		.sys-pre-btn {
+			width: 130px;
+			height: 70px;
+			margin-top: 35px;
+		}
+		.bgj .sys-pre-btn {
+			margin-top: 20px;
+		}
+		</style>
+</head>
+<body>
+	<div style="height:900px;">
+		<div class="layui-row pagetitle" title="您的已预约信息" style="padding-bottom:20px;" ></div>
+		<div class='layui-row' style="height:600px">
+			<div class="layui-col-md12" style="height:600px">
+				<div class="layui-carousel" id="TurnPlay">
+					<div carousel-item class="HISContent">
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="layui-row bottom-change" style="text-align: center;border:none;" >
+			<img onClick = "ChangePage('sub')" id="BackButton" src="/WebAPP/themes/images/prev.png" />
+			<label class="pagenum-c" id="currentPage">1</label>
+			<label class="pagenum-t"id="pageNum"></label>	
+			<img onClick = "ChangePage('add')" id="NextButton" src="/WebAPP/themes/images/next.png" />
+		</div>
+	</div>
+	<script type="text/javascript" src="/WebAPP/js/prereg/predetails.js" charset="utf-8"></script>
+</body>
+</html>

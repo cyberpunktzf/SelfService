@@ -1,0 +1,94 @@
+<!-- 
+ * FileName: query.accountbalance.csp
+ * Creator: tangzf 
+ * Date: 2020-4-09
+ * Description: 移动收费-查询账户余额
+-->
+<html>
+<head>
+		<script type="text/javascript" src="/WebAPP/plugin/jquery1.8.3/jquery.min.js" ></script>
+		<script type="text/javascript" src="/WebAPP/plugin/jquery1.8.3/jquery.easyui.min.js" ></script>
+		
+		<link rel="stylesheet" type="text/css" href="/WebAPP/plugin/layim-v3.7.8/dist/css/layui.css"/>
+		<script type="text/javascript" src="/WebAPP/plugin/layim-v3.7.8/dist/layui.js" charset="utf-8"></script>
+		<link rel="stylesheet" type="text/css" href="/WebAPP/plugin/layim-v3.7.8/dist/css/global.css"/>
+
+		<script type="text/javascript" src="/WebAPP/plugin/xml2json/xml2json.min.js" charset="utf-8"></script>
+
+		<link rel="stylesheet" type="text/css" href="/WebAPP/plugin/hisui-0.1.0/dist/css/hisui.css"/>
+		<script type="text/javascript" src="/WebAPP/plugin/hisui-0.1.0/dist/js/jquery-1.11.3.min.js" charset="utf-8"></script>
+		<script type="text/javascript" src="/WebAPP/plugin/hisui-0.1.0/dist/js/jquery.hisui.min.js" charset="utf-8"></script>
+
+		<link rel="stylesheet" type="text/css" href="/WebAPP/themes/css/charge.main.css"/>
+		<link rel="stylesheet" type="text/css" href="/WebAPP/themes/css/default.css"/>
+		<script type="text/javascript" src="/WebAPP/js/sys/layout.js" charset="utf-8"></script>
+		<script type="text/javascript" src="/WebAPP/js/sys/parsedata.js" charset="utf-8"></script>
+		<script type="text/javascript" src="/WebAPP/js/sys/webservices.js" charset="utf-8"></script>
+		<script type="text/javascript" src="/WebAPP/js/sys/adapter.js" charset="utf-8"></script>
+		<script type="text/javascript" src="/WebAPP/js/sys/common.js" charset="utf-8"></script>
+		<script type="text/javascript" src="/WebAPP/js/sys/card.js" charset="utf-8"></script>
+
+		<link rel="stylesheet" type="text/css" href="/WebAPP/themes/css/icons.css"/>
+		<link rel="stylesheet" type="text/css" href="/WebAPP/themes/css/sysbtn.css"/>
+		<link rel="stylesheet" type="text/css" href="/WebAPP/themes/css/syswindow.css"/>
+
+		<script type="text/javascript" src="/WebAPP/js/sys/syswindow.js" charset="utf-8"></script>
+		<script type="text/javascript" src="/WebAPP/js/common/payservice.js" charset="utf-8"></script>
+		<script type="text/javascript" src="/WebAPP/plugin/lodop/LodopFuncs.js"></script>
+		<script type="text/javascript" src="/WebAPP/js/sys/print.js" charset="utf-8"></script>
+		
+		<script type="text/javascript" src="/WebAPP/js/sys/sysconfig.js" charset="utf-8"></script>
+		<script type="text/javascript" src="/WebAPP/js/sys/DHCInsuPort.js" charset="utf-8"></script>
+	<style>
+		.layui-col-md12{
+			text-align:right;
+		}
+	</style>
+</head>
+
+<body>
+<div class="layui-container" style="padding: 20px;width:60%">
+		<div class="layui-card">
+	        <div class="layui-card-header" style="border:0" >
+				
+	        </div>
+        	<hr class="layui-bg-gray" style="margin:0px;">
+	        <div class="layui-card-body">
+					<div class='layui-row' style='text-align:center;'>
+						<div class='layui-col-md6'  >
+							<label>院内账户号</label>
+						</div>
+						<div class='layui-col-md6'  >
+							<label>开户日期</label>
+						</div>
+					</div>
+					<div class='layui-row' style='text-align:center;'>
+						<div class='layui-col-md6'  >
+							<label id='AccountID'></label>
+						</div>
+						<div class='layui-col-md6'  >
+							<label id='Date'>2020-1-1</label>
+						</div>
+					</div>
+					<div class='layui-row' style='text-align:center;'>
+						<div class='layui-col-md6'  >
+							<label>充值限额(单位：元)</label>
+						</div>	
+						<div class='layui-col-md6'  >
+							<label>账户余额(单位：元)</label>
+						</div>	
+					</div>
+					<div class='layui-row' style='text-align:center;'>
+						<div class='layui-col-md6'  >
+							<label id='LimitAmt'></label>
+						</div>	
+						<div class='layui-col-md6'  >
+							<label id='BalanceAmt'></label>
+						</div>	
+					</div>
+			</div>
+		</div>
+</div>	
+<script type="text/javascript" src="/WebAPP/js/query/accountbalance.js"></script>
+</body>
+</html>

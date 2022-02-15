@@ -1,0 +1,139 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script type="text/javascript" src="/WebAPP/plugin/hisui-0.1.0/dist/js/jquery-1.11.3.min.js"></script>
+	<script type="text/javascript" src="/WebAPP/js/sys/adapter.js" charset="utf-8"></script>
+    <script type='text/javascript' src='/WebAPP/plugin/echarts/echarts.min.js'></script>
+	<style>
+		body {
+			background-color: #293c55;
+			overflow: hidden;
+		}
+		.title {
+			background-color: #a52a2a;
+			width: 340px;
+		}
+		.title>h2 {
+			color: #fff8dc;
+		}
+	</style>
+</head>
+<body>
+    <div class="title">
+        <h2>自助挂号分布（单位：人次）</h2>
+    </div>
+    <div id="regEcharts" style="width:100%;height:300px;"></div>
+</body>
+<script type="text/javascript">
+	//常量
+	const CV = {
+		MoudleName: 'SelfServPy.Common.ss_eqlistdCtl',
+		ClassName: 'ELC'
+	};
+	//全局变量
+	var GV = {
+		Echarts: {}
+	}
+	$(function() {
+		//初始化ECharts实列
+		GV.Echarts = echarts.init($("#regEcharts")[0]);
+		//指定图表的配置项和数据
+		var option= {
+			title: {
+				text: ''
+			},
+			tooltip: {},
+			xAxis: {
+				axisTick: {
+					show: false
+				},
+				data: ['7:00', '8:00', '9:00', '10:00', '11:00'],
+				axisLine: {
+					lineStyle: {
+						color: '#3b80ee',
+						opacity: 0.4
+					}
+				},
+				axisLabel: {
+					textStyle: {
+						fontSize: '16',
+						color: '#ffffff'
+					}
+				}
+			},
+			yAxis: {
+				show: false,
+				splitLine: {
+					show: false
+				}
+			},
+			series:[{
+				stack: '1',   //叠起来
+				name: '最大值',
+				type: 'bar',
+				barWidth: '20%',
+				data: [25, 20, 15, 10, 5],
+				itemStyle: {
+					normal: {
+						color: '#FFFF00'
+					}
+				},
+				label: {
+					show: true,
+					position: 'top',
+					valueAnimation: true,
+					textStyle: {
+						fontSize: '16',
+						color: '#52d2ff'
+					}
+				}
+			}]
+		};
+		GV.Echarts.setOption(option);
+		
+		//从后台请求数据
+		var input = {};
+        input['TradeCode'] = "query^" + CV.MoudleName + "^" + CV.ClassName;
+        CallMethod(input, function(rtn) {
+			if (rtn.result != 0) {
+				return;
+			}
+			var eqCount = rtn.output.length;
+			/*
+			$("#DeviceNum").text(eqCount);
+			
+			var _opts = GV.Echarts.getOption();
+			_opts.series = [{
+				data: [
+					{value: 9, name: '正常',
+					itemStyle: {
+						normal: {
+							color: '#32CD99'
+						}
+					}},
+					{value: 3, name: '故障',
+					itemStyle: {
+						normal: {
+							color: '#CC3299'
+						}
+					}},
+					{value: 2, name: '离线'}
+				]
+			}];
+			GV.Echarts.setOption(_opts);
+			*/
+        }, "DoMethod");
+	});
+	
+	/**
+	* 定时刷新，5分钟刷新
+	*/
+	var handler = setInterval(function() {
+		clearInterval(handler);
+		location = location;
+	}, 1000 * 60 * 5);
+</script>
+</html>

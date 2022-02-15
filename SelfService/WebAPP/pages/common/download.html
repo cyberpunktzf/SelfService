@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<!-- 
+ * FileName: charge.readcard.show.html
+ * Creator: tangzf 
+ * Date: 2020-3-26
+ * Description: 移动收费-下载
+-->
+<html>
+<head>
+				<link rel="stylesheet" type="text/css" href="/WebAPP/plugin/layim-v3.7.8/dist/css/layui.css"/>
+				<script type="text/javascript" src="/WebAPP/plugin/layim-v3.7.8/dist/layui.js" charset="utf-8"></script>
+				<link rel="stylesheet" type="text/css" href="/WebAPP/plugin/layim-v3.7.8/dist/css/global.css"/>
+		
+				<script type="text/javascript" src="/WebAPP/plugin/xml2json/xml2json.min.js" charset="utf-8"></script>
+		
+				<link rel="stylesheet" type="text/css" href="/WebAPP/plugin/hisui-0.1.0/dist/css/hisui.css"/>
+				<script type="text/javascript" src="/WebAPP/plugin/hisui-0.1.0/dist/js/jquery-1.11.3.min.js" charset="utf-8"></script>
+				<script type="text/javascript" src="/WebAPP/plugin/hisui-0.1.0/dist/js/jquery.hisui.min.js" charset="utf-8"></script>
+		
+				<link rel="stylesheet" type="text/css" href="/WebAPP/themes/css/charge.main.css"/>
+				<link rel="stylesheet" type="text/css" href="/WebAPP/themes/css/default.css"/>
+				<script type="text/javascript" src="/WebAPP/js/sys/layout.js" charset="utf-8"></script>
+				<script type="text/javascript" src="/WebAPP/js/sys/parsedata.js" charset="utf-8"></script>
+				<script type="text/javascript" src="/WebAPP/js/sys/webservices.js" charset="utf-8"></script>
+				<script type="text/javascript" src="/WebAPP/js/sys/adapter.js" charset="utf-8"></script>
+				<script type="text/javascript" src="/WebAPP/js/sys/common.js" charset="utf-8"></script>
+				<script type="text/javascript" src="/WebAPP/js/sys/card.js" charset="utf-8"></script>
+		
+				<link rel="stylesheet" type="text/css" href="/WebAPP/themes/css/icons.css"/>
+				<link rel="stylesheet" type="text/css" href="/WebAPP/themes/css/sysbtn.css"/>
+				<link rel="stylesheet" type="text/css" href="/WebAPP/themes/css/syswindow.css"/>
+		
+				<script type="text/javascript" src="/WebAPP/js/sys/syswindow.js" charset="utf-8"></script>
+				<script type="text/javascript" src="/WebAPP/js/common/payservice.js" charset="utf-8"></script>
+				<script type="text/javascript" src="/WebAPP/js/sys/print.js" charset="utf-8"></script>
+				<script type="text/javascript" src="/WebAPP/plugin/lodop/LodopFuncs.js"></script>
+				<script type="text/javascript" src="/WebAPP/js/sys/sysconfig.js" charset="utf-8"></script>
+				<script type="text/javascript" src="/WebAPP/js/sys/DHCInsuPort.js" charset="utf-8"></script>
+	<style>
+		body{
+			background: #fff !important;
+		}
+	</style>
+</head>
+
+<body>
+		<script type="text/javascript" >
+			$.ajax({           
+				type: "POST",                  
+				url: PYTHONSERVER + 'FileList?TradeType=1',            
+				async: true,             
+				success: function (jsonObj) {  
+					$.each(jsonObj,function(index,val){
+						$("body").prepend('<div><a style="font-size:20px;color:red;"  href="' + PYTHONSERVER + 'DownLoad?file=' + index +  '" >' + index +'</a></div>');
+					});
+				},error:function(e){
+					alert(e.responseText)
+				}
+			})
+		</script>
+</body>
+</html>

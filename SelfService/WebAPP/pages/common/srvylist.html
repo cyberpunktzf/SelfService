@@ -1,0 +1,182 @@
+﻿<!-- 
+ * FileName: common.srvylist.html
+ * Creator: tangzf 
+ * Date: 2020-3-26
+ * Description: 移动收费-订单
+-->
+<!DOCTYPE html>
+<html>
+	<head>
+		<script type="text/javascript" src="/WebAPP/plugin/jquery1.8.3/jquery.min.js" ></script>
+		<script type="text/javascript" src="/WebAPP/plugin/jquery1.8.3/jquery.easyui.min.js" ></script>
+		
+		<link rel="stylesheet" type="text/css" href="/WebAPP/plugin/layim-v3.7.8/dist/css/layui.css"/>
+		<script type="text/javascript" src="/WebAPP/plugin/layim-v3.7.8/dist/layui.js" charset="utf-8"></script>
+		<link rel="stylesheet" type="text/css" href="/WebAPP/plugin/layim-v3.7.8/dist/css/global.css"/>
+
+		<script type="text/javascript" src="/WebAPP/plugin/xml2json/xml2json.min.js" charset="utf-8"></script>
+
+		<link rel="stylesheet" type="text/css" href="/WebAPP/plugin/hisui-0.1.0/dist/css/hisui.css"/>
+		<script type="text/javascript" src="/WebAPP/plugin/hisui-0.1.0/dist/js/jquery-1.11.3.min.js" charset="utf-8"></script>
+		<script type="text/javascript" src="/WebAPP/plugin/hisui-0.1.0/dist/js/jquery.hisui.min.js" charset="utf-8"></script>
+
+		<link rel="stylesheet" type="text/css" href="/WebAPP/themes/css/charge.main.css"/>
+		<link rel="stylesheet" type="text/css" href="/WebAPP/themes/css/default.css"/>
+		<script type="text/javascript" src="/WebAPP/js/sys/layout.js" charset="utf-8"></script>
+		<script type="text/javascript" src="/WebAPP/js/sys/parsedata.js" charset="utf-8"></script>
+		<script type="text/javascript" src="/WebAPP/js/sys/webservices.js" charset="utf-8"></script>
+		<script type="text/javascript" src="/WebAPP/js/sys/adapter.js" charset="utf-8"></script>
+		<script type="text/javascript" src="/WebAPP/js/sys/common.js" charset="utf-8"></script>
+		<script type="text/javascript" src="/WebAPP/js/sys/card.js" charset="utf-8"></script>
+
+		<link rel="stylesheet" type="text/css" href="/WebAPP/themes/css/icons.css"/>
+		<link rel="stylesheet" type="text/css" href="/WebAPP/themes/css/sysbtn.css"/>
+		<link rel="stylesheet" type="text/css" href="/WebAPP/themes/css/syswindow.css"/>
+
+		<script type="text/javascript" src="/WebAPP/js/sys/syswindow.js" charset="utf-8"></script>
+		<script type="text/javascript" src="/WebAPP/js/common/payservice.js" charset="utf-8"></script>
+		<script type="text/javascript" src="/WebAPP/plugin/lodop/LodopFuncs.js"></script>
+		<script type="text/javascript" src="/WebAPP/js/sys/print.js" charset="utf-8"></script>
+		
+		<script type="text/javascript" src="/WebAPP/js/sys/sysconfig.js" charset="utf-8"></script>
+		<script type="text/javascript" src="/WebAPP/js/sys/DHCInsuPort.js" charset="utf-8"></script>
+<style>
+		html body{
+			margin-top: 0px;
+		}
+	  	#OrderList{
+			margin:0px	!important;
+		}
+		.layui-form{
+			margin:0px	!important;	
+		}
+		.layui-table-cell .layui-form-checkbox[lay-skin=primary] {
+		    margin-top: 12px !important;
+		}
+		.layui-card-body{
+			padding:0px;
+			border:2px solid #8CBCF9;		
+		}
+		.layui-card{
+			margin-bottom:0px;
+		}
+		.layui-table-tool-self{
+			display:none; /*列选项 打印选项*/	
+		}
+		.layui-row{
+			height:64px !important;
+		}
+		.layui-table-header{
+			display: none;
+		}
+		/*隐藏标题栏的radio*/
+		tr[data-index="0"] .laytable-cell-radio{
+			display: none !important;
+		}
+		/*表格高度*/
+		tr{
+			height:80px;
+		}
+		.layui-table-cell{
+			font-size: 35px;
+			overflow:inherit !important;
+			white-space:inherit !important;
+			padding-bottom: 80px;
+		}
+		/*表格去边框*/
+		.layui-border-box {
+			padding:0px !important;
+			border: 0px !important;
+		}
+		.layui-card-body th{
+			padding:0px !important;
+			border:0px !important;
+		}
+		.layui-card-body td{
+			padding:0px !important;
+			border:0px !important;
+		}
+		.layui-table-total{
+			padding:0px !important;
+			border:0px !important;
+		}
+		.layui-table-tool{
+			padding:0px !important;
+			border:0px !important;
+		}
+		.layui-table-header{
+			border:0px !important;
+		}
+		/*表格背景色*/
+		.layui-table{
+			background-color: #fff;
+			width:946px;
+		}
+		table{
+			word-break:break-all !important;
+		}
+		.layui-form-radio>i:hover, .layui-form-radioed>i {
+			color:black !important;
+		}
+		.title-surv{
+			width: 400px;
+			height: 52px;
+			opacity: 1;
+			font-size: 40px;
+			font-family: MicrosoftYaHei;
+			text-align: left;
+			color: #FFFFFF;
+			line-height: 182px;
+		}
+		.bottom-advise{
+			text-align: left;
+			padding-top:20px;
+		}
+		.bottom-advise label{
+			width: 920px;
+			height: 192px;
+			opacity: 1;
+			font-size: 28px;
+			font-family: MicrosoftYaHei;
+			text-align: left;
+			color: white;
+			line-height: 50px;
+		}
+	</style>
+	
+</head>
+
+<body class="">
+	<div class="layui-card osp-themes layui-container" style="height:900px;">
+		<div class="osp-themes">
+			<div style="text-align: center;">
+				<img style="padding-bottom: 20px;" onClick="FillSrvyList(0)" src="/WebAPP/themes/images/dbnext.png"/>
+				<label class="title-surv">请填写流行病学调查表</label>	
+				<img style="padding-bottom: 20px;" onClick="FillSrvyList(0)" src="/WebAPP/themes/images/dbprev.png"/>
+			</div>
+		</div>
+		<div class="layui-card-body" style="border-radius:30px;background-color: #fff;height:349px;" >
+			<table  class="layui-table" id="OrderList" lay-filter="OrderList" style="border-radius:30px;width:100%;">
+				<tr>
+					<td style="text-align: center">
+						<label>津卫医政（2020）373号-流行病学调查内容</label>
+					</td>
+				</tr>
+			</table>
+		</div>
+		<div class="layui-row bottom-advise">
+			<div>
+				<img id="picture" style="padding-bottom: 15px;" src="/WebAPP/themes/images/info.png" />
+				<label>上述信息已经过本人确认核实，本人对信息内容的真实性和完整性负责。如果信息有误或缺失，本人愿意承担相应法律责任。同时，本人保证遵守疫情防控的各项规定，配合并听从医院的各项措施和要求。</label>
+			</div>
+		</div>
+		<div class="layui-row bottom-change" style="text-align: right;padding-top:140px;border:none;">
+			<label class="pagenum-c" id="currentPage">1/</label>
+			<label class="pagenum-t"id="pageNum">/8</label>		
+			<img onClick="FillSrvyList(0)" style="margin-bottom:18px;" id="BackButton" src="/WebAPP/themes/images/prev.png"/>
+			<span onClick="submit()" id="submit" style="display:none;font-size:35px;margin-left:20px;padding:18px 85px;border-radius:40px;color:black;background-color:white;">提交</span>
+		</div>
+	</div>
+	<script type="text/javascript" src="/WebAPP/js/common/srvylist.js"></script>
+</body>
+</html>

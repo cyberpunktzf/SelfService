@@ -1,0 +1,16 @@
+[pid: 5406|app: 0|req: 1/1] 10.3.204.31 () {38 vars in 569 bytes} [Thu Sep  2 16:21:59 2021] GET / => generated 3953 bytes in 132 msecs (HTTP/1.1 200) 5 headers in 167 bytes (1 switches on core 0)
+{"TradeCode":"GetMenuBtn","serial_id":"","serial_number":"","modal_code":"","bd_id":{}}
+入参：{"TradeCode":"GetMenuBtn","serial_id":"","serial_number":"","modal_code":"","bd_id":{}}
+开始取全局对象
+取全局对象成功
+开始生成根据客户端信息 10.3.204.31
+生成根据客户端信息成功 {'id': 4, 'ss_eqlistd_eqcode': 'DH31-46', 'ss_eqlistd_eqdesc': '开发机', 'ss_eqlistd_address': '46所3楼', 'ss_eqlistd_spec': '', 'ss_eqlistd_unit': '', 'ss_eqlistd_type': '', 'ss_eqlistd_ip': '10.3.204.31', 'ss_eqlistd_mac': '', 'ss_eqlistd_opdate': '2021-08-09 15:53:00', 'ss_eqlistd_closedate': '2021-08-09 15:53:00', 'ss_eqlistd_createdate': '2021-08-09 15:53:00', 'ss_eqlistd_creator': '', 'ss_eqlistd_update': '2021-08-09 15:53:00', 'ss_eqlistd_upuser': '', 'ss_eqlistd_role': 'admin'}
+业务开始，入参参数= {'TradeCode': 'GetMenuBtn', 'serial_id': '', 'serial_number': '', 'modal_code': '', 'bd_id': {}}
+获取患者基本信息成功：
+获取HIS患者基本信息成功：
+获取菜单 {'id': 4, 'ss_eqlistd_eqcode': 'DH31-46', 'ss_eqlistd_eqdesc': '开发机', 'ss_eqlistd_address': '46所3楼', 'ss_eqlistd_spec': '', 'ss_eqlistd_unit': '', 'ss_eqlistd_type': '', 'ss_eqlistd_ip': '10.3.204.31', 'ss_eqlistd_mac': '', 'ss_eqlistd_opdate': '2021-08-09 15:53:00', 'ss_eqlistd_closedate': '2021-08-09 15:53:00', 'ss_eqlistd_createdate': '2021-08-09 15:53:00', 'ss_eqlistd_creator': '', 'ss_eqlistd_update': '2021-08-09 15:53:00', 'ss_eqlistd_upuser': '', 'ss_eqlistd_role': 'admin'}
+根据角色获取 admin
+1
+[pid: 5407|app: 0|req: 1/2] 10.3.204.31 () {48 vars in 835 bytes} [Thu Sep  2 16:21:59 2021] POST /CallPythonService => generated 68 bytes in 182 msecs (HTTP/1.1 200) 5 headers in 171 bytes (1 switches on core 0)
+[pid: 5408|app: 0|req: 1/3] 10.3.204.31 () {38 vars in 569 bytes} [Thu Sep  2 16:22:00 2021] GET / => generated 3953 bytes in 130 msecs (HTTP/1.1 200) 5 headers in 167 bytes (1 switches on core 0)
+Thu Sep  2 16:22:00 2021 - logsize: 2145, triggering rotation to /SelfService/uwsgi_conf/logs/uwsgi.log.1630570920...

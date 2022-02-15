@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<!-- 
+* FileName: admin.extdetails.html
+* Creator: tangzf 
+* Date: 2020-5-22
+* Description: 获取可退费列表
+-->
+<html>
+<head>
+	<meta charset="utf-8">
+
+	<script type="text/javascript" src="/WebAPP/js/admin/head.js" charset="utf-8"></script>
+
+	<style>
+		.layui-card-body .layui-table{
+			margin:0px !important;
+		}
+		.layui-card-header{
+			height:100px;
+			padding:10px;
+		}
+		.layui-card-body{
+			float: left;
+		}
+		.layui-table-click{
+			background-color:yellow !important;
+		}
+	</style>
+</head>
+<body class="layui-fluid">	
+	<div class="layui-card" >
+		<div class="layui-card-header">
+			<form class="layui-form"  >
+				<div class='layui-row'>
+					<div class="layui-form-item">
+						<label class="layui-form-label title8"></label>
+						<div class="layui-input-inline">
+								<input type="text"  class='layui-input id8'>
+						</div>
+						<label class="layui-form-label title2"></label>
+						<div class="layui-input-inline">
+							<input type="text"  class='layui-input id2'>
+						</div>
+						<label class="layui-form-label title3"></label>
+						<div class="layui-input-inline">
+							<input type="text"  class='layui-input id3'>
+						</div>
+						<label class="layui-form-label title4"></label>
+						<div class="layui-input-inline">
+							<input type="text"  class='layui-input id4'>
+						</div>
+						<input type="button" class="layui-btn" id="QueryBtn"  value="查询">
+						<input type="button" class="layui-btn" id="ClearBtn"  value="清屏">
+					</div>
+				</div>
+				<div class="layui-row">	
+					<div class="layui-form-item">
+						<label class="layui-form-label title5" ></label>
+						<div class="layui-input-inline">
+							<input type="text"  class='layui-input id5'>
+						</div>
+						<label class="layui-form-label title10"></label>
+						<div class="layui-input-inline">
+							<input type="text"  class='layui-input id10'>
+						</div>
+						<label class="layui-form-label title11" ></label>
+						<div class="layui-input-inline">
+							<input type="text"  class='layui-input id11'>
+						</div>
+						<label class="layui-form-label title12"></label><!-- style="width:100px"-->
+						<div class="layui-input-inline">
+							<select class="layui-input id12" lay-search>
+									<option value=""></option>
+									<option value="WxPay">微信</option>
+									<option value="AliPay">支付宝</option>
+							</select>
+						</div>
+						<input type="button" class="layui-btn"  id="RefundBtn" value="退费">
+					</div>
+				</div>										
+			</form>
+		</div>
+		<div class='layui-row'style='top: 0%'>
+			<div class="layui-col-md" style='top: 0%'>
+				<table class="layui-table" id="dg" lay-filter="dg"></table>
+			</div>
+		</div>	
+	</div>
+	<script type="text/javascript" src="/WebAPP/js/admin/QrRefund.js" charset="utf-8"></script>
+</body>
+
+</html>

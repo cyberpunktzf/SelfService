@@ -1,0 +1,1200 @@
+*** Starting uWSGI 2.0.19.1 (64bit) on [Thu Sep  2 16:06:36 2021] ***
+compiled with version: 10.2.0 on 12 August 2021 03:12:18
+os: CYGWIN_NT-6.3-9600-3.2.0-340.x86_64 2021-03-29 08:42 UTC
+nodename: WIN-1MDNOQHL2T2
+machine: x86_64
+clock source: unix
+detected number of CPU cores: 8
+current working directory: /SelfService/uwsgi_conf
+writing pidfile to /SelfService/uwsgi_conf/pid/uwsgi.pid
+detected binary path: /usr/bin/uwsgi
+!!! no internal routing support, rebuild with pcre support !!!
+chdir() to /SelfService
+your memory page size is 4096 bytes
+detected max file descriptor number: 3200
+building mime-types dictionary from file /etc/mime.types...0 entry found
+lock engine: windows mutexes
+thunder lock: enabled
+uwsgi socket 0 bound to TCP address :8000 fd 3
+Python version: 3.7.10 (default, May  5 2021, 11:43:58)  [GCC 10.2.0]
+Python main interpreter initialized at 0x80009e030
+python threads support enabled
+your server socket listen backlog is limited to 100 connections
+your mercy for graceful operations on workers is 60 seconds
+setting request body buffering size to 40960 bytes
+mapped 1051818 bytes (1027 KB) for 5 cores
+*** Operational MODE: preforking ***
+WSGI app 0 (mountpoint='') ready in 0 seconds on interpreter 0x80009e030 pid: 5360 (default app)
+*** uWSGI is running in multiple interpreter mode ***
+spawned uWSGI master process (pid: 5360)
+spawned uWSGI worker 1 (pid: 5361, cores: 1)
+Python auto-reloader enabled
+spawned uWSGI worker 2 (pid: 5362, cores: 1)
+spawned uWSGI worker 3 (pid: 5363, cores: 1)
+spawned uWSGI worker 4 (pid: 5364, cores: 1)
+spawned uWSGI worker 5 (pid: 5365, cores: 1)
+[pid: 5361|app: 0|req: 1/1] 10.3.204.31 () {38 vars in 569 bytes} [Thu Sep  2 16:06:44 2021] GET / => generated 3953 bytes in 148 msecs (HTTP/1.1 200) 5 headers in 167 bytes (1 switches on core 0)
+{"TradeCode":"GetMenuBtn","serial_id":"","serial_number":"","modal_code":"","bd_id":{}}
+入参：{"TradeCode":"GetMenuBtn","serial_id":"","serial_number":"","modal_code":"","bd_id":{}}
+开始取全局对象
+取全局对象成功
+开始生成根据客户端信息 10.3.204.31
+生成根据客户端信息成功 {'id': 4, 'ss_eqlistd_eqcode': 'DH31-46', 'ss_eqlistd_eqdesc': '开发机', 'ss_eqlistd_address': '46所3楼', 'ss_eqlistd_spec': '', 'ss_eqlistd_unit': '', 'ss_eqlistd_type': '', 'ss_eqlistd_ip': '10.3.204.31', 'ss_eqlistd_mac': '', 'ss_eqlistd_opdate': '2021-08-09 15:53:00', 'ss_eqlistd_closedate': '2021-08-09 15:53:00', 'ss_eqlistd_createdate': '2021-08-09 15:53:00', 'ss_eqlistd_creator': '', 'ss_eqlistd_update': '2021-08-09 15:53:00', 'ss_eqlistd_upuser': '', 'ss_eqlistd_role': 'admin'}
+业务开始，入参参数= {'TradeCode': 'GetMenuBtn', 'serial_id': '', 'serial_number': '', 'modal_code': '', 'bd_id': {}}
+获取患者基本信息成功：
+获取HIS患者基本信息成功：
+获取菜单 {'id': 4, 'ss_eqlistd_eqcode': 'DH31-46', 'ss_eqlistd_eqdesc': '开发机', 'ss_eqlistd_address': '46所3楼', 'ss_eqlistd_spec': '', 'ss_eqlistd_unit': '', 'ss_eqlistd_type': '', 'ss_eqlistd_ip': '10.3.204.31', 'ss_eqlistd_mac': '', 'ss_eqlistd_opdate': '2021-08-09 15:53:00', 'ss_eqlistd_closedate': '2021-08-09 15:53:00', 'ss_eqlistd_createdate': '2021-08-09 15:53:00', 'ss_eqlistd_creator': '', 'ss_eqlistd_update': '2021-08-09 15:53:00', 'ss_eqlistd_upuser': '', 'ss_eqlistd_role': 'admin'}
+根据角色获取 admin
+1
+[pid: 5362|app: 0|req: 1/2] 10.3.204.31 () {48 vars in 835 bytes} [Thu Sep  2 16:06:45 2021] POST /CallPythonService => generated 68 bytes in 181 msecs (HTTP/1.1 200) 5 headers in 171 bytes (1 switches on core 0)
+[pid: 5363|app: 0|req: 1/3] 10.3.204.31 () {38 vars in 569 bytes} [Thu Sep  2 16:06:58 2021] GET / => generated 3953 bytes in 131 msecs (HTTP/1.1 200) 5 headers in 167 bytes (1 switches on core 0)
+{"TradeCode":"GetMenuBtn","serial_id":"","serial_number":"","modal_code":"","bd_id":{}}
+入参：{"TradeCode":"GetMenuBtn","serial_id":"","serial_number":"","modal_code":"","bd_id":{}}
+开始取全局对象
+取全局对象成功
+开始生成根据客户端信息 10.3.204.31
+生成根据客户端信息成功 {'id': 4, 'ss_eqlistd_eqcode': 'DH31-46', 'ss_eqlistd_eqdesc': '开发机', 'ss_eqlistd_address': '46所3楼', 'ss_eqlistd_spec': '', 'ss_eqlistd_unit': '', 'ss_eqlistd_type': '', 'ss_eqlistd_ip': '10.3.204.31', 'ss_eqlistd_mac': '', 'ss_eqlistd_opdate': '2021-08-09 15:53:00', 'ss_eqlistd_closedate': '2021-08-09 15:53:00', 'ss_eqlistd_createdate': '2021-08-09 15:53:00', 'ss_eqlistd_creator': '', 'ss_eqlistd_update': '2021-08-09 15:53:00', 'ss_eqlistd_upuser': '', 'ss_eqlistd_role': 'admin'}
+业务开始，入参参数= {'TradeCode': 'GetMenuBtn', 'serial_id': '', 'serial_number': '', 'modal_code': '', 'bd_id': {}}
+获取患者基本信息成功：
+获取HIS患者基本信息成功：
+获取菜单 {'id': 4, 'ss_eqlistd_eqcode': 'DH31-46', 'ss_eqlistd_eqdesc': '开发机', 'ss_eqlistd_address': '46所3楼', 'ss_eqlistd_spec': '', 'ss_eqlistd_unit': '', 'ss_eqlistd_type': '', 'ss_eqlistd_ip': '10.3.204.31', 'ss_eqlistd_mac': '', 'ss_eqlistd_opdate': '2021-08-09 15:53:00', 'ss_eqlistd_closedate': '2021-08-09 15:53:00', 'ss_eqlistd_createdate': '2021-08-09 15:53:00', 'ss_eqlistd_creator': '', 'ss_eqlistd_update': '2021-08-09 15:53:00', 'ss_eqlistd_upuser': '', 'ss_eqlistd_role': 'admin'}
+根据角色获取 admin
+1
+[pid: 5364|app: 0|req: 1/4] 10.3.204.31 () {48 vars in 835 bytes} [Thu Sep  2 16:06:58 2021] POST /CallPythonService => generated 68 bytes in 181 msecs (HTTP/1.1 200) 5 headers in 171 bytes (1 switches on core 0)
+<WSGIRequest: POST '/DoMethod'>
+Domethod= <QueryDict: {'ss_pc_dictype': ['Business'], 'ss_pc_processcode': ['Reg'], 'TradeCode': ['GetDicDataDemoByTypeCode']}>
+GetDicDataDemoByTypeCode: <QueryDict: {'ss_pc_dictype': ['Business'], 'ss_pc_processcode': ['Reg'], 'TradeCode': ['GetDicDataDemoByTypeCode']}>
+GetDicDataByTypeCodeFun Business None
+[pid: 5365|app: 0|req: 1/5] 10.3.204.31 () {48 vars in 815 bytes} [Thu Sep  2 16:06:59 2021] POST /DoMethod => generated 2381 bytes in 129 msecs (HTTP/1.1 200) 5 headers in 173 bytes (1 switches on core 0)
+{"UserID":"19401","UserCode":"ZZ1","HospId":"2","GroupId":"238","Terminal":"","TradeCode":"Init","Business":"Reg","processcode":"Reg","serial_id":"","serial_number":"","modal_code":"","bd_id":{}}
+入参：{"UserID":"19401","UserCode":"ZZ1","HospId":"2","GroupId":"238","Terminal":"","TradeCode":"Init","Business":"Reg","processcode":"Reg","serial_id":"","serial_number":"","modal_code":"","bd_id":{}}
+开始取全局对象
+取全局对象成功
+开始生成根据客户端信息 10.3.204.31
+生成根据客户端信息成功 {'id': 4, 'ss_eqlistd_eqcode': 'DH31-46', 'ss_eqlistd_eqdesc': '开发机', 'ss_eqlistd_address': '46所3楼', 'ss_eqlistd_spec': '', 'ss_eqlistd_unit': '', 'ss_eqlistd_type': '', 'ss_eqlistd_ip': '10.3.204.31', 'ss_eqlistd_mac': '', 'ss_eqlistd_opdate': '2021-08-09 15:53:00', 'ss_eqlistd_closedate': '2021-08-09 15:53:00', 'ss_eqlistd_createdate': '2021-08-09 15:53:00', 'ss_eqlistd_creator': '', 'ss_eqlistd_update': '2021-08-09 15:53:00', 'ss_eqlistd_upuser': '', 'ss_eqlistd_role': 'admin'}
+业务开始，入参参数= {'UserID': '19401', 'UserCode': 'ZZ1', 'HospId': '2', 'GroupId': '238', 'Terminal': '', 'TradeCode': 'Init', 'Business': 'Reg', 'processcode': 'Reg', 'serial_id': '', 'serial_number': '', 'modal_code': '', 'bd_id': {}}
+__insert {'terminal_info': '{"UserID": "19401", "UserCode": "ZZ1", "HospId": "2", "GroupId": "238", "Terminal": "DH31-46"}', 'serial_number': 'ydrwa4bgse', 'code': 'Reg', 'desc': '', 'processcode': 'Reg'}
+初始化成功 <SelfServPy.Common.business_masterCtl.BM object at 0x6ffffd464410>
+1
+[pid: 5361|app: 0|req: 2/6] 10.3.204.31 () {48 vars in 835 bytes} [Thu Sep  2 16:06:59 2021] POST /CallPythonService => generated 118 bytes in 62 msecs (HTTP/1.1 200) 5 headers in 172 bytes (1 switches on core 0)
+{"TradeCode":"GetDeviceInfo","serial_id":"1590","serial_number":"ydrwa4bgse","modal_code":"","bd_id":{}}
+入参：{"TradeCode":"GetDeviceInfo","serial_id":"1590","serial_number":"ydrwa4bgse","modal_code":"","bd_id":{}}
+开始取全局对象
+取全局对象成功
+开始生成根据客户端信息 10.3.204.31
+生成根据客户端信息成功 {'id': 4, 'ss_eqlistd_eqcode': 'DH31-46', 'ss_eqlistd_eqdesc': '开发机', 'ss_eqlistd_address': '46所3楼', 'ss_eqlistd_spec': '', 'ss_eqlistd_unit': '', 'ss_eqlistd_type': '', 'ss_eqlistd_ip': '10.3.204.31', 'ss_eqlistd_mac': '', 'ss_eqlistd_opdate': '2021-08-09 15:53:00', 'ss_eqlistd_closedate': '2021-08-09 15:53:00', 'ss_eqlistd_createdate': '2021-08-09 15:53:00', 'ss_eqlistd_creator': '', 'ss_eqlistd_update': '2021-08-09 15:53:00', 'ss_eqlistd_upuser': '', 'ss_eqlistd_role': 'admin'}
+开始生成业务主表信息
+queryst {'id': 1590}
+生成业务主表信息成功
+业务开始，入参参数= {'TradeCode': 'GetDeviceInfo', 'serial_id': '1590', 'serial_number': 'ydrwa4bgse', 'modal_code': '', 'bd_id': {}}
+开始生成患者基本信息
+未查询到患者基本信息,BusinessMasterId
+获取患者基本信息成功：
+开始生成HIS患者基本信息
+未查询到HIS患者基本信息,BusinessMasterId
+获取HIS患者基本信息成功：
+1
+[pid: 5362|app: 0|req: 2/7] 10.3.204.31 () {48 vars in 835 bytes} [Thu Sep  2 16:06:59 2021] POST /CallPythonService => generated 561 bytes in 7 msecs (HTTP/1.1 200) 5 headers in 172 bytes (1 switches on core 0)
+{"TradeCode":"CheckRule","CheckCode":"","serial_id":"1590","serial_number":"ydrwa4bgse","modal_code":"pattype","bd_id":{}}
+入参：{"TradeCode":"CheckRule","CheckCode":"","serial_id":"1590","serial_number":"ydrwa4bgse","modal_code":"pattype","bd_id":{}}
+开始取全局对象
+取全局对象成功
+开始生成根据客户端信息 10.3.204.31
+生成根据客户端信息成功 {'id': 4, 'ss_eqlistd_eqcode': 'DH31-46', 'ss_eqlistd_eqdesc': '开发机', 'ss_eqlistd_address': '46所3楼', 'ss_eqlistd_spec': '', 'ss_eqlistd_unit': '', 'ss_eqlistd_type': '', 'ss_eqlistd_ip': '10.3.204.31', 'ss_eqlistd_mac': '', 'ss_eqlistd_opdate': '2021-08-09 15:53:00', 'ss_eqlistd_closedate': '2021-08-09 15:53:00', 'ss_eqlistd_createdate': '2021-08-09 15:53:00', 'ss_eqlistd_creator': '', 'ss_eqlistd_update': '2021-08-09 15:53:00', 'ss_eqlistd_upuser': '', 'ss_eqlistd_role': 'admin'}
+开始生成业务主表信息
+queryst {'id': 1590}
+生成业务主表信息成功
+业务开始，入参参数= {'TradeCode': 'CheckRule', 'CheckCode': '', 'serial_id': '1590', 'serial_number': 'ydrwa4bgse', 'modal_code': 'pattype', 'bd_id': {}}
+开始生成患者基本信息
+未查询到患者基本信息,BusinessMasterId
+获取患者基本信息成功：
+开始生成HIS患者基本信息
+未查询到HIS患者基本信息,BusinessMasterId
+获取HIS患者基本信息成功：
+checkfun
+1
+[pid: 5363|app: 0|req: 2/8] 10.3.204.31 () {48 vars in 835 bytes} [Thu Sep  2 16:06:59 2021] POST /CallPythonService => generated 60 bytes in 62 msecs (HTTP/1.1 200) 5 headers in 171 bytes (1 switches on core 0)
+{"TradeCode":"CheckRule","CheckCode":"","serial_id":"1590","serial_number":"ydrwa4bgse","modal_code":"readcard","bd_id":{}}
+入参：{"TradeCode":"CheckRule","CheckCode":"","serial_id":"1590","serial_number":"ydrwa4bgse","modal_code":"readcard","bd_id":{}}
+开始取全局对象
+取全局对象成功
+开始生成根据客户端信息 10.3.204.31
+生成根据客户端信息成功 {'id': 4, 'ss_eqlistd_eqcode': 'DH31-46', 'ss_eqlistd_eqdesc': '开发机', 'ss_eqlistd_address': '46所3楼', 'ss_eqlistd_spec': '', 'ss_eqlistd_unit': '', 'ss_eqlistd_type': '', 'ss_eqlistd_ip': '10.3.204.31', 'ss_eqlistd_mac': '', 'ss_eqlistd_opdate': '2021-08-09 15:53:00', 'ss_eqlistd_closedate': '2021-08-09 15:53:00', 'ss_eqlistd_createdate': '2021-08-09 15:53:00', 'ss_eqlistd_creator': '', 'ss_eqlistd_update': '2021-08-09 15:53:00', 'ss_eqlistd_upuser': '', 'ss_eqlistd_role': 'admin'}
+开始生成业务主表信息
+queryst {'id': 1590}
+生成业务主表信息成功
+业务开始，入参参数= {'TradeCode': 'CheckRule', 'CheckCode': '', 'serial_id': '1590', 'serial_number': 'ydrwa4bgse', 'modal_code': 'readcard', 'bd_id': {}}
+开始生成患者基本信息
+未查询到患者基本信息,BusinessMasterId
+获取患者基本信息成功：
+开始生成HIS患者基本信息
+未查询到HIS患者基本信息,BusinessMasterId
+获取HIS患者基本信息成功：
+checkfun
+1
+[pid: 5364|app: 0|req: 2/9] 10.3.204.31 () {48 vars in 847 bytes} [Thu Sep  2 16:07:00 2021] POST /CallPythonService => generated 60 bytes in 7 msecs (HTTP/1.1 200) 5 headers in 171 bytes (1 switches on core 0)
+{"card_patinfo":{"ResponseStatus":0,"ResponseText":"","CardType":"1","CardTypeCode":"01","IDNo":"622126199412131419","Name":"唐正飞","Sex":"男","Age":"25","brdy":"1994-12-13","naty":"a","Address":"","INSUCardStr":"","barCode":""},"TradeCode":"SavePatInfo","serial_id":"1590","serial_number":"ydrwa4bgse","modal_code":"readcard","bd_id":{}}
+入参：{"card_patinfo":{"ResponseStatus":0,"ResponseText":"","CardType":"1","CardTypeCode":"01","IDNo":"622126199412131419","Name":"唐正飞","Sex":"男","Age":"25","brdy":"1994-12-13","naty":"a","Address":"","INSUCardStr":"","barCode":""},"TradeCode":"SavePatInfo","serial_id":"1590","serial_number":"ydrwa4bgse","modal_code":"readcard","bd_id":{}}
+开始取全局对象
+取全局对象成功
+开始生成根据客户端信息 10.3.204.31
+生成根据客户端信息成功 {'id': 4, 'ss_eqlistd_eqcode': 'DH31-46', 'ss_eqlistd_eqdesc': '开发机', 'ss_eqlistd_address': '46所3楼', 'ss_eqlistd_spec': '', 'ss_eqlistd_unit': '', 'ss_eqlistd_type': '', 'ss_eqlistd_ip': '10.3.204.31', 'ss_eqlistd_mac': '', 'ss_eqlistd_opdate': '2021-08-09 15:53:00', 'ss_eqlistd_closedate': '2021-08-09 15:53:00', 'ss_eqlistd_createdate': '2021-08-09 15:53:00', 'ss_eqlistd_creator': '', 'ss_eqlistd_update': '2021-08-09 15:53:00', 'ss_eqlistd_upuser': '', 'ss_eqlistd_role': 'admin'}
+开始生成业务主表信息
+queryst {'id': 1590}
+生成业务主表信息成功
+业务开始，入参参数= {'card_patinfo': {'ResponseStatus': 0, 'ResponseText': '', 'CardType': '1', 'CardTypeCode': '01', 'IDNo': '622126199412131419', 'Name': '唐正飞', 'Sex': '男', 'Age': '25', 'brdy': '1994-12-13', 'naty': 'a', 'Address': '', 'INSUCardStr': '', 'barCode': ''}, 'TradeCode': 'SavePatInfo', 'serial_id': '1590', 'serial_number': 'ydrwa4bgse', 'modal_code': 'readcard', 'bd_id': {}}
+__insert {'fk_businessmaster_id': '1590', 'code': 'card_patinfo', 'code_val': '{"ResponseStatus": 0, "ResponseText": "", "CardType": "1", "CardTypeCode": "01", "IDNo": "622126199412131419", "Name": "唐正飞", "Sex": "男", "Age": "25", "brdy": "1994-12-13", "naty": "a", "Address": "", "INSUCardStr": "", "barCode": ""}', 'his_master_id': ''}
+保存患者基本信息结束： Success
+1
+[pid: 5365|app: 0|req: 2/10] 10.3.204.31 () {48 vars in 852 bytes} [Thu Sep  2 16:07:02 2021] POST /CallPythonService => generated 86 bytes in 61 msecs (HTTP/1.1 200) 5 headers in 171 bytes (1 switches on core 0)
+{"TradeCode":"3300","serial_id":"1590","serial_number":"ydrwa4bgse","modal_code":"readcard","bd_id":{}}
+入参：{"TradeCode":"3300","serial_id":"1590","serial_number":"ydrwa4bgse","modal_code":"readcard","bd_id":{}}
+开始取全局对象
+取全局对象成功
+开始生成根据客户端信息 10.3.204.31
+生成根据客户端信息成功 {'id': 4, 'ss_eqlistd_eqcode': 'DH31-46', 'ss_eqlistd_eqdesc': '开发机', 'ss_eqlistd_address': '46所3楼', 'ss_eqlistd_spec': '', 'ss_eqlistd_unit': '', 'ss_eqlistd_type': '', 'ss_eqlistd_ip': '10.3.204.31', 'ss_eqlistd_mac': '', 'ss_eqlistd_opdate': '2021-08-09 15:53:00', 'ss_eqlistd_closedate': '2021-08-09 15:53:00', 'ss_eqlistd_createdate': '2021-08-09 15:53:00', 'ss_eqlistd_creator': '', 'ss_eqlistd_update': '2021-08-09 15:53:00', 'ss_eqlistd_upuser': '', 'ss_eqlistd_role': 'admin'}
+开始生成业务主表信息
+queryst {'id': 1590}
+生成业务主表信息成功
+业务开始，入参参数= {'TradeCode': '3300', 'serial_id': '1590', 'serial_number': 'ydrwa4bgse', 'modal_code': 'readcard', 'bd_id': {}}
+开始生成患者基本信息
+生成患者基本信息成功
+获取患者基本信息成功：
+开始生成HIS患者基本信息
+未查询到HIS患者基本信息,BusinessMasterId
+获取HIS患者基本信息成功：
+DHC_3300接口开始
+__insert {'fk_businessmaster_id': '1590', 'serial_number': '79amj4w8ni', 'his_serial_number': None, 'modal_code': 'readcard', 'model_desc': None, 'intef_code': '3300', 'intef_desc': None, 'intef_input': '<Request><AdmId></AdmId><TradeCode>3300</TradeCode><TransactionId></TransactionId><ExtOrgCode></ExtOrgCode><ClientType></ClientType><TerminalID></TerminalID><HospitalId>2</HospitalId><ExtUserID>ZZ1</ExtUserID><PatientCard></PatientCard><CardType></CardType><Phone></Phone><IDCardType>01</IDCardType><IDNo>622126199412131419</IDNo><PatientName>唐正飞</PatientName></Request>', 'intef_output': None}
+content <Response><ResultCode>0</ResultCode><PatInfos><PatInfo><PatientID>00000089</PatientID><PatientName>唐正飞</PatientName><Sex>男</Sex><SexCode>1</SexCode><DOB>1994-12-13</DOB><TelephoneNo>18611101542</TelephoneNo><Mobile>18611101542</Mobile><DocumentID></DocumentID><Address></Address><IDTypeCode>20</IDTypeCode><IDTypeDesc></IDTypeDesc><IDNo>622126199412131419</IDNo><InsureCardNo>TANGZHENGFEI</InsureCardNo><AccInfo>0^1182192^000000890001^0^^0^^1584^00000089^1182302^P^PC^1^^0^1182192^000000890001^0^^0^^1584^00000089^1182302^P^PC^1^</AccInfo><AccInfoBalance>0</AccInfoBalance><AccInfoNo>1182192</AccInfoNo><PatientCard>X0000149</PatientCard><YBFlag>0</YBFlag><PatType>自费</PatType><PatTypeCode>01</PatTypeCode><Age>27</Age></PatInfo></PatInfos></Response>
+__insert {'id': 9413, 'fk_businessmaster_id': '1590', 'serial_number': 'kpja0u64rd', 'his_serial_number': None, 'modal_code': 'readcard', 'model_desc': None, 'intef_code': '3300', 'intef_desc': None, 'intef_input': '<Request><AdmId></AdmId><TradeCode>3300</TradeCode><TransactionId></TransactionId><ExtOrgCode></ExtOrgCode><ClientType></ClientType><TerminalID></TerminalID><HospitalId>2</HospitalId><ExtUserID>ZZ1</ExtUserID><PatientCard></PatientCard><CardType></CardType><Phone></Phone><IDCardType>01</IDCardType><IDNo>622126199412131419</IDNo><PatientName>唐正飞</PatientName></Request>', 'intef_output': <Response><ResultCode>0</ResultCode><PatInfos><PatInfo><PatientID>00000089</PatientID><PatientName>唐正飞</PatientName><Sex>男</Sex><SexCode>1</SexCode><DOB>1994-12-13</DOB><TelephoneNo>18611101542</TelephoneNo><Mobile>18611101542</Mobile><DocumentID></DocumentID><Address></Address><IDTypeCode>20</IDTypeCode><IDTypeDesc></IDTypeDesc><IDNo>622126199412131419</IDNo><InsureCardNo>TANGZHENGFEI</InsureCardNo><AccInfo>0^1182192^000000890001^0^^0^^1584^00000089^1182302^P^PC^1^^0^1182192^000000890001^0^^0^^1584^00000089^1182302^P^PC^1^</AccInfo><AccInfoBalance>0</AccInfoBalance><AccInfoNo>1182192</AccInfoNo><PatientCard>X0000149</PatientCard><YBFlag>0</YBFlag><PatType>自费</PatType><PatTypeCode>01</PatTypeCode><Age>27</Age></PatInfo></PatInfos></Response>}
+__insert {'fk_businessmaster_id': '1590', 'code': 'his_patinfo', 'code_val': <Response><ResultCode>0</ResultCode><PatInfos><PatInfo><PatientID>00000089</PatientID><PatientName>唐正飞</PatientName><Sex>男</Sex><SexCode>1</SexCode><DOB>1994-12-13</DOB><TelephoneNo>18611101542</TelephoneNo><Mobile>18611101542</Mobile><DocumentID></DocumentID><Address></Address><IDTypeCode>20</IDTypeCode><IDTypeDesc></IDTypeDesc><IDNo>622126199412131419</IDNo><InsureCardNo>TANGZHENGFEI</InsureCardNo><AccInfo>0^1182192^000000890001^0^^0^^1584^00000089^1182302^P^PC^1^^0^1182192^000000890001^0^^0^^1584^00000089^1182302^P^PC^1^</AccInfo><AccInfoBalance>0</AccInfoBalance><AccInfoNo>1182192</AccInfoNo><PatientCard>X0000149</PatientCard><YBFlag>0</YBFlag><PatType>自费</PatType><PatTypeCode>01</PatTypeCode><Age>27</Age></PatInfo></PatInfos></Response>, 'his_master_id': ''}
+__insert {'ResponseStatus': 0, 'ResponseText': '', 'CardType': '1', 'CardTypeCode': '01', 'IDNo': '622126199412131419', 'Name': '唐正飞', 'Sex': '男', 'Age': '27', 'brdy': '1994-12-13', 'naty': '', 'Address': '', 'INSUCardStr': '', 'barCode': ''}
+1
+[pid: 5361|app: 0|req: 3/11] 10.3.204.31 () {48 vars in 852 bytes} [Thu Sep  2 16:07:02 2021] POST /CallPythonService => generated 831 bytes in 179 msecs (HTTP/1.1 200) 5 headers in 172 bytes (1 switches on core 0)
+{"TradeCode":"CheckRule","CheckCode":"","serial_id":"1590","serial_number":"ydrwa4bgse","modal_code":"insutype","bd_id":{}}
+入参：{"TradeCode":"CheckRule","CheckCode":"","serial_id":"1590","serial_number":"ydrwa4bgse","modal_code":"insutype","bd_id":{}}
+开始取全局对象
+取全局对象成功
+开始生成根据客户端信息 10.3.204.31
+生成根据客户端信息成功 {'id': 4, 'ss_eqlistd_eqcode': 'DH31-46', 'ss_eqlistd_eqdesc': '开发机', 'ss_eqlistd_address': '46所3楼', 'ss_eqlistd_spec': '', 'ss_eqlistd_unit': '', 'ss_eqlistd_type': '', 'ss_eqlistd_ip': '10.3.204.31', 'ss_eqlistd_mac': '', 'ss_eqlistd_opdate': '2021-08-09 15:53:00', 'ss_eqlistd_closedate': '2021-08-09 15:53:00', 'ss_eqlistd_createdate': '2021-08-09 15:53:00', 'ss_eqlistd_creator': '', 'ss_eqlistd_update': '2021-08-09 15:53:00', 'ss_eqlistd_upuser': '', 'ss_eqlistd_role': 'admin'}
+开始生成业务主表信息
+queryst {'id': 1590}
+生成业务主表信息成功
+业务开始，入参参数= {'TradeCode': 'CheckRule', 'CheckCode': '', 'serial_id': '1590', 'serial_number': 'ydrwa4bgse', 'modal_code': 'insutype', 'bd_id': {}}
+开始生成患者基本信息
+生成患者基本信息成功
+获取患者基本信息成功：
+开始生成HIS患者基本信息
+his_patinfo <Response><ResultCode>0</ResultCode><PatInfos><PatInfo><PatientID>00000089</PatientID><PatientName>唐正飞</PatientName><Sex>男</Sex><SexCode>1</SexCode><DOB>1994-12-13</DOB><TelephoneNo>18611101542</TelephoneNo><Mobile>18611101542</Mobile><DocumentID></DocumentID><Address></Address><IDTypeCode>20</IDTypeCode><IDTypeDesc></IDTypeDesc><IDNo>622126199412131419</IDNo><InsureCardNo>TANGZHENGFEI</InsureCardNo><AccInfo>0^1182192^000000890001^0^^0^^1584^00000089^1182302^P^PC^1^^0^1182192^000000890001^0^^0^^1584^00000089^1182302^P^PC^1^</AccInfo><AccInfoBalance>0</AccInfoBalance><AccInfoNo>1182192</AccInfoNo><PatientCard>X0000149</PatientCard><YBFlag>0</YBFlag><PatType>自费</PatType><PatTypeCode>01</PatTypeCode><Age>27</Age></PatInfo></PatInfos></Response>
+生成HIS患者基本信息成功 00000089
+获取HIS患者基本信息成功：
+checkfun
+1
+[pid: 5362|app: 0|req: 3/12] 10.3.204.31 () {48 vars in 852 bytes} [Thu Sep  2 16:07:05 2021] POST /CallPythonService => generated 60 bytes in 7 msecs (HTTP/1.1 200) 5 headers in 171 bytes (1 switches on core 0)
+{"TradeCode":"CheckRule","CheckCode":"","serial_id":"1590","serial_number":"ydrwa4bgse","modal_code":"diag","bd_id":{}}
+入参：{"TradeCode":"CheckRule","CheckCode":"","serial_id":"1590","serial_number":"ydrwa4bgse","modal_code":"diag","bd_id":{}}
+开始取全局对象
+取全局对象成功
+开始生成根据客户端信息 10.3.204.31
+生成根据客户端信息成功 {'id': 4, 'ss_eqlistd_eqcode': 'DH31-46', 'ss_eqlistd_eqdesc': '开发机', 'ss_eqlistd_address': '46所3楼', 'ss_eqlistd_spec': '', 'ss_eqlistd_unit': '', 'ss_eqlistd_type': '', 'ss_eqlistd_ip': '10.3.204.31', 'ss_eqlistd_mac': '', 'ss_eqlistd_opdate': '2021-08-09 15:53:00', 'ss_eqlistd_closedate': '2021-08-09 15:53:00', 'ss_eqlistd_createdate': '2021-08-09 15:53:00', 'ss_eqlistd_creator': '', 'ss_eqlistd_update': '2021-08-09 15:53:00', 'ss_eqlistd_upuser': '', 'ss_eqlistd_role': 'admin'}
+开始生成业务主表信息
+queryst {'id': 1590}
+生成业务主表信息成功
+业务开始，入参参数= {'TradeCode': 'CheckRule', 'CheckCode': '', 'serial_id': '1590', 'serial_number': 'ydrwa4bgse', 'modal_code': 'diag', 'bd_id': {}}
+开始生成患者基本信息
+生成患者基本信息成功
+获取患者基本信息成功：
+开始生成HIS患者基本信息
+his_patinfo <Response><ResultCode>0</ResultCode><PatInfos><PatInfo><PatientID>00000089</PatientID><PatientName>唐正飞</PatientName><Sex>男</Sex><SexCode>1</SexCode><DOB>1994-12-13</DOB><TelephoneNo>18611101542</TelephoneNo><Mobile>18611101542</Mobile><DocumentID></DocumentID><Address></Address><IDTypeCode>20</IDTypeCode><IDTypeDesc></IDTypeDesc><IDNo>622126199412131419</IDNo><InsureCardNo>TANGZHENGFEI</InsureCardNo><AccInfo>0^1182192^000000890001^0^^0^^1584^00000089^1182302^P^PC^1^^0^1182192^000000890001^0^^0^^1584^00000089^1182302^P^PC^1^</AccInfo><AccInfoBalance>0</AccInfoBalance><AccInfoNo>1182192</AccInfoNo><PatientCard>X0000149</PatientCard><YBFlag>0</YBFlag><PatType>自费</PatType><PatTypeCode>01</PatTypeCode><Age>27</Age></PatInfo></PatInfos></Response>
+生成HIS患者基本信息成功 00000089
+获取HIS患者基本信息成功：
+checkfun
+1
+[pid: 5363|app: 0|req: 3/13] 10.3.204.31 () {48 vars in 844 bytes} [Thu Sep  2 16:07:05 2021] POST /CallPythonService => generated 60 bytes in 7 msecs (HTTP/1.1 200) 5 headers in 171 bytes (1 switches on core 0)
+{"TradeCode":"6666","intef_input":"&Param=","serial_id":"1590","serial_number":"ydrwa4bgse","modal_code":"insutype","bd_id":{}}
+入参：{"TradeCode":"6666","intef_input":"&Param=","serial_id":"1590","serial_number":"ydrwa4bgse","modal_code":"insutype","bd_id":{}}
+开始取全局对象
+取全局对象成功
+开始生成根据客户端信息 10.3.204.31
+生成根据客户端信息成功 {'id': 4, 'ss_eqlistd_eqcode': 'DH31-46', 'ss_eqlistd_eqdesc': '开发机', 'ss_eqlistd_address': '46所3楼', 'ss_eqlistd_spec': '', 'ss_eqlistd_unit': '', 'ss_eqlistd_type': '', 'ss_eqlistd_ip': '10.3.204.31', 'ss_eqlistd_mac': '', 'ss_eqlistd_opdate': '2021-08-09 15:53:00', 'ss_eqlistd_closedate': '2021-08-09 15:53:00', 'ss_eqlistd_createdate': '2021-08-09 15:53:00', 'ss_eqlistd_creator': '', 'ss_eqlistd_update': '2021-08-09 15:53:00', 'ss_eqlistd_upuser': '', 'ss_eqlistd_role': 'admin'}
+开始生成业务主表信息
+queryst {'id': 1590}
+生成业务主表信息成功
+业务开始，入参参数= {'TradeCode': '6666', 'intef_input': '&Param=', 'serial_id': '1590', 'serial_number': 'ydrwa4bgse', 'modal_code': 'insutype', 'bd_id': {}}
+开始生成患者基本信息
+生成患者基本信息成功
+获取患者基本信息成功：
+开始生成HIS患者基本信息
+his_patinfo <Response><ResultCode>0</ResultCode><PatInfos><PatInfo><PatientID>00000089</PatientID><PatientName>唐正飞</PatientName><Sex>男</Sex><SexCode>1</SexCode><DOB>1994-12-13</DOB><TelephoneNo>18611101542</TelephoneNo><Mobile>18611101542</Mobile><DocumentID></DocumentID><Address></Address><IDTypeCode>20</IDTypeCode><IDTypeDesc></IDTypeDesc><IDNo>622126199412131419</IDNo><InsureCardNo>TANGZHENGFEI</InsureCardNo><AccInfo>0^1182192^000000890001^0^^0^^1584^00000089^1182302^P^PC^1^^0^1182192^000000890001^0^^0^^1584^00000089^1182302^P^PC^1^</AccInfo><AccInfoBalance>0</AccInfoBalance><AccInfoNo>1182192</AccInfoNo><PatientCard>X0000149</PatientCard><YBFlag>0</YBFlag><PatType>自费</PatType><PatTypeCode>01</PatTypeCode><Age>27</Age></PatInfo></PatInfos></Response>
+生成HIS患者基本信息成功 00000089
+获取HIS患者基本信息成功：
+__insert {'fk_businessmaster_id': '1590', 'serial_number': 'tmy4zxh8i9', 'his_serial_number': None, 'modal_code': 'insutype', 'model_desc': None, 'intef_code': '6666', 'intef_desc': None, 'intef_input': '&Param=', 'intef_output': None}
+1
+[pid: 5364|app: 0|req: 3/14] 10.3.204.31 () {48 vars in 844 bytes} [Thu Sep  2 16:07:05 2021] POST /CallPythonService => generated 94 bytes in 10 msecs (HTTP/1.1 200) 5 headers in 171 bytes (1 switches on core 0)
+{"DicType":"MTLBA","TradeCode":"PayServ_GetDicInfo","serial_id":"1590","serial_number":"ydrwa4bgse","modal_code":"diag","bd_id":9414}
+入参：{"DicType":"MTLBA","TradeCode":"PayServ_GetDicInfo","serial_id":"1590","serial_number":"ydrwa4bgse","modal_code":"diag","bd_id":9414}
+开始取全局对象
+取全局对象成功
+开始生成根据客户端信息 10.3.204.31
+生成根据客户端信息成功 {'id': 4, 'ss_eqlistd_eqcode': 'DH31-46', 'ss_eqlistd_eqdesc': '开发机', 'ss_eqlistd_address': '46所3楼', 'ss_eqlistd_spec': '', 'ss_eqlistd_unit': '', 'ss_eqlistd_type': '', 'ss_eqlistd_ip': '10.3.204.31', 'ss_eqlistd_mac': '', 'ss_eqlistd_opdate': '2021-08-09 15:53:00', 'ss_eqlistd_closedate': '2021-08-09 15:53:00', 'ss_eqlistd_createdate': '2021-08-09 15:53:00', 'ss_eqlistd_creator': '', 'ss_eqlistd_update': '2021-08-09 15:53:00', 'ss_eqlistd_upuser': '', 'ss_eqlistd_role': 'admin'}
+开始生成业务主表信息
+queryst {'id': 1590}
+生成业务主表信息成功
+业务开始，入参参数= {'DicType': 'MTLBA', 'TradeCode': 'PayServ_GetDicInfo', 'serial_id': '1590', 'serial_number': 'ydrwa4bgse', 'modal_code': 'diag', 'bd_id': 9414}
+开始生成患者基本信息
+生成患者基本信息成功
+获取患者基本信息成功：
+开始生成HIS患者基本信息
+his_patinfo <Response><ResultCode>0</ResultCode><PatInfos><PatInfo><PatientID>00000089</PatientID><PatientName>唐正飞</PatientName><Sex>男</Sex><SexCode>1</SexCode><DOB>1994-12-13</DOB><TelephoneNo>18611101542</TelephoneNo><Mobile>18611101542</Mobile><DocumentID></DocumentID><Address></Address><IDTypeCode>20</IDTypeCode><IDTypeDesc></IDTypeDesc><IDNo>622126199412131419</IDNo><InsureCardNo>TANGZHENGFEI</InsureCardNo><AccInfo>0^1182192^000000890001^0^^0^^1584^00000089^1182302^P^PC^1^^0^1182192^000000890001^0^^0^^1584^00000089^1182302^P^PC^1^</AccInfo><AccInfoBalance>0</AccInfoBalance><AccInfoNo>1182192</AccInfoNo><PatientCard>X0000149</PatientCard><YBFlag>0</YBFlag><PatType>自费</PatType><PatTypeCode>01</PatTypeCode><Age>27</Age></PatInfo></PatInfos></Response>
+生成HIS患者基本信息成功 00000089
+获取HIS患者基本信息成功：
+GetDicInfo参数开始 {'DicType': 'MTLBA', 'TradeCode': 'PayServ_GetDicInfo', 'serial_id': '1590', 'serial_number': 'ydrwa4bgse', 'modal_code': 'diag', 'bd_id': 9414}
+queryst {'fk_businessmaster_id': 1590, 'modal_code': 'insutype', 'intef_code': '6666'}
+1
+[pid: 5365|app: 0|req: 3/15] 10.3.204.31 () {48 vars in 848 bytes} [Thu Sep  2 16:07:05 2021] POST /CallPythonService => generated 68 bytes in 20 msecs (HTTP/1.1 200) 5 headers in 171 bytes (1 switches on core 0)
+{"TradeCode":"CheckRule","CheckCode":"","serial_id":"1590","serial_number":"ydrwa4bgse","modal_code":"srvylist","bd_id":9414}
+入参：{"TradeCode":"CheckRule","CheckCode":"","serial_id":"1590","serial_number":"ydrwa4bgse","modal_code":"srvylist","bd_id":9414}
+开始取全局对象
+取全局对象成功
+开始生成根据客户端信息 10.3.204.31
+生成根据客户端信息成功 {'id': 4, 'ss_eqlistd_eqcode': 'DH31-46', 'ss_eqlistd_eqdesc': '开发机', 'ss_eqlistd_address': '46所3楼', 'ss_eqlistd_spec': '', 'ss_eqlistd_unit': '', 'ss_eqlistd_type': '', 'ss_eqlistd_ip': '10.3.204.31', 'ss_eqlistd_mac': '', 'ss_eqlistd_opdate': '2021-08-09 15:53:00', 'ss_eqlistd_closedate': '2021-08-09 15:53:00', 'ss_eqlistd_createdate': '2021-08-09 15:53:00', 'ss_eqlistd_creator': '', 'ss_eqlistd_update': '2021-08-09 15:53:00', 'ss_eqlistd_upuser': '', 'ss_eqlistd_role': 'admin'}
+开始生成业务主表信息
+queryst {'id': 1590}
+生成业务主表信息成功
+业务开始，入参参数= {'TradeCode': 'CheckRule', 'CheckCode': '', 'serial_id': '1590', 'serial_number': 'ydrwa4bgse', 'modal_code': 'srvylist', 'bd_id': 9414}
+开始生成患者基本信息
+生成患者基本信息成功
+获取患者基本信息成功：
+开始生成HIS患者基本信息
+his_patinfo <Response><ResultCode>0</ResultCode><PatInfos><PatInfo><PatientID>00000089</PatientID><PatientName>唐正飞</PatientName><Sex>男</Sex><SexCode>1</SexCode><DOB>1994-12-13</DOB><TelephoneNo>18611101542</TelephoneNo><Mobile>18611101542</Mobile><DocumentID></DocumentID><Address></Address><IDTypeCode>20</IDTypeCode><IDTypeDesc></IDTypeDesc><IDNo>622126199412131419</IDNo><InsureCardNo>TANGZHENGFEI</InsureCardNo><AccInfo>0^1182192^000000890001^0^^0^^1584^00000089^1182302^P^PC^1^^0^1182192^000000890001^0^^0^^1584^00000089^1182302^P^PC^1^</AccInfo><AccInfoBalance>0</AccInfoBalance><AccInfoNo>1182192</AccInfoNo><PatientCard>X0000149</PatientCard><YBFlag>0</YBFlag><PatType>自费</PatType><PatTypeCode>01</PatTypeCode><Age>27</Age></PatInfo></PatInfos></Response>
+生成HIS患者基本信息成功 00000089
+获取HIS患者基本信息成功：
+checkfun
+1
+[pid: 5361|app: 0|req: 4/16] 10.3.204.31 () {48 vars in 848 bytes} [Thu Sep  2 16:07:05 2021] POST /CallPythonService => generated 60 bytes in 7 msecs (HTTP/1.1 200) 5 headers in 171 bytes (1 switches on core 0)
+{"TradeCode":"6666","intef_input":"undefined","serial_id":"1590","serial_number":"ydrwa4bgse","modal_code":"diag","bd_id":9414}
+入参：{"TradeCode":"6666","intef_input":"undefined","serial_id":"1590","serial_number":"ydrwa4bgse","modal_code":"diag","bd_id":9414}
+开始取全局对象
+取全局对象成功
+开始生成根据客户端信息 10.3.204.31
+生成根据客户端信息成功 {'id': 4, 'ss_eqlistd_eqcode': 'DH31-46', 'ss_eqlistd_eqdesc': '开发机', 'ss_eqlistd_address': '46所3楼', 'ss_eqlistd_spec': '', 'ss_eqlistd_unit': '', 'ss_eqlistd_type': '', 'ss_eqlistd_ip': '10.3.204.31', 'ss_eqlistd_mac': '', 'ss_eqlistd_opdate': '2021-08-09 15:53:00', 'ss_eqlistd_closedate': '2021-08-09 15:53:00', 'ss_eqlistd_createdate': '2021-08-09 15:53:00', 'ss_eqlistd_creator': '', 'ss_eqlistd_update': '2021-08-09 15:53:00', 'ss_eqlistd_upuser': '', 'ss_eqlistd_role': 'admin'}
+开始生成业务主表信息
+queryst {'id': 1590}
+生成业务主表信息成功
+业务开始，入参参数= {'TradeCode': '6666', 'intef_input': 'undefined', 'serial_id': '1590', 'serial_number': 'ydrwa4bgse', 'modal_code': 'diag', 'bd_id': 9414}
+开始生成患者基本信息
+生成患者基本信息成功
+获取患者基本信息成功：
+开始生成HIS患者基本信息
+his_patinfo <Response><ResultCode>0</ResultCode><PatInfos><PatInfo><PatientID>00000089</PatientID><PatientName>唐正飞</PatientName><Sex>男</Sex><SexCode>1</SexCode><DOB>1994-12-13</DOB><TelephoneNo>18611101542</TelephoneNo><Mobile>18611101542</Mobile><DocumentID></DocumentID><Address></Address><IDTypeCode>20</IDTypeCode><IDTypeDesc></IDTypeDesc><IDNo>622126199412131419</IDNo><InsureCardNo>TANGZHENGFEI</InsureCardNo><AccInfo>0^1182192^000000890001^0^^0^^1584^00000089^1182302^P^PC^1^^0^1182192^000000890001^0^^0^^1584^00000089^1182302^P^PC^1^</AccInfo><AccInfoBalance>0</AccInfoBalance><AccInfoNo>1182192</AccInfoNo><PatientCard>X0000149</PatientCard><YBFlag>0</YBFlag><PatType>自费</PatType><PatTypeCode>01</PatTypeCode><Age>27</Age></PatInfo></PatInfos></Response>
+生成HIS患者基本信息成功 00000089
+获取HIS患者基本信息成功：
+__insert {'fk_businessmaster_id': '1590', 'serial_number': 'rajqhvtyxu', 'his_serial_number': None, 'modal_code': 'diag', 'model_desc': None, 'intef_code': '6666', 'intef_desc': None, 'intef_input': 'undefined', 'intef_output': None}
+1
+[pid: 5362|app: 0|req: 4/17] 10.3.204.31 () {48 vars in 848 bytes} [Thu Sep  2 16:07:05 2021] POST /CallPythonService => generated 94 bytes in 9 msecs (HTTP/1.1 200) 5 headers in 171 bytes (1 switches on core 0)
+{"msg": "", "code": "200", "data": [[]], "count": "0"}
+[pid: 5363|app: 0|req: 4/18] 10.3.204.31 () {42 vars in 747 bytes} [Thu Sep  2 16:07:05 2021] GET /CallSelfServPY?page=1&limit=10 => generated 54 bytes in 0 msecs (HTTP/1.1 200) 5 headers in 164 bytes (1 switches on core 0)
+{"msg": "", "code": "200", "data": [[]], "count": "0"}
+[pid: 5364|app: 0|req: 4/19] 10.3.204.31 () {42 vars in 747 bytes} [Thu Sep  2 16:07:06 2021] GET /CallSelfServPY?page=1&limit=10 => generated 54 bytes in 0 msecs (HTTP/1.1 200) 5 headers in 164 bytes (1 switches on core 0)
+{"msg": "", "code": "200", "data": [[]], "count": "0"}
+[pid: 5365|app: 0|req: 4/20] 10.3.204.31 () {42 vars in 747 bytes} [Thu Sep  2 16:07:06 2021] GET /CallSelfServPY?page=1&limit=10 => generated 54 bytes in 0 msecs (HTTP/1.1 200) 5 headers in 164 bytes (1 switches on core 0)
+{"msg": "", "code": "200", "data": [[]], "count": "0"}
+[pid: 5361|app: 0|req: 5/21] 10.3.204.31 () {42 vars in 747 bytes} [Thu Sep  2 16:07:06 2021] GET /CallSelfServPY?page=1&limit=10 => generated 54 bytes in 0 msecs (HTTP/1.1 200) 5 headers in 164 bytes (1 switches on core 0)
+{"msg": "", "code": "200", "data": [[]], "count": "0"}
+[pid: 5362|app: 0|req: 5/22] 10.3.204.31 () {42 vars in 747 bytes} [Thu Sep  2 16:07:07 2021] GET /CallSelfServPY?page=1&limit=10 => generated 54 bytes in 0 msecs (HTTP/1.1 200) 5 headers in 164 bytes (1 switches on core 0)
+{"msg": "", "code": "200", "data": [[]], "count": "0"}
+[pid: 5363|app: 0|req: 5/23] 10.3.204.31 () {42 vars in 747 bytes} [Thu Sep  2 16:07:07 2021] GET /CallSelfServPY?page=1&limit=10 => generated 54 bytes in 0 msecs (HTTP/1.1 200) 5 headers in 164 bytes (1 switches on core 0)
+{"msg": "", "code": "200", "data": [[]], "count": "0"}
+[pid: 5364|app: 0|req: 5/24] 10.3.204.31 () {42 vars in 747 bytes} [Thu Sep  2 16:07:07 2021] GET /CallSelfServPY?page=1&limit=10 => generated 54 bytes in 0 msecs (HTTP/1.1 200) 5 headers in 164 bytes (1 switches on core 0)
+{"msg": "", "code": "200", "data": [[]], "count": "0"}
+[pid: 5365|app: 0|req: 5/25] 10.3.204.31 () {42 vars in 747 bytes} [Thu Sep  2 16:07:07 2021] GET /CallSelfServPY?page=1&limit=10 => generated 54 bytes in 0 msecs (HTTP/1.1 200) 5 headers in 164 bytes (1 switches on core 0)
+{"TradeCode":"CheckRule","CheckCode":"","serial_id":"1590","serial_number":"ydrwa4bgse","modal_code":"level1dep","bd_id":9415}
+入参：{"TradeCode":"CheckRule","CheckCode":"","serial_id":"1590","serial_number":"ydrwa4bgse","modal_code":"level1dep","bd_id":9415}
+开始取全局对象
+取全局对象成功
+开始生成根据客户端信息 10.3.204.31
+生成根据客户端信息成功 {'id': 4, 'ss_eqlistd_eqcode': 'DH31-46', 'ss_eqlistd_eqdesc': '开发机', 'ss_eqlistd_address': '46所3楼', 'ss_eqlistd_spec': '', 'ss_eqlistd_unit': '', 'ss_eqlistd_type': '', 'ss_eqlistd_ip': '10.3.204.31', 'ss_eqlistd_mac': '', 'ss_eqlistd_opdate': '2021-08-09 15:53:00', 'ss_eqlistd_closedate': '2021-08-09 15:53:00', 'ss_eqlistd_createdate': '2021-08-09 15:53:00', 'ss_eqlistd_creator': '', 'ss_eqlistd_update': '2021-08-09 15:53:00', 'ss_eqlistd_upuser': '', 'ss_eqlistd_role': 'admin'}
+开始生成业务主表信息
+queryst {'id': 1590}
+生成业务主表信息成功
+业务开始，入参参数= {'TradeCode': 'CheckRule', 'CheckCode': '', 'serial_id': '1590', 'serial_number': 'ydrwa4bgse', 'modal_code': 'level1dep', 'bd_id': 9415}
+开始生成患者基本信息
+生成患者基本信息成功
+获取患者基本信息成功：
+开始生成HIS患者基本信息
+his_patinfo <Response><ResultCode>0</ResultCode><PatInfos><PatInfo><PatientID>00000089</PatientID><PatientName>唐正飞</PatientName><Sex>男</Sex><SexCode>1</SexCode><DOB>1994-12-13</DOB><TelephoneNo>18611101542</TelephoneNo><Mobile>18611101542</Mobile><DocumentID></DocumentID><Address></Address><IDTypeCode>20</IDTypeCode><IDTypeDesc></IDTypeDesc><IDNo>622126199412131419</IDNo><InsureCardNo>TANGZHENGFEI</InsureCardNo><AccInfo>0^1182192^000000890001^0^^0^^1584^00000089^1182302^P^PC^1^^0^1182192^000000890001^0^^0^^1584^00000089^1182302^P^PC^1^</AccInfo><AccInfoBalance>0</AccInfoBalance><AccInfoNo>1182192</AccInfoNo><PatientCard>X0000149</PatientCard><YBFlag>0</YBFlag><PatType>自费</PatType><PatTypeCode>01</PatTypeCode><Age>27</Age></PatInfo></PatInfos></Response>
+生成HIS患者基本信息成功 00000089
+获取HIS患者基本信息成功：
+checkfun
+1
+[pid: 5361|app: 0|req: 6/26] 10.3.204.31 () {48 vars in 856 bytes} [Thu Sep  2 16:07:08 2021] POST /CallPythonService => generated 60 bytes in 7 msecs (HTTP/1.1 200) 5 headers in 171 bytes (1 switches on core 0)
+{"TradeCode":"6666","intef_input":"undefined","serial_id":"1590","serial_number":"ydrwa4bgse","modal_code":"srvylist","bd_id":9415}
+入参：{"TradeCode":"6666","intef_input":"undefined","serial_id":"1590","serial_number":"ydrwa4bgse","modal_code":"srvylist","bd_id":9415}
+开始取全局对象
+取全局对象成功
+开始生成根据客户端信息 10.3.204.31
+生成根据客户端信息成功 {'id': 4, 'ss_eqlistd_eqcode': 'DH31-46', 'ss_eqlistd_eqdesc': '开发机', 'ss_eqlistd_address': '46所3楼', 'ss_eqlistd_spec': '', 'ss_eqlistd_unit': '', 'ss_eqlistd_type': '', 'ss_eqlistd_ip': '10.3.204.31', 'ss_eqlistd_mac': '', 'ss_eqlistd_opdate': '2021-08-09 15:53:00', 'ss_eqlistd_closedate': '2021-08-09 15:53:00', 'ss_eqlistd_createdate': '2021-08-09 15:53:00', 'ss_eqlistd_creator': '', 'ss_eqlistd_update': '2021-08-09 15:53:00', 'ss_eqlistd_upuser': '', 'ss_eqlistd_role': 'admin'}
+开始生成业务主表信息
+queryst {'id': 1590}
+生成业务主表信息成功
+业务开始，入参参数= {'TradeCode': '6666', 'intef_input': 'undefined', 'serial_id': '1590', 'serial_number': 'ydrwa4bgse', 'modal_code': 'srvylist', 'bd_id': 9415}
+开始生成患者基本信息
+生成患者基本信息成功
+获取患者基本信息成功：
+开始生成HIS患者基本信息
+his_patinfo <Response><ResultCode>0</ResultCode><PatInfos><PatInfo><PatientID>00000089</PatientID><PatientName>唐正飞</PatientName><Sex>男</Sex><SexCode>1</SexCode><DOB>1994-12-13</DOB><TelephoneNo>18611101542</TelephoneNo><Mobile>18611101542</Mobile><DocumentID></DocumentID><Address></Address><IDTypeCode>20</IDTypeCode><IDTypeDesc></IDTypeDesc><IDNo>622126199412131419</IDNo><InsureCardNo>TANGZHENGFEI</InsureCardNo><AccInfo>0^1182192^000000890001^0^^0^^1584^00000089^1182302^P^PC^1^^0^1182192^000000890001^0^^0^^1584^00000089^1182302^P^PC^1^</AccInfo><AccInfoBalance>0</AccInfoBalance><AccInfoNo>1182192</AccInfoNo><PatientCard>X0000149</PatientCard><YBFlag>0</YBFlag><PatType>自费</PatType><PatTypeCode>01</PatTypeCode><Age>27</Age></PatInfo></PatInfos></Response>
+生成HIS患者基本信息成功 00000089
+获取HIS患者基本信息成功：
+__insert {'fk_businessmaster_id': '1590', 'serial_number': '2oiv5gx3tz', 'his_serial_number': None, 'modal_code': 'srvylist', 'model_desc': None, 'intef_code': '6666', 'intef_desc': None, 'intef_input': 'undefined', 'intef_output': None}
+1
+[pid: 5362|app: 0|req: 6/27] 10.3.204.31 () {48 vars in 856 bytes} [Thu Sep  2 16:07:08 2021] POST /CallPythonService => generated 94 bytes in 9 msecs (HTTP/1.1 200) 5 headers in 171 bytes (1 switches on core 0)
+{"TradeCode":"1011","serial_id":"1590","serial_number":"ydrwa4bgse","modal_code":"level1dep","bd_id":9416}
+入参：{"TradeCode":"1011","serial_id":"1590","serial_number":"ydrwa4bgse","modal_code":"level1dep","bd_id":9416}
+开始取全局对象
+取全局对象成功
+开始生成根据客户端信息 10.3.204.31
+生成根据客户端信息成功 {'id': 4, 'ss_eqlistd_eqcode': 'DH31-46', 'ss_eqlistd_eqdesc': '开发机', 'ss_eqlistd_address': '46所3楼', 'ss_eqlistd_spec': '', 'ss_eqlistd_unit': '', 'ss_eqlistd_type': '', 'ss_eqlistd_ip': '10.3.204.31', 'ss_eqlistd_mac': '', 'ss_eqlistd_opdate': '2021-08-09 15:53:00', 'ss_eqlistd_closedate': '2021-08-09 15:53:00', 'ss_eqlistd_createdate': '2021-08-09 15:53:00', 'ss_eqlistd_creator': '', 'ss_eqlistd_update': '2021-08-09 15:53:00', 'ss_eqlistd_upuser': '', 'ss_eqlistd_role': 'admin'}
+开始生成业务主表信息
+queryst {'id': 1590}
+生成业务主表信息成功
+业务开始，入参参数= {'TradeCode': '1011', 'serial_id': '1590', 'serial_number': 'ydrwa4bgse', 'modal_code': 'level1dep', 'bd_id': 9416}
+开始生成患者基本信息
+生成患者基本信息成功
+获取患者基本信息成功：
+开始生成HIS患者基本信息
+his_patinfo <Response><ResultCode>0</ResultCode><PatInfos><PatInfo><PatientID>00000089</PatientID><PatientName>唐正飞</PatientName><Sex>男</Sex><SexCode>1</SexCode><DOB>1994-12-13</DOB><TelephoneNo>18611101542</TelephoneNo><Mobile>18611101542</Mobile><DocumentID></DocumentID><Address></Address><IDTypeCode>20</IDTypeCode><IDTypeDesc></IDTypeDesc><IDNo>622126199412131419</IDNo><InsureCardNo>TANGZHENGFEI</InsureCardNo><AccInfo>0^1182192^000000890001^0^^0^^1584^00000089^1182302^P^PC^1^^0^1182192^000000890001^0^^0^^1584^00000089^1182302^P^PC^1^</AccInfo><AccInfoBalance>0</AccInfoBalance><AccInfoNo>1182192</AccInfoNo><PatientCard>X0000149</PatientCard><YBFlag>0</YBFlag><PatType>自费</PatType><PatTypeCode>01</PatTypeCode><Age>27</Age></PatInfo></PatInfos></Response>
+生成HIS患者基本信息成功 00000089
+获取HIS患者基本信息成功：
+__insert {'fk_businessmaster_id': '1590', 'serial_number': 'pw9mhyi2ed', 'his_serial_number': None, 'modal_code': 'level1dep', 'model_desc': None, 'intef_code': '1011', 'intef_desc': None, 'intef_input': '<Request><TradeCode>1011</TradeCode><ExtUserID>reg</ExtUserID><DepartmentGroupCode></DepartmentGroupCode><ExtOrgCode></ExtOrgCode><ClientType>ATM</ClientType><HospitalId>2</HospitalId></Request>', 'intef_output': None}
+content <Response><ResultCode>0</ResultCode><RecordCount>24</RecordCount><Departments><Department><DepartmentCode>4</DepartmentCode><DepartmentName>内科类</DepartmentName><DepartmentGroup>Y</DepartmentGroup></Department><Department><DepartmentCode>5</DepartmentCode><DepartmentName>外科类</DepartmentName><DepartmentGroup>Y</DepartmentGroup></Department><Department><DepartmentCode>6</DepartmentCode><DepartmentName>移植</DepartmentName><DepartmentGroup>Y</DepartmentGroup></Department><Department><DepartmentCode>7</DepartmentCode><DepartmentName>眼科类</DepartmentName><DepartmentGroup>Y</DepartmentGroup></Department><Department><DepartmentCode>8</DepartmentCode><DepartmentName>耳鼻喉</DepartmentName><DepartmentGroup>Y</DepartmentGroup></Department><Department><DepartmentCode>9</DepartmentCode><DepartmentName>口腔</DepartmentName><DepartmentGroup>Y</DepartmentGroup></Department><Department><DepartmentCode>10</DepartmentCode><DepartmentName>皮肤</DepartmentName><DepartmentGroup>Y</DepartmentGroup></Department><Department><DepartmentCode>11</DepartmentCode><DepartmentName>妇产类</DepartmentName><DepartmentGroup>Y</DepartmentGroup></Department><Department><DepartmentCode>12</DepartmentCode><DepartmentName>生殖医学</DepartmentName><DepartmentGroup>Y</DepartmentGroup></Department><Department><DepartmentCode>13</DepartmentCode><DepartmentName>儿科类</DepartmentName><DepartmentGroup>Y</DepartmentGroup></Department><Department><DepartmentCode>14</DepartmentCode><DepartmentName>中医</DepartmentName><DepartmentGroup>Y</DepartmentGroup></Department><Department><DepartmentCode>15</DepartmentCode><DepartmentName>中西医</DepartmentName><DepartmentGroup>Y</DepartmentGroup></Department><Department><DepartmentCode>16</DepartmentCode><DepartmentName>影像</DepartmentName><DepartmentGroup>Y</DepartmentGroup></Department><Department><DepartmentCode>17</DepartmentCode><DepartmentName>甲状腺类</DepartmentName><DepartmentGroup>Y</DepartmentGroup></Department><Department><DepartmentCode>18</DepartmentCode><DepartmentName>其他类</DepartmentName><DepartmentGroup>Y</DepartmentGroup></Department><Department><DepartmentCode>19</DepartmentCode><DepartmentName>病理</DepartmentName><DepartmentGroup>Y</DepartmentGroup></Department><Department><DepartmentCode>20</DepartmentCode><DepartmentName>神经内科类</DepartmentName><DepartmentGroup>Y</DepartmentGroup></Department><Department><DepartmentCode>25</DepartmentCode><DepartmentName>老年慢病</DepartmentName><DepartmentGroup>Y</DepartmentGroup></Department><Department><DepartmentCode>28</DepartmentCode><DepartmentName>药学部</DepartmentName><DepartmentGroup>Y</DepartmentGroup></Department><Department><DepartmentCode>29</DepartmentCode><DepartmentName>联合门诊大类</DepartmentName><DepartmentGroup>Y</DepartmentGroup></Department><Department><DepartmentCode>30</DepartmentCode><DepartmentName>呼吸类</DepartmentName><DepartmentGroup>Y</DepartmentGroup></Department><Department><DepartmentCode>31</DepartmentCode><DepartmentName>健康管理类</DepartmentName><DepartmentGroup>Y</DepartmentGroup></Department><Department><DepartmentCode>32</DepartmentCode><DepartmentName>核酸退费</DepartmentName><DepartmentGroup>Y</DepartmentGroup></Department><Department><DepartmentCode>33</DepartmentCode><DepartmentName>遗传代谢病门诊</DepartmentName><DepartmentGroup>Y</DepartmentGroup></Department></Departments></Response>
+__insert {'id': 9417, 'fk_businessmaster_id': '1590', 'serial_number': 'ikgvdpmltz', 'his_serial_number': None, 'modal_code': 'level1dep', 'model_desc': None, 'intef_code': '1011', 'intef_desc': None, 'intef_input': '<Request><TradeCode>1011</TradeCode><ExtUserID>reg</ExtUserID><DepartmentGroupCode></DepartmentGroupCode><ExtOrgCode></ExtOrgCode><ClientType>ATM</ClientType><HospitalId>2</HospitalId></Request>', 'intef_output': <Response><ResultCode>0</ResultCode><RecordCount>24</RecordCount><Departments><Department><DepartmentCode>4</DepartmentCode><DepartmentName>内科类</DepartmentName><DepartmentGroup>Y</DepartmentGroup></Department><Department><DepartmentCode>5</DepartmentCode><DepartmentName>外科类</DepartmentName><DepartmentGroup>Y</DepartmentGroup></Department><Department><DepartmentCode>6</DepartmentCode><DepartmentName>移植</DepartmentName><DepartmentGroup>Y</DepartmentGroup></Department><Department><DepartmentCode>7</DepartmentCode><DepartmentName>眼科类</DepartmentName><DepartmentGroup>Y</DepartmentGroup></Department><Department><DepartmentCode>8</DepartmentCode><DepartmentName>耳鼻喉</DepartmentName><DepartmentGroup>Y</DepartmentGroup></Department><Department><DepartmentCode>9</DepartmentCode><DepartmentName>口腔</DepartmentName><DepartmentGroup>Y</DepartmentGroup></Department><Department><DepartmentCode>10</DepartmentCode><DepartmentName>皮肤</DepartmentName><DepartmentGroup>Y</DepartmentGroup></Department><Department><DepartmentCode>11</DepartmentCode><DepartmentName>妇产类</DepartmentName><DepartmentGroup>Y</DepartmentGroup></Department><Department><DepartmentCode>12</DepartmentCode><DepartmentName>生殖医学</DepartmentName><DepartmentGroup>Y</DepartmentGroup></Department><Department><DepartmentCode>13</DepartmentCode><DepartmentName>儿科类</DepartmentName><DepartmentGroup>Y</DepartmentGroup></Department><Department><DepartmentCode>14</DepartmentCode><DepartmentName>中医</DepartmentName><DepartmentGroup>Y</DepartmentGroup></Department><Department><DepartmentCode>15</DepartmentCode><DepartmentName>中西医</DepartmentName><DepartmentGroup>Y</DepartmentGroup></Department><Department><DepartmentCode>16</DepartmentCode><DepartmentName>影像</DepartmentName><DepartmentGroup>Y</DepartmentGroup></Department><Department><DepartmentCode>17</DepartmentCode><DepartmentName>甲状腺类</DepartmentName><DepartmentGroup>Y</DepartmentGroup></Department><Department><DepartmentCode>18</DepartmentCode><DepartmentName>其他类</DepartmentName><DepartmentGroup>Y</DepartmentGroup></Department><Department><DepartmentCode>19</DepartmentCode><DepartmentName>病理</DepartmentName><DepartmentGroup>Y</DepartmentGroup></Department><Department><DepartmentCode>20</DepartmentCode><DepartmentName>神经内科类</DepartmentName><DepartmentGroup>Y</DepartmentGroup></Department><Department><DepartmentCode>25</DepartmentCode><DepartmentName>老年慢病</DepartmentName><DepartmentGroup>Y</DepartmentGroup></Department><Department><DepartmentCode>28</DepartmentCode><DepartmentName>药学部</DepartmentName><DepartmentGroup>Y</DepartmentGroup></Department><Department><DepartmentCode>29</DepartmentCode><DepartmentName>联合门诊大类</DepartmentName><DepartmentGroup>Y</DepartmentGroup></Department><Department><DepartmentCode>30</DepartmentCode><DepartmentName>呼吸类</DepartmentName><DepartmentGroup>Y</DepartmentGroup></Department><Department><DepartmentCode>31</DepartmentCode><DepartmentName>健康管理类</DepartmentName><DepartmentGroup>Y</DepartmentGroup></Department><Department><DepartmentCode>32</DepartmentCode><DepartmentName>核酸退费</DepartmentName><DepartmentGroup>Y</DepartmentGroup></Department><Department><DepartmentCode>33</DepartmentCode><DepartmentName>遗传代谢病门诊</DepartmentName><DepartmentGroup>Y</DepartmentGroup></Department></Departments></Response>}
+1
+[pid: 5363|app: 0|req: 6/28] 10.3.204.31 () {48 vars in 864 bytes} [Thu Sep  2 16:07:09 2021] POST /CallPythonService => generated 3504 bytes in 32 msecs (HTTP/1.1 200) 5 headers in 173 bytes (1 switches on core 0)
+{"TradeCode":"CheckRule","CheckCode":"","serial_id":"1590","serial_number":"ydrwa4bgse","modal_code":"level2dep","bd_id":9416}
+入参：{"TradeCode":"CheckRule","CheckCode":"","serial_id":"1590","serial_number":"ydrwa4bgse","modal_code":"level2dep","bd_id":9416}
+开始取全局对象
+取全局对象成功
+开始生成根据客户端信息 10.3.204.31
+生成根据客户端信息成功 {'id': 4, 'ss_eqlistd_eqcode': 'DH31-46', 'ss_eqlistd_eqdesc': '开发机', 'ss_eqlistd_address': '46所3楼', 'ss_eqlistd_spec': '', 'ss_eqlistd_unit': '', 'ss_eqlistd_type': '', 'ss_eqlistd_ip': '10.3.204.31', 'ss_eqlistd_mac': '', 'ss_eqlistd_opdate': '2021-08-09 15:53:00', 'ss_eqlistd_closedate': '2021-08-09 15:53:00', 'ss_eqlistd_createdate': '2021-08-09 15:53:00', 'ss_eqlistd_creator': '', 'ss_eqlistd_update': '2021-08-09 15:53:00', 'ss_eqlistd_upuser': '', 'ss_eqlistd_role': 'admin'}
+开始生成业务主表信息
+queryst {'id': 1590}
+生成业务主表信息成功
+业务开始，入参参数= {'TradeCode': 'CheckRule', 'CheckCode': '', 'serial_id': '1590', 'serial_number': 'ydrwa4bgse', 'modal_code': 'level2dep', 'bd_id': 9416}
+开始生成患者基本信息
+生成患者基本信息成功
+获取患者基本信息成功：
+开始生成HIS患者基本信息
+his_patinfo <Response><ResultCode>0</ResultCode><PatInfos><PatInfo><PatientID>00000089</PatientID><PatientName>唐正飞</PatientName><Sex>男</Sex><SexCode>1</SexCode><DOB>1994-12-13</DOB><TelephoneNo>18611101542</TelephoneNo><Mobile>18611101542</Mobile><DocumentID></DocumentID><Address></Address><IDTypeCode>20</IDTypeCode><IDTypeDesc></IDTypeDesc><IDNo>622126199412131419</IDNo><InsureCardNo>TANGZHENGFEI</InsureCardNo><AccInfo>0^1182192^000000890001^0^^0^^1584^00000089^1182302^P^PC^1^^0^1182192^000000890001^0^^0^^1584^00000089^1182302^P^PC^1^</AccInfo><AccInfoBalance>0</AccInfoBalance><AccInfoNo>1182192</AccInfoNo><PatientCard>X0000149</PatientCard><YBFlag>0</YBFlag><PatType>自费</PatType><PatTypeCode>01</PatTypeCode><Age>27</Age></PatInfo></PatInfos></Response>
+生成HIS患者基本信息成功 00000089
+获取HIS患者基本信息成功：
+checkfun
+1
+[pid: 5364|app: 0|req: 6/29] 10.3.204.31 () {48 vars in 864 bytes} [Thu Sep  2 16:07:09 2021] POST /CallPythonService => generated 60 bytes in 7 msecs (HTTP/1.1 200) 5 headers in 171 bytes (1 switches on core 0)
+{"TradeCode":"6666","intef_input":"&DepartmentCode=4&DepartmentName=内科类","serial_id":"1590","serial_number":"ydrwa4bgse","modal_code":"level1dep","bd_id":9416}
+入参：{"TradeCode":"6666","intef_input":"&DepartmentCode=4&DepartmentName=内科类","serial_id":"1590","serial_number":"ydrwa4bgse","modal_code":"level1dep","bd_id":9416}
+开始取全局对象
+取全局对象成功
+开始生成根据客户端信息 10.3.204.31
+生成根据客户端信息成功 {'id': 4, 'ss_eqlistd_eqcode': 'DH31-46', 'ss_eqlistd_eqdesc': '开发机', 'ss_eqlistd_address': '46所3楼', 'ss_eqlistd_spec': '', 'ss_eqlistd_unit': '', 'ss_eqlistd_type': '', 'ss_eqlistd_ip': '10.3.204.31', 'ss_eqlistd_mac': '', 'ss_eqlistd_opdate': '2021-08-09 15:53:00', 'ss_eqlistd_closedate': '2021-08-09 15:53:00', 'ss_eqlistd_createdate': '2021-08-09 15:53:00', 'ss_eqlistd_creator': '', 'ss_eqlistd_update': '2021-08-09 15:53:00', 'ss_eqlistd_upuser': '', 'ss_eqlistd_role': 'admin'}
+开始生成业务主表信息
+queryst {'id': 1590}
+生成业务主表信息成功
+业务开始，入参参数= {'TradeCode': '6666', 'intef_input': '&DepartmentCode=4&DepartmentName=内科类', 'serial_id': '1590', 'serial_number': 'ydrwa4bgse', 'modal_code': 'level1dep', 'bd_id': 9416}
+开始生成患者基本信息
+生成患者基本信息成功
+获取患者基本信息成功：
+开始生成HIS患者基本信息
+his_patinfo <Response><ResultCode>0</ResultCode><PatInfos><PatInfo><PatientID>00000089</PatientID><PatientName>唐正飞</PatientName><Sex>男</Sex><SexCode>1</SexCode><DOB>1994-12-13</DOB><TelephoneNo>18611101542</TelephoneNo><Mobile>18611101542</Mobile><DocumentID></DocumentID><Address></Address><IDTypeCode>20</IDTypeCode><IDTypeDesc></IDTypeDesc><IDNo>622126199412131419</IDNo><InsureCardNo>TANGZHENGFEI</InsureCardNo><AccInfo>0^1182192^000000890001^0^^0^^1584^00000089^1182302^P^PC^1^^0^1182192^000000890001^0^^0^^1584^00000089^1182302^P^PC^1^</AccInfo><AccInfoBalance>0</AccInfoBalance><AccInfoNo>1182192</AccInfoNo><PatientCard>X0000149</PatientCard><YBFlag>0</YBFlag><PatType>自费</PatType><PatTypeCode>01</PatTypeCode><Age>27</Age></PatInfo></PatInfos></Response>
+生成HIS患者基本信息成功 00000089
+获取HIS患者基本信息成功：
+__insert {'fk_businessmaster_id': '1590', 'serial_number': '465k7bomju', 'his_serial_number': None, 'modal_code': 'level1dep', 'model_desc': None, 'intef_code': '6666', 'intef_desc': None, 'intef_input': '&DepartmentCode=4&DepartmentName=内科类', 'intef_output': None}
+1
+[pid: 5365|app: 0|req: 6/30] 10.3.204.31 () {48 vars in 864 bytes} [Thu Sep  2 16:07:09 2021] POST /CallPythonService => generated 94 bytes in 9 msecs (HTTP/1.1 200) 5 headers in 171 bytes (1 switches on core 0)
+{"TradeCode":"1012","serial_id":"1590","serial_number":"ydrwa4bgse","modal_code":"level2dep","bd_id":9418}
+入参：{"TradeCode":"1012","serial_id":"1590","serial_number":"ydrwa4bgse","modal_code":"level2dep","bd_id":9418}
+开始取全局对象
+取全局对象成功
+开始生成根据客户端信息 10.3.204.31
+生成根据客户端信息成功 {'id': 4, 'ss_eqlistd_eqcode': 'DH31-46', 'ss_eqlistd_eqdesc': '开发机', 'ss_eqlistd_address': '46所3楼', 'ss_eqlistd_spec': '', 'ss_eqlistd_unit': '', 'ss_eqlistd_type': '', 'ss_eqlistd_ip': '10.3.204.31', 'ss_eqlistd_mac': '', 'ss_eqlistd_opdate': '2021-08-09 15:53:00', 'ss_eqlistd_closedate': '2021-08-09 15:53:00', 'ss_eqlistd_createdate': '2021-08-09 15:53:00', 'ss_eqlistd_creator': '', 'ss_eqlistd_update': '2021-08-09 15:53:00', 'ss_eqlistd_upuser': '', 'ss_eqlistd_role': 'admin'}
+开始生成业务主表信息
+queryst {'id': 1590}
+生成业务主表信息成功
+业务开始，入参参数= {'TradeCode': '1012', 'serial_id': '1590', 'serial_number': 'ydrwa4bgse', 'modal_code': 'level2dep', 'bd_id': 9418}
+开始生成患者基本信息
+生成患者基本信息成功
+获取患者基本信息成功：
+开始生成HIS患者基本信息
+his_patinfo <Response><ResultCode>0</ResultCode><PatInfos><PatInfo><PatientID>00000089</PatientID><PatientName>唐正飞</PatientName><Sex>男</Sex><SexCode>1</SexCode><DOB>1994-12-13</DOB><TelephoneNo>18611101542</TelephoneNo><Mobile>18611101542</Mobile><DocumentID></DocumentID><Address></Address><IDTypeCode>20</IDTypeCode><IDTypeDesc></IDTypeDesc><IDNo>622126199412131419</IDNo><InsureCardNo>TANGZHENGFEI</InsureCardNo><AccInfo>0^1182192^000000890001^0^^0^^1584^00000089^1182302^P^PC^1^^0^1182192^000000890001^0^^0^^1584^00000089^1182302^P^PC^1^</AccInfo><AccInfoBalance>0</AccInfoBalance><AccInfoNo>1182192</AccInfoNo><PatientCard>X0000149</PatientCard><YBFlag>0</YBFlag><PatType>自费</PatType><PatTypeCode>01</PatTypeCode><Age>27</Age></PatInfo></PatInfos></Response>
+生成HIS患者基本信息成功 00000089
+获取HIS患者基本信息成功：
+DHC_1012接口开始
+queryst {'fk_businessmaster_id': 1590, 'modal_code': 'level1dep', 'intef_code': '6666'}
+__insert {'fk_businessmaster_id': '1590', 'serial_number': 'vlw8byq23z', 'his_serial_number': None, 'modal_code': 'level2dep', 'model_desc': None, 'intef_code': '1012', 'intef_desc': None, 'intef_input': '<Request><TradeCode>1012</TradeCode><StartDate>2021-9-2</StartDate><EndDate>2021-9-2</EndDate><ExtUserID>reg</ExtUserID><DepartmentCode></DepartmentCode><DepartmentGroupCode>4</DepartmentGroupCode><ExtOrgCode></ExtOrgCode><ClientType>ATM</ClientType><HospitalId>2</HospitalId></Request>', 'intef_output': None}
+content <Response><ResultCode>0</ResultCode><RecordCount>16</RecordCount><Departments><Department><DepartmentCode>116</DepartmentCode><DepartmentName>血液科门诊</DepartmentName><ParentId>4</ParentId><DepartmentAddress>2层内科诊区</DepartmentAddress><DepartmentHospCode>2</DepartmentHospCode><DepartmentHospDesc>天津市第一中心医院</DepartmentHospDesc></Department><Department><DepartmentCode>117</DepartmentCode><DepartmentName>消化科门诊</DepartmentName><ParentId>4</ParentId><DepartmentAddress>二层内科诊区</DepartmentAddress><DepartmentHospCode>2</DepartmentHospCode><DepartmentHospDesc>天津市第一中心医院</DepartmentHospDesc></Department><Department><DepartmentCode>119</DepartmentCode><DepartmentName>内分泌科门诊</DepartmentName><ParentId>4</ParentId><DepartmentAddress>1层内科诊区11、12、13诊室</DepartmentAddress><DepartmentHospCode>2</DepartmentHospCode><DepartmentHospDesc>天津市第一中心医院</DepartmentHospDesc></Department><Department><DepartmentCode>121</DepartmentCode><DepartmentName>感染科门诊</DepartmentName><ParentId>4</ParentId><DepartmentAddress>2层内科诊区1或3、4、5诊室</DepartmentAddress><DepartmentHospCode>2</DepartmentHospCode><DepartmentHospDesc>天津市第一中心医院</DepartmentHospDesc></Department><Department><DepartmentCode>137</DepartmentCode><DepartmentName>免疫科门诊</DepartmentName><ParentId>4</ParentId><DepartmentAddress>2层内科诊区</DepartmentAddress><DepartmentHospCode>2</DepartmentHospCode><DepartmentHospDesc>天津市第一中心医院</DepartmentHospDesc></Department><Department><DepartmentCode>141</DepartmentCode><DepartmentName>心内科门诊</DepartmentName><ParentId>4</ParentId><DepartmentAddress>2层内科诊区</DepartmentAddress><DepartmentHospCode>2</DepartmentHospCode><DepartmentHospDesc>天津市第一中心医院</DepartmentHospDesc></Department><Department><DepartmentCode>142</DepartmentCode><DepartmentName>心律失常门诊</DepartmentName><ParentId>4</ParentId><DepartmentAddress>2层内科诊区29诊室</DepartmentAddress><DepartmentHospCode>2</DepartmentHospCode><DepartmentHospDesc>天津市第一中心医院</DepartmentHospDesc></Department><Department><DepartmentCode>146</DepartmentCode><DepartmentName>起搏器程控门诊</DepartmentName><ParentId>4</ParentId><DepartmentAddress>2层内科诊区26诊室</DepartmentAddress><DepartmentHospCode>2</DepartmentHospCode><DepartmentHospDesc>天津市第一中心医院</DepartmentHospDesc></Department><Department><DepartmentCode>149</DepartmentCode><DepartmentName>肾内科门诊</DepartmentName><ParentId>4</ParentId><DepartmentAddress>2层内科诊区11诊室</DepartmentAddress><DepartmentHospCode>2</DepartmentHospCode><DepartmentHospDesc>天津市第一中心医院</DepartmentHospDesc></Department><Department><DepartmentCode>151</DepartmentCode><DepartmentName>肾内科门诊(CKD)</DepartmentName><ParentId>4</ParentId><DepartmentAddress>2层内科诊区12诊室</DepartmentAddress><DepartmentHospCode>2</DepartmentHospCode><DepartmentHospDesc>天津市第一中心医院</DepartmentHospDesc></Department><Department><DepartmentCode>152</DepartmentCode><DepartmentName>普通内科门诊</DepartmentName><ParentId>4</ParentId><DepartmentAddress>2层内科诊区</DepartmentAddress><DepartmentHospCode>2</DepartmentHospCode><DepartmentHospDesc>天津市第一中心医院</DepartmentHospDesc></Department><Department><DepartmentCode>153</DepartmentCode><DepartmentName>肝病门诊</DepartmentName><ParentId>4</ParentId><DepartmentAddress>2楼内科诊区23诊室</DepartmentAddress><DepartmentHospCode>2</DepartmentHospCode><DepartmentHospDesc>天津市第一中心医院</DepartmentHospDesc></Department><Department><DepartmentCode>196</DepartmentCode><DepartmentName>血液净化门诊</DepartmentName><ParentId>4</ParentId><DepartmentAddress>A区@-1层|-1层|-1层</DepartmentAddress><DepartmentHospCode>2</DepartmentHospCode><DepartmentHospDesc>天津市第一中心医院</DepartmentHospDesc></Department><Department><DepartmentCode>230</DepartmentCode><DepartmentName>国诊中心门诊</DepartmentName><ParentId>4</ParentId><DepartmentAddress>3层国诊中心诊区</DepartmentAddress><DepartmentHospCode>2</DepartmentHospCode><DepartmentHospDesc>天津市第一中心医院</DepartmentHospDesc></Department><Department><DepartmentCode>233</DepartmentCode><DepartmentName>心理科门诊</DepartmentName><ParentId>4</ParentId><DepartmentAddress>2层内科诊区1诊室</DepartmentAddress><DepartmentHospCode>2</DepartmentHospCode><DepartmentHospDesc>天津市第一中心医院</DepartmentHospDesc></Department><Department><DepartmentCode>279</DepartmentCode><DepartmentName>PICC换药门诊</DepartmentName><ParentId>4</ParentId><DepartmentAddress>E区2层124诊室</DepartmentAddress><DepartmentHospCode>2</DepartmentHospCode><DepartmentHospDesc>天津市第一中心医院</DepartmentHospDesc></Department></Departments></Response>
+__insert {'id': 9419, 'fk_businessmaster_id': '1590', 'serial_number': 'utal8o7qvk', 'his_serial_number': None, 'modal_code': 'level2dep', 'model_desc': None, 'intef_code': '1012', 'intef_desc': None, 'intef_input': '<Request><TradeCode>1012</TradeCode><StartDate>2021-9-2</StartDate><EndDate>2021-9-2</EndDate><ExtUserID>reg</ExtUserID><DepartmentCode></DepartmentCode><DepartmentGroupCode>4</DepartmentGroupCode><ExtOrgCode></ExtOrgCode><ClientType>ATM</ClientType><HospitalId>2</HospitalId></Request>', 'intef_output': <Response><ResultCode>0</ResultCode><RecordCount>16</RecordCount><Departments><Department><DepartmentCode>116</DepartmentCode><DepartmentName>血液科门诊</DepartmentName><ParentId>4</ParentId><DepartmentAddress>2层内科诊区</DepartmentAddress><DepartmentHospCode>2</DepartmentHospCode><DepartmentHospDesc>天津市第一中心医院</DepartmentHospDesc></Department><Department><DepartmentCode>117</DepartmentCode><DepartmentName>消化科门诊</DepartmentName><ParentId>4</ParentId><DepartmentAddress>二层内科诊区</DepartmentAddress><DepartmentHospCode>2</DepartmentHospCode><DepartmentHospDesc>天津市第一中心医院</DepartmentHospDesc></Department><Department><DepartmentCode>119</DepartmentCode><DepartmentName>内分泌科门诊</DepartmentName><ParentId>4</ParentId><DepartmentAddress>1层内科诊区11、12、13诊室</DepartmentAddress><DepartmentHospCode>2</DepartmentHospCode><DepartmentHospDesc>天津市第一中心医院</DepartmentHospDesc></Department><Department><DepartmentCode>121</DepartmentCode><DepartmentName>感染科门诊</DepartmentName><ParentId>4</ParentId><DepartmentAddress>2层内科诊区1或3、4、5诊室</DepartmentAddress><DepartmentHospCode>2</DepartmentHospCode><DepartmentHospDesc>天津市第一中心医院</DepartmentHospDesc></Department><Department><DepartmentCode>137</DepartmentCode><DepartmentName>免疫科门诊</DepartmentName><ParentId>4</ParentId><DepartmentAddress>2层内科诊区</DepartmentAddress><DepartmentHospCode>2</DepartmentHospCode><DepartmentHospDesc>天津市第一中心医院</DepartmentHospDesc></Department><Department><DepartmentCode>141</DepartmentCode><DepartmentName>心内科门诊</DepartmentName><ParentId>4</ParentId><DepartmentAddress>2层内科诊区</DepartmentAddress><DepartmentHospCode>2</DepartmentHospCode><DepartmentHospDesc>天津市第一中心医院</DepartmentHospDesc></Department><Department><DepartmentCode>142</DepartmentCode><DepartmentName>心律失常门诊</DepartmentName><ParentId>4</ParentId><DepartmentAddress>2层内科诊区29诊室</DepartmentAddress><DepartmentHospCode>2</DepartmentHospCode><DepartmentHospDesc>天津市第一中心医院</DepartmentHospDesc></Department><Department><DepartmentCode>146</DepartmentCode><DepartmentName>起搏器程控门诊</DepartmentName><ParentId>4</ParentId><DepartmentAddress>2层内科诊区26诊室</DepartmentAddress><DepartmentHospCode>2</DepartmentHospCode><DepartmentHospDesc>天津市第一中心医院</DepartmentHospDesc></Department><Department><DepartmentCode>149</DepartmentCode><DepartmentName>肾内科门诊</DepartmentName><ParentId>4</ParentId><DepartmentAddress>2层内科诊区11诊室</DepartmentAddress><DepartmentHospCode>2</DepartmentHospCode><DepartmentHospDesc>天津市第一中心医院</DepartmentHospDesc></Department><Department><DepartmentCode>151</DepartmentCode><DepartmentName>肾内科门诊(CKD)</DepartmentName><ParentId>4</ParentId><DepartmentAddress>2层内科诊区12诊室</DepartmentAddress><DepartmentHospCode>2</DepartmentHospCode><DepartmentHospDesc>天津市第一中心医院</DepartmentHospDesc></Department><Department><DepartmentCode>152</DepartmentCode><DepartmentName>普通内科门诊</DepartmentName><ParentId>4</ParentId><DepartmentAddress>2层内科诊区</DepartmentAddress><DepartmentHospCode>2</DepartmentHospCode><DepartmentHospDesc>天津市第一中心医院</DepartmentHospDesc></Department><Department><DepartmentCode>153</DepartmentCode><DepartmentName>肝病门诊</DepartmentName><ParentId>4</ParentId><DepartmentAddress>2楼内科诊区23诊室</DepartmentAddress><DepartmentHospCode>2</DepartmentHospCode><DepartmentHospDesc>天津市第一中心医院</DepartmentHospDesc></Department><Department><DepartmentCode>196</DepartmentCode><DepartmentName>血液净化门诊</DepartmentName><ParentId>4</ParentId><DepartmentAddress>A区@-1层|-1层|-1层</DepartmentAddress><DepartmentHospCode>2</DepartmentHospCode><DepartmentHospDesc>天津市第一中心医院</DepartmentHospDesc></Department><Department><DepartmentCode>230</DepartmentCode><DepartmentName>国诊中心门诊</DepartmentName><ParentId>4</ParentId><DepartmentAddress>3层国诊中心诊区</DepartmentAddress><DepartmentHospCode>2</DepartmentHospCode><DepartmentHospDesc>天津市第一中心医院</DepartmentHospDesc></Department><Department><DepartmentCode>233</DepartmentCode><DepartmentName>心理科门诊</DepartmentName><ParentId>4</ParentId><DepartmentAddress>2层内科诊区1诊室</DepartmentAddress><DepartmentHospCode>2</DepartmentHospCode><DepartmentHospDesc>天津市第一中心医院</DepartmentHospDesc></Department><Department><DepartmentCode>279</DepartmentCode><DepartmentName>PICC换药门诊</DepartmentName><ParentId>4</ParentId><DepartmentAddress>E区2层124诊室</DepartmentAddress><DepartmentHospCode>2</DepartmentHospCode><DepartmentHospDesc>天津市第一中心医院</DepartmentHospDesc></Department></Departments></Response>}
+1
+[pid: 5361|app: 0|req: 7/31] 10.3.204.31 () {48 vars in 909 bytes} [Thu Sep  2 16:07:10 2021] POST /CallPythonService => generated 5030 bytes in 66 msecs (HTTP/1.1 200) 5 headers in 173 bytes (1 switches on core 0)
+{"TradeCode":"CheckRule","CheckCode":"","serial_id":"1590","serial_number":"ydrwa4bgse","modal_code":"predoc","bd_id":9418}
+入参：{"TradeCode":"CheckRule","CheckCode":"","serial_id":"1590","serial_number":"ydrwa4bgse","modal_code":"predoc","bd_id":9418}
+开始取全局对象
+取全局对象成功
+开始生成根据客户端信息 10.3.204.31
+生成根据客户端信息成功 {'id': 4, 'ss_eqlistd_eqcode': 'DH31-46', 'ss_eqlistd_eqdesc': '开发机', 'ss_eqlistd_address': '46所3楼', 'ss_eqlistd_spec': '', 'ss_eqlistd_unit': '', 'ss_eqlistd_type': '', 'ss_eqlistd_ip': '10.3.204.31', 'ss_eqlistd_mac': '', 'ss_eqlistd_opdate': '2021-08-09 15:53:00', 'ss_eqlistd_closedate': '2021-08-09 15:53:00', 'ss_eqlistd_createdate': '2021-08-09 15:53:00', 'ss_eqlistd_creator': '', 'ss_eqlistd_update': '2021-08-09 15:53:00', 'ss_eqlistd_upuser': '', 'ss_eqlistd_role': 'admin'}
+开始生成业务主表信息
+queryst {'id': 1590}
+生成业务主表信息成功
+业务开始，入参参数= {'TradeCode': 'CheckRule', 'CheckCode': '', 'serial_id': '1590', 'serial_number': 'ydrwa4bgse', 'modal_code': 'predoc', 'bd_id': 9418}
+开始生成患者基本信息
+生成患者基本信息成功
+获取患者基本信息成功：
+开始生成HIS患者基本信息
+his_patinfo <Response><ResultCode>0</ResultCode><PatInfos><PatInfo><PatientID>00000089</PatientID><PatientName>唐正飞</PatientName><Sex>男</Sex><SexCode>1</SexCode><DOB>1994-12-13</DOB><TelephoneNo>18611101542</TelephoneNo><Mobile>18611101542</Mobile><DocumentID></DocumentID><Address></Address><IDTypeCode>20</IDTypeCode><IDTypeDesc></IDTypeDesc><IDNo>622126199412131419</IDNo><InsureCardNo>TANGZHENGFEI</InsureCardNo><AccInfo>0^1182192^000000890001^0^^0^^1584^00000089^1182302^P^PC^1^^0^1182192^000000890001^0^^0^^1584^00000089^1182302^P^PC^1^</AccInfo><AccInfoBalance>0</AccInfoBalance><AccInfoNo>1182192</AccInfoNo><PatientCard>X0000149</PatientCard><YBFlag>0</YBFlag><PatType>自费</PatType><PatTypeCode>01</PatTypeCode><Age>27</Age></PatInfo></PatInfos></Response>
+生成HIS患者基本信息成功 00000089
+获取HIS患者基本信息成功：
+checkfun
+1
+[pid: 5362|app: 0|req: 7/32] 10.3.204.31 () {48 vars in 909 bytes} [Thu Sep  2 16:07:10 2021] POST /CallPythonService => generated 60 bytes in 7 msecs (HTTP/1.1 200) 5 headers in 171 bytes (1 switches on core 0)
+{"TradeCode":"6666","intef_input":"&DepartmentCode=119&DepartmentName=内分泌科门诊","serial_id":"1590","serial_number":"ydrwa4bgse","modal_code":"level2dep","bd_id":9418}
+入参：{"TradeCode":"6666","intef_input":"&DepartmentCode=119&DepartmentName=内分泌科门诊","serial_id":"1590","serial_number":"ydrwa4bgse","modal_code":"level2dep","bd_id":9418}
+开始取全局对象
+取全局对象成功
+开始生成根据客户端信息 10.3.204.31
+生成根据客户端信息成功 {'id': 4, 'ss_eqlistd_eqcode': 'DH31-46', 'ss_eqlistd_eqdesc': '开发机', 'ss_eqlistd_address': '46所3楼', 'ss_eqlistd_spec': '', 'ss_eqlistd_unit': '', 'ss_eqlistd_type': '', 'ss_eqlistd_ip': '10.3.204.31', 'ss_eqlistd_mac': '', 'ss_eqlistd_opdate': '2021-08-09 15:53:00', 'ss_eqlistd_closedate': '2021-08-09 15:53:00', 'ss_eqlistd_createdate': '2021-08-09 15:53:00', 'ss_eqlistd_creator': '', 'ss_eqlistd_update': '2021-08-09 15:53:00', 'ss_eqlistd_upuser': '', 'ss_eqlistd_role': 'admin'}
+开始生成业务主表信息
+queryst {'id': 1590}
+生成业务主表信息成功
+业务开始，入参参数= {'TradeCode': '6666', 'intef_input': '&DepartmentCode=119&DepartmentName=内分泌科门诊', 'serial_id': '1590', 'serial_number': 'ydrwa4bgse', 'modal_code': 'level2dep', 'bd_id': 9418}
+开始生成患者基本信息
+生成患者基本信息成功
+获取患者基本信息成功：
+开始生成HIS患者基本信息
+his_patinfo <Response><ResultCode>0</ResultCode><PatInfos><PatInfo><PatientID>00000089</PatientID><PatientName>唐正飞</PatientName><Sex>男</Sex><SexCode>1</SexCode><DOB>1994-12-13</DOB><TelephoneNo>18611101542</TelephoneNo><Mobile>18611101542</Mobile><DocumentID></DocumentID><Address></Address><IDTypeCode>20</IDTypeCode><IDTypeDesc></IDTypeDesc><IDNo>622126199412131419</IDNo><InsureCardNo>TANGZHENGFEI</InsureCardNo><AccInfo>0^1182192^000000890001^0^^0^^1584^00000089^1182302^P^PC^1^^0^1182192^000000890001^0^^0^^1584^00000089^1182302^P^PC^1^</AccInfo><AccInfoBalance>0</AccInfoBalance><AccInfoNo>1182192</AccInfoNo><PatientCard>X0000149</PatientCard><YBFlag>0</YBFlag><PatType>自费</PatType><PatTypeCode>01</PatTypeCode><Age>27</Age></PatInfo></PatInfos></Response>
+生成HIS患者基本信息成功 00000089
+获取HIS患者基本信息成功：
+__insert {'fk_businessmaster_id': '1590', 'serial_number': '41nyrga2z9', 'his_serial_number': None, 'modal_code': 'level2dep', 'model_desc': None, 'intef_code': '6666', 'intef_desc': None, 'intef_input': '&DepartmentCode=119&DepartmentName=内分泌科门诊', 'intef_output': None}
+1
+[pid: 5363|app: 0|req: 7/33] 10.3.204.31 () {48 vars in 909 bytes} [Thu Sep  2 16:07:10 2021] POST /CallPythonService => generated 94 bytes in 9 msecs (HTTP/1.1 200) 5 headers in 171 bytes (1 switches on core 0)
+{"TradeCode":"1013","serial_id":"1590","serial_number":"ydrwa4bgse","modal_code":"predoc","bd_id":9420}
+入参：{"TradeCode":"1013","serial_id":"1590","serial_number":"ydrwa4bgse","modal_code":"predoc","bd_id":9420}
+开始取全局对象
+取全局对象成功
+开始生成根据客户端信息 10.3.204.31
+生成根据客户端信息成功 {'id': 4, 'ss_eqlistd_eqcode': 'DH31-46', 'ss_eqlistd_eqdesc': '开发机', 'ss_eqlistd_address': '46所3楼', 'ss_eqlistd_spec': '', 'ss_eqlistd_unit': '', 'ss_eqlistd_type': '', 'ss_eqlistd_ip': '10.3.204.31', 'ss_eqlistd_mac': '', 'ss_eqlistd_opdate': '2021-08-09 15:53:00', 'ss_eqlistd_closedate': '2021-08-09 15:53:00', 'ss_eqlistd_createdate': '2021-08-09 15:53:00', 'ss_eqlistd_creator': '', 'ss_eqlistd_update': '2021-08-09 15:53:00', 'ss_eqlistd_upuser': '', 'ss_eqlistd_role': 'admin'}
+开始生成业务主表信息
+queryst {'id': 1590}
+生成业务主表信息成功
+业务开始，入参参数= {'TradeCode': '1013', 'serial_id': '1590', 'serial_number': 'ydrwa4bgse', 'modal_code': 'predoc', 'bd_id': 9420}
+开始生成患者基本信息
+生成患者基本信息成功
+获取患者基本信息成功：
+开始生成HIS患者基本信息
+his_patinfo <Response><ResultCode>0</ResultCode><PatInfos><PatInfo><PatientID>00000089</PatientID><PatientName>唐正飞</PatientName><Sex>男</Sex><SexCode>1</SexCode><DOB>1994-12-13</DOB><TelephoneNo>18611101542</TelephoneNo><Mobile>18611101542</Mobile><DocumentID></DocumentID><Address></Address><IDTypeCode>20</IDTypeCode><IDTypeDesc></IDTypeDesc><IDNo>622126199412131419</IDNo><InsureCardNo>TANGZHENGFEI</InsureCardNo><AccInfo>0^1182192^000000890001^0^^0^^1584^00000089^1182302^P^PC^1^^0^1182192^000000890001^0^^0^^1584^00000089^1182302^P^PC^1^</AccInfo><AccInfoBalance>0</AccInfoBalance><AccInfoNo>1182192</AccInfoNo><PatientCard>X0000149</PatientCard><YBFlag>0</YBFlag><PatType>自费</PatType><PatTypeCode>01</PatTypeCode><Age>27</Age></PatInfo></PatInfos></Response>
+生成HIS患者基本信息成功 00000089
+获取HIS患者基本信息成功：
+queryst {'fk_businessmaster_id': 1590, 'modal_code': 'level2dep', 'intef_code': '6666'}
+__insert {'fk_businessmaster_id': '1590', 'serial_number': 'mdfylojekp', 'his_serial_number': None, 'modal_code': 'predoc', 'model_desc': None, 'intef_code': '1013', 'intef_desc': None, 'intef_input': '<Request><TimeRangeCode>X</TimeRangeCode><Source>Reg</Source><DoctorCode></DoctorCode><TradeCode>1013</TradeCode><ExtOrgCode></ExtOrgCode><ClientType></ClientType><HospitalId>2</HospitalId><ExtUserID>ZZ1</ExtUserID><DepartmentCode>119</DepartmentCode></Request>', 'intef_output': None}
+content <Response><ResultCode>0</ResultCode><RecordCount>5</RecordCount><Doctors><Doctor><DoctorCode>632</DoctorCode><DoctorName>李俊峰</DoctorName><DoctotLevelCode>副主任医师</DoctotLevelCode><DoctorLevel>2</DoctorLevel><DeptId>119</DeptId><DeptName>内分泌科门诊</DeptName><UserCode>D1344</UserCode><EffectiveSeqNo>下午:30</EffectiveSeqNo></Doctor><Doctor><DoctorCode>254</DoctorCode><DoctorName>张扬</DoctorName><DoctotLevelCode>副主任医师</DoctotLevelCode><DoctorLevel>2</DoctorLevel><DeptId>119</DeptId><DeptName>内分泌科门诊</DeptName><UserCode>D1784</UserCode></Doctor><Doctor><DoctorCode>897</DoctorCode><DoctorName>普诊医师</DoctorName><DoctotLevelCode>主治医师</DoctotLevelCode><DoctorLevel>3</DoctorLevel><DeptId>119</DeptId><DeptName>内分泌科门诊</DeptName><UserCode>PTH</UserCode><EffectiveSeqNo>下午:400</EffectiveSeqNo></Doctor><Doctor><DoctorCode>903</DoctorCode><DoctorName>便民医师</DoctorName><DoctotLevelCode>主治医师</DoctotLevelCode><DoctorLevel>3</DoctorLevel><DeptId>119</DeptId><DeptName>内分泌科门诊</DeptName><UserCode>BMH</UserCode><EffectiveSeqNo>下午:400</EffectiveSeqNo></Doctor><Doctor><DoctorCode>937</DoctorCode><DoctorName>附加号专用</DoctorName><DoctotLevelCode>主治医师</DoctotLevelCode><DoctorLevel>3</DoctorLevel><DeptId>119</DeptId><DeptName>内分泌科门诊</DeptName><UserCode>FJHZY</UserCode><EffectiveSeqNo>下午:400</EffectiveSeqNo></Doctor></Doctors></Response>
+__insert {'id': 9421, 'fk_businessmaster_id': '1590', 'serial_number': 'ko7f6xg1ad', 'his_serial_number': None, 'modal_code': 'predoc', 'model_desc': None, 'intef_code': '1013', 'intef_desc': None, 'intef_input': '<Request><TimeRangeCode>X</TimeRangeCode><Source>Reg</Source><DoctorCode></DoctorCode><TradeCode>1013</TradeCode><ExtOrgCode></ExtOrgCode><ClientType></ClientType><HospitalId>2</HospitalId><ExtUserID>ZZ1</ExtUserID><DepartmentCode>119</DepartmentCode></Request>', 'intef_output': <Response><ResultCode>0</ResultCode><RecordCount>5</RecordCount><Doctors><Doctor><DoctorCode>632</DoctorCode><DoctorName>李俊峰</DoctorName><DoctotLevelCode>副主任医师</DoctotLevelCode><DoctorLevel>2</DoctorLevel><DeptId>119</DeptId><DeptName>内分泌科门诊</DeptName><UserCode>D1344</UserCode><EffectiveSeqNo>下午:30</EffectiveSeqNo></Doctor><Doctor><DoctorCode>254</DoctorCode><DoctorName>张扬</DoctorName><DoctotLevelCode>副主任医师</DoctotLevelCode><DoctorLevel>2</DoctorLevel><DeptId>119</DeptId><DeptName>内分泌科门诊</DeptName><UserCode>D1784</UserCode></Doctor><Doctor><DoctorCode>897</DoctorCode><DoctorName>普诊医师</DoctorName><DoctotLevelCode>主治医师</DoctotLevelCode><DoctorLevel>3</DoctorLevel><DeptId>119</DeptId><DeptName>内分泌科门诊</DeptName><UserCode>PTH</UserCode><EffectiveSeqNo>下午:400</EffectiveSeqNo></Doctor><Doctor><DoctorCode>903</DoctorCode><DoctorName>便民医师</DoctorName><DoctotLevelCode>主治医师</DoctotLevelCode><DoctorLevel>3</DoctorLevel><DeptId>119</DeptId><DeptName>内分泌科门诊</DeptName><UserCode>BMH</UserCode><EffectiveSeqNo>下午:400</EffectiveSeqNo></Doctor><Doctor><DoctorCode>937</DoctorCode><DoctorName>附加号专用</DoctorName><DoctotLevelCode>主治医师</DoctotLevelCode><DoctorLevel>3</DoctorLevel><DeptId>119</DeptId><DeptName>内分泌科门诊</DeptName><UserCode>FJHZY</UserCode><EffectiveSeqNo>下午:400</EffectiveSeqNo></Doctor></Doctors></Response>}
+1
+[pid: 5364|app: 0|req: 7/34] 10.3.204.31 () {48 vars in 934 bytes} [Thu Sep  2 16:07:10 2021] POST /CallPythonService => generated 1539 bytes in 57 msecs (HTTP/1.1 200) 5 headers in 173 bytes (1 switches on core 0)
+{"TradeCode":"GetDoctorPicture","DoctorCode":"D1784","serial_id":"1590","serial_number":"ydrwa4bgse","modal_code":"predoc","bd_id":9420}
+入参：{"TradeCode":"GetDoctorPicture","DoctorCode":"D1784","serial_id":"1590","serial_number":"ydrwa4bgse","modal_code":"predoc","bd_id":9420}
+开始取全局对象
+取全局对象成功
+开始生成根据客户端信息 10.3.204.31
+生成根据客户端信息成功 {'id': 4, 'ss_eqlistd_eqcode': 'DH31-46', 'ss_eqlistd_eqdesc': '开发机', 'ss_eqlistd_address': '46所3楼', 'ss_eqlistd_spec': '', 'ss_eqlistd_unit': '', 'ss_eqlistd_type': '', 'ss_eqlistd_ip': '10.3.204.31', 'ss_eqlistd_mac': '', 'ss_eqlistd_opdate': '2021-08-09 15:53:00', 'ss_eqlistd_closedate': '2021-08-09 15:53:00', 'ss_eqlistd_createdate': '2021-08-09 15:53:00', 'ss_eqlistd_creator': '', 'ss_eqlistd_update': '2021-08-09 15:53:00', 'ss_eqlistd_upuser': '', 'ss_eqlistd_role': 'admin'}
+开始生成业务主表信息
+queryst {'id': 1590}
+生成业务主表信息成功
+业务开始，入参参数= {'TradeCode': 'GetDoctorPicture', 'DoctorCode': 'D1784', 'serial_id': '1590', 'serial_number': 'ydrwa4bgse', 'modal_code': 'predoc', 'bd_id': 9420}
+开始生成患者基本信息
+生成患者基本信息成功
+获取患者基本信息成功：
+开始生成HIS患者基本信息
+his_patinfo <Response><ResultCode>0</ResultCode><PatInfos><PatInfo><PatientID>00000089</PatientID><PatientName>唐正飞</PatientName><Sex>男</Sex><SexCode>1</SexCode><DOB>1994-12-13</DOB><TelephoneNo>18611101542</TelephoneNo><Mobile>18611101542</Mobile><DocumentID></DocumentID><Address></Address><IDTypeCode>20</IDTypeCode><IDTypeDesc></IDTypeDesc><IDNo>622126199412131419</IDNo><InsureCardNo>TANGZHENGFEI</InsureCardNo><AccInfo>0^1182192^000000890001^0^^0^^1584^00000089^1182302^P^PC^1^^0^1182192^000000890001^0^^0^^1584^00000089^1182302^P^PC^1^</AccInfo><AccInfoBalance>0</AccInfoBalance><AccInfoNo>1182192</AccInfoNo><PatientCard>X0000149</PatientCard><YBFlag>0</YBFlag><PatType>自费</PatType><PatTypeCode>01</PatTypeCode><Age>27</Age></PatInfo></PatInfos></Response>
+生成HIS患者基本信息成功 00000089
+获取HIS患者基本信息成功：
+GetDoctorPicture参数开始 D1784
+1
+[pid: 5365|app: 0|req: 7/35] 10.3.204.31 () {48 vars in 934 bytes} [Thu Sep  2 16:07:10 2021] POST /CallPythonService => generated 39322 bytes in 131 msecs (HTTP/1.1 200) 5 headers in 174 bytes (1 switches on core 0)
+{"TradeCode":"GetDoctorPicture","DoctorCode":"PTH","serial_id":"1590","serial_number":"ydrwa4bgse","modal_code":"predoc","bd_id":9420}
+入参：{"TradeCode":"GetDoctorPicture","DoctorCode":"PTH","serial_id":"1590","serial_number":"ydrwa4bgse","modal_code":"predoc","bd_id":9420}
+开始取全局对象
+取全局对象成功
+开始生成根据客户端信息 10.3.204.31
+生成根据客户端信息成功 {'id': 4, 'ss_eqlistd_eqcode': 'DH31-46', 'ss_eqlistd_eqdesc': '开发机', 'ss_eqlistd_address': '46所3楼', 'ss_eqlistd_spec': '', 'ss_eqlistd_unit': '', 'ss_eqlistd_type': '', 'ss_eqlistd_ip': '10.3.204.31', 'ss_eqlistd_mac': '', 'ss_eqlistd_opdate': '2021-08-09 15:53:00', 'ss_eqlistd_closedate': '2021-08-09 15:53:00', 'ss_eqlistd_createdate': '2021-08-09 15:53:00', 'ss_eqlistd_creator': '', 'ss_eqlistd_update': '2021-08-09 15:53:00', 'ss_eqlistd_upuser': '', 'ss_eqlistd_role': 'admin'}
+开始生成业务主表信息
+queryst {'id': 1590}
+生成业务主表信息成功
+业务开始，入参参数= {'TradeCode': 'GetDoctorPicture', 'DoctorCode': 'PTH', 'serial_id': '1590', 'serial_number': 'ydrwa4bgse', 'modal_code': 'predoc', 'bd_id': 9420}
+开始生成患者基本信息
+生成患者基本信息成功
+获取患者基本信息成功：
+开始生成HIS患者基本信息
+his_patinfo <Response><ResultCode>0</ResultCode><PatInfos><PatInfo><PatientID>00000089</PatientID><PatientName>唐正飞</PatientName><Sex>男</Sex><SexCode>1</SexCode><DOB>1994-12-13</DOB><TelephoneNo>18611101542</TelephoneNo><Mobile>18611101542</Mobile><DocumentID></DocumentID><Address></Address><IDTypeCode>20</IDTypeCode><IDTypeDesc></IDTypeDesc><IDNo>622126199412131419</IDNo><InsureCardNo>TANGZHENGFEI</InsureCardNo><AccInfo>0^1182192^000000890001^0^^0^^1584^00000089^1182302^P^PC^1^^0^1182192^000000890001^0^^0^^1584^00000089^1182302^P^PC^1^</AccInfo><AccInfoBalance>0</AccInfoBalance><AccInfoNo>1182192</AccInfoNo><PatientCard>X0000149</PatientCard><YBFlag>0</YBFlag><PatType>自费</PatType><PatTypeCode>01</PatTypeCode><Age>27</Age></PatInfo></PatInfos></Response>
+生成HIS患者基本信息成功 00000089
+获取HIS患者基本信息成功：
+GetDoctorPicture参数开始 PTH
+1
+[pid: 5361|app: 0|req: 8/36] 10.3.204.31 () {48 vars in 934 bytes} [Thu Sep  2 16:07:10 2021] POST /CallPythonService => generated 4 bytes in 94 msecs (HTTP/1.1 200) 5 headers in 170 bytes (1 switches on core 0)
+{"TradeCode":"GetDoctorPicture","DoctorCode":"BMH","serial_id":"1590","serial_number":"ydrwa4bgse","modal_code":"predoc","bd_id":9420}
+入参：{"TradeCode":"GetDoctorPicture","DoctorCode":"BMH","serial_id":"1590","serial_number":"ydrwa4bgse","modal_code":"predoc","bd_id":9420}
+开始取全局对象
+取全局对象成功
+开始生成根据客户端信息 10.3.204.31
+生成根据客户端信息成功 {'id': 4, 'ss_eqlistd_eqcode': 'DH31-46', 'ss_eqlistd_eqdesc': '开发机', 'ss_eqlistd_address': '46所3楼', 'ss_eqlistd_spec': '', 'ss_eqlistd_unit': '', 'ss_eqlistd_type': '', 'ss_eqlistd_ip': '10.3.204.31', 'ss_eqlistd_mac': '', 'ss_eqlistd_opdate': '2021-08-09 15:53:00', 'ss_eqlistd_closedate': '2021-08-09 15:53:00', 'ss_eqlistd_createdate': '2021-08-09 15:53:00', 'ss_eqlistd_creator': '', 'ss_eqlistd_update': '2021-08-09 15:53:00', 'ss_eqlistd_upuser': '', 'ss_eqlistd_role': 'admin'}
+开始生成业务主表信息
+queryst {'id': 1590}
+生成业务主表信息成功
+业务开始，入参参数= {'TradeCode': 'GetDoctorPicture', 'DoctorCode': 'BMH', 'serial_id': '1590', 'serial_number': 'ydrwa4bgse', 'modal_code': 'predoc', 'bd_id': 9420}
+开始生成患者基本信息
+生成患者基本信息成功
+获取患者基本信息成功：
+开始生成HIS患者基本信息
+his_patinfo <Response><ResultCode>0</ResultCode><PatInfos><PatInfo><PatientID>00000089</PatientID><PatientName>唐正飞</PatientName><Sex>男</Sex><SexCode>1</SexCode><DOB>1994-12-13</DOB><TelephoneNo>18611101542</TelephoneNo><Mobile>18611101542</Mobile><DocumentID></DocumentID><Address></Address><IDTypeCode>20</IDTypeCode><IDTypeDesc></IDTypeDesc><IDNo>622126199412131419</IDNo><InsureCardNo>TANGZHENGFEI</InsureCardNo><AccInfo>0^1182192^000000890001^0^^0^^1584^00000089^1182302^P^PC^1^^0^1182192^000000890001^0^^0^^1584^00000089^1182302^P^PC^1^</AccInfo><AccInfoBalance>0</AccInfoBalance><AccInfoNo>1182192</AccInfoNo><PatientCard>X0000149</PatientCard><YBFlag>0</YBFlag><PatType>自费</PatType><PatTypeCode>01</PatTypeCode><Age>27</Age></PatInfo></PatInfos></Response>
+生成HIS患者基本信息成功 00000089
+获取HIS患者基本信息成功：
+GetDoctorPicture参数开始 BMH
+1
+[pid: 5362|app: 0|req: 8/37] 10.3.204.31 () {48 vars in 934 bytes} [Thu Sep  2 16:07:11 2021] POST /CallPythonService => generated 4 bytes in 97 msecs (HTTP/1.1 200) 5 headers in 170 bytes (1 switches on core 0)
+{"TradeCode":"GetDoctorPicture","DoctorCode":"D1344","serial_id":"1590","serial_number":"ydrwa4bgse","modal_code":"predoc","bd_id":9420}
+入参：{"TradeCode":"GetDoctorPicture","DoctorCode":"D1344","serial_id":"1590","serial_number":"ydrwa4bgse","modal_code":"predoc","bd_id":9420}
+开始取全局对象
+取全局对象成功
+开始生成根据客户端信息 10.3.204.31
+生成根据客户端信息成功 {'id': 4, 'ss_eqlistd_eqcode': 'DH31-46', 'ss_eqlistd_eqdesc': '开发机', 'ss_eqlistd_address': '46所3楼', 'ss_eqlistd_spec': '', 'ss_eqlistd_unit': '', 'ss_eqlistd_type': '', 'ss_eqlistd_ip': '10.3.204.31', 'ss_eqlistd_mac': '', 'ss_eqlistd_opdate': '2021-08-09 15:53:00', 'ss_eqlistd_closedate': '2021-08-09 15:53:00', 'ss_eqlistd_createdate': '2021-08-09 15:53:00', 'ss_eqlistd_creator': '', 'ss_eqlistd_update': '2021-08-09 15:53:00', 'ss_eqlistd_upuser': '', 'ss_eqlistd_role': 'admin'}
+开始生成业务主表信息
+queryst {'id': 1590}
+生成业务主表信息成功
+业务开始，入参参数= {'TradeCode': 'GetDoctorPicture', 'DoctorCode': 'D1344', 'serial_id': '1590', 'serial_number': 'ydrwa4bgse', 'modal_code': 'predoc', 'bd_id': 9420}
+开始生成患者基本信息
+生成患者基本信息成功
+获取患者基本信息成功：
+开始生成HIS患者基本信息
+his_patinfo <Response><ResultCode>0</ResultCode><PatInfos><PatInfo><PatientID>00000089</PatientID><PatientName>唐正飞</PatientName><Sex>男</Sex><SexCode>1</SexCode><DOB>1994-12-13</DOB><TelephoneNo>18611101542</TelephoneNo><Mobile>18611101542</Mobile><DocumentID></DocumentID><Address></Address><IDTypeCode>20</IDTypeCode><IDTypeDesc></IDTypeDesc><IDNo>622126199412131419</IDNo><InsureCardNo>TANGZHENGFEI</InsureCardNo><AccInfo>0^1182192^000000890001^0^^0^^1584^00000089^1182302^P^PC^1^^0^1182192^000000890001^0^^0^^1584^00000089^1182302^P^PC^1^</AccInfo><AccInfoBalance>0</AccInfoBalance><AccInfoNo>1182192</AccInfoNo><PatientCard>X0000149</PatientCard><YBFlag>0</YBFlag><PatType>自费</PatType><PatTypeCode>01</PatTypeCode><Age>27</Age></PatInfo></PatInfos></Response>
+生成HIS患者基本信息成功 00000089
+获取HIS患者基本信息成功：
+GetDoctorPicture参数开始 D1344
+1
+[pid: 5363|app: 0|req: 8/38] 10.3.204.31 () {48 vars in 934 bytes} [Thu Sep  2 16:07:11 2021] POST /CallPythonService => generated 40804 bytes in 118 msecs (HTTP/1.1 200) 5 headers in 174 bytes (1 switches on core 0)
+{"TradeCode":"CheckRule","CheckCode":"","serial_id":"1590","serial_number":"ydrwa4bgse","modal_code":"showreg","bd_id":9420}
+入参：{"TradeCode":"CheckRule","CheckCode":"","serial_id":"1590","serial_number":"ydrwa4bgse","modal_code":"showreg","bd_id":9420}
+开始取全局对象
+取全局对象成功
+开始生成根据客户端信息 10.3.204.31
+生成根据客户端信息成功 {'id': 4, 'ss_eqlistd_eqcode': 'DH31-46', 'ss_eqlistd_eqdesc': '开发机', 'ss_eqlistd_address': '46所3楼', 'ss_eqlistd_spec': '', 'ss_eqlistd_unit': '', 'ss_eqlistd_type': '', 'ss_eqlistd_ip': '10.3.204.31', 'ss_eqlistd_mac': '', 'ss_eqlistd_opdate': '2021-08-09 15:53:00', 'ss_eqlistd_closedate': '2021-08-09 15:53:00', 'ss_eqlistd_createdate': '2021-08-09 15:53:00', 'ss_eqlistd_creator': '', 'ss_eqlistd_update': '2021-08-09 15:53:00', 'ss_eqlistd_upuser': '', 'ss_eqlistd_role': 'admin'}
+开始生成业务主表信息
+queryst {'id': 1590}
+生成业务主表信息成功
+业务开始，入参参数= {'TradeCode': 'CheckRule', 'CheckCode': '', 'serial_id': '1590', 'serial_number': 'ydrwa4bgse', 'modal_code': 'showreg', 'bd_id': 9420}
+开始生成患者基本信息
+生成患者基本信息成功
+获取患者基本信息成功：
+开始生成HIS患者基本信息
+his_patinfo <Response><ResultCode>0</ResultCode><PatInfos><PatInfo><PatientID>00000089</PatientID><PatientName>唐正飞</PatientName><Sex>男</Sex><SexCode>1</SexCode><DOB>1994-12-13</DOB><TelephoneNo>18611101542</TelephoneNo><Mobile>18611101542</Mobile><DocumentID></DocumentID><Address></Address><IDTypeCode>20</IDTypeCode><IDTypeDesc></IDTypeDesc><IDNo>622126199412131419</IDNo><InsureCardNo>TANGZHENGFEI</InsureCardNo><AccInfo>0^1182192^000000890001^0^^0^^1584^00000089^1182302^P^PC^1^^0^1182192^000000890001^0^^0^^1584^00000089^1182302^P^PC^1^</AccInfo><AccInfoBalance>0</AccInfoBalance><AccInfoNo>1182192</AccInfoNo><PatientCard>X0000149</PatientCard><YBFlag>0</YBFlag><PatType>自费</PatType><PatTypeCode>01</PatTypeCode><Age>27</Age></PatInfo></PatInfos></Response>
+生成HIS患者基本信息成功 00000089
+获取HIS患者基本信息成功：
+checkfun
+1
+[pid: 5364|app: 0|req: 8/39] 10.3.204.31 () {48 vars in 934 bytes} [Thu Sep  2 16:07:12 2021] POST /CallPythonService => generated 60 bytes in 7 msecs (HTTP/1.1 200) 5 headers in 171 bytes (1 switches on core 0)
+{"TradeCode":"6666","intef_input":"&Param={\"DoctorCode\":\"897\",\"DoctorName\":\"普诊医师\",\"DoctotLevelCode\":\"主治医师\",\"DoctorLevel\":\"3\",\"DeptId\":\"119\",\"DeptName\":\"内分泌科门诊\",\"UserCode\":\"PTH\",\"EffectiveSeqNo\":\"下午:400\"}","serial_id":"1590","serial_number":"ydrwa4bgse","modal_code":"predoc","bd_id":9420}
+入参：{"TradeCode":"6666","intef_input":"&Param={\"DoctorCode\":\"897\",\"DoctorName\":\"普诊医师\",\"DoctotLevelCode\":\"主治医师\",\"DoctorLevel\":\"3\",\"DeptId\":\"119\",\"DeptName\":\"内分泌科门诊\",\"UserCode\":\"PTH\",\"EffectiveSeqNo\":\"下午:400\"}","serial_id":"1590","serial_number":"ydrwa4bgse","modal_code":"predoc","bd_id":9420}
+开始取全局对象
+取全局对象成功
+开始生成根据客户端信息 10.3.204.31
+生成根据客户端信息成功 {'id': 4, 'ss_eqlistd_eqcode': 'DH31-46', 'ss_eqlistd_eqdesc': '开发机', 'ss_eqlistd_address': '46所3楼', 'ss_eqlistd_spec': '', 'ss_eqlistd_unit': '', 'ss_eqlistd_type': '', 'ss_eqlistd_ip': '10.3.204.31', 'ss_eqlistd_mac': '', 'ss_eqlistd_opdate': '2021-08-09 15:53:00', 'ss_eqlistd_closedate': '2021-08-09 15:53:00', 'ss_eqlistd_createdate': '2021-08-09 15:53:00', 'ss_eqlistd_creator': '', 'ss_eqlistd_update': '2021-08-09 15:53:00', 'ss_eqlistd_upuser': '', 'ss_eqlistd_role': 'admin'}
+开始生成业务主表信息
+queryst {'id': 1590}
+生成业务主表信息成功
+业务开始，入参参数= {'TradeCode': '6666', 'intef_input': '&Param={"DoctorCode":"897","DoctorName":"普诊医师","DoctotLevelCode":"主治医师","DoctorLevel":"3","DeptId":"119","DeptName":"内分泌科门诊","UserCode":"PTH","EffectiveSeqNo":"下午:400"}', 'serial_id': '1590', 'serial_number': 'ydrwa4bgse', 'modal_code': 'predoc', 'bd_id': 9420}
+开始生成患者基本信息
+生成患者基本信息成功
+获取患者基本信息成功：
+开始生成HIS患者基本信息
+his_patinfo <Response><ResultCode>0</ResultCode><PatInfos><PatInfo><PatientID>00000089</PatientID><PatientName>唐正飞</PatientName><Sex>男</Sex><SexCode>1</SexCode><DOB>1994-12-13</DOB><TelephoneNo>18611101542</TelephoneNo><Mobile>18611101542</Mobile><DocumentID></DocumentID><Address></Address><IDTypeCode>20</IDTypeCode><IDTypeDesc></IDTypeDesc><IDNo>622126199412131419</IDNo><InsureCardNo>TANGZHENGFEI</InsureCardNo><AccInfo>0^1182192^000000890001^0^^0^^1584^00000089^1182302^P^PC^1^^0^1182192^000000890001^0^^0^^1584^00000089^1182302^P^PC^1^</AccInfo><AccInfoBalance>0</AccInfoBalance><AccInfoNo>1182192</AccInfoNo><PatientCard>X0000149</PatientCard><YBFlag>0</YBFlag><PatType>自费</PatType><PatTypeCode>01</PatTypeCode><Age>27</Age></PatInfo></PatInfos></Response>
+生成HIS患者基本信息成功 00000089
+获取HIS患者基本信息成功：
+__insert {'fk_businessmaster_id': '1590', 'serial_number': 'omipftu7rj', 'his_serial_number': None, 'modal_code': 'predoc', 'model_desc': None, 'intef_code': '6666', 'intef_desc': None, 'intef_input': '&Param={"DoctorCode":"897","DoctorName":"普诊医师","DoctotLevelCode":"主治医师","DoctorLevel":"3","DeptId":"119","DeptName":"内分泌科门诊","UserCode":"PTH","EffectiveSeqNo":"下午:400"}', 'intef_output': None}
+1
+[pid: 5365|app: 0|req: 8/40] 10.3.204.31 () {48 vars in 934 bytes} [Thu Sep  2 16:07:12 2021] POST /CallPythonService => generated 94 bytes in 10 msecs (HTTP/1.1 200) 5 headers in 171 bytes (1 switches on core 0)
+{"CheckCode":"RegCheck","TradeCode":"CheckRule","serial_id":"1590","serial_number":"ydrwa4bgse","modal_code":"showreg","bd_id":9422}
+入参：{"CheckCode":"RegCheck","TradeCode":"CheckRule","serial_id":"1590","serial_number":"ydrwa4bgse","modal_code":"showreg","bd_id":9422}
+开始取全局对象
+取全局对象成功
+开始生成根据客户端信息 10.3.204.31
+生成根据客户端信息成功 {'id': 4, 'ss_eqlistd_eqcode': 'DH31-46', 'ss_eqlistd_eqdesc': '开发机', 'ss_eqlistd_address': '46所3楼', 'ss_eqlistd_spec': '', 'ss_eqlistd_unit': '', 'ss_eqlistd_type': '', 'ss_eqlistd_ip': '10.3.204.31', 'ss_eqlistd_mac': '', 'ss_eqlistd_opdate': '2021-08-09 15:53:00', 'ss_eqlistd_closedate': '2021-08-09 15:53:00', 'ss_eqlistd_createdate': '2021-08-09 15:53:00', 'ss_eqlistd_creator': '', 'ss_eqlistd_update': '2021-08-09 15:53:00', 'ss_eqlistd_upuser': '', 'ss_eqlistd_role': 'admin'}
+开始生成业务主表信息
+queryst {'id': 1590}
+生成业务主表信息成功
+业务开始，入参参数= {'CheckCode': 'RegCheck', 'TradeCode': 'CheckRule', 'serial_id': '1590', 'serial_number': 'ydrwa4bgse', 'modal_code': 'showreg', 'bd_id': 9422}
+开始生成患者基本信息
+生成患者基本信息成功
+获取患者基本信息成功：
+开始生成HIS患者基本信息
+his_patinfo <Response><ResultCode>0</ResultCode><PatInfos><PatInfo><PatientID>00000089</PatientID><PatientName>唐正飞</PatientName><Sex>男</Sex><SexCode>1</SexCode><DOB>1994-12-13</DOB><TelephoneNo>18611101542</TelephoneNo><Mobile>18611101542</Mobile><DocumentID></DocumentID><Address></Address><IDTypeCode>20</IDTypeCode><IDTypeDesc></IDTypeDesc><IDNo>622126199412131419</IDNo><InsureCardNo>TANGZHENGFEI</InsureCardNo><AccInfo>0^1182192^000000890001^0^^0^^1584^00000089^1182302^P^PC^1^^0^1182192^000000890001^0^^0^^1584^00000089^1182302^P^PC^1^</AccInfo><AccInfoBalance>0</AccInfoBalance><AccInfoNo>1182192</AccInfoNo><PatientCard>X0000149</PatientCard><YBFlag>0</YBFlag><PatType>自费</PatType><PatTypeCode>01</PatTypeCode><Age>27</Age></PatInfo></PatInfos></Response>
+生成HIS患者基本信息成功 00000089
+获取HIS患者基本信息成功：
+checkfun
+queryst {'fk_businessmaster_id': 1590, 'modal_code': 'predoc', 'intef_code': '6666'}
+1
+[pid: 5361|app: 0|req: 9/41] 10.3.204.31 () {48 vars in 1207 bytes} [Thu Sep  2 16:07:13 2021] POST /CallPythonService => generated 60 bytes in 19 msecs (HTTP/1.1 200) 5 headers in 171 bytes (1 switches on core 0)
+{"TradeCode":"1004","serial_id":"1590","serial_number":"ydrwa4bgse","modal_code":"showreg","bd_id":9422}
+入参：{"TradeCode":"1004","serial_id":"1590","serial_number":"ydrwa4bgse","modal_code":"showreg","bd_id":9422}
+开始取全局对象
+取全局对象成功
+开始生成根据客户端信息 10.3.204.31
+生成根据客户端信息成功 {'id': 4, 'ss_eqlistd_eqcode': 'DH31-46', 'ss_eqlistd_eqdesc': '开发机', 'ss_eqlistd_address': '46所3楼', 'ss_eqlistd_spec': '', 'ss_eqlistd_unit': '', 'ss_eqlistd_type': '', 'ss_eqlistd_ip': '10.3.204.31', 'ss_eqlistd_mac': '', 'ss_eqlistd_opdate': '2021-08-09 15:53:00', 'ss_eqlistd_closedate': '2021-08-09 15:53:00', 'ss_eqlistd_createdate': '2021-08-09 15:53:00', 'ss_eqlistd_creator': '', 'ss_eqlistd_update': '2021-08-09 15:53:00', 'ss_eqlistd_upuser': '', 'ss_eqlistd_role': 'admin'}
+开始生成业务主表信息
+queryst {'id': 1590}
+生成业务主表信息成功
+业务开始，入参参数= {'TradeCode': '1004', 'serial_id': '1590', 'serial_number': 'ydrwa4bgse', 'modal_code': 'showreg', 'bd_id': 9422}
+开始生成患者基本信息
+生成患者基本信息成功
+获取患者基本信息成功：
+开始生成HIS患者基本信息
+his_patinfo <Response><ResultCode>0</ResultCode><PatInfos><PatInfo><PatientID>00000089</PatientID><PatientName>唐正飞</PatientName><Sex>男</Sex><SexCode>1</SexCode><DOB>1994-12-13</DOB><TelephoneNo>18611101542</TelephoneNo><Mobile>18611101542</Mobile><DocumentID></DocumentID><Address></Address><IDTypeCode>20</IDTypeCode><IDTypeDesc></IDTypeDesc><IDNo>622126199412131419</IDNo><InsureCardNo>TANGZHENGFEI</InsureCardNo><AccInfo>0^1182192^000000890001^0^^0^^1584^00000089^1182302^P^PC^1^^0^1182192^000000890001^0^^0^^1584^00000089^1182302^P^PC^1^</AccInfo><AccInfoBalance>0</AccInfoBalance><AccInfoNo>1182192</AccInfoNo><PatientCard>X0000149</PatientCard><YBFlag>0</YBFlag><PatType>自费</PatType><PatTypeCode>01</PatTypeCode><Age>27</Age></PatInfo></PatInfos></Response>
+生成HIS患者基本信息成功 00000089
+获取HIS患者基本信息成功：
+queryst {'fk_businessmaster_id': 1590, 'modal_code': 'predoc', 'intef_code': '6666'}
+组织HIS接口参数 <Request><Source>Reg</Source><TradeCode>1004</TradeCode><ExtOrgCode></ExtOrgCode><ClientType></ClientType><HospitalId>2</HospitalId><ExtUserID>reg</ExtUserID><StartDate></StartDate><EndDate></EndDate><DepartmentCode>119</DepartmentCode><ServiceCode></ServiceCode><DoctorCode>897</DoctorCode><RBASSessionCode></RBASSessionCode></Request>
+__insert {'fk_businessmaster_id': '1590', 'serial_number': 'cp61osj9b5', 'his_serial_number': None, 'modal_code': 'showreg', 'model_desc': None, 'intef_code': '1004', 'intef_desc': None, 'intef_input': '<Request><Source>Reg</Source><TradeCode>1004</TradeCode><ExtOrgCode></ExtOrgCode><ClientType></ClientType><HospitalId>2</HospitalId><ExtUserID>reg</ExtUserID><StartDate></StartDate><EndDate></EndDate><DepartmentCode>119</DepartmentCode><ServiceCode></ServiceCode><DoctorCode>897</DoctorCode><RBASSessionCode></RBASSessionCode></Request>', 'intef_output': None}
+content <Response><ResultCode>0</ResultCode><RecordCount>1</RecordCount><Schedules><Schedule><ScheduleItemCode>8923||25</ScheduleItemCode><ServiceDate>2021-09-02</ServiceDate><WeekDay>4</WeekDay><SessionCode>01</SessionCode><SessionName>上午</SessionName><StartTime>08:00</StartTime><EndTime>12:00</EndTime><DepartmentCode>119</DepartmentCode><DepartmentName>内分泌科门诊</DepartmentName><DoctorCode>897</DoctorCode><DoctorName>普诊医师</DoctorName><DoctorTitleCode>81</DoctorTitleCode><DoctorTitle>普通号</DoctorTitle><DoctorSessTypeCode>81</DoctorSessTypeCode><DoctorSessType>普通号</DoctorSessType><Fee>15</Fee><RegFee>0</RegFee><CheckupFee>15</CheckupFee><OtherFee>0</OtherFee><AvailableNumStr>11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48,49,50,51,52,53,54,55,56,57,58,59,60,61,62,63,64,65,66,67,68,69,70,71,72,73,74,75,76,77,78,79,80,81,82,83,84,85,86,87,88,89,90,91,92,93,94,95,96,97,98,99,100,101,102,103,104,105,106,107,108,109,110,111,112,113,114,115,116,117,118,119,120,121,122,123,124,125,126,127,128,129,130,131,132,133,134,135,136,137,138,139,140,141,142,143,144,145,146,147,148,149,150,151,152,153,154,155,156,157,158,159,160,161,162,163,164,165,166,167,168,169,170,171,172,173,174,175,176,177,178,179,180,181,182,183,184,185,186,187,188,189,190,191,192,193,194,195,196,197,198,199,200,201,202,203,204,205,206,207,208,209,210,211,212,213,214,215,216,217,218,219,220,221,222,223,224,225,226,227,228,229,230,231,232,233,234,235,236,237,238,239,240,241,242,243,244,245,246,247,248,249,250,251,252,253,254,255,256,257,258,259,260,261,262,263,264,265,266,267,268,269,270,271,272,273,274,275,276,277,278,279,280,281,282,283,284,285,286,287,288,289,290,291,292,293,294,295,296,297,298,299,300,301,302,303,304,305,306,307,308,309,310,311,312,313,314,315,316,317,318,319,320,321,322,323,324,325,326,327,328,329,330,331,332,333,334,335,336,337,338,339,340,341,342,343,344,345,346,347,348,349,350,351,352,353,354,355,356,357,358,359,360,361,362,363,364,365,366,367,368,369,370,371,372,373,374,375,376,377,378,379,380,381,382,383,384,385,386,387,388,389,390,391,392,393,394,395,396,397,398,399,400,401,402,403,404,405,406,407,408,409,410,411,412,413,414,415,416,417,418,419,420,421,422,423,424,425,426,427,428,429,430,431,432,433,434,435,436,437,438,439,440,441,442,443,444,445,446,447,448,449,450,451</AvailableNumStr><AdmitAddress>1层内科诊区11、12、13诊室</AdmitAddress><ScheduleStatus>1</ScheduleStatus><AvailableTotalNum>450</AvailableTotalNum><AvailableLeftNum>441</AvailableLeftNum><TimeRangeFlag>1</TimeRangeFlag><JointFlag>N</JointFlag></Schedule></Schedules></Response>
+__insert {'id': 9423, 'fk_businessmaster_id': '1590', 'serial_number': 'v4j753s0gp', 'his_serial_number': None, 'modal_code': 'showreg', 'model_desc': None, 'intef_code': '1004', 'intef_desc': None, 'intef_input': '<Request><Source>Reg</Source><TradeCode>1004</TradeCode><ExtOrgCode></ExtOrgCode><ClientType></ClientType><HospitalId>2</HospitalId><ExtUserID>reg</ExtUserID><StartDate></StartDate><EndDate></EndDate><DepartmentCode>119</DepartmentCode><ServiceCode></ServiceCode><DoctorCode>897</DoctorCode><RBASSessionCode></RBASSessionCode></Request>', 'intef_output': <Response><ResultCode>0</ResultCode><RecordCount>1</RecordCount><Schedules><Schedule><ScheduleItemCode>8923||25</ScheduleItemCode><ServiceDate>2021-09-02</ServiceDate><WeekDay>4</WeekDay><SessionCode>01</SessionCode><SessionName>上午</SessionName><StartTime>08:00</StartTime><EndTime>12:00</EndTime><DepartmentCode>119</DepartmentCode><DepartmentName>内分泌科门诊</DepartmentName><DoctorCode>897</DoctorCode><DoctorName>普诊医师</DoctorName><DoctorTitleCode>81</DoctorTitleCode><DoctorTitle>普通号</DoctorTitle><DoctorSessTypeCode>81</DoctorSessTypeCode><DoctorSessType>普通号</DoctorSessType><Fee>15</Fee><RegFee>0</RegFee><CheckupFee>15</CheckupFee><OtherFee>0</OtherFee><AvailableNumStr>11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48,49,50,51,52,53,54,55,56,57,58,59,60,61,62,63,64,65,66,67,68,69,70,71,72,73,74,75,76,77,78,79,80,81,82,83,84,85,86,87,88,89,90,91,92,93,94,95,96,97,98,99,100,101,102,103,104,105,106,107,108,109,110,111,112,113,114,115,116,117,118,119,120,121,122,123,124,125,126,127,128,129,130,131,132,133,134,135,136,137,138,139,140,141,142,143,144,145,146,147,148,149,150,151,152,153,154,155,156,157,158,159,160,161,162,163,164,165,166,167,168,169,170,171,172,173,174,175,176,177,178,179,180,181,182,183,184,185,186,187,188,189,190,191,192,193,194,195,196,197,198,199,200,201,202,203,204,205,206,207,208,209,210,211,212,213,214,215,216,217,218,219,220,221,222,223,224,225,226,227,228,229,230,231,232,233,234,235,236,237,238,239,240,241,242,243,244,245,246,247,248,249,250,251,252,253,254,255,256,257,258,259,260,261,262,263,264,265,266,267,268,269,270,271,272,273,274,275,276,277,278,279,280,281,282,283,284,285,286,287,288,289,290,291,292,293,294,295,296,297,298,299,300,301,302,303,304,305,306,307,308,309,310,311,312,313,314,315,316,317,318,319,320,321,322,323,324,325,326,327,328,329,330,331,332,333,334,335,336,337,338,339,340,341,342,343,344,345,346,347,348,349,350,351,352,353,354,355,356,357,358,359,360,361,362,363,364,365,366,367,368,369,370,371,372,373,374,375,376,377,378,379,380,381,382,383,384,385,386,387,388,389,390,391,392,393,394,395,396,397,398,399,400,401,402,403,404,405,406,407,408,409,410,411,412,413,414,415,416,417,418,419,420,421,422,423,424,425,426,427,428,429,430,431,432,433,434,435,436,437,438,439,440,441,442,443,444,445,446,447,448,449,450,451</AvailableNumStr><AdmitAddress>1层内科诊区11、12、13诊室</AdmitAddress><ScheduleStatus>1</ScheduleStatus><AvailableTotalNum>450</AvailableTotalNum><AvailableLeftNum>441</AvailableLeftNum><TimeRangeFlag>1</TimeRangeFlag><JointFlag>N</JointFlag></Schedule></Schedules></Response>}
+1
+[pid: 5362|app: 0|req: 9/42] 10.3.204.31 () {48 vars in 1207 bytes} [Thu Sep  2 16:07:13 2021] POST /CallPythonService => generated 2737 bytes in 81 msecs (HTTP/1.1 200) 5 headers in 173 bytes (1 switches on core 0)
+{"TradeCode":"SaveBD","modal_code":"ScheduleInfo","intef_output":"{\"ScheduleItemCode\":\"8923||25\",\"ServiceDate\":\"2021-09-02\",\"WeekDay\":\"4\",\"SessionCode\":\"01\",\"SessionName\":\"上午\",\"StartTime\":\"08:00\",\"EndTime\":\"12:00\",\"DepartmentCode\":\"119\",\"DepartmentName\":\"内分泌科门诊\",\"DoctorCode\":\"897\",\"DoctorName\":\"普诊医师\",\"DoctorTitleCode\":\"81\",\"DoctorTitle\":\"普通号\",\"DoctorSessTypeCode\":\"81\",\"DoctorSessType\":\"普通号\",\"Fee\":\"15\",\"RegFee\":\"0\",\"CheckupFee\":\"15\",\"OtherFee\":\"0\",\"AvailableNumStr\":\"11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48,49,50,51,52,53,54,55,56,57,58,59,60,61,62,63,64,65,66,67,68,69,70,71,72,73,74,75,76,77,78,79,80,81,82,83,84,85,86,87,88,89,90,91,92,93,94,95,96,97,98,99,100,101,102,103,104,105,106,107,108,109,110,111,112,113,114,115,116,117,118,119,120,121,122,123,124,125,126,127,128,129,130,131,132,133,134,135,136,137,138,139,140,141,142,143,144,145,146,147,148,149,150,151,152,153,154,155,156,157,158,159,160,161,162,163,164,165,166,167,168,169,170,171,172,173,174,175,176,177,178,179,180,181,182,183,184,185,186,187,188,189,190,191,192,193,194,195,196,197,198,199,200,201,202,203,204,205,206,207,208,209,210,211,212,213,214,215,216,217,218,219,220,221,222,223,224,225,226,227,228,229,230,231,232,233,234,235,236,237,238,239,240,241,242,243,244,245,246,247,248,249,250,251,252,253,254,255,256,257,258,259,260,261,262,263,264,265,266,267,268,269,270,271,272,273,274,275,276,277,278,279,280,281,282,283,284,285,286,287,288,289,290,291,292,293,294,295,296,297,298,299,300,301,302,303,304,305,306,307,308,309,310,311,312,313,314,315,316,317,318,319,320,321,322,323,324,325,326,327,328,329,330,331,332,333,334,335,336,337,338,339,340,341,342,343,344,345,346,347,348,349,350,351,352,353,354,355,356,357,358,359,360,361,362,363,364,365,366,367,368,369,370,371,372,373,374,375,376,377,378,379,380,381,382,383,384,385,386,387,388,389,390,391,392,393,394,395,396,397,398,399,400,401,402,403,404,405,406,407,408,409,410,411,412,413,414,415,416,417,418,419,420,421,422,423,424,425,426,427,428,429,430,431,432,433,434,435,436,437,438,439,440,441,442,443,444,445,446,447,448,449,450,451\",\"AdmitAddress\":\"1层内科诊区11、12、13诊室\",\"ScheduleStatus\":\"1\",\"AvailableTotalNum\":\"450\",\"AvailableLeftNum\":\"441\",\"TimeRangeFlag\":\"1\",\"JointFlag\":\"N\"}","serial_id":"1590","serial_number":"ydrwa4bgse","bd_id":9422}
+入参：{"TradeCode":"SaveBD","modal_code":"ScheduleInfo","intef_output":"{\"ScheduleItemCode\":\"8923||25\",\"ServiceDate\":\"2021-09-02\",\"WeekDay\":\"4\",\"SessionCode\":\"01\",\"SessionName\":\"上午\",\"StartTime\":\"08:00\",\"EndTime\":\"12:00\",\"DepartmentCode\":\"119\",\"DepartmentName\":\"内分泌科门诊\",\"DoctorCode\":\"897\",\"DoctorName\":\"普诊医师\",\"DoctorTitleCode\":\"81\",\"DoctorTitle\":\"普通号\",\"DoctorSessTypeCode\":\"81\",\"DoctorSessType\":\"普通号\",\"Fee\":\"15\",\"RegFee\":\"0\",\"CheckupFee\":\"15\",\"OtherFee\":\"0\",\"AvailableNumStr\":\"11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48,49,50,51,52,53,54,55,56,57,58,59,60,61,62,63,64,65,66,67,68,69,70,71,72,73,74,75,76,77,78,79,80,81,82,83,84,85,86,87,88,89,90,91,92,93,94,95,96,97,98,99,100,101,102,103,104,105,106,107,108,109,110,111,112,113,114,115,116,117,118,119,120,121,122,123,124,125,126,127,128,129,130,131,132,133,134,135,136,137,138,139,140,141,142,143,144,145,146,147,148,149,150,151,152,153,154,155,156,157,158,159,160,161,162,163,164,165,166,167,168,169,170,171,172,173,174,175,176,177,178,179,180,181,182,183,184,185,186,187,188,189,190,191,192,193,194,195,196,197,198,199,200,201,202,203,204,205,206,207,208,209,210,211,212,213,214,215,216,217,218,219,220,221,222,223,224,225,226,227,228,229,230,231,232,233,234,235,236,237,238,239,240,241,242,243,244,245,246,247,248,249,250,251,252,253,254,255,256,257,258,259,260,261,262,263,264,265,266,267,268,269,270,271,272,273,274,275,276,277,278,279,280,281,282,283,284,285,286,287,288,289,290,291,292,293,294,295,296,297,298,299,300,301,302,303,304,305,306,307,308,309,310,311,312,313,314,315,316,317,318,319,320,321,322,323,324,325,326,327,328,329,330,331,332,333,334,335,336,337,338,339,340,341,342,343,344,345,346,347,348,349,350,351,352,353,354,355,356,357,358,359,360,361,362,363,364,365,366,367,368,369,370,371,372,373,374,375,376,377,378,379,380,381,382,383,384,385,386,387,388,389,390,391,392,393,394,395,396,397,398,399,400,401,402,403,404,405,406,407,408,409,410,411,412,413,414,415,416,417,418,419,420,421,422,423,424,425,426,427,428,429,430,431,432,433,434,435,436,437,438,439,440,441,442,443,444,445,446,447,448,449,450,451\",\"AdmitAddress\":\"1层内科诊区11、12、13诊室\",\"ScheduleStatus\":\"1\",\"AvailableTotalNum\":\"450\",\"AvailableLeftNum\":\"441\",\"TimeRangeFlag\":\"1\",\"JointFlag\":\"N\"}","serial_id":"1590","serial_number":"ydrwa4bgse","bd_id":9422}
+开始取全局对象
+取全局对象成功
+开始生成根据客户端信息 10.3.204.31
+生成根据客户端信息成功 {'id': 4, 'ss_eqlistd_eqcode': 'DH31-46', 'ss_eqlistd_eqdesc': '开发机', 'ss_eqlistd_address': '46所3楼', 'ss_eqlistd_spec': '', 'ss_eqlistd_unit': '', 'ss_eqlistd_type': '', 'ss_eqlistd_ip': '10.3.204.31', 'ss_eqlistd_mac': '', 'ss_eqlistd_opdate': '2021-08-09 15:53:00', 'ss_eqlistd_closedate': '2021-08-09 15:53:00', 'ss_eqlistd_createdate': '2021-08-09 15:53:00', 'ss_eqlistd_creator': '', 'ss_eqlistd_update': '2021-08-09 15:53:00', 'ss_eqlistd_upuser': '', 'ss_eqlistd_role': 'admin'}
+开始生成业务主表信息
+queryst {'id': 1590}
+生成业务主表信息成功
+业务开始，入参参数= {'TradeCode': 'SaveBD', 'modal_code': 'ScheduleInfo', 'intef_output': '{"ScheduleItemCode":"8923||25","ServiceDate":"2021-09-02","WeekDay":"4","SessionCode":"01","SessionName":"上午","StartTime":"08:00","EndTime":"12:00","DepartmentCode":"119","DepartmentName":"内分泌科门诊","DoctorCode":"897","DoctorName":"普诊医师","DoctorTitleCode":"81","DoctorTitle":"普通号","DoctorSessTypeCode":"81","DoctorSessType":"普通号","Fee":"15","RegFee":"0","CheckupFee":"15","OtherFee":"0","AvailableNumStr":"11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48,49,50,51,52,53,54,55,56,57,58,59,60,61,62,63,64,65,66,67,68,69,70,71,72,73,74,75,76,77,78,79,80,81,82,83,84,85,86,87,88,89,90,91,92,93,94,95,96,97,98,99,100,101,102,103,104,105,106,107,108,109,110,111,112,113,114,115,116,117,118,119,120,121,122,123,124,125,126,127,128,129,130,131,132,133,134,135,136,137,138,139,140,141,142,143,144,145,146,147,148,149,150,151,152,153,154,155,156,157,158,159,160,161,162,163,164,165,166,167,168,169,170,171,172,173,174,175,176,177,178,179,180,181,182,183,184,185,186,187,188,189,190,191,192,193,194,195,196,197,198,199,200,201,202,203,204,205,206,207,208,209,210,211,212,213,214,215,216,217,218,219,220,221,222,223,224,225,226,227,228,229,230,231,232,233,234,235,236,237,238,239,240,241,242,243,244,245,246,247,248,249,250,251,252,253,254,255,256,257,258,259,260,261,262,263,264,265,266,267,268,269,270,271,272,273,274,275,276,277,278,279,280,281,282,283,284,285,286,287,288,289,290,291,292,293,294,295,296,297,298,299,300,301,302,303,304,305,306,307,308,309,310,311,312,313,314,315,316,317,318,319,320,321,322,323,324,325,326,327,328,329,330,331,332,333,334,335,336,337,338,339,340,341,342,343,344,345,346,347,348,349,350,351,352,353,354,355,356,357,358,359,360,361,362,363,364,365,366,367,368,369,370,371,372,373,374,375,376,377,378,379,380,381,382,383,384,385,386,387,388,389,390,391,392,393,394,395,396,397,398,399,400,401,402,403,404,405,406,407,408,409,410,411,412,413,414,415,416,417,418,419,420,421,422,423,424,425,426,427,428,429,430,431,432,433,434,435,436,437,438,439,440,441,442,443,444,445,446,447,448,449,450,451","AdmitAddress":"1层内科诊区11、12、13诊室","ScheduleStatus":"1","AvailableTotalNum":"450","AvailableLeftNum":"441","TimeRangeFlag":"1","JointFlag":"N"}', 'serial_id': '1590', 'serial_number': 'ydrwa4bgse', 'bd_id': 9422}
+开始生成患者基本信息
+生成患者基本信息成功
+获取患者基本信息成功：
+开始生成HIS患者基本信息
+his_patinfo <Response><ResultCode>0</ResultCode><PatInfos><PatInfo><PatientID>00000089</PatientID><PatientName>唐正飞</PatientName><Sex>男</Sex><SexCode>1</SexCode><DOB>1994-12-13</DOB><TelephoneNo>18611101542</TelephoneNo><Mobile>18611101542</Mobile><DocumentID></DocumentID><Address></Address><IDTypeCode>20</IDTypeCode><IDTypeDesc></IDTypeDesc><IDNo>622126199412131419</IDNo><InsureCardNo>TANGZHENGFEI</InsureCardNo><AccInfo>0^1182192^000000890001^0^^0^^1584^00000089^1182302^P^PC^1^^0^1182192^000000890001^0^^0^^1584^00000089^1182302^P^PC^1^</AccInfo><AccInfoBalance>0</AccInfoBalance><AccInfoNo>1182192</AccInfoNo><PatientCard>X0000149</PatientCard><YBFlag>0</YBFlag><PatType>自费</PatType><PatTypeCode>01</PatTypeCode><Age>27</Age></PatInfo></PatInfos></Response>
+生成HIS患者基本信息成功 00000089
+获取HIS患者基本信息成功：
+SaveBD参数开始
+__insert {'fk_businessmaster_id': '1590', 'serial_number': 'rg4ed26m19', 'his_serial_number': None, 'modal_code': 'ScheduleInfo', 'model_desc': None, 'intef_code': 'SaveBD', 'intef_desc': None, 'intef_input': None, 'intef_output': '{"ScheduleItemCode":"8923||25","ServiceDate":"2021-09-02","WeekDay":"4","SessionCode":"01","SessionName":"上午","StartTime":"08:00","EndTime":"12:00","DepartmentCode":"119","DepartmentName":"内分泌科门诊","DoctorCode":"897","DoctorName":"普诊医师","DoctorTitleCode":"81","DoctorTitle":"普通号","DoctorSessTypeCode":"81","DoctorSessType":"普通号","Fee":"15","RegFee":"0","CheckupFee":"15","OtherFee":"0","AvailableNumStr":"11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48,49,50,51,52,53,54,55,56,57,58,59,60,61,62,63,64,65,66,67,68,69,70,71,72,73,74,75,76,77,78,79,80,81,82,83,84,85,86,87,88,89,90,91,92,93,94,95,96,97,98,99,100,101,102,103,104,105,106,107,108,109,110,111,112,113,114,115,116,117,118,119,120,121,122,123,124,125,126,127,128,129,130,131,132,133,134,135,136,137,138,139,140,141,142,143,144,145,146,147,148,149,150,151,152,153,154,155,156,157,158,159,160,161,162,163,164,165,166,167,168,169,170,171,172,173,174,175,176,177,178,179,180,181,182,183,184,185,186,187,188,189,190,191,192,193,194,195,196,197,198,199,200,201,202,203,204,205,206,207,208,209,210,211,212,213,214,215,216,217,218,219,220,221,222,223,224,225,226,227,228,229,230,231,232,233,234,235,236,237,238,239,240,241,242,243,244,245,246,247,248,249,250,251,252,253,254,255,256,257,258,259,260,261,262,263,264,265,266,267,268,269,270,271,272,273,274,275,276,277,278,279,280,281,282,283,284,285,286,287,288,289,290,291,292,293,294,295,296,297,298,299,300,301,302,303,304,305,306,307,308,309,310,311,312,313,314,315,316,317,318,319,320,321,322,323,324,325,326,327,328,329,330,331,332,333,334,335,336,337,338,339,340,341,342,343,344,345,346,347,348,349,350,351,352,353,354,355,356,357,358,359,360,361,362,363,364,365,366,367,368,369,370,371,372,373,374,375,376,377,378,379,380,381,382,383,384,385,386,387,388,389,390,391,392,393,394,395,396,397,398,399,400,401,402,403,404,405,406,407,408,409,410,411,412,413,414,415,416,417,418,419,420,421,422,423,424,425,426,427,428,429,430,431,432,433,434,435,436,437,438,439,440,441,442,443,444,445,446,447,448,449,450,451","AdmitAddress":"1层内科诊区11、12、13诊室","ScheduleStatus":"1","AvailableTotalNum":"450","AvailableLeftNum":"441","TimeRangeFlag":"1","JointFlag":"N"}'}
+1
+[pid: 5363|app: 0|req: 9/43] 10.3.204.31 () {48 vars in 1209 bytes} [Thu Sep  2 16:07:13 2021] POST /CallPythonService => generated 154 bytes in 10 msecs (HTTP/1.1 200) 5 headers in 172 bytes (1 switches on core 0)
+{"TradeCode":"10015","serial_id":"1590","serial_number":"ydrwa4bgse","modal_code":"showreg","bd_id":9422}
+入参：{"TradeCode":"10015","serial_id":"1590","serial_number":"ydrwa4bgse","modal_code":"showreg","bd_id":9422}
+开始取全局对象
+取全局对象成功
+开始生成根据客户端信息 10.3.204.31
+生成根据客户端信息成功 {'id': 4, 'ss_eqlistd_eqcode': 'DH31-46', 'ss_eqlistd_eqdesc': '开发机', 'ss_eqlistd_address': '46所3楼', 'ss_eqlistd_spec': '', 'ss_eqlistd_unit': '', 'ss_eqlistd_type': '', 'ss_eqlistd_ip': '10.3.204.31', 'ss_eqlistd_mac': '', 'ss_eqlistd_opdate': '2021-08-09 15:53:00', 'ss_eqlistd_closedate': '2021-08-09 15:53:00', 'ss_eqlistd_createdate': '2021-08-09 15:53:00', 'ss_eqlistd_creator': '', 'ss_eqlistd_update': '2021-08-09 15:53:00', 'ss_eqlistd_upuser': '', 'ss_eqlistd_role': 'admin'}
+开始生成业务主表信息
+queryst {'id': 1590}
+生成业务主表信息成功
+业务开始，入参参数= {'TradeCode': '10015', 'serial_id': '1590', 'serial_number': 'ydrwa4bgse', 'modal_code': 'showreg', 'bd_id': 9422}
+开始生成患者基本信息
+生成患者基本信息成功
+获取患者基本信息成功：
+开始生成HIS患者基本信息
+his_patinfo <Response><ResultCode>0</ResultCode><PatInfos><PatInfo><PatientID>00000089</PatientID><PatientName>唐正飞</PatientName><Sex>男</Sex><SexCode>1</SexCode><DOB>1994-12-13</DOB><TelephoneNo>18611101542</TelephoneNo><Mobile>18611101542</Mobile><DocumentID></DocumentID><Address></Address><IDTypeCode>20</IDTypeCode><IDTypeDesc></IDTypeDesc><IDNo>622126199412131419</IDNo><InsureCardNo>TANGZHENGFEI</InsureCardNo><AccInfo>0^1182192^000000890001^0^^0^^1584^00000089^1182302^P^PC^1^^0^1182192^000000890001^0^^0^^1584^00000089^1182302^P^PC^1^</AccInfo><AccInfoBalance>0</AccInfoBalance><AccInfoNo>1182192</AccInfoNo><PatientCard>X0000149</PatientCard><YBFlag>0</YBFlag><PatType>自费</PatType><PatTypeCode>01</PatTypeCode><Age>27</Age></PatInfo></PatInfos></Response>
+生成HIS患者基本信息成功 00000089
+获取HIS患者基本信息成功：
+医保挂号扩展串开始： {'client_dict': {'id': 4, 'ss_eqlistd_eqcode': 'DH31-46', 'ss_eqlistd_eqdesc': '开发机', 'ss_eqlistd_address': '46所3楼', 'ss_eqlistd_spec': '', 'ss_eqlistd_unit': '', 'ss_eqlistd_type': '', 'ss_eqlistd_ip': '10.3.204.31', 'ss_eqlistd_mac': '', 'ss_eqlistd_opdate': '2021-08-09 15:53:00', 'ss_eqlistd_closedate': '2021-08-09 15:53:00', 'ss_eqlistd_createdate': '2021-08-09 15:53:00', 'ss_eqlistd_creator': '', 'ss_eqlistd_update': '2021-08-09 15:53:00', 'ss_eqlistd_upuser': '', 'ss_eqlistd_role': 'admin'}, 'serial_id': '1590', 'serial_number': 'ydrwa4bgse', 'business_type': 'Reg', 'processcode': 'Reg'}
+queryst {'fk_businessmaster_id': 1590, 'modal_code': 'ScheduleInfo', 'intef_code': 'SaveBD'}
+RequestStr <Request><TradeCode>10015</TradeCode><CardType>01</CardType><PatientID>00000089</PatientID><ExtUserID>ZZ1</ExtUserID><ScheduleItemCode>8923||25</ScheduleItemCode><PayOrderId></PayOrderId><LockQueueNo></LockQueueNo></Request>
+__insert {'fk_businessmaster_id': '1590', 'serial_number': 'vs92yqh6u3', 'his_serial_number': None, 'modal_code': 'showreg', 'model_desc': None, 'intef_code': '10015', 'intef_desc': None, 'intef_input': '<Request><TradeCode>10015</TradeCode><CardType>01</CardType><PatientID>00000089</PatientID><ExtUserID>ZZ1</ExtUserID><ScheduleItemCode>8923||25</ScheduleItemCode><PayOrderId></PayOrderId><LockQueueNo></LockQueueNo></Request>', 'intef_output': None}
+content <Response><TradeCode>10015</TradeCode><TransactionId>DHC000089210902160714</TransactionId><ResultCode>0</ResultCode><ResultContent>加号成功</ResultContent><LockQueueNo>11</LockQueueNo><ScheduleItemCode>8923||25</ScheduleItemCode><AdmDoc>普通号</AdmDoc><AdmDate>2021-09-02</AdmDate><AdmTime>上午</AdmTime><RegFee>15</RegFee></Response>
+__insert {'id': 9425, 'fk_businessmaster_id': '1590', 'serial_number': 'vykxh71l5u', 'his_serial_number': None, 'modal_code': 'showreg', 'model_desc': None, 'intef_code': '10015', 'intef_desc': None, 'intef_input': '<Request><TradeCode>10015</TradeCode><CardType>01</CardType><PatientID>00000089</PatientID><ExtUserID>ZZ1</ExtUserID><ScheduleItemCode>8923||25</ScheduleItemCode><PayOrderId></PayOrderId><LockQueueNo></LockQueueNo></Request>', 'intef_output': <Response><TradeCode>10015</TradeCode><TransactionId>DHC000089210902160714</TransactionId><ResultCode>0</ResultCode><ResultContent>加号成功</ResultContent><LockQueueNo>11</LockQueueNo><ScheduleItemCode>8923||25</ScheduleItemCode><AdmDoc>普通号</AdmDoc><AdmDate>2021-09-02</AdmDate><AdmTime>上午</AdmTime><RegFee>15</RegFee></Response>}
+Response {'result': '0', 'msg': '成功', 'output': <Response><TradeCode>10015</TradeCode><TransactionId>DHC000089210902160714</TransactionId><ResultCode>0</ResultCode><ResultContent>加号成功</ResultContent><LockQueueNo>11</LockQueueNo><ScheduleItemCode>8923||25</ScheduleItemCode><AdmDoc>普通号</AdmDoc><AdmDate>2021-09-02</AdmDate><AdmTime>上午</AdmTime><RegFee>15</RegFee></Response>, 'outputType': 'JSON'}
+1
+[pid: 5364|app: 0|req: 9/44] 10.3.204.31 () {48 vars in 1207 bytes} [Thu Sep  2 16:07:13 2021] POST /CallPythonService => generated 411 bytes in 53 msecs (HTTP/1.1 200) 5 headers in 172 bytes (1 switches on core 0)
+{"TradeCode":"CheckRule","CheckCode":"","serial_id":"1590","serial_number":"ydrwa4bgse","modal_code":"paymode","bd_id":9422}
+入参：{"TradeCode":"CheckRule","CheckCode":"","serial_id":"1590","serial_number":"ydrwa4bgse","modal_code":"paymode","bd_id":9422}
+开始取全局对象
+取全局对象成功
+开始生成根据客户端信息 10.3.204.31
+生成根据客户端信息成功 {'id': 4, 'ss_eqlistd_eqcode': 'DH31-46', 'ss_eqlistd_eqdesc': '开发机', 'ss_eqlistd_address': '46所3楼', 'ss_eqlistd_spec': '', 'ss_eqlistd_unit': '', 'ss_eqlistd_type': '', 'ss_eqlistd_ip': '10.3.204.31', 'ss_eqlistd_mac': '', 'ss_eqlistd_opdate': '2021-08-09 15:53:00', 'ss_eqlistd_closedate': '2021-08-09 15:53:00', 'ss_eqlistd_createdate': '2021-08-09 15:53:00', 'ss_eqlistd_creator': '', 'ss_eqlistd_update': '2021-08-09 15:53:00', 'ss_eqlistd_upuser': '', 'ss_eqlistd_role': 'admin'}
+开始生成业务主表信息
+queryst {'id': 1590}
+生成业务主表信息成功
+业务开始，入参参数= {'TradeCode': 'CheckRule', 'CheckCode': '', 'serial_id': '1590', 'serial_number': 'ydrwa4bgse', 'modal_code': 'paymode', 'bd_id': 9422}
+开始生成患者基本信息
+生成患者基本信息成功
+获取患者基本信息成功：
+开始生成HIS患者基本信息
+his_patinfo <Response><ResultCode>0</ResultCode><PatInfos><PatInfo><PatientID>00000089</PatientID><PatientName>唐正飞</PatientName><Sex>男</Sex><SexCode>1</SexCode><DOB>1994-12-13</DOB><TelephoneNo>18611101542</TelephoneNo><Mobile>18611101542</Mobile><DocumentID></DocumentID><Address></Address><IDTypeCode>20</IDTypeCode><IDTypeDesc></IDTypeDesc><IDNo>622126199412131419</IDNo><InsureCardNo>TANGZHENGFEI</InsureCardNo><AccInfo>0^1182192^000000890001^0^^0^^1584^00000089^1182302^P^PC^1^^0^1182192^000000890001^0^^0^^1584^00000089^1182302^P^PC^1^</AccInfo><AccInfoBalance>0</AccInfoBalance><AccInfoNo>1182192</AccInfoNo><PatientCard>X0000149</PatientCard><YBFlag>0</YBFlag><PatType>自费</PatType><PatTypeCode>01</PatTypeCode><Age>27</Age></PatInfo></PatInfos></Response>
+生成HIS患者基本信息成功 00000089
+获取HIS患者基本信息成功：
+checkfun
+1
+[pid: 5365|app: 0|req: 9/45] 10.3.204.31 () {48 vars in 1207 bytes} [Thu Sep  2 16:07:14 2021] POST /CallPythonService => generated 60 bytes in 7 msecs (HTTP/1.1 200) 5 headers in 171 bytes (1 switches on core 0)
+{"TradeCode":"6666","intef_input":"&Param= {\"ScheduleItemCode\":\"8923||25\",\"ServiceDate\":\"2021-09-02\",\"WeekDay\":\"4\",\"SessionCode\":\"01\",\"SessionName\":\"上午\",\"StartTime\":\"08:00\",\"EndTime\":\"12:00\",\"DepartmentCode\":\"119\",\"DepartmentName\":\"内分泌科门诊\",\"DoctorCode\":\"897\",\"DoctorName\":\"普诊医师\",\"DoctorTitleCode\":\"81\",\"DoctorTitle\":\"普通号\",\"DoctorSessTypeCode\":\"81\",\"DoctorSessType\":\"普通号\",\"Fee\":\"15\",\"RegFee\":\"0\",\"CheckupFee\":\"15\",\"OtherFee\":\"0\",\"AvailableNumStr\":\"11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48,49,50,51,52,53,54,55,56,57,58,59,60,61,62,63,64,65,66,67,68,69,70,71,72,73,74,75,76,77,78,79,80,81,82,83,84,85,86,87,88,89,90,91,92,93,94,95,96,97,98,99,100,101,102,103,104,105,106,107,108,109,110,111,112,113,114,115,116,117,118,119,120,121,122,123,124,125,126,127,128,129,130,131,132,133,134,135,136,137,138,139,140,141,142,143,144,145,146,147,148,149,150,151,152,153,154,155,156,157,158,159,160,161,162,163,164,165,166,167,168,169,170,171,172,173,174,175,176,177,178,179,180,181,182,183,184,185,186,187,188,189,190,191,192,193,194,195,196,197,198,199,200,201,202,203,204,205,206,207,208,209,210,211,212,213,214,215,216,217,218,219,220,221,222,223,224,225,226,227,228,229,230,231,232,233,234,235,236,237,238,239,240,241,242,243,244,245,246,247,248,249,250,251,252,253,254,255,256,257,258,259,260,261,262,263,264,265,266,267,268,269,270,271,272,273,274,275,276,277,278,279,280,281,282,283,284,285,286,287,288,289,290,291,292,293,294,295,296,297,298,299,300,301,302,303,304,305,306,307,308,309,310,311,312,313,314,315,316,317,318,319,320,321,322,323,324,325,326,327,328,329,330,331,332,333,334,335,336,337,338,339,340,341,342,343,344,345,346,347,348,349,350,351,352,353,354,355,356,357,358,359,360,361,362,363,364,365,366,367,368,369,370,371,372,373,374,375,376,377,378,379,380,381,382,383,384,385,386,387,388,389,390,391,392,393,394,395,396,397,398,399,400,401,402,403,404,405,406,407,408,409,410,411,412,413,414,415,416,417,418,419,420,421,422,423,424,425,426,427,428,429,430,431,432,433,434,435,436,437,438,439,440,441,442,443,444,445,446,447,448,449,450,451\",\"AdmitAddress\":\"1层内科诊区11、12、13诊室\",\"ScheduleStatus\":\"1\",\"AvailableTotalNum\":\"450\",\"AvailableLeftNum\":\"441\",\"TimeRangeFlag\":\"1\",\"JointFlag\":\"N\"}","serial_id":"1590","serial_number":"ydrwa4bgse","modal_code":"showreg","bd_id":9422}
+入参：{"TradeCode":"6666","intef_input":"&Param= {\"ScheduleItemCode\":\"8923||25\",\"ServiceDate\":\"2021-09-02\",\"WeekDay\":\"4\",\"SessionCode\":\"01\",\"SessionName\":\"上午\",\"StartTime\":\"08:00\",\"EndTime\":\"12:00\",\"DepartmentCode\":\"119\",\"DepartmentName\":\"内分泌科门诊\",\"DoctorCode\":\"897\",\"DoctorName\":\"普诊医师\",\"DoctorTitleCode\":\"81\",\"DoctorTitle\":\"普通号\",\"DoctorSessTypeCode\":\"81\",\"DoctorSessType\":\"普通号\",\"Fee\":\"15\",\"RegFee\":\"0\",\"CheckupFee\":\"15\",\"OtherFee\":\"0\",\"AvailableNumStr\":\"11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48,49,50,51,52,53,54,55,56,57,58,59,60,61,62,63,64,65,66,67,68,69,70,71,72,73,74,75,76,77,78,79,80,81,82,83,84,85,86,87,88,89,90,91,92,93,94,95,96,97,98,99,100,101,102,103,104,105,106,107,108,109,110,111,112,113,114,115,116,117,118,119,120,121,122,123,124,125,126,127,128,129,130,131,132,133,134,135,136,137,138,139,140,141,142,143,144,145,146,147,148,149,150,151,152,153,154,155,156,157,158,159,160,161,162,163,164,165,166,167,168,169,170,171,172,173,174,175,176,177,178,179,180,181,182,183,184,185,186,187,188,189,190,191,192,193,194,195,196,197,198,199,200,201,202,203,204,205,206,207,208,209,210,211,212,213,214,215,216,217,218,219,220,221,222,223,224,225,226,227,228,229,230,231,232,233,234,235,236,237,238,239,240,241,242,243,244,245,246,247,248,249,250,251,252,253,254,255,256,257,258,259,260,261,262,263,264,265,266,267,268,269,270,271,272,273,274,275,276,277,278,279,280,281,282,283,284,285,286,287,288,289,290,291,292,293,294,295,296,297,298,299,300,301,302,303,304,305,306,307,308,309,310,311,312,313,314,315,316,317,318,319,320,321,322,323,324,325,326,327,328,329,330,331,332,333,334,335,336,337,338,339,340,341,342,343,344,345,346,347,348,349,350,351,352,353,354,355,356,357,358,359,360,361,362,363,364,365,366,367,368,369,370,371,372,373,374,375,376,377,378,379,380,381,382,383,384,385,386,387,388,389,390,391,392,393,394,395,396,397,398,399,400,401,402,403,404,405,406,407,408,409,410,411,412,413,414,415,416,417,418,419,420,421,422,423,424,425,426,427,428,429,430,431,432,433,434,435,436,437,438,439,440,441,442,443,444,445,446,447,448,449,450,451\",\"AdmitAddress\":\"1层内科诊区11、12、13诊室\",\"ScheduleStatus\":\"1\",\"AvailableTotalNum\":\"450\",\"AvailableLeftNum\":\"441\",\"TimeRangeFlag\":\"1\",\"JointFlag\":\"N\"}","serial_id":"1590","serial_number":"ydrwa4bgse","modal_code":"showreg","bd_id":9422}
+开始取全局对象
+取全局对象成功
+开始生成根据客户端信息 10.3.204.31
+生成根据客户端信息成功 {'id': 4, 'ss_eqlistd_eqcode': 'DH31-46', 'ss_eqlistd_eqdesc': '开发机', 'ss_eqlistd_address': '46所3楼', 'ss_eqlistd_spec': '', 'ss_eqlistd_unit': '', 'ss_eqlistd_type': '', 'ss_eqlistd_ip': '10.3.204.31', 'ss_eqlistd_mac': '', 'ss_eqlistd_opdate': '2021-08-09 15:53:00', 'ss_eqlistd_closedate': '2021-08-09 15:53:00', 'ss_eqlistd_createdate': '2021-08-09 15:53:00', 'ss_eqlistd_creator': '', 'ss_eqlistd_update': '2021-08-09 15:53:00', 'ss_eqlistd_upuser': '', 'ss_eqlistd_role': 'admin'}
+开始生成业务主表信息
+queryst {'id': 1590}
+生成业务主表信息成功
+业务开始，入参参数= {'TradeCode': '6666', 'intef_input': '&Param= {"ScheduleItemCode":"8923||25","ServiceDate":"2021-09-02","WeekDay":"4","SessionCode":"01","SessionName":"上午","StartTime":"08:00","EndTime":"12:00","DepartmentCode":"119","DepartmentName":"内分泌科门诊","DoctorCode":"897","DoctorName":"普诊医师","DoctorTitleCode":"81","DoctorTitle":"普通号","DoctorSessTypeCode":"81","DoctorSessType":"普通号","Fee":"15","RegFee":"0","CheckupFee":"15","OtherFee":"0","AvailableNumStr":"11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48,49,50,51,52,53,54,55,56,57,58,59,60,61,62,63,64,65,66,67,68,69,70,71,72,73,74,75,76,77,78,79,80,81,82,83,84,85,86,87,88,89,90,91,92,93,94,95,96,97,98,99,100,101,102,103,104,105,106,107,108,109,110,111,112,113,114,115,116,117,118,119,120,121,122,123,124,125,126,127,128,129,130,131,132,133,134,135,136,137,138,139,140,141,142,143,144,145,146,147,148,149,150,151,152,153,154,155,156,157,158,159,160,161,162,163,164,165,166,167,168,169,170,171,172,173,174,175,176,177,178,179,180,181,182,183,184,185,186,187,188,189,190,191,192,193,194,195,196,197,198,199,200,201,202,203,204,205,206,207,208,209,210,211,212,213,214,215,216,217,218,219,220,221,222,223,224,225,226,227,228,229,230,231,232,233,234,235,236,237,238,239,240,241,242,243,244,245,246,247,248,249,250,251,252,253,254,255,256,257,258,259,260,261,262,263,264,265,266,267,268,269,270,271,272,273,274,275,276,277,278,279,280,281,282,283,284,285,286,287,288,289,290,291,292,293,294,295,296,297,298,299,300,301,302,303,304,305,306,307,308,309,310,311,312,313,314,315,316,317,318,319,320,321,322,323,324,325,326,327,328,329,330,331,332,333,334,335,336,337,338,339,340,341,342,343,344,345,346,347,348,349,350,351,352,353,354,355,356,357,358,359,360,361,362,363,364,365,366,367,368,369,370,371,372,373,374,375,376,377,378,379,380,381,382,383,384,385,386,387,388,389,390,391,392,393,394,395,396,397,398,399,400,401,402,403,404,405,406,407,408,409,410,411,412,413,414,415,416,417,418,419,420,421,422,423,424,425,426,427,428,429,430,431,432,433,434,435,436,437,438,439,440,441,442,443,444,445,446,447,448,449,450,451","AdmitAddress":"1层内科诊区11、12、13诊室","ScheduleStatus":"1","AvailableTotalNum":"450","AvailableLeftNum":"441","TimeRangeFlag":"1","JointFlag":"N"}', 'serial_id': '1590', 'serial_number': 'ydrwa4bgse', 'modal_code': 'showreg', 'bd_id': 9422}
+开始生成患者基本信息
+生成患者基本信息成功
+获取患者基本信息成功：
+开始生成HIS患者基本信息
+his_patinfo <Response><ResultCode>0</ResultCode><PatInfos><PatInfo><PatientID>00000089</PatientID><PatientName>唐正飞</PatientName><Sex>男</Sex><SexCode>1</SexCode><DOB>1994-12-13</DOB><TelephoneNo>18611101542</TelephoneNo><Mobile>18611101542</Mobile><DocumentID></DocumentID><Address></Address><IDTypeCode>20</IDTypeCode><IDTypeDesc></IDTypeDesc><IDNo>622126199412131419</IDNo><InsureCardNo>TANGZHENGFEI</InsureCardNo><AccInfo>0^1182192^000000890001^0^^0^^1584^00000089^1182302^P^PC^1^^0^1182192^000000890001^0^^0^^1584^00000089^1182302^P^PC^1^</AccInfo><AccInfoBalance>0</AccInfoBalance><AccInfoNo>1182192</AccInfoNo><PatientCard>X0000149</PatientCard><YBFlag>0</YBFlag><PatType>自费</PatType><PatTypeCode>01</PatTypeCode><Age>27</Age></PatInfo></PatInfos></Response>
+生成HIS患者基本信息成功 00000089
+获取HIS患者基本信息成功：
+__insert {'fk_businessmaster_id': '1590', 'serial_number': 'dy3qrv1klj', 'his_serial_number': None, 'modal_code': 'showreg', 'model_desc': None, 'intef_code': '6666', 'intef_desc': None, 'intef_input': '&Param= {"ScheduleItemCode":"8923||25","ServiceDate":"2021-09-02","WeekDay":"4","SessionCode":"01","SessionName":"上午","StartTime":"08:00","EndTime":"12:00","DepartmentCode":"119","DepartmentName":"内分泌科门诊","DoctorCode":"897","DoctorName":"普诊医师","DoctorTitleCode":"81","DoctorTitle":"普通号","DoctorSessTypeCode":"81","DoctorSessType":"普通号","Fee":"15","RegFee":"0","CheckupFee":"15","OtherFee":"0","AvailableNumStr":"11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48,49,50,51,52,53,54,55,56,57,58,59,60,61,62,63,64,65,66,67,68,69,70,71,72,73,74,75,76,77,78,79,80,81,82,83,84,85,86,87,88,89,90,91,92,93,94,95,96,97,98,99,100,101,102,103,104,105,106,107,108,109,110,111,112,113,114,115,116,117,118,119,120,121,122,123,124,125,126,127,128,129,130,131,132,133,134,135,136,137,138,139,140,141,142,143,144,145,146,147,148,149,150,151,152,153,154,155,156,157,158,159,160,161,162,163,164,165,166,167,168,169,170,171,172,173,174,175,176,177,178,179,180,181,182,183,184,185,186,187,188,189,190,191,192,193,194,195,196,197,198,199,200,201,202,203,204,205,206,207,208,209,210,211,212,213,214,215,216,217,218,219,220,221,222,223,224,225,226,227,228,229,230,231,232,233,234,235,236,237,238,239,240,241,242,243,244,245,246,247,248,249,250,251,252,253,254,255,256,257,258,259,260,261,262,263,264,265,266,267,268,269,270,271,272,273,274,275,276,277,278,279,280,281,282,283,284,285,286,287,288,289,290,291,292,293,294,295,296,297,298,299,300,301,302,303,304,305,306,307,308,309,310,311,312,313,314,315,316,317,318,319,320,321,322,323,324,325,326,327,328,329,330,331,332,333,334,335,336,337,338,339,340,341,342,343,344,345,346,347,348,349,350,351,352,353,354,355,356,357,358,359,360,361,362,363,364,365,366,367,368,369,370,371,372,373,374,375,376,377,378,379,380,381,382,383,384,385,386,387,388,389,390,391,392,393,394,395,396,397,398,399,400,401,402,403,404,405,406,407,408,409,410,411,412,413,414,415,416,417,418,419,420,421,422,423,424,425,426,427,428,429,430,431,432,433,434,435,436,437,438,439,440,441,442,443,444,445,446,447,448,449,450,451","AdmitAddress":"1层内科诊区11、12、13诊室","ScheduleStatus":"1","AvailableTotalNum":"450","AvailableLeftNum":"441","TimeRangeFlag":"1","JointFlag":"N"}', 'intef_output': None}
+1
+[pid: 5361|app: 0|req: 10/46] 10.3.204.31 () {48 vars in 1209 bytes} [Thu Sep  2 16:07:14 2021] POST /CallPythonService => generated 94 bytes in 10 msecs (HTTP/1.1 200) 5 headers in 171 bytes (1 switches on core 0)
+{"TradeCode":"CheckRule","CheckCode":"","serial_id":"1590","serial_number":"ydrwa4bgse","modal_code":"pay","bd_id":9426}
+入参：{"TradeCode":"CheckRule","CheckCode":"","serial_id":"1590","serial_number":"ydrwa4bgse","modal_code":"pay","bd_id":9426}
+开始取全局对象
+取全局对象成功
+开始生成根据客户端信息 10.3.204.31
+生成根据客户端信息成功 {'id': 4, 'ss_eqlistd_eqcode': 'DH31-46', 'ss_eqlistd_eqdesc': '开发机', 'ss_eqlistd_address': '46所3楼', 'ss_eqlistd_spec': '', 'ss_eqlistd_unit': '', 'ss_eqlistd_type': '', 'ss_eqlistd_ip': '10.3.204.31', 'ss_eqlistd_mac': '', 'ss_eqlistd_opdate': '2021-08-09 15:53:00', 'ss_eqlistd_closedate': '2021-08-09 15:53:00', 'ss_eqlistd_createdate': '2021-08-09 15:53:00', 'ss_eqlistd_creator': '', 'ss_eqlistd_update': '2021-08-09 15:53:00', 'ss_eqlistd_upuser': '', 'ss_eqlistd_role': 'admin'}
+开始生成业务主表信息
+queryst {'id': 1590}
+生成业务主表信息成功
+业务开始，入参参数= {'TradeCode': 'CheckRule', 'CheckCode': '', 'serial_id': '1590', 'serial_number': 'ydrwa4bgse', 'modal_code': 'pay', 'bd_id': 9426}
+开始生成患者基本信息
+生成患者基本信息成功
+获取患者基本信息成功：
+开始生成HIS患者基本信息
+his_patinfo <Response><ResultCode>0</ResultCode><PatInfos><PatInfo><PatientID>00000089</PatientID><PatientName>唐正飞</PatientName><Sex>男</Sex><SexCode>1</SexCode><DOB>1994-12-13</DOB><TelephoneNo>18611101542</TelephoneNo><Mobile>18611101542</Mobile><DocumentID></DocumentID><Address></Address><IDTypeCode>20</IDTypeCode><IDTypeDesc></IDTypeDesc><IDNo>622126199412131419</IDNo><InsureCardNo>TANGZHENGFEI</InsureCardNo><AccInfo>0^1182192^000000890001^0^^0^^1584^00000089^1182302^P^PC^1^^0^1182192^000000890001^0^^0^^1584^00000089^1182302^P^PC^1^</AccInfo><AccInfoBalance>0</AccInfoBalance><AccInfoNo>1182192</AccInfoNo><PatientCard>X0000149</PatientCard><YBFlag>0</YBFlag><PatType>自费</PatType><PatTypeCode>01</PatTypeCode><Age>27</Age></PatInfo></PatInfos></Response>
+生成HIS患者基本信息成功 00000089
+获取HIS患者基本信息成功：
+checkfun
+1
+[pid: 5362|app: 0|req: 10/47] 10.3.204.31 () {48 vars in 3510 bytes} [Thu Sep  2 16:07:16 2021] POST /CallPythonService => generated 60 bytes in 7 msecs (HTTP/1.1 200) 5 headers in 171 bytes (1 switches on core 0)
+{"TradeCode":"6666","intef_input":"&PayModeCode=WECHAT&PayModeId=46","serial_id":"1590","serial_number":"ydrwa4bgse","modal_code":"paymode","bd_id":9426}
+入参：{"TradeCode":"6666","intef_input":"&PayModeCode=WECHAT&PayModeId=46","serial_id":"1590","serial_number":"ydrwa4bgse","modal_code":"paymode","bd_id":9426}
+开始取全局对象
+取全局对象成功
+开始生成根据客户端信息 10.3.204.31
+生成根据客户端信息成功 {'id': 4, 'ss_eqlistd_eqcode': 'DH31-46', 'ss_eqlistd_eqdesc': '开发机', 'ss_eqlistd_address': '46所3楼', 'ss_eqlistd_spec': '', 'ss_eqlistd_unit': '', 'ss_eqlistd_type': '', 'ss_eqlistd_ip': '10.3.204.31', 'ss_eqlistd_mac': '', 'ss_eqlistd_opdate': '2021-08-09 15:53:00', 'ss_eqlistd_closedate': '2021-08-09 15:53:00', 'ss_eqlistd_createdate': '2021-08-09 15:53:00', 'ss_eqlistd_creator': '', 'ss_eqlistd_update': '2021-08-09 15:53:00', 'ss_eqlistd_upuser': '', 'ss_eqlistd_role': 'admin'}
+开始生成业务主表信息
+queryst {'id': 1590}
+生成业务主表信息成功
+业务开始，入参参数= {'TradeCode': '6666', 'intef_input': '&PayModeCode=WECHAT&PayModeId=46', 'serial_id': '1590', 'serial_number': 'ydrwa4bgse', 'modal_code': 'paymode', 'bd_id': 9426}
+开始生成患者基本信息
+生成患者基本信息成功
+获取患者基本信息成功：
+开始生成HIS患者基本信息
+his_patinfo <Response><ResultCode>0</ResultCode><PatInfos><PatInfo><PatientID>00000089</PatientID><PatientName>唐正飞</PatientName><Sex>男</Sex><SexCode>1</SexCode><DOB>1994-12-13</DOB><TelephoneNo>18611101542</TelephoneNo><Mobile>18611101542</Mobile><DocumentID></DocumentID><Address></Address><IDTypeCode>20</IDTypeCode><IDTypeDesc></IDTypeDesc><IDNo>622126199412131419</IDNo><InsureCardNo>TANGZHENGFEI</InsureCardNo><AccInfo>0^1182192^000000890001^0^^0^^1584^00000089^1182302^P^PC^1^^0^1182192^000000890001^0^^0^^1584^00000089^1182302^P^PC^1^</AccInfo><AccInfoBalance>0</AccInfoBalance><AccInfoNo>1182192</AccInfoNo><PatientCard>X0000149</PatientCard><YBFlag>0</YBFlag><PatType>自费</PatType><PatTypeCode>01</PatTypeCode><Age>27</Age></PatInfo></PatInfos></Response>
+生成HIS患者基本信息成功 00000089
+获取HIS患者基本信息成功：
+__insert {'fk_businessmaster_id': '1590', 'serial_number': 'xg10hqc8o5', 'his_serial_number': None, 'modal_code': 'paymode', 'model_desc': None, 'intef_code': '6666', 'intef_desc': None, 'intef_input': '&PayModeCode=WECHAT&PayModeId=46', 'intef_output': None}
+1
+[pid: 5363|app: 0|req: 10/48] 10.3.204.31 () {48 vars in 3510 bytes} [Thu Sep  2 16:07:16 2021] POST /CallPythonService => generated 94 bytes in 9 msecs (HTTP/1.1 200) 5 headers in 171 bytes (1 switches on core 0)
+{"TradeCode":"ExtPay","serial_id":"1590","serial_number":"ydrwa4bgse","modal_code":"pay","bd_id":9427}
+入参：{"TradeCode":"ExtPay","serial_id":"1590","serial_number":"ydrwa4bgse","modal_code":"pay","bd_id":9427}
+开始取全局对象
+取全局对象成功
+开始生成根据客户端信息 10.3.204.31
+生成根据客户端信息成功 {'id': 4, 'ss_eqlistd_eqcode': 'DH31-46', 'ss_eqlistd_eqdesc': '开发机', 'ss_eqlistd_address': '46所3楼', 'ss_eqlistd_spec': '', 'ss_eqlistd_unit': '', 'ss_eqlistd_type': '', 'ss_eqlistd_ip': '10.3.204.31', 'ss_eqlistd_mac': '', 'ss_eqlistd_opdate': '2021-08-09 15:53:00', 'ss_eqlistd_closedate': '2021-08-09 15:53:00', 'ss_eqlistd_createdate': '2021-08-09 15:53:00', 'ss_eqlistd_creator': '', 'ss_eqlistd_update': '2021-08-09 15:53:00', 'ss_eqlistd_upuser': '', 'ss_eqlistd_role': 'admin'}
+开始生成业务主表信息
+queryst {'id': 1590}
+生成业务主表信息成功
+业务开始，入参参数= {'TradeCode': 'ExtPay', 'serial_id': '1590', 'serial_number': 'ydrwa4bgse', 'modal_code': 'pay', 'bd_id': 9427}
+开始生成患者基本信息
+生成患者基本信息成功
+获取患者基本信息成功：
+开始生成HIS患者基本信息
+his_patinfo <Response><ResultCode>0</ResultCode><PatInfos><PatInfo><PatientID>00000089</PatientID><PatientName>唐正飞</PatientName><Sex>男</Sex><SexCode>1</SexCode><DOB>1994-12-13</DOB><TelephoneNo>18611101542</TelephoneNo><Mobile>18611101542</Mobile><DocumentID></DocumentID><Address></Address><IDTypeCode>20</IDTypeCode><IDTypeDesc></IDTypeDesc><IDNo>622126199412131419</IDNo><InsureCardNo>TANGZHENGFEI</InsureCardNo><AccInfo>0^1182192^000000890001^0^^0^^1584^00000089^1182302^P^PC^1^^0^1182192^000000890001^0^^0^^1584^00000089^1182302^P^PC^1^</AccInfo><AccInfoBalance>0</AccInfoBalance><AccInfoNo>1182192</AccInfoNo><PatientCard>X0000149</PatientCard><YBFlag>0</YBFlag><PatType>自费</PatType><PatTypeCode>01</PatTypeCode><Age>27</Age></PatInfo></PatInfos></Response>
+生成HIS患者基本信息成功 00000089
+获取HIS患者基本信息成功：
+开始第三方支付
+queryst {'fk_businessmaster_id': 1590, 'modal_code': 'insutype', 'intef_code': '6666'}
+queryst {'fk_businessmaster_id': 1590, 'modal_code': 'paymode', 'intef_code': '6666'}
+queryst {'fk_businessmaster_id': 1590, 'intef_code': '10015'}
+sign
+business_type=regist-day&mch_appid=1629983059933605&mch_notify_url=http://geteway.clear-sz.com/DHC/SelfPay/PayCallBack&mch_order_id=DHC000089210902160714&order_amt=0.01&order_detail=当日挂号&order_subject=当日挂号&org_code=50821&patient_id=00000089&patient_name=唐正飞&patient_type=1&pay_option=WxPay&terminal_id=DH31-46&time_expire=300&user_client_ip=10.3.204.31&key=A09462711DC94490AD803D7BC9983545
+2.1获取支付入参 {"org_code": "50821", "mch_appid": "1629983059933605", "mch_order_id": "DHC000089210902160714", "mch_notify_url": "http://geteway.clear-sz.com/DHC/SelfPay/PayCallBack", "order_amt": "0.01", "order_ccy": "", "order_subject": "\u5f53\u65e5\u6302\u53f7", "order_detail": "\u5f53\u65e5\u6302\u53f7", "pay_option": "WxPay", "patient_id": "00000089", "patient_name": "\u5510\u6b63\u98de", "patient_type": "1", "terminal_id": "DH31-46", "user_client_ip": "10.3.204.31", "business_type": "regist-day", "time_expire": "300", "extend_params": "", "sign": "B2ACC33BD1DEAE8D4AC0FE84A499ACBF", "sign_type": "MD5", "proxy_channel": ""}
+支付参数 {"appKey": "1629983059933605", "appSecret": "A09462711DC94490AD803D7BC9983545"}
+支付接口 sys-auth/channel/oauth/token
+支付权限 
+headers {'Content-Type': 'application/json'}
+{"code":200,"message":"success","result":{"accessToken":"3362dc8d-294b-457f-9d02-fdfc9c2db8347749648f-3847-4be4-9063-94aa0e9ac82d","refreshToken":"89b8ab6c-f288-4c2e-9758-98fe8d0297ee2b1b7272-6249-4f45-88e4-a27a6cb3a020","expiresIn":307,"scope":"chlapp","tokenType":"password"}}
+支付参数 {"org_code": "50821", "mch_appid": "1629983059933605", "mch_order_id": "DHC000089210902160714", "mch_notify_url": "http://geteway.clear-sz.com/DHC/SelfPay/PayCallBack", "order_amt": "0.01", "order_ccy": "", "order_subject": "\u5f53\u65e5\u6302\u53f7", "order_detail": "\u5f53\u65e5\u6302\u53f7", "pay_option": "WxPay", "patient_id": "00000089", "patient_name": "\u5510\u6b63\u98de", "patient_type": "1", "terminal_id": "DH31-46", "user_client_ip": "10.3.204.31", "business_type": "regist-day", "time_expire": "300", "extend_params": "", "sign": "B2ACC33BD1DEAE8D4AC0FE84A499ACBF", "sign_type": "MD5", "proxy_channel": ""}
+支付接口 /jdpay/core/nativepay
+支付权限 3362dc8d-294b-457f-9d02-fdfc9c2db8347749648f-3847-4be4-9063-94aa0e9ac82d
+headers {'Content-Type': 'application/json', 'Authorization-Token': '3362dc8d-294b-457f-9d02-fdfc9c2db8347749648f-3847-4be4-9063-94aa0e9ac82d'}
+{"result":{"extend_params":"","mch_order_id":"DHC000089210902160714","qrcode_content":"weixin://wxpay/bizpayurl?pr=KPdL4Ndzz","pay_id":"12001201166217081874944000"},"code":200,"sign":"3E448FF79FEBE9CC7D1B64B0D305AECB","message":"success","sign_type":"MD5"}
+2.1获取支付 {"result":{"extend_params":"","mch_order_id":"DHC000089210902160714","qrcode_content":"weixin://wxpay/bizpayurl?pr=KPdL4Ndzz","pay_id":"12001201166217081874944000"},"code":200,"sign":"3E448FF79FEBE9CC7D1B64B0D305AECB","message":"success","sign_type":"MD5"}
+queryst {'fk_businessmaster_id': 1590, 'modal_code': 'insutype', 'intef_code': '6666'}
+queryst {'fk_businessmaster_id': 1590, 'modal_code': 'paymode', 'intef_code': '6666'}
+queryst {'fk_businessmaster_id': 1590, 'intef_code': '10015'}
+保存Ext {"result":{"extend_params":"","mch_order_id":"DHC000089210902160714","qrcode_content":"weixin://wxpay/bizpayurl?pr=KPdL4Ndzz","pay_id":"12001201166217081874944000"},"code":200,"sign":"3E448FF79FEBE9CC7D1B64B0D305AECB","message":"success","sign_type":"MD5"}
+保存ExtInputJson {'org_code': '50821', 'mch_appid': '1629983059933605', 'mch_order_id': 'DHC000089210902160714', 'mch_notify_url': 'http://geteway.clear-sz.com/DHC/SelfPay/PayCallBack', 'order_amt': '0.01', 'order_ccy': '', 'order_subject': '当日挂号', 'order_detail': '当日挂号', 'pay_option': 'WxPay', 'patient_id': '00000089', 'patient_name': '唐正飞', 'patient_type': '1', 'terminal_id': 'DH31-46', 'user_client_ip': '10.3.204.31', 'business_type': 'regist-day', 'time_expire': '300', 'extend_params': '', 'sign': '', 'sign_type': 'MD5', 'proxy_channel': ''}
+__insert {'ss_extd_code': 'Reg', 'ss_extd_amt': '0.01', 'ss_extd_type': 'Pay', 'ss_extd_status': '0', 'ss_extd_id': '1590', 'ss_extd_no': 'ydrwa4bgse', 'ss_extd_hisno': 'DHC000089210902160714', 'ss_extd_platno': '12001201166217081874944000', 'ss_extd_extno': '', 'ss_extd_channel': 'WxPay', 'ss_extd_outinfo': {'result': {'extend_params': '', 'mch_order_id': 'DHC000089210902160714', 'qrcode_content': 'weixin://wxpay/bizpayurl?pr=KPdL4Ndzz', 'pay_id': '12001201166217081874944000'}, 'code': 200, 'sign': '3E448FF79FEBE9CC7D1B64B0D305AECB', 'message': 'success', 'sign_type': 'MD5'}, 'ss_extd_ininfo': {'org_code': '50821', 'mch_appid': '1629983059933605', 'mch_order_id': 'DHC000089210902160714', 'mch_notify_url': 'http://geteway.clear-sz.com/DHC/SelfPay/PayCallBack', 'order_amt': '0.01', 'order_ccy': '', 'order_subject': '当日挂号', 'order_detail': '当日挂号', 'pay_option': 'WxPay', 'patient_id': '00000089', 'patient_name': '唐正飞', 'patient_type': '1', 'terminal_id': 'DH31-46', 'user_client_ip': '10.3.204.31', 'business_type': 'regist-day', 'time_expire': '300', 'extend_params': '', 'sign': '', 'sign_type': 'MD5', 'proxy_channel': ''}, 'ss_extd_creator': 'DH31-46'}
+1
+[pid: 5364|app: 0|req: 10/49] 10.3.204.31 () {48 vars in 874 bytes} [Thu Sep  2 16:07:17 2021] POST /CallPythonService => generated 97 bytes in 420 msecs (HTTP/1.1 200) 5 headers in 171 bytes (1 switches on core 0)
+{"TradeCode":"SaveBD","serial_id":"1590","serial_number":"ydrwa4bgse","modal_code":"ExtPayBack","bd_id":9427,"intef_output":{"result":"1","msg":"","output":"weixin://wxpay/bizpayurl?pr=KPdL4Ndzz","outputType":null}}
+入参：{"TradeCode":"SaveBD","serial_id":"1590","serial_number":"ydrwa4bgse","modal_code":"ExtPayBack","bd_id":9427,"intef_output":{"result":"1","msg":"","output":"weixin://wxpay/bizpayurl?pr=KPdL4Ndzz","outputType":null}}
+开始取全局对象
+取全局对象成功
+开始生成根据客户端信息 10.3.204.31
+生成根据客户端信息成功 {'id': 4, 'ss_eqlistd_eqcode': 'DH31-46', 'ss_eqlistd_eqdesc': '开发机', 'ss_eqlistd_address': '46所3楼', 'ss_eqlistd_spec': '', 'ss_eqlistd_unit': '', 'ss_eqlistd_type': '', 'ss_eqlistd_ip': '10.3.204.31', 'ss_eqlistd_mac': '', 'ss_eqlistd_opdate': '2021-08-09 15:53:00', 'ss_eqlistd_closedate': '2021-08-09 15:53:00', 'ss_eqlistd_createdate': '2021-08-09 15:53:00', 'ss_eqlistd_creator': '', 'ss_eqlistd_update': '2021-08-09 15:53:00', 'ss_eqlistd_upuser': '', 'ss_eqlistd_role': 'admin'}
+开始生成业务主表信息
+queryst {'id': 1590}
+生成业务主表信息成功
+业务开始，入参参数= {'TradeCode': 'SaveBD', 'serial_id': '1590', 'serial_number': 'ydrwa4bgse', 'modal_code': 'ExtPayBack', 'bd_id': 9427, 'intef_output': {'result': '1', 'msg': '', 'output': 'weixin://wxpay/bizpayurl?pr=KPdL4Ndzz', 'outputType': None}}
+开始生成患者基本信息
+生成患者基本信息成功
+获取患者基本信息成功：
+开始生成HIS患者基本信息
+his_patinfo <Response><ResultCode>0</ResultCode><PatInfos><PatInfo><PatientID>00000089</PatientID><PatientName>唐正飞</PatientName><Sex>男</Sex><SexCode>1</SexCode><DOB>1994-12-13</DOB><TelephoneNo>18611101542</TelephoneNo><Mobile>18611101542</Mobile><DocumentID></DocumentID><Address></Address><IDTypeCode>20</IDTypeCode><IDTypeDesc></IDTypeDesc><IDNo>622126199412131419</IDNo><InsureCardNo>TANGZHENGFEI</InsureCardNo><AccInfo>0^1182192^000000890001^0^^0^^1584^00000089^1182302^P^PC^1^^0^1182192^000000890001^0^^0^^1584^00000089^1182302^P^PC^1^</AccInfo><AccInfoBalance>0</AccInfoBalance><AccInfoNo>1182192</AccInfoNo><PatientCard>X0000149</PatientCard><YBFlag>0</YBFlag><PatType>自费</PatType><PatTypeCode>01</PatTypeCode><Age>27</Age></PatInfo></PatInfos></Response>
+生成HIS患者基本信息成功 00000089
+获取HIS患者基本信息成功：
+SaveBD参数开始
+__insert {'fk_businessmaster_id': '1590', 'serial_number': 'dqjr53pvow', 'his_serial_number': None, 'modal_code': 'ExtPayBack', 'model_desc': None, 'intef_code': 'SaveBD', 'intef_desc': None, 'intef_input': None, 'intef_output': {'result': '1', 'msg': '', 'output': 'weixin://wxpay/bizpayurl?pr=KPdL4Ndzz', 'outputType': None}}
+1
+[pid: 5365|app: 0|req: 10/50] 10.3.204.31 () {48 vars in 874 bytes} [Thu Sep  2 16:07:18 2021] POST /CallPythonService => generated 154 bytes in 9 msecs (HTTP/1.1 200) 5 headers in 172 bytes (1 switches on core 0)
+{"TradeCode":"QueryExtPay","serial_id":"1590","serial_number":"ydrwa4bgse","modal_code":"pay","bd_id":9427}
+入参：{"TradeCode":"QueryExtPay","serial_id":"1590","serial_number":"ydrwa4bgse","modal_code":"pay","bd_id":9427}
+开始取全局对象
+取全局对象成功
+开始生成根据客户端信息 10.3.204.31
+生成根据客户端信息成功 {'id': 4, 'ss_eqlistd_eqcode': 'DH31-46', 'ss_eqlistd_eqdesc': '开发机', 'ss_eqlistd_address': '46所3楼', 'ss_eqlistd_spec': '', 'ss_eqlistd_unit': '', 'ss_eqlistd_type': '', 'ss_eqlistd_ip': '10.3.204.31', 'ss_eqlistd_mac': '', 'ss_eqlistd_opdate': '2021-08-09 15:53:00', 'ss_eqlistd_closedate': '2021-08-09 15:53:00', 'ss_eqlistd_createdate': '2021-08-09 15:53:00', 'ss_eqlistd_creator': '', 'ss_eqlistd_update': '2021-08-09 15:53:00', 'ss_eqlistd_upuser': '', 'ss_eqlistd_role': 'admin'}
+开始生成业务主表信息
+queryst {'id': 1590}
+生成业务主表信息成功
+业务开始，入参参数= {'TradeCode': 'QueryExtPay', 'serial_id': '1590', 'serial_number': 'ydrwa4bgse', 'modal_code': 'pay', 'bd_id': 9427}
+开始生成患者基本信息
+生成患者基本信息成功
+获取患者基本信息成功：
+开始生成HIS患者基本信息
+his_patinfo <Response><ResultCode>0</ResultCode><PatInfos><PatInfo><PatientID>00000089</PatientID><PatientName>唐正飞</PatientName><Sex>男</Sex><SexCode>1</SexCode><DOB>1994-12-13</DOB><TelephoneNo>18611101542</TelephoneNo><Mobile>18611101542</Mobile><DocumentID></DocumentID><Address></Address><IDTypeCode>20</IDTypeCode><IDTypeDesc></IDTypeDesc><IDNo>622126199412131419</IDNo><InsureCardNo>TANGZHENGFEI</InsureCardNo><AccInfo>0^1182192^000000890001^0^^0^^1584^00000089^1182302^P^PC^1^^0^1182192^000000890001^0^^0^^1584^00000089^1182302^P^PC^1^</AccInfo><AccInfoBalance>0</AccInfoBalance><AccInfoNo>1182192</AccInfoNo><PatientCard>X0000149</PatientCard><YBFlag>0</YBFlag><PatType>自费</PatType><PatTypeCode>01</PatTypeCode><Age>27</Age></PatInfo></PatInfos></Response>
+生成HIS患者基本信息成功 00000089
+获取HIS患者基本信息成功：
+开始查询订单状态
+queryst {'fk_businessmaster_id': 1590, 'modal_code': 'paymode', 'intef_code': '6666'}
+sign
+mch_appid=1629983059933605&mch_order_id=DHC000089210902160714&org_code=50821&pay_id=12001201166217081874944000&key=A09462711DC94490AD803D7BC9983545
+2.1获取查询订单状态入参 {"org_code": "50821", "mch_appid": "1629983059933605", "mch_order_id": "DHC000089210902160714", "pay_id": "12001201166217081874944000", "out_trade_no": "", "sign": "D2BC8F9F0DA5F5CE18EB84588BE64867", "sign_type": "MD5"}
+支付参数 {"appKey": "1629983059933605", "appSecret": "A09462711DC94490AD803D7BC9983545"}
+支付接口 sys-auth/channel/oauth/token
+支付权限 
+headers {'Content-Type': 'application/json'}
+{"code":200,"message":"success","result":{"accessToken":"3362dc8d-294b-457f-9d02-fdfc9c2db8347749648f-3847-4be4-9063-94aa0e9ac82d","refreshToken":"89b8ab6c-f288-4c2e-9758-98fe8d0297ee2b1b7272-6249-4f45-88e4-a27a6cb3a020","expiresIn":302,"scope":"chlapp","tokenType":"password"}}
+支付参数 {"org_code": "50821", "mch_appid": "1629983059933605", "mch_order_id": "DHC000089210902160714", "pay_id": "12001201166217081874944000", "out_trade_no": "", "sign": "D2BC8F9F0DA5F5CE18EB84588BE64867", "sign_type": "MD5"}
+支付接口 /jdpay/query/order
+支付权限 3362dc8d-294b-457f-9d02-fdfc9c2db8347749648f-3847-4be4-9063-94aa0e9ac82d
+headers {'Content-Type': 'application/json', 'Authorization-Token': '3362dc8d-294b-457f-9d02-fdfc9c2db8347749648f-3847-4be4-9063-94aa0e9ac82d'}
+{"result":{"pay_option":"WxPay","patient_type":"1","order_subject":"当日挂号","patient_id":"00000089","business_type":"regist-day","mch_order_id":"DHC000089210902160714","patient_name":"唐正飞","pay_type":"SCANPAY","order_amt":0.01,"pay_id":"12001201166217081874944000","terminal_id":"DH31-46","status":"pay_processing"},"code":200,"sign":"0183E2487686BBF6D64FE5F0252F5722","message":"success","sign_type":"MD5"}
+2.1获取查询订单状态 {"result":{"pay_option":"WxPay","patient_type":"1","order_subject":"当日挂号","patient_id":"00000089","business_type":"regist-day","mch_order_id":"DHC000089210902160714","patient_name":"唐正飞","pay_type":"SCANPAY","order_amt":0.01,"pay_id":"12001201166217081874944000","terminal_id":"DH31-46","status":"pay_processing"},"code":200,"sign":"0183E2487686BBF6D64FE5F0252F5722","message":"success","sign_type":"MD5"}
+queryst {'fk_businessmaster_id': 1590, 'modal_code': 'paymode', 'intef_code': '6666'}
+保存Ext {"result":{"pay_option":"WxPay","patient_type":"1","order_subject":"当日挂号","patient_id":"00000089","business_type":"regist-day","mch_order_id":"DHC000089210902160714","patient_name":"唐正飞","pay_type":"SCANPAY","order_amt":0.01,"pay_id":"12001201166217081874944000","terminal_id":"DH31-46","status":"pay_processing"},"code":200,"sign":"0183E2487686BBF6D64FE5F0252F5722","message":"success","sign_type":"MD5"}
+保存ExtInputJson {'org_code': '50821', 'mch_appid': '1629983059933605', 'mch_order_id': 'DHC000089210902160714', 'pay_id': '12001201166217081874944000', 'out_trade_no': '', 'sign': '', 'sign_type': 'MD5'}
+__insert {'ss_extd_code': 'Reg', 'ss_extd_amt': None, 'ss_extd_type': 'Query', 'ss_extd_status': '0', 'ss_extd_id': '1590', 'ss_extd_no': 'ydrwa4bgse', 'ss_extd_hisno': 'DHC000089210902160714', 'ss_extd_platno': '12001201166217081874944000', 'ss_extd_extno': '', 'ss_extd_channel': None, 'ss_extd_outinfo': {'result': {'pay_option': 'WxPay', 'patient_type': '1', 'order_subject': '当日挂号', 'patient_id': '00000089', 'business_type': 'regist-day', 'mch_order_id': 'DHC000089210902160714', 'patient_name': '唐正飞', 'pay_type': 'SCANPAY', 'order_amt': 0.01, 'pay_id': '12001201166217081874944000', 'terminal_id': 'DH31-46', 'status': 'pay_processing'}, 'code': 200, 'sign': '0183E2487686BBF6D64FE5F0252F5722', 'message': 'success', 'sign_type': 'MD5'}, 'ss_extd_ininfo': {'org_code': '50821', 'mch_appid': '1629983059933605', 'mch_order_id': 'DHC000089210902160714', 'pay_id': '12001201166217081874944000', 'out_trade_no': '', 'sign': '', 'sign_type': 'MD5'}, 'ss_extd_creator': 'DH31-46'}
+1
+[pid: 5361|app: 0|req: 11/51] 10.3.204.31 () {48 vars in 874 bytes} [Thu Sep  2 16:07:23 2021] POST /CallPythonService => generated 60 bytes in 298 msecs (HTTP/1.1 200) 5 headers in 171 bytes (1 switches on core 0)
+{"TradeCode":"SaveBD","serial_id":"1590","serial_number":"ydrwa4bgse","modal_code":"QueryExtPayBack","bd_id":9427,"intef_output":{"result":"1","msg":"","output":"","outputType":null}}
+入参：{"TradeCode":"SaveBD","serial_id":"1590","serial_number":"ydrwa4bgse","modal_code":"QueryExtPayBack","bd_id":9427,"intef_output":{"result":"1","msg":"","output":"","outputType":null}}
+开始取全局对象
+取全局对象成功
+开始生成根据客户端信息 10.3.204.31
+生成根据客户端信息成功 {'id': 4, 'ss_eqlistd_eqcode': 'DH31-46', 'ss_eqlistd_eqdesc': '开发机', 'ss_eqlistd_address': '46所3楼', 'ss_eqlistd_spec': '', 'ss_eqlistd_unit': '', 'ss_eqlistd_type': '', 'ss_eqlistd_ip': '10.3.204.31', 'ss_eqlistd_mac': '', 'ss_eqlistd_opdate': '2021-08-09 15:53:00', 'ss_eqlistd_closedate': '2021-08-09 15:53:00', 'ss_eqlistd_createdate': '2021-08-09 15:53:00', 'ss_eqlistd_creator': '', 'ss_eqlistd_update': '2021-08-09 15:53:00', 'ss_eqlistd_upuser': '', 'ss_eqlistd_role': 'admin'}
+开始生成业务主表信息
+queryst {'id': 1590}
+生成业务主表信息成功
+业务开始，入参参数= {'TradeCode': 'SaveBD', 'serial_id': '1590', 'serial_number': 'ydrwa4bgse', 'modal_code': 'QueryExtPayBack', 'bd_id': 9427, 'intef_output': {'result': '1', 'msg': '', 'output': '', 'outputType': None}}
+开始生成患者基本信息
+生成患者基本信息成功
+获取患者基本信息成功：
+开始生成HIS患者基本信息
+his_patinfo <Response><ResultCode>0</ResultCode><PatInfos><PatInfo><PatientID>00000089</PatientID><PatientName>唐正飞</PatientName><Sex>男</Sex><SexCode>1</SexCode><DOB>1994-12-13</DOB><TelephoneNo>18611101542</TelephoneNo><Mobile>18611101542</Mobile><DocumentID></DocumentID><Address></Address><IDTypeCode>20</IDTypeCode><IDTypeDesc></IDTypeDesc><IDNo>622126199412131419</IDNo><InsureCardNo>TANGZHENGFEI</InsureCardNo><AccInfo>0^1182192^000000890001^0^^0^^1584^00000089^1182302^P^PC^1^^0^1182192^000000890001^0^^0^^1584^00000089^1182302^P^PC^1^</AccInfo><AccInfoBalance>0</AccInfoBalance><AccInfoNo>1182192</AccInfoNo><PatientCard>X0000149</PatientCard><YBFlag>0</YBFlag><PatType>自费</PatType><PatTypeCode>01</PatTypeCode><Age>27</Age></PatInfo></PatInfos></Response>
+生成HIS患者基本信息成功 00000089
+获取HIS患者基本信息成功：
+SaveBD参数开始
+__insert {'fk_businessmaster_id': '1590', 'serial_number': 'fju5cxkdy4', 'his_serial_number': None, 'modal_code': 'QueryExtPayBack', 'model_desc': None, 'intef_code': 'SaveBD', 'intef_desc': None, 'intef_input': None, 'intef_output': {'result': '1', 'msg': '', 'output': '', 'outputType': None}}
+1
+[pid: 5362|app: 0|req: 11/52] 10.3.204.31 () {48 vars in 874 bytes} [Thu Sep  2 16:07:23 2021] POST /CallPythonService => generated 154 bytes in 9 msecs (HTTP/1.1 200) 5 headers in 172 bytes (1 switches on core 0)
+{"TradeCode":"QueryExtPay","serial_id":"1590","serial_number":"ydrwa4bgse","modal_code":"pay","bd_id":9427}
+入参：{"TradeCode":"QueryExtPay","serial_id":"1590","serial_number":"ydrwa4bgse","modal_code":"pay","bd_id":9427}
+开始取全局对象
+取全局对象成功
+开始生成根据客户端信息 10.3.204.31
+生成根据客户端信息成功 {'id': 4, 'ss_eqlistd_eqcode': 'DH31-46', 'ss_eqlistd_eqdesc': '开发机', 'ss_eqlistd_address': '46所3楼', 'ss_eqlistd_spec': '', 'ss_eqlistd_unit': '', 'ss_eqlistd_type': '', 'ss_eqlistd_ip': '10.3.204.31', 'ss_eqlistd_mac': '', 'ss_eqlistd_opdate': '2021-08-09 15:53:00', 'ss_eqlistd_closedate': '2021-08-09 15:53:00', 'ss_eqlistd_createdate': '2021-08-09 15:53:00', 'ss_eqlistd_creator': '', 'ss_eqlistd_update': '2021-08-09 15:53:00', 'ss_eqlistd_upuser': '', 'ss_eqlistd_role': 'admin'}
+开始生成业务主表信息
+queryst {'id': 1590}
+生成业务主表信息成功
+业务开始，入参参数= {'TradeCode': 'QueryExtPay', 'serial_id': '1590', 'serial_number': 'ydrwa4bgse', 'modal_code': 'pay', 'bd_id': 9427}
+开始生成患者基本信息
+生成患者基本信息成功
+获取患者基本信息成功：
+开始生成HIS患者基本信息
+his_patinfo <Response><ResultCode>0</ResultCode><PatInfos><PatInfo><PatientID>00000089</PatientID><PatientName>唐正飞</PatientName><Sex>男</Sex><SexCode>1</SexCode><DOB>1994-12-13</DOB><TelephoneNo>18611101542</TelephoneNo><Mobile>18611101542</Mobile><DocumentID></DocumentID><Address></Address><IDTypeCode>20</IDTypeCode><IDTypeDesc></IDTypeDesc><IDNo>622126199412131419</IDNo><InsureCardNo>TANGZHENGFEI</InsureCardNo><AccInfo>0^1182192^000000890001^0^^0^^1584^00000089^1182302^P^PC^1^^0^1182192^000000890001^0^^0^^1584^00000089^1182302^P^PC^1^</AccInfo><AccInfoBalance>0</AccInfoBalance><AccInfoNo>1182192</AccInfoNo><PatientCard>X0000149</PatientCard><YBFlag>0</YBFlag><PatType>自费</PatType><PatTypeCode>01</PatTypeCode><Age>27</Age></PatInfo></PatInfos></Response>
+生成HIS患者基本信息成功 00000089
+获取HIS患者基本信息成功：
+开始查询订单状态
+queryst {'fk_businessmaster_id': 1590, 'modal_code': 'paymode', 'intef_code': '6666'}
+sign
+mch_appid=1629983059933605&mch_order_id=DHC000089210902160714&org_code=50821&pay_id=12001201166217081874944000&key=A09462711DC94490AD803D7BC9983545
+2.1获取查询订单状态入参 {"org_code": "50821", "mch_appid": "1629983059933605", "mch_order_id": "DHC000089210902160714", "pay_id": "12001201166217081874944000", "out_trade_no": "", "sign": "D2BC8F9F0DA5F5CE18EB84588BE64867", "sign_type": "MD5"}
+支付参数 {"appKey": "1629983059933605", "appSecret": "A09462711DC94490AD803D7BC9983545"}
+支付接口 sys-auth/channel/oauth/token
+支付权限 
+headers {'Content-Type': 'application/json'}
+{"code":200,"message":"success","result":{"accessToken":"b4e4a994-828c-4eef-93bc-49f191c9fee0d67cae9e-f9e4-412f-b968-b2e7864143e3","refreshToken":"65b49b41-b9f8-4da4-a2d6-84b196ea195ffe49e1ca-b0ff-4353-8767-86f7f63da017","expiresIn":1800,"scope":"chlapp","tokenType":"password"}}
+支付参数 {"org_code": "50821", "mch_appid": "1629983059933605", "mch_order_id": "DHC000089210902160714", "pay_id": "12001201166217081874944000", "out_trade_no": "", "sign": "D2BC8F9F0DA5F5CE18EB84588BE64867", "sign_type": "MD5"}
+支付接口 /jdpay/query/order
+支付权限 b4e4a994-828c-4eef-93bc-49f191c9fee0d67cae9e-f9e4-412f-b968-b2e7864143e3
+headers {'Content-Type': 'application/json', 'Authorization-Token': 'b4e4a994-828c-4eef-93bc-49f191c9fee0d67cae9e-f9e4-412f-b968-b2e7864143e3'}
+{"result":{"pay_time_end":"2021-09-02 16:07:29","out_trade_no":"4200001221202109027528142684","pay_option":"WxPay","patient_type":"1","order_subject":"当日挂号","patient_id":"00000089","business_type":"regist-day","mch_order_id":"DHC000089210902160714","patient_name":"唐正飞","pay_type":"SCANPAY","order_amt":0.01,"pay_id":"12001201166217081874944000","terminal_id":"DH31-46","status":"pay_success"},"code":200,"sign":"01F2B42C446EAC02CAF070AB7C883362","message":"success","sign_type":"MD5"}
+2.1获取查询订单状态 {"result":{"pay_time_end":"2021-09-02 16:07:29","out_trade_no":"4200001221202109027528142684","pay_option":"WxPay","patient_type":"1","order_subject":"当日挂号","patient_id":"00000089","business_type":"regist-day","mch_order_id":"DHC000089210902160714","patient_name":"唐正飞","pay_type":"SCANPAY","order_amt":0.01,"pay_id":"12001201166217081874944000","terminal_id":"DH31-46","status":"pay_success"},"code":200,"sign":"01F2B42C446EAC02CAF070AB7C883362","message":"success","sign_type":"MD5"}
+queryst {'fk_businessmaster_id': 1590, 'modal_code': 'paymode', 'intef_code': '6666'}
+保存Ext {"result":{"pay_time_end":"2021-09-02 16:07:29","out_trade_no":"4200001221202109027528142684","pay_option":"WxPay","patient_type":"1","order_subject":"当日挂号","patient_id":"00000089","business_type":"regist-day","mch_order_id":"DHC000089210902160714","patient_name":"唐正飞","pay_type":"SCANPAY","order_amt":0.01,"pay_id":"12001201166217081874944000","terminal_id":"DH31-46","status":"pay_success"},"code":200,"sign":"01F2B42C446EAC02CAF070AB7C883362","message":"success","sign_type":"MD5"}
+保存ExtInputJson {'org_code': '50821', 'mch_appid': '1629983059933605', 'mch_order_id': 'DHC000089210902160714', 'pay_id': '12001201166217081874944000', 'out_trade_no': '', 'sign': '', 'sign_type': 'MD5'}
+__insert {'ss_extd_code': 'Reg', 'ss_extd_amt': None, 'ss_extd_type': 'Query', 'ss_extd_status': '0', 'ss_extd_id': '1590', 'ss_extd_no': 'ydrwa4bgse', 'ss_extd_hisno': 'DHC000089210902160714', 'ss_extd_platno': '12001201166217081874944000', 'ss_extd_extno': '', 'ss_extd_channel': None, 'ss_extd_outinfo': {'result': {'pay_time_end': '2021-09-02 16:07:29', 'out_trade_no': '4200001221202109027528142684', 'pay_option': 'WxPay', 'patient_type': '1', 'order_subject': '当日挂号', 'patient_id': '00000089', 'business_type': 'regist-day', 'mch_order_id': 'DHC000089210902160714', 'patient_name': '唐正飞', 'pay_type': 'SCANPAY', 'order_amt': 0.01, 'pay_id': '12001201166217081874944000', 'terminal_id': 'DH31-46', 'status': 'pay_success'}, 'code': 200, 'sign': '01F2B42C446EAC02CAF070AB7C883362', 'message': 'success', 'sign_type': 'MD5'}, 'ss_extd_ininfo': {'org_code': '50821', 'mch_appid': '1629983059933605', 'mch_order_id': 'DHC000089210902160714', 'pay_id': '12001201166217081874944000', 'out_trade_no': '', 'sign': '', 'sign_type': 'MD5'}, 'ss_extd_creator': 'DH31-46'}
+1
+[pid: 5363|app: 0|req: 11/53] 10.3.204.31 () {48 vars in 874 bytes} [Thu Sep  2 16:07:28 2021] POST /CallPythonService => generated 60 bytes in 160 msecs (HTTP/1.1 200) 5 headers in 171 bytes (1 switches on core 0)
+{"TradeCode":"SaveBD","serial_id":"1590","serial_number":"ydrwa4bgse","modal_code":"QueryExtPayBack","bd_id":9427,"intef_output":{"result":"0","msg":"","output":"","outputType":null}}
+入参：{"TradeCode":"SaveBD","serial_id":"1590","serial_number":"ydrwa4bgse","modal_code":"QueryExtPayBack","bd_id":9427,"intef_output":{"result":"0","msg":"","output":"","outputType":null}}
+开始取全局对象
+取全局对象成功
+开始生成根据客户端信息 10.3.204.31
+生成根据客户端信息成功 {'id': 4, 'ss_eqlistd_eqcode': 'DH31-46', 'ss_eqlistd_eqdesc': '开发机', 'ss_eqlistd_address': '46所3楼', 'ss_eqlistd_spec': '', 'ss_eqlistd_unit': '', 'ss_eqlistd_type': '', 'ss_eqlistd_ip': '10.3.204.31', 'ss_eqlistd_mac': '', 'ss_eqlistd_opdate': '2021-08-09 15:53:00', 'ss_eqlistd_closedate': '2021-08-09 15:53:00', 'ss_eqlistd_createdate': '2021-08-09 15:53:00', 'ss_eqlistd_creator': '', 'ss_eqlistd_update': '2021-08-09 15:53:00', 'ss_eqlistd_upuser': '', 'ss_eqlistd_role': 'admin'}
+开始生成业务主表信息
+queryst {'id': 1590}
+生成业务主表信息成功
+业务开始，入参参数= {'TradeCode': 'SaveBD', 'serial_id': '1590', 'serial_number': 'ydrwa4bgse', 'modal_code': 'QueryExtPayBack', 'bd_id': 9427, 'intef_output': {'result': '0', 'msg': '', 'output': '', 'outputType': None}}
+开始生成患者基本信息
+生成患者基本信息成功
+获取患者基本信息成功：
+开始生成HIS患者基本信息
+his_patinfo <Response><ResultCode>0</ResultCode><PatInfos><PatInfo><PatientID>00000089</PatientID><PatientName>唐正飞</PatientName><Sex>男</Sex><SexCode>1</SexCode><DOB>1994-12-13</DOB><TelephoneNo>18611101542</TelephoneNo><Mobile>18611101542</Mobile><DocumentID></DocumentID><Address></Address><IDTypeCode>20</IDTypeCode><IDTypeDesc></IDTypeDesc><IDNo>622126199412131419</IDNo><InsureCardNo>TANGZHENGFEI</InsureCardNo><AccInfo>0^1182192^000000890001^0^^0^^1584^00000089^1182302^P^PC^1^^0^1182192^000000890001^0^^0^^1584^00000089^1182302^P^PC^1^</AccInfo><AccInfoBalance>0</AccInfoBalance><AccInfoNo>1182192</AccInfoNo><PatientCard>X0000149</PatientCard><YBFlag>0</YBFlag><PatType>自费</PatType><PatTypeCode>01</PatTypeCode><Age>27</Age></PatInfo></PatInfos></Response>
+生成HIS患者基本信息成功 00000089
+获取HIS患者基本信息成功：
+SaveBD参数开始
+__insert {'fk_businessmaster_id': '1590', 'serial_number': '37zbptkfu2', 'his_serial_number': None, 'modal_code': 'QueryExtPayBack', 'model_desc': None, 'intef_code': 'SaveBD', 'intef_desc': None, 'intef_input': None, 'intef_output': {'result': '0', 'msg': '', 'output': '', 'outputType': None}}
+1
+[pid: 5364|app: 0|req: 11/54] 10.3.204.31 () {48 vars in 874 bytes} [Thu Sep  2 16:07:28 2021] POST /CallPythonService => generated 154 bytes in 10 msecs (HTTP/1.1 200) 5 headers in 172 bytes (1 switches on core 0)
+{"TradeCode":"1101","serial_id":"1590","serial_number":"ydrwa4bgse","modal_code":"pay","bd_id":9427}
+入参：{"TradeCode":"1101","serial_id":"1590","serial_number":"ydrwa4bgse","modal_code":"pay","bd_id":9427}
+开始取全局对象
+取全局对象成功
+开始生成根据客户端信息 10.3.204.31
+生成根据客户端信息成功 {'id': 4, 'ss_eqlistd_eqcode': 'DH31-46', 'ss_eqlistd_eqdesc': '开发机', 'ss_eqlistd_address': '46所3楼', 'ss_eqlistd_spec': '', 'ss_eqlistd_unit': '', 'ss_eqlistd_type': '', 'ss_eqlistd_ip': '10.3.204.31', 'ss_eqlistd_mac': '', 'ss_eqlistd_opdate': '2021-08-09 15:53:00', 'ss_eqlistd_closedate': '2021-08-09 15:53:00', 'ss_eqlistd_createdate': '2021-08-09 15:53:00', 'ss_eqlistd_creator': '', 'ss_eqlistd_update': '2021-08-09 15:53:00', 'ss_eqlistd_upuser': '', 'ss_eqlistd_role': 'admin'}
+开始生成业务主表信息
+queryst {'id': 1590}
+生成业务主表信息成功
+业务开始，入参参数= {'TradeCode': '1101', 'serial_id': '1590', 'serial_number': 'ydrwa4bgse', 'modal_code': 'pay', 'bd_id': 9427}
+开始生成患者基本信息
+生成患者基本信息成功
+获取患者基本信息成功：
+开始生成HIS患者基本信息
+his_patinfo <Response><ResultCode>0</ResultCode><PatInfos><PatInfo><PatientID>00000089</PatientID><PatientName>唐正飞</PatientName><Sex>男</Sex><SexCode>1</SexCode><DOB>1994-12-13</DOB><TelephoneNo>18611101542</TelephoneNo><Mobile>18611101542</Mobile><DocumentID></DocumentID><Address></Address><IDTypeCode>20</IDTypeCode><IDTypeDesc></IDTypeDesc><IDNo>622126199412131419</IDNo><InsureCardNo>TANGZHENGFEI</InsureCardNo><AccInfo>0^1182192^000000890001^0^^0^^1584^00000089^1182302^P^PC^1^^0^1182192^000000890001^0^^0^^1584^00000089^1182302^P^PC^1^</AccInfo><AccInfoBalance>0</AccInfoBalance><AccInfoNo>1182192</AccInfoNo><PatientCard>X0000149</PatientCard><YBFlag>0</YBFlag><PatType>自费</PatType><PatTypeCode>01</PatTypeCode><Age>27</Age></PatInfo></PatInfos></Response>
+生成HIS患者基本信息成功 00000089
+获取HIS患者基本信息成功：
+1101参数开始
+queryst {'fk_businessmaster_id': 1590, 'modal_code': 'insutype', 'intef_code': '6666'}
+queryst {'fk_businessmaster_id': 1590, 'intef_code': '10015'}
+queryst {'fk_businessmaster_id': 1590, 'modal_code': 'paymode', 'intef_code': '6666'}
+queryst {'fk_businessmaster_id': 1590, 'modal_code': 'paymode', 'intef_code': '6666'}
+queryst {'fk_businessmaster_id': 1590, 'modal_code': 'INSURegBack', 'intef_code': 'SaveBD'}
+PayInsuFeeStrOutPut 
+RequestStr <Request><AdmReasonDr>1</AdmReasonDr><TradeCode>1101</TradeCode><AppOrderCode></AppOrderCode><TransactionId>DHC000089210902160714</TransactionId><ExtOrgCode></ExtOrgCode><ClientType></ClientType><HospitalId>2</HospitalId><TerminalID></TerminalID><ScheduleItemCode>8923||25</ScheduleItemCode><ExtUserID>ZZ1</ExtUserID><PatientID>00000089</PatientID><QueueNo></QueueNo><CardType>01</CardType><PayBankCode></PayBankCode><PayCardNo></PayCardNo><PayModeCode>WECHAT</PayModeCode><PayFee>15</PayFee><PayInsuFeeStr></PayInsuFeeStr><PayTradeNo></PayTradeNo><PayOrderId>95275555555</PayOrderId><PayDetails><PayModeCode>WECHAT</PayModeCode><TradeChannel>WECHAT</TradeChannel><PayAccountNo></PayAccountNo><PayAmt>15</PayAmt><PlatformNo></PlatformNo><OutPayNo>ydrwa4bgse</OutPayNo><PayChannel>WECHAT</PayChannel><PayData>"{'result': {'pay_time_end': '2021-09-02 16:07:29', 'out_trade_no': '4200001221202109027528142684', 'pay_option': 'WxPay', 'patient_type': '1', 'order_subject': '\u5f53\u65e5\u6302\u53f7', 'patient_id': '00000089', 'business_type': 'regist-day', 'mch_order_id': 'DHC000089210902160714', 'patient_name': '\u5510\u6b63\u98de', 'pay_type': 'SCANPAY', 'order_amt': 0.01, 'pay_id': '12001201166217081874944000', 'terminal_id': 'DH31-46', 'status': 'pay_success'}, 'code': 200, 'sign': '01F2B42C446EAC02CAF070AB7C883362', 'message': 'success', 'sign_type': 'MD5'}"</PayData></PayDetails></Request>
+__insert {'fk_businessmaster_id': '1590', 'serial_number': 'shc3em4vpa', 'his_serial_number': None, 'modal_code': 'pay', 'model_desc': None, 'intef_code': '1101', 'intef_desc': None, 'intef_input': '<Request><AdmReasonDr>1</AdmReasonDr><TradeCode>1101</TradeCode><AppOrderCode></AppOrderCode><TransactionId>DHC000089210902160714</TransactionId><ExtOrgCode></ExtOrgCode><ClientType></ClientType><HospitalId>2</HospitalId><TerminalID></TerminalID><ScheduleItemCode>8923||25</ScheduleItemCode><ExtUserID>ZZ1</ExtUserID><PatientID>00000089</PatientID><QueueNo></QueueNo><CardType>01</CardType><PayBankCode></PayBankCode><PayCardNo></PayCardNo><PayModeCode>WECHAT</PayModeCode><PayFee>15</PayFee><PayInsuFeeStr></PayInsuFeeStr><PayTradeNo></PayTradeNo><PayOrderId>95275555555</PayOrderId><PayDetails><PayModeCode>WECHAT</PayModeCode><TradeChannel>WECHAT</TradeChannel><PayAccountNo></PayAccountNo><PayAmt>15</PayAmt><PlatformNo></PlatformNo><OutPayNo>ydrwa4bgse</OutPayNo><PayChannel>WECHAT</PayChannel><PayData>"{\'result\': {\'pay_time_end\': \'2021-09-02 16:07:29\', \'out_trade_no\': \'4200001221202109027528142684\', \'pay_option\': \'WxPay\', \'patient_type\': \'1\', \'order_subject\': \'\\u5f53\\u65e5\\u6302\\u53f7\', \'patient_id\': \'00000089\', \'business_type\': \'regist-day\', \'mch_order_id\': \'DHC000089210902160714\', \'patient_name\': \'\\u5510\\u6b63\\u98de\', \'pay_type\': \'SCANPAY\', \'order_amt\': 0.01, \'pay_id\': \'12001201166217081874944000\', \'terminal_id\': \'DH31-46\', \'status\': \'pay_success\'}, \'code\': 200, \'sign\': \'01F2B42C446EAC02CAF070AB7C883362\', \'message\': \'success\', \'sign_type\': \'MD5\'}"</PayData></PayDetails></Request>', 'intef_output': None}
+content <Response><ResultCode>-110120</ResultCode><ResultContent>-304-挂号失败:超过每人该时段可挂号限额!不能进行挂号和预约.</ResultContent></Response>
+__insert {'id': 9431, 'fk_businessmaster_id': '1590', 'serial_number': '8k1m4qd3wr', 'his_serial_number': None, 'modal_code': 'pay', 'model_desc': None, 'intef_code': '1101', 'intef_desc': None, 'intef_input': '<Request><AdmReasonDr>1</AdmReasonDr><TradeCode>1101</TradeCode><AppOrderCode></AppOrderCode><TransactionId>DHC000089210902160714</TransactionId><ExtOrgCode></ExtOrgCode><ClientType></ClientType><HospitalId>2</HospitalId><TerminalID></TerminalID><ScheduleItemCode>8923||25</ScheduleItemCode><ExtUserID>ZZ1</ExtUserID><PatientID>00000089</PatientID><QueueNo></QueueNo><CardType>01</CardType><PayBankCode></PayBankCode><PayCardNo></PayCardNo><PayModeCode>WECHAT</PayModeCode><PayFee>15</PayFee><PayInsuFeeStr></PayInsuFeeStr><PayTradeNo></PayTradeNo><PayOrderId>95275555555</PayOrderId><PayDetails><PayModeCode>WECHAT</PayModeCode><TradeChannel>WECHAT</TradeChannel><PayAccountNo></PayAccountNo><PayAmt>15</PayAmt><PlatformNo></PlatformNo><OutPayNo>ydrwa4bgse</OutPayNo><PayChannel>WECHAT</PayChannel><PayData>"{\'result\': {\'pay_time_end\': \'2021-09-02 16:07:29\', \'out_trade_no\': \'4200001221202109027528142684\', \'pay_option\': \'WxPay\', \'patient_type\': \'1\', \'order_subject\': \'\\u5f53\\u65e5\\u6302\\u53f7\', \'patient_id\': \'00000089\', \'business_type\': \'regist-day\', \'mch_order_id\': \'DHC000089210902160714\', \'patient_name\': \'\\u5510\\u6b63\\u98de\', \'pay_type\': \'SCANPAY\', \'order_amt\': 0.01, \'pay_id\': \'12001201166217081874944000\', \'terminal_id\': \'DH31-46\', \'status\': \'pay_success\'}, \'code\': 200, \'sign\': \'01F2B42C446EAC02CAF070AB7C883362\', \'message\': \'success\', \'sign_type\': \'MD5\'}"</PayData></PayDetails></Request>', 'intef_output': <Response><ResultCode>-110120</ResultCode><ResultContent>-304-挂号失败:超过每人该时段可挂号限额!不能进行挂号和预约.</ResultContent></Response>}
+1
+[pid: 5365|app: 0|req: 11/55] 10.3.204.31 () {48 vars in 874 bytes} [Thu Sep  2 16:07:28 2021] POST /CallPythonService => generated 235 bytes in 278 msecs (HTTP/1.1 200) 5 headers in 172 bytes (1 switches on core 0)
+{"TradeCode":"GetExceptionPrint","PrtData":"挂号失败:-304-挂号失败:超过每人该时段可挂号限额!不能进行挂号和预约.","serial_id":"1590","serial_number":"ydrwa4bgse","modal_code":"pay","bd_id":9427}
+入参：{"TradeCode":"GetExceptionPrint","PrtData":"挂号失败:-304-挂号失败:超过每人该时段可挂号限额!不能进行挂号和预约.","serial_id":"1590","serial_number":"ydrwa4bgse","modal_code":"pay","bd_id":9427}
+开始取全局对象
+取全局对象成功
+开始生成根据客户端信息 10.3.204.31
+生成根据客户端信息成功 {'id': 4, 'ss_eqlistd_eqcode': 'DH31-46', 'ss_eqlistd_eqdesc': '开发机', 'ss_eqlistd_address': '46所3楼', 'ss_eqlistd_spec': '', 'ss_eqlistd_unit': '', 'ss_eqlistd_type': '', 'ss_eqlistd_ip': '10.3.204.31', 'ss_eqlistd_mac': '', 'ss_eqlistd_opdate': '2021-08-09 15:53:00', 'ss_eqlistd_closedate': '2021-08-09 15:53:00', 'ss_eqlistd_createdate': '2021-08-09 15:53:00', 'ss_eqlistd_creator': '', 'ss_eqlistd_update': '2021-08-09 15:53:00', 'ss_eqlistd_upuser': '', 'ss_eqlistd_role': 'admin'}
+开始生成业务主表信息
+queryst {'id': 1590}
+生成业务主表信息成功
+业务开始，入参参数= {'TradeCode': 'GetExceptionPrint', 'PrtData': '挂号失败:-304-挂号失败:超过每人该时段可挂号限额!不能进行挂号和预约.', 'serial_id': '1590', 'serial_number': 'ydrwa4bgse', 'modal_code': 'pay', 'bd_id': 9427}
+开始生成患者基本信息
+生成患者基本信息成功
+获取患者基本信息成功：
+开始生成HIS患者基本信息
+his_patinfo <Response><ResultCode>0</ResultCode><PatInfos><PatInfo><PatientID>00000089</PatientID><PatientName>唐正飞</PatientName><Sex>男</Sex><SexCode>1</SexCode><DOB>1994-12-13</DOB><TelephoneNo>18611101542</TelephoneNo><Mobile>18611101542</Mobile><DocumentID></DocumentID><Address></Address><IDTypeCode>20</IDTypeCode><IDTypeDesc></IDTypeDesc><IDNo>622126199412131419</IDNo><InsureCardNo>TANGZHENGFEI</InsureCardNo><AccInfo>0^1182192^000000890001^0^^0^^1584^00000089^1182302^P^PC^1^^0^1182192^000000890001^0^^0^^1584^00000089^1182302^P^PC^1^</AccInfo><AccInfoBalance>0</AccInfoBalance><AccInfoNo>1182192</AccInfoNo><PatientCard>X0000149</PatientCard><YBFlag>0</YBFlag><PatType>自费</PatType><PatTypeCode>01</PatTypeCode><Age>27</Age></PatInfo></PatInfos></Response>
+生成HIS患者基本信息成功 00000089
+获取HIS患者基本信息成功：
+GetExceptionPrint参数开始
+GetExceptionPrint参数jieshu {'result': '0', 'msg': '成功', 'output': '[{"fontbold": "", "fontname": "", "fontsize": 10, "height": "40", "isqrcode": "", "name": "DrugEnd", "type": "text", "value": " \\u5929\\u6d25\\u5e02\\u7b2c\\u4e00\\u4e2d\\u5fc3\\u533b\\u9662", "width": 250, "x": 17, "y": 5}, {"fontbold": "", "fontname": "", "fontsize": 10, "height": "40", "isqrcode": "", "name": "DrugEnd", "type": "text", "value": "     \\u9519\\u8bef\\u63d0\\u793a", "width": 250, "x": 17, "y": 10}, {"fontbold": "", "fontname": "", "fontsize": 15, "height": "40", "isqrcode": "", "name": "DrugEnd", "type": "text", "value": "\\u6b64\\u51ed\\u8bc1\\u8bf7\\u59a5\\u5584\\u4fdd\\u7ba1", "width": 250, "x": 13, "y": 15}, {"fontbold": "", "fontname": "", "fontsize": 10, "height": "40", "isqrcode": "", "name": "DrugEnd", "type": "text", "value": "-----------------------------------", "width": 250, "x": 2, "y": 20}, {"fontbold": "", "fontname": "", "fontsize": 10, "height": "40", "isqrcode": "", "name": "DrugEnd", "type": "text", "value": "\\u65e5\\u671f\\u65f6\\u95f4\\uff1a2021/9/2 16/7/28", "width": 250, "x": 2, "y": 25}, {"fontbold": "", "fontname": "", "fontsize": 10, "height": "40", "isqrcode": "", "name": "DrugEnd", "type": "text", "value": "\\u5c31\\u8bca\\u5361ID\\uff1a00000089", "width": 250, "x": 2, "y": 30}, {"fontbold": "", "fontname": "", "fontsize": 10, "height": "40", "isqrcode": "", "name": "DrugEnd", "type": "text", "value": "\\u64cd\\u4f5c\\u5458\\uff1aZZ1", "width": 250, "x": 2, "y": 35}, {"fontbold": "", "fontname": "", "fontsize": 10, "height": "40", "isqrcode": "", "name": "DrugEnd", "type": "text", "value": "-----------------------------------", "width": 250, "x": 2, "y": 40}, {"fontbold": "", "fontname": "", "fontsize": 10, "height": "40", "isqrcode": "", "name": "DrugEnd", "type": "text", "value": "\\u60a3\\u8005\\u59d3\\u540d\\uff1a\\u5510\\u6b63\\u98de", "width": 250, "x": 2, "y": 45}, {"fontbold": "", "fontname": "", "fontsize": 10, "height": "40", "isqrcode": "", "name": "DrugEnd", "type": "text", "value": "\\u4e1a\\u52a1\\u6d41\\u6c34\\u53f7\\uff1aydrwa4bgse", "width": 250, "x": 2, "y": 50}, {"fontbold": "", "fontname": "", "fontsize": 10, "height": "40", "isqrcode": "", "name": "DrugEnd", "type": "text", "value": "\\u95e8\\u8bca\\u53f7\\uff1a", "width": 250, "x": 2, "y": 55}, {"fontbold": "", "fontname": "", "fontsize": 10, "height": "40", "isqrcode": "", "name": "DrugEnd", "type": "text", "value": "-----------------------------------", "width": 250, "x": 2, "y": 60}, {"fontbold": "", "fontname": "", "fontsize": 10, "height": "80", "isqrcode": "", "name": "DrugEnd", "type": "text", "value": "\\u6302\\u53f7\\u5931\\u8d25:-304-\\u6302\\u53f7\\u5931\\u8d25:\\u8d85\\u8fc7\\u6bcf\\u4eba\\u8be5\\u65f6\\u6bb5\\u53ef\\u6302\\u53f7\\u9650\\u989d!\\u4e0d\\u80fd\\u8fdb\\u884c\\u6302\\u53f7\\u548c\\u9884\\u7ea6.", "width": 250, "x": 2, "y": 65}, {"fontbold": "", "fontname": "", "fontsize": 15, "height": "40", "isqrcode": "", "name": "DrugEnd", "type": "text", "value": "\\u8bf7\\u5230\\u4eba\\u5de5\\u7a97\\u53e3\\u5904\\u7406", "width": 250, "x": 13, "y": 80}]', 'outputType': 'JSON'}
+1
+[pid: 5361|app: 0|req: 12/56] 10.3.204.31 () {48 vars in 874 bytes} [Thu Sep  2 16:07:28 2021] POST /CallPythonService => generated 3611 bytes in 7 msecs (HTTP/1.1 200) 5 headers in 173 bytes (1 switches on core 0)
+{"TradeCode":"CheckSingleData","serial_id":"1590","serial_number":"ydrwa4bgse","modal_code":"pay","bd_id":9427}
+入参：{"TradeCode":"CheckSingleData","serial_id":"1590","serial_number":"ydrwa4bgse","modal_code":"pay","bd_id":9427}
+开始取全局对象
+取全局对象成功
+开始生成根据客户端信息 10.3.204.31
+生成根据客户端信息成功 {'id': 4, 'ss_eqlistd_eqcode': 'DH31-46', 'ss_eqlistd_eqdesc': '开发机', 'ss_eqlistd_address': '46所3楼', 'ss_eqlistd_spec': '', 'ss_eqlistd_unit': '', 'ss_eqlistd_type': '', 'ss_eqlistd_ip': '10.3.204.31', 'ss_eqlistd_mac': '', 'ss_eqlistd_opdate': '2021-08-09 15:53:00', 'ss_eqlistd_closedate': '2021-08-09 15:53:00', 'ss_eqlistd_createdate': '2021-08-09 15:53:00', 'ss_eqlistd_creator': '', 'ss_eqlistd_update': '2021-08-09 15:53:00', 'ss_eqlistd_upuser': '', 'ss_eqlistd_role': 'admin'}
+开始生成业务主表信息
+queryst {'id': 1590}
+生成业务主表信息成功
+业务开始，入参参数= {'TradeCode': 'CheckSingleData', 'serial_id': '1590', 'serial_number': 'ydrwa4bgse', 'modal_code': 'pay', 'bd_id': 9427}
+开始生成患者基本信息
+生成患者基本信息成功
+获取患者基本信息成功：
+开始生成HIS患者基本信息
+his_patinfo <Response><ResultCode>0</ResultCode><PatInfos><PatInfo><PatientID>00000089</PatientID><PatientName>唐正飞</PatientName><Sex>男</Sex><SexCode>1</SexCode><DOB>1994-12-13</DOB><TelephoneNo>18611101542</TelephoneNo><Mobile>18611101542</Mobile><DocumentID></DocumentID><Address></Address><IDTypeCode>20</IDTypeCode><IDTypeDesc></IDTypeDesc><IDNo>622126199412131419</IDNo><InsureCardNo>TANGZHENGFEI</InsureCardNo><AccInfo>0^1182192^000000890001^0^^0^^1584^00000089^1182302^P^PC^1^^0^1182192^000000890001^0^^0^^1584^00000089^1182302^P^PC^1^</AccInfo><AccInfoBalance>0</AccInfoBalance><AccInfoNo>1182192</AccInfoNo><PatientCard>X0000149</PatientCard><YBFlag>0</YBFlag><PatType>自费</PatType><PatTypeCode>01</PatTypeCode><Age>27</Age></PatInfo></PatInfos></Response>
+生成HIS患者基本信息成功 00000089
+获取HIS患者基本信息成功：
+CheckSingleData参数开始
+queryst {'fk_businessmaster_id': 1590, 'modal_code': 'INSUPreRegBack', 'intef_code': 'SaveBD'}
+queryst {'fk_businessmaster_id': 1590, 'modal_code': 'INSURegBack', 'intef_code': 'SaveBD'}
+queryst {'fk_businessmaster_id': 1590, 'modal_code': 'InsuOPDividePreBack', 'intef_code': 'SaveBD'}
+queryst {'fk_businessmaster_id': 1590, 'modal_code': 'InsuOPDivideCommitBacak', 'intef_code': 'SaveBD'}
+queryst {'fk_businessmaster_id': 1590, 'intef_code': '4905'}
+queryst {'fk_businessmaster_id': 1590, 'modal_code': 'paymode', 'intef_code': '6666'}
+1
+[pid: 5362|app: 0|req: 12/57] 10.3.204.31 () {48 vars in 874 bytes} [Thu Sep  2 16:07:37 2021] POST /CallPythonService => generated 179 bytes in 78 msecs (HTTP/1.1 200) 5 headers in 172 bytes (1 switches on core 0)
+{"TradeCode":"RefundExtPay","serial_id":"1590","serial_number":"ydrwa4bgse","modal_code":"pay","bd_id":9427}
+入参：{"TradeCode":"RefundExtPay","serial_id":"1590","serial_number":"ydrwa4bgse","modal_code":"pay","bd_id":9427}
+开始取全局对象
+取全局对象成功
+开始生成根据客户端信息 10.3.204.31
+生成根据客户端信息成功 {'id': 4, 'ss_eqlistd_eqcode': 'DH31-46', 'ss_eqlistd_eqdesc': '开发机', 'ss_eqlistd_address': '46所3楼', 'ss_eqlistd_spec': '', 'ss_eqlistd_unit': '', 'ss_eqlistd_type': '', 'ss_eqlistd_ip': '10.3.204.31', 'ss_eqlistd_mac': '', 'ss_eqlistd_opdate': '2021-08-09 15:53:00', 'ss_eqlistd_closedate': '2021-08-09 15:53:00', 'ss_eqlistd_createdate': '2021-08-09 15:53:00', 'ss_eqlistd_creator': '', 'ss_eqlistd_update': '2021-08-09 15:53:00', 'ss_eqlistd_upuser': '', 'ss_eqlistd_role': 'admin'}
+开始生成业务主表信息
+queryst {'id': 1590}
+生成业务主表信息成功
+业务开始，入参参数= {'TradeCode': 'RefundExtPay', 'serial_id': '1590', 'serial_number': 'ydrwa4bgse', 'modal_code': 'pay', 'bd_id': 9427}
+开始生成患者基本信息
+生成患者基本信息成功
+获取患者基本信息成功：
+开始生成HIS患者基本信息
+his_patinfo <Response><ResultCode>0</ResultCode><PatInfos><PatInfo><PatientID>00000089</PatientID><PatientName>唐正飞</PatientName><Sex>男</Sex><SexCode>1</SexCode><DOB>1994-12-13</DOB><TelephoneNo>18611101542</TelephoneNo><Mobile>18611101542</Mobile><DocumentID></DocumentID><Address></Address><IDTypeCode>20</IDTypeCode><IDTypeDesc></IDTypeDesc><IDNo>622126199412131419</IDNo><InsureCardNo>TANGZHENGFEI</InsureCardNo><AccInfo>0^1182192^000000890001^0^^0^^1584^00000089^1182302^P^PC^1^^0^1182192^000000890001^0^^0^^1584^00000089^1182302^P^PC^1^</AccInfo><AccInfoBalance>0</AccInfoBalance><AccInfoNo>1182192</AccInfoNo><PatientCard>X0000149</PatientCard><YBFlag>0</YBFlag><PatType>自费</PatType><PatTypeCode>01</PatTypeCode><Age>27</Age></PatInfo></PatInfos></Response>
+生成HIS患者基本信息成功 00000089
+获取HIS患者基本信息成功：
+开始第三方退费
+支付参数 {"appKey": "1629983059933605", "appSecret": "A09462711DC94490AD803D7BC9983545"}
+支付接口 sys-auth/channel/oauth/token
+支付权限 
+headers {'Content-Type': 'application/json'}
+{"code":200,"message":"success","result":{"accessToken":"b4e4a994-828c-4eef-93bc-49f191c9fee0d67cae9e-f9e4-412f-b968-b2e7864143e3","refreshToken":"65b49b41-b9f8-4da4-a2d6-84b196ea195ffe49e1ca-b0ff-4353-8767-86f7f63da017","expiresIn":1790,"scope":"chlapp","tokenType":"password"}}
+sign
+mch_appid=1629983059933605&mch_notify_url=http://geteway.clear-sz.com/DHC/SelfPay/PayCallBack&mch_order_id=RDHC000089210902160714&org_code=50821&pay_id=12001201166217081874944000&refund_amt=0.01&refund_reason=HIS支付失败&key=A09462711DC94490AD803D7BC9983545
+2.1获取退费入参 {"org_code": "50821", "mch_appid": "1629983059933605", "mch_order_id": "RDHC000089210902160714", "mch_notify_url": "http://geteway.clear-sz.com/DHC/SelfPay/PayCallBack", "pay_id": "12001201166217081874944000", "mch_pay_order_id": "", "pay_out_trade_no": "", "refund_amt": "0.01", "refund_reason": "HIS\u652f\u4ed8\u5931\u8d25", "extend_params": "", "sign": "B20E60B221A26ECADCE4E9AD168EA3FF", "sign_type": "MD5", "part_refund_type": "", "request_content": "", "cancel_bill_no": "", "cancel_serial_no": ""}
+支付参数 {"org_code": "50821", "mch_appid": "1629983059933605", "mch_order_id": "RDHC000089210902160714", "mch_notify_url": "http://geteway.clear-sz.com/DHC/SelfPay/PayCallBack", "pay_id": "12001201166217081874944000", "mch_pay_order_id": "", "pay_out_trade_no": "", "refund_amt": "0.01", "refund_reason": "HIS\u652f\u4ed8\u5931\u8d25", "extend_params": "", "sign": "B20E60B221A26ECADCE4E9AD168EA3FF", "sign_type": "MD5", "part_refund_type": "", "request_content": "", "cancel_bill_no": "", "cancel_serial_no": ""}
+支付接口 /jdpay/core/refund
+支付权限 b4e4a994-828c-4eef-93bc-49f191c9fee0d67cae9e-f9e4-412f-b968-b2e7864143e3
+headers {'Content-Type': 'application/json', 'Authorization-Token': 'b4e4a994-828c-4eef-93bc-49f191c9fee0d67cae9e-f9e4-412f-b968-b2e7864143e3'}
+{"result":{"extend_params":"","out_trade_no":"50300809562021090212121398887","mch_order_id":"RDHC000089210902160714","refund_id":"12001203166217166642089984","status":"refund_processing"},"code":200,"sign":"B5C296189B9705FF169C2DACBBDB62CD","message":"success","sign_type":"MD5"}
+2.1获取退费 {"result":{"extend_params":"","out_trade_no":"50300809562021090212121398887","mch_order_id":"RDHC000089210902160714","refund_id":"12001203166217166642089984","status":"refund_processing"},"code":200,"sign":"B5C296189B9705FF169C2DACBBDB62CD","message":"success","sign_type":"MD5"}
+保存Ext {"result":{"extend_params":"","out_trade_no":"50300809562021090212121398887","mch_order_id":"RDHC000089210902160714","refund_id":"12001203166217166642089984","status":"refund_processing"},"code":200,"sign":"B5C296189B9705FF169C2DACBBDB62CD","message":"success","sign_type":"MD5"}
+保存ExtInputJson {'org_code': '50821', 'mch_appid': '1629983059933605', 'mch_order_id': 'RDHC000089210902160714', 'mch_notify_url': 'http://geteway.clear-sz.com/DHC/SelfPay/PayCallBack', 'pay_id': '12001201166217081874944000', 'mch_pay_order_id': '', 'pay_out_trade_no': '', 'refund_amt': '0.01', 'refund_reason': 'HIS支付失败', 'extend_params': '', 'sign': '', 'sign_type': 'MD5', 'part_refund_type': '', 'request_content': '', 'cancel_bill_no': '', 'cancel_serial_no': ''}
+__insert {'ss_extd_code': 'Reg', 'ss_extd_amt': None, 'ss_extd_type': 'Refund', 'ss_extd_status': '0', 'ss_extd_id': '1590', 'ss_extd_no': 'ydrwa4bgse', 'ss_extd_hisno': 'RDHC000089210902160714', 'ss_extd_platno': '', 'ss_extd_extno': '', 'ss_extd_channel': None, 'ss_extd_outinfo': {'result': {'extend_params': '', 'out_trade_no': '50300809562021090212121398887', 'mch_order_id': 'RDHC000089210902160714', 'refund_id': '12001203166217166642089984', 'status': 'refund_processing'}, 'code': 200, 'sign': 'B5C296189B9705FF169C2DACBBDB62CD', 'message': 'success', 'sign_type': 'MD5'}, 'ss_extd_ininfo': {'org_code': '50821', 'mch_appid': '1629983059933605', 'mch_order_id': 'RDHC000089210902160714', 'mch_notify_url': 'http://geteway.clear-sz.com/DHC/SelfPay/PayCallBack', 'pay_id': '12001201166217081874944000', 'mch_pay_order_id': '', 'pay_out_trade_no': '', 'refund_amt': '0.01', 'refund_reason': 'HIS支付失败', 'extend_params': '', 'sign': '', 'sign_type': 'MD5', 'part_refund_type': '', 'request_content': '', 'cancel_bill_no': '', 'cancel_serial_no': ''}, 'ss_extd_creator': 'DH31-46'}
+1
+[pid: 5363|app: 0|req: 12/58] 10.3.204.31 () {48 vars in 874 bytes} [Thu Sep  2 16:07:37 2021] POST /CallPythonService => generated 383 bytes in 952 msecs (HTTP/1.1 200) 5 headers in 172 bytes (1 switches on core 0)
+{"TradeCode":"SaveBD","serial_id":"1590","serial_number":"ydrwa4bgse","modal_code":"RefundExtPayBack","bd_id":9427,"intef_output":{"result":"0","msg":"成功","output":"{\"result\":{\"extend_params\":\"\",\"out_trade_no\":\"50300809562021090212121398887\",\"mch_order_id\":\"RDHC000089210902160714\",\"refund_id\":\"12001203166217166642089984\",\"status\":\"refund_processing\"},\"code\":200,\"sign\":\"B5C296189B9705FF169C2DACBBDB62CD\",\"message\":\"success\",\"sign_type\":\"MD5\"}","outputType":"JSON"}}
+入参：{"TradeCode":"SaveBD","serial_id":"1590","serial_number":"ydrwa4bgse","modal_code":"RefundExtPayBack","bd_id":9427,"intef_output":{"result":"0","msg":"成功","output":"{\"result\":{\"extend_params\":\"\",\"out_trade_no\":\"50300809562021090212121398887\",\"mch_order_id\":\"RDHC000089210902160714\",\"refund_id\":\"12001203166217166642089984\",\"status\":\"refund_processing\"},\"code\":200,\"sign\":\"B5C296189B9705FF169C2DACBBDB62CD\",\"message\":\"success\",\"sign_type\":\"MD5\"}","outputType":"JSON"}}
+开始取全局对象
+取全局对象成功
+开始生成根据客户端信息 10.3.204.31
+生成根据客户端信息成功 {'id': 4, 'ss_eqlistd_eqcode': 'DH31-46', 'ss_eqlistd_eqdesc': '开发机', 'ss_eqlistd_address': '46所3楼', 'ss_eqlistd_spec': '', 'ss_eqlistd_unit': '', 'ss_eqlistd_type': '', 'ss_eqlistd_ip': '10.3.204.31', 'ss_eqlistd_mac': '', 'ss_eqlistd_opdate': '2021-08-09 15:53:00', 'ss_eqlistd_closedate': '2021-08-09 15:53:00', 'ss_eqlistd_createdate': '2021-08-09 15:53:00', 'ss_eqlistd_creator': '', 'ss_eqlistd_update': '2021-08-09 15:53:00', 'ss_eqlistd_upuser': '', 'ss_eqlistd_role': 'admin'}
+开始生成业务主表信息
+queryst {'id': 1590}
+生成业务主表信息成功
+业务开始，入参参数= {'TradeCode': 'SaveBD', 'serial_id': '1590', 'serial_number': 'ydrwa4bgse', 'modal_code': 'RefundExtPayBack', 'bd_id': 9427, 'intef_output': {'result': '0', 'msg': '成功', 'output': '{"result":{"extend_params":"","out_trade_no":"50300809562021090212121398887","mch_order_id":"RDHC000089210902160714","refund_id":"12001203166217166642089984","status":"refund_processing"},"code":200,"sign":"B5C296189B9705FF169C2DACBBDB62CD","message":"success","sign_type":"MD5"}', 'outputType': 'JSON'}}
+开始生成患者基本信息
+生成患者基本信息成功
+获取患者基本信息成功：
+开始生成HIS患者基本信息
+his_patinfo <Response><ResultCode>0</ResultCode><PatInfos><PatInfo><PatientID>00000089</PatientID><PatientName>唐正飞</PatientName><Sex>男</Sex><SexCode>1</SexCode><DOB>1994-12-13</DOB><TelephoneNo>18611101542</TelephoneNo><Mobile>18611101542</Mobile><DocumentID></DocumentID><Address></Address><IDTypeCode>20</IDTypeCode><IDTypeDesc></IDTypeDesc><IDNo>622126199412131419</IDNo><InsureCardNo>TANGZHENGFEI</InsureCardNo><AccInfo>0^1182192^000000890001^0^^0^^1584^00000089^1182302^P^PC^1^^0^1182192^000000890001^0^^0^^1584^00000089^1182302^P^PC^1^</AccInfo><AccInfoBalance>0</AccInfoBalance><AccInfoNo>1182192</AccInfoNo><PatientCard>X0000149</PatientCard><YBFlag>0</YBFlag><PatType>自费</PatType><PatTypeCode>01</PatTypeCode><Age>27</Age></PatInfo></PatInfos></Response>
+生成HIS患者基本信息成功 00000089
+获取HIS患者基本信息成功：
+SaveBD参数开始
+__insert {'fk_businessmaster_id': '1590', 'serial_number': '4861n7i0kr', 'his_serial_number': None, 'modal_code': 'RefundExtPayBack', 'model_desc': None, 'intef_code': 'SaveBD', 'intef_desc': None, 'intef_input': None, 'intef_output': {'result': '0', 'msg': '成功', 'output': '{"result":{"extend_params":"","out_trade_no":"50300809562021090212121398887","mch_order_id":"RDHC000089210902160714","refund_id":"12001203166217166642089984","status":"refund_processing"},"code":200,"sign":"B5C296189B9705FF169C2DACBBDB62CD","message":"success","sign_type":"MD5"}', 'outputType': 'JSON'}}
+1
+[pid: 5364|app: 0|req: 12/59] 10.3.204.31 () {48 vars in 874 bytes} [Thu Sep  2 16:07:38 2021] POST /CallPythonService => generated 154 bytes in 10 msecs (HTTP/1.1 200) 5 headers in 172 bytes (1 switches on core 0)
+[pid: 5365|app: 0|req: 12/60] 10.3.204.31 () {38 vars in 569 bytes} [Thu Sep  2 16:07:39 2021] GET / => generated 3953 bytes in 11 msecs (HTTP/1.1 200) 5 headers in 167 bytes (1 switches on core 0)
+{"TradeCode":"GetMenuBtn","serial_id":"","serial_number":"","modal_code":"","bd_id":{}}
+入参：{"TradeCode":"GetMenuBtn","serial_id":"","serial_number":"","modal_code":"","bd_id":{}}
+开始取全局对象
+取全局对象成功
+开始生成根据客户端信息 10.3.204.31
+生成根据客户端信息成功 {'id': 4, 'ss_eqlistd_eqcode': 'DH31-46', 'ss_eqlistd_eqdesc': '开发机', 'ss_eqlistd_address': '46所3楼', 'ss_eqlistd_spec': '', 'ss_eqlistd_unit': '', 'ss_eqlistd_type': '', 'ss_eqlistd_ip': '10.3.204.31', 'ss_eqlistd_mac': '', 'ss_eqlistd_opdate': '2021-08-09 15:53:00', 'ss_eqlistd_closedate': '2021-08-09 15:53:00', 'ss_eqlistd_createdate': '2021-08-09 15:53:00', 'ss_eqlistd_creator': '', 'ss_eqlistd_update': '2021-08-09 15:53:00', 'ss_eqlistd_upuser': '', 'ss_eqlistd_role': 'admin'}
+业务开始，入参参数= {'TradeCode': 'GetMenuBtn', 'serial_id': '', 'serial_number': '', 'modal_code': '', 'bd_id': {}}
+获取患者基本信息成功：
+获取HIS患者基本信息成功：
+获取菜单 {'id': 4, 'ss_eqlistd_eqcode': 'DH31-46', 'ss_eqlistd_eqdesc': '开发机', 'ss_eqlistd_address': '46所3楼', 'ss_eqlistd_spec': '', 'ss_eqlistd_unit': '', 'ss_eqlistd_type': '', 'ss_eqlistd_ip': '10.3.204.31', 'ss_eqlistd_mac': '', 'ss_eqlistd_opdate': '2021-08-09 15:53:00', 'ss_eqlistd_closedate': '2021-08-09 15:53:00', 'ss_eqlistd_createdate': '2021-08-09 15:53:00', 'ss_eqlistd_creator': '', 'ss_eqlistd_update': '2021-08-09 15:53:00', 'ss_eqlistd_upuser': '', 'ss_eqlistd_role': 'admin'}
+根据角色获取 admin
+1
+[pid: 5361|app: 0|req: 13/61] 10.3.204.31 () {48 vars in 835 bytes} [Thu Sep  2 16:07:39 2021] POST /CallPythonService => generated 68 bytes in 5 msecs (HTTP/1.1 200) 5 headers in 171 bytes (1 switches on core 0)
+*** Starting uWSGI 2.0.19.1 (64bit) on [Thu Sep  2 16:11:49 2021] ***
+compiled with version: 10.2.0 on 12 August 2021 03:12:18
+os: CYGWIN_NT-6.3-9600-3.2.0-340.x86_64 2021-03-29 08:42 UTC
+nodename: WIN-1MDNOQHL2T2
+machine: x86_64
+clock source: unix
+detected number of CPU cores: 8
+current working directory: /SelfService/uwsgi_conf
+writing pidfile to /SelfService/uwsgi_conf/pid/uwsgi.pid
+detected binary path: /usr/bin/uwsgi
+!!! no internal routing support, rebuild with pcre support !!!
+chdir() to /SelfService
+your memory page size is 4096 bytes
+detected max file descriptor number: 3200
+building mime-types dictionary from file /etc/mime.types...0 entry found
+lock engine: windows mutexes
+thunder lock: enabled
+probably another instance of uWSGI is running on the same address (:8000).
+bind(): Address already in use [core/socket.c line 769]
+DAMN ! worker 5 (pid: 5365) died :( trying respawn ...
+Respawned uWSGI worker 5 (new pid: 5393)
+DAMN ! worker 5 (pid: 5393) died :( trying respawn ...
+Respawned uWSGI worker 5 (new pid: 5394)
+DAMN ! worker 3 (pid: 5363) died :( trying respawn ...
+Respawned uWSGI worker 3 (new pid: 5395)
+DAMN ! worker 2 (pid: 5362) died :( trying respawn ...
+Respawned uWSGI worker 2 (new pid: 5396)
+DAMN ! worker 2 (pid: 5396) died :( trying respawn ...
+Respawned uWSGI worker 2 (new pid: 5397)
+DAMN ! worker 2 (pid: 5397) died :( trying respawn ...
+Respawned uWSGI worker 2 (new pid: 5398)
+[uwsgi-signal] read(): Connection reset by peer [core/signal.c line 482]
+Thu Sep  2 16:20:16 2021 - uWSGI worker 4 screams: UAAAAAAH my master disconnected: i will kill myself !!!
+[uwsgi-signal] read(): Connection reset by peer [core/signal.c line 482]
+Thu Sep  2 16:20:16 2021 - uWSGI worker 1 screams: UAAAAAAH my master disconnected: i will kill myself !!!
+[uwsgi-signal] read(): Connection reset by peer [core/signal.c line 482]
+Thu Sep  2 16:20:16 2021 - uWSGI worker 5 screams: UAAAAAAH my master disconnected: i will kill myself !!!
+[uwsgi-signal] read(): Connection reset by peer [core/signal.c line 482]
+Thu Sep  2 16:20:16 2021 - uWSGI worker 3 screams: UAAAAAAH my master disconnected: i will kill myself !!!
+[uwsgi-signal] read(): Connection reset by peer [core/signal.c line 482]
+Thu Sep  2 16:20:16 2021 - uWSGI worker 2 screams: UAAAAAAH my master disconnected: i will kill myself !!!
+*** Starting uWSGI 2.0.19.1 (64bit) on [Thu Sep  2 16:21:30 2021] ***
+compiled with version: 10.2.0 on 12 August 2021 03:12:18
+os: CYGWIN_NT-6.3-9600-3.2.0-340.x86_64 2021-03-29 08:42 UTC
+nodename: WIN-1MDNOQHL2T2
+machine: x86_64
+clock source: unix
+detected number of CPU cores: 8
+current working directory: /SelfService/uwsgi_conf
+detected binary path: /usr/bin/uwsgi
+!!! no internal routing support, rebuild with pcre support !!!
+chdir() to /SelfService
+your memory page size is 4096 bytes
+detected max file descriptor number: 3200
+building mime-types dictionary from file /etc/mime.types...0 entry found
+lock engine: windows mutexes
+thunder lock: enabled
+uwsgi socket 0 bound to TCP address :8000 fd 6
+Python version: 3.7.10 (default, May  5 2021, 11:43:58)  [GCC 10.2.0]
+Python main interpreter initialized at 0x80009e060
+python threads support enabled
+your server socket listen backlog is limited to 100 connections
+your mercy for graceful operations on workers is 60 seconds
+setting request body buffering size to 40960 bytes
+mapped 1051818 bytes (1027 KB) for 5 cores
+*** Operational MODE: preforking ***
+WSGI app 0 (mountpoint='') ready in 0 seconds on interpreter 0x80009e060 pid: 5405 (default app)
+*** uWSGI is running in multiple interpreter mode ***
+spawned uWSGI master process (pid: 5405)
+spawned uWSGI worker 1 (pid: 5406, cores: 1)
+Python auto-reloader enabled
+spawned uWSGI worker 2 (pid: 5407, cores: 1)
+spawned uWSGI worker 3 (pid: 5408, cores: 1)
+spawned uWSGI worker 4 (pid: 5409, cores: 1)
+spawned uWSGI worker 5 (pid: 5410, cores: 1)
+Thu Sep  2 16:21:31 2021 - logsize: 207993, triggering rotation to /SelfService/uwsgi_conf/logs/uwsgi.log.1630570891...

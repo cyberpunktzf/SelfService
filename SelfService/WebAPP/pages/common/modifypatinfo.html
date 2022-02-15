@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<!-- 
+ * FileName: charge.readcard.show.html
+ * Creator: tangzf 
+ * Date: 2020-3-26
+ * Description: 移动收费-读卡提示
+-->
+<html>
+<head>
+		<link rel="stylesheet" type="text/css" href="/WebAPP/plugin/layim-v3.7.8/dist/css/layui.css"/>
+		<script type="text/javascript" src="/WebAPP/plugin/layim-v3.7.8/dist/layui.js" charset="utf-8"></script>
+		<link rel="stylesheet" type="text/css" href="/WebAPP/plugin/layim-v3.7.8/dist/css/global.css"/>
+
+		<script type="text/javascript" src="/WebAPP/plugin/xml2json/xml2json.min.js" charset="utf-8"></script>
+
+		<link rel="stylesheet" type="text/css" href="/WebAPP/plugin/hisui-0.1.0/dist/css/hisui.css"/>
+		<script type="text/javascript" src="/WebAPP/plugin/hisui-0.1.0/dist/js/jquery-1.11.3.min.js" charset="utf-8"></script>
+		<script type="text/javascript" src="/WebAPP/plugin/hisui-0.1.0/dist/js/jquery.hisui.min.js" charset="utf-8"></script>
+
+		<link rel="stylesheet" type="text/css" href="/WebAPP/themes/css/charge.main.css"/>
+		<link rel="stylesheet" type="text/css" href="/WebAPP/themes/css/default.css"/>
+		<script type="text/javascript" src="/WebAPP/js/sys/layout.js" charset="utf-8"></script>
+		<script type="text/javascript" src="/WebAPP/js/sys/parsedata.js" charset="utf-8"></script>
+		<script type="text/javascript" src="/WebAPP/js/sys/webservices.js" charset="utf-8"></script>
+		<script type="text/javascript" src="/WebAPP/js/sys/adapter.js" charset="utf-8"></script>
+		<script type="text/javascript" src="/WebAPP/js/sys/common.js" charset="utf-8"></script>
+		<script type="text/javascript" src="/WebAPP/js/sys/card.js" charset="utf-8"></script>
+
+		<link rel="stylesheet" type="text/css" href="/WebAPP/themes/css/icons.css"/>
+		<link rel="stylesheet" type="text/css" href="/WebAPP/themes/css/sysbtn.css"/>
+		<link rel="stylesheet" type="text/css" href="/WebAPP/themes/css/syswindow.css"/>
+
+		<script type="text/javascript" src="/WebAPP/js/sys/syswindow.js" charset="utf-8"></script>
+		<script type="text/javascript" src="/WebAPP/js/common/payservice.js" charset="utf-8"></script>
+		<script type="text/javascript" src="/WebAPP/plugin/lodop/LodopFuncs.js"></script>
+		<script type="text/javascript" src="/WebAPP/js/sys/print.js" charset="utf-8"></script>
+		
+		<script type="text/javascript" src="/WebAPP/js/sys/sysconfig.js" charset="utf-8"></script>
+		<script type="text/javascript" src="/WebAPP/js/sys/DHCInsuPort.js" charset="utf-8"></script>
+	<style>
+		.sys-white-defbutton.cardno{
+			width: 920px ;
+			height: 108px;
+		}
+		.sys-white-defbutton-label{
+			line-height: 102px;
+		}
+		.sys-defbutton.modify-button{
+			height: 80px;
+			width: 624px;
+		}
+		.sys-white-defbutton.number{
+			width: 180px;
+			height: 98px;
+			opacity: 1;
+			background: #ffffff;
+			border: 2px solid #8cbcf9;
+			border-radius: 16px;
+		}
+		.sys-white-defbutton.number{
+			margin: 0px;
+		}
+		.middle{
+			margin:0px 40px !important;
+		}
+		.keybord-region .layui-row{
+			display: flex;
+			justify-content: center;
+		}
+		.sys-defbutton{
+			background: linear-gradient(360deg,#2a4fd3 6%, #3057d6 92%);
+		}
+		.bgj-phone img{
+			position: absolute;
+			top: 89px;
+			left: 837px;
+		}
+	</style>
+</head>
+
+<body>
+	<div class="">
+		<div class="layui-row" style="text-align: center;">
+			<img style="padding-bottom: 20px;" src="/WebAPP/themes/images/dbnext.png"/>
+			<label style="
+			height: 52px;
+			opacity: 1;
+			font-size: 40px;
+			font-family: MicrosoftYaHei;
+			color: #ffffff;
+			line-height: 42px;">请输入联系电话</label>	
+			<img style="padding-bottom: 20px;" src="/WebAPP/themes/images/dbprev.png"/>
+		</div>
+		<div class="layui-row bgj-phone" style="text-align: center;">
+			<div class='sys-white-defbutton cardno'>
+				<label class='sys-white-defbutton-label' id="CardNo"></label>
+				<img src="/WebAPP/themes/images/right.png"/>
+			</div>
+		</div>
+		<div class="layui-row bgj" style="text-align: center;margin-top: 20px;">
+			<img src="/WebAPP/themes/images/modifytel.png"/>
+		</div>
+		<div class="sys-defbutton modify-button change" style="margin-top: 40px;">
+			<label class="sys-defbutton-label keybord change" data="change" id="change">变更号码</label>
+		</div>	
+		<!--键盘-->
+		<div class="layui-container keybord-region" style="display:none;" id="keybord">
+			<div class="layui-row" style="padding-top:20px;">
+				<div class='sys-white-defbutton number'>
+					<label class='sys-white-defbutton-label'>1</label>
+				</div>
+				<div class='sys-white-defbutton number middle'>
+					<label class='sys-white-defbutton-label'>2</label>
+				</div>
+				<div class='sys-white-defbutton number'>
+					<label class='sys-white-defbutton-label'>3</label>
+				</div>
+			</div>
+			<div class="layui-row" style="padding-top:20px;">
+				<div class='sys-white-defbutton number'>
+					<label class='sys-white-defbutton-label'>4</label>
+				</div>
+				<div class='sys-white-defbutton number middle'>
+					<label class='sys-white-defbutton-label'>5</label>
+				</div>
+				<div class='sys-white-defbutton number'>
+					<label class='sys-white-defbutton-label'>6</label>
+				</div>
+			</div>
+			<div class="layui-row" style="padding-top:20px;">
+				<div class='sys-white-defbutton number'>
+					<label class='sys-white-defbutton-label'>7</label>
+				</div>
+				<div class='sys-white-defbutton number middle'>
+					<label class='sys-white-defbutton-label'>8</label>
+				</div>
+				<div class='sys-white-defbutton number'>
+					<label class='sys-white-defbutton-label'>9</label>
+				</div>
+			</div>
+			<div class="layui-row" style="padding-top:20px">
+				<div class='sys-white-defbutton number'>
+					<label class='sys-white-defbutton-label' data="clear">清空</label>
+				</div>
+				<div class='sys-white-defbutton number middle'>
+					<label class='sys-white-defbutton-label'>0</label>
+				</div>
+				<div class='sys-white-defbutton number'>
+					<img style="margin-top: 30px;" onClick="FillSrvyList(0)" data="back" src="/WebAPP/themes/images/backsp.png"/>
+				</div>
+			</div>
+			<!--键盘-->
+		</div>
+		<!--确认-->
+		<div class="sys-defbutton modify-button" id="BtnConfirm" style="margin-top: 40px;">
+			<label class="sys-defbutton-label" data="confirm">确认</label>
+		</div>
+		<div class="layui-row" style="text-align: center;padding-top:20px;">
+			<button style="display:none;" class="layui-btn layui-btn-lg layui-btn-radius keybord" id="modifyBack1" data="modifyBack">返回</button>
+		</div>
+	</div>
+	<script type="text/javascript" src="/WebAPP/js/common/modifypatinfo.js"></script>
+</body>
+</html>

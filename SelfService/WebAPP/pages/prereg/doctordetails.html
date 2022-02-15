@@ -1,0 +1,262 @@
+<!-- 
+ * FileName: prereg.doctordetails.html
+ * Creator: tangzf 
+ * Date: 2020-4-09
+ * Description: 预约挂号-医生排班查询 1004
+-->
+<!DOCTYPE html>
+<html>
+<head>
+		<script type="text/javascript" src="/WebAPP/plugin/jquery1.8.3/jquery.min.js" ></script>
+		<script type="text/javascript" src="/WebAPP/plugin/jquery1.8.3/jquery.easyui.min.js" ></script>
+		
+		<link rel="stylesheet" type="text/css" href="/WebAPP/plugin/layim-v3.7.8/dist/css/layui.css"/>
+		<script type="text/javascript" src="/WebAPP/plugin/layim-v3.7.8/dist/layui.js" charset="utf-8"></script>
+		<link rel="stylesheet" type="text/css" href="/WebAPP/plugin/layim-v3.7.8/dist/css/global.css"/>
+
+		<script type="text/javascript" src="/WebAPP/plugin/xml2json/xml2json.min.js" charset="utf-8"></script>
+
+		<link rel="stylesheet" type="text/css" href="/WebAPP/plugin/hisui-0.1.0/dist/css/hisui.css"/>
+		<script type="text/javascript" src="/WebAPP/plugin/hisui-0.1.0/dist/js/jquery-1.11.3.min.js" charset="utf-8"></script>
+		<script type="text/javascript" src="/WebAPP/plugin/hisui-0.1.0/dist/js/jquery.hisui.min.js" charset="utf-8"></script>
+
+		<link rel="stylesheet" type="text/css" href="/WebAPP/themes/css/charge.main.css"/>
+		<link rel="stylesheet" type="text/css" href="/WebAPP/themes/css/default.css"/>
+		<script type="text/javascript" src="/WebAPP/js/sys/layout.js" charset="utf-8"></script>
+		<script type="text/javascript" src="/WebAPP/js/sys/parsedata.js" charset="utf-8"></script>
+		<script type="text/javascript" src="/WebAPP/js/sys/webservices.js" charset="utf-8"></script>
+		<script type="text/javascript" src="/WebAPP/js/sys/adapter.js" charset="utf-8"></script>
+		<script type="text/javascript" src="/WebAPP/js/sys/common.js" charset="utf-8"></script>
+		<script type="text/javascript" src="/WebAPP/js/sys/card.js" charset="utf-8"></script>
+
+		<link rel="stylesheet" type="text/css" href="/WebAPP/themes/css/icons.css"/>
+		<link rel="stylesheet" type="text/css" href="/WebAPP/themes/css/sysbtn.css"/>
+		<link rel="stylesheet" type="text/css" href="/WebAPP/themes/css/syswindow.css"/>
+
+		<script type="text/javascript" src="/WebAPP/js/sys/syswindow.js" charset="utf-8"></script>
+		<script type="text/javascript" src="/WebAPP/js/common/payservice.js" charset="utf-8"></script>
+		<script type="text/javascript" src="/WebAPP/plugin/lodop/LodopFuncs.js"></script>
+		<script type="text/javascript" src="/WebAPP/js/sys/print.js" charset="utf-8"></script>
+		
+		<script type="text/javascript" src="/WebAPP/js/sys/sysconfig.js" charset="utf-8"></script>
+		<script type="text/javascript" src="/WebAPP/js/sys/DHCInsuPort.js" charset="utf-8"></script>
+	<style>
+		body>div{
+			overflow: hidden;
+		}
+		.layui-table{
+			margin: 0px;
+		}
+		.content>td,.content>td div{ /*表格内文字大小*/
+			opacity: 1;
+			font-size: 30px;
+			font-family: Microsoft YaHei, Microsoft YaHei-Regular;
+			font-weight: 400;
+			color: #000000;
+			line-height: 40px;
+			text-align: center;
+		}
+		.content>td>button{ /*表格内按钮大小*/
+			width: 120px;
+			height: 60px;
+		}
+		/*表格去边框*/
+		.content td,th{
+			padding: 0px;
+			border: 0px;
+		}
+		.table-title td{
+			text-align: center !important;
+			justify-content: center !important;
+		}
+		.title-td {
+			height: 146px !important;
+		}
+		.morning,.afternoon td{
+			height: 124px !important;
+		}
+		.content td{
+			width:190px !important;
+		}
+		/*
+		.table-title td:not(:first-child):not(:last-child),.morning td:not(:first-child):not(:last-child){
+			border-bottom: 1px solid #D9D9D9;
+		}
+		*/
+		/*分割线*/
+		.table-title td,.morning td{
+			border-bottom: 1px solid #D9D9D9;
+		}
+		.sys-defbutton-label{
+			width: 60px;
+			height: 40px;
+			opacity: 1;
+			font-size: 30px;
+			font-family: MicrosoftYaHei;
+			text-align: left;
+			color: #ffffff;
+			line-height: 50px;
+		}
+		.sys-defbutton-label.disabled{
+			width: 60px;
+			height: 40px;
+			opacity: 1;
+			font-size: 30px;
+			font-family: MicrosoftYaHei;
+			text-align: left;
+			line-height: 50px;
+		}
+		.bgj{
+			display: none;
+		}
+	</style>
+</head>
+
+<body>
+	<div style="overflow: hidden;">
+		<div class="layui-row" style="text-align: center;padding-top:10px;">
+			<img style="padding-bottom: 20px;" onClick="FillSrvyList(0)" src="/WebAPP/themes/images/dbnext.png" />
+			<label class="doc-date-title" style="
+			width: 400px;
+			height: 52px;
+			opacity: 1;
+			font-size: 40px;
+			font-family: MicrosoftYaHei;
+			text-align: left;
+			color: #FFFFFF;
+			line-height: 42px;">请选择预约日期</label>	
+			<img style="padding-bottom:20px;" onClick="FillSrvyList(0)" src="/WebAPP/themes/images/dbprev.png"/>
+		</div>
+		<div class="layui-row" style="text-align: center;">
+			<div class="layui-row DeptName bgj" style="
+			height: 42px;
+			opacity: 1;
+			border: 1px solid rgba(0,0,0,0.00);
+			font-size: 32px;
+			font-family: Microsoft YaHei, Microsoft YaHei-Regular;
+			font-weight: 400;
+			text-align: center;
+			color: #ffffff;
+			line-height: 46px;"">
+				<!--label class='bgj' style="width: 626px;
+				height: 42px;
+				opacity: 1;
+				border: 1px solid rgba(0,0,0,0.00);
+				font-size: 32px;
+				font-family: Microsoft YaHei, Microsoft YaHei-Regular;
+				font-weight: 400;
+				text-align: center;
+				color: #FFFFFF;
+				line-height: 46px;">【您选择的是】</label>
+				<label class='layui-row bgj DoctorName' style="width: 626px;
+				height: 42px;
+				opacity: 1;
+				border: 1px solid rgba(0,0,0,0.00);
+				font-size: 32px;
+				font-family: Microsoft YaHei, Microsoft YaHei-Regular;
+				font-weight: 400;
+				text-align: center;
+				color: #FFFFFF;
+				line-height: 46px;"></label>
+				<label class='layui-row bgj DoctorLevel' style="width: 626px;
+				height: 42px;
+				opacity: 1;
+				border: 1px solid rgba(0,0,0,0.00);
+				font-size: 32px;
+				font-family: Microsoft YaHei, Microsoft YaHei-Regular;
+				font-weight: 400;
+				text-align: center;
+				color: #FFFFFF;
+				line-height: 46px;"></label>	
+				<label class='layui-row bgj DeptNamebgj' style="width: 626px;
+				opacity: 1;
+				border: 1px solid rgba(0,0,0,0.00);
+				font-size: 32px;
+				font-family: Microsoft YaHei, Microsoft YaHei-Regular;
+				font-weight: 400;
+				text-align: center;
+				color: #FFFFFF;
+				line-height: 46px;"></label-->
+			</div>
+			<div class="layui-row today" style="text-align: center;" >
+				<label id="today" style="width: 380px;
+				height: 42px;
+				opacity: 1;
+				border: 1px solid rgba(0,0,0,0.00);
+				font-size: 32px;
+				font-family: Microsoft YaHei, Microsoft YaHei-Regular;
+				font-weight: 400;
+				text-align: center;
+				color: #FFFFFF;
+				line-height: 46px;"></label>	
+			</div>
+		</div>
+		<!--timeinfo-->
+		<div class='layui-row'>
+			<div class="layui-col-md8" style="width:928px;height:405px;margin: 18px 74px 139px 74px;border: 2px solid #8cbcf9;border-radius:24px;background:#ffffff;">
+				<table class="layui-table" style="border-radius:24px;">
+					<tbody> 
+						<tr class="content table-title title-td">
+							<td></td>
+							<td class="week-head1">
+								<div class="week-head-days"></div>
+								<div class="week-head-title"></div>						
+							</td>
+							<td class="week-head2">
+								<div class="week-head-days"></div>
+								<div class="week-head-title"></div>	
+							<td class="week-head3">
+								<div class="week-head-days"></div>
+								<div class="week-head-title"></div>	
+							</td>
+							<td class="week-head4">
+								<div class="week-head-days"></div>
+								<div class="week-head-title"></div>	
+							</td>
+							<td class="week-head5">
+								<div class="week-head-days"></div>
+								<div class="week-head-title"></div>	
+							</td>
+							<td class="week-head6">
+								<div class="week-head-days"></div>
+								<div class="week-head-title"></div>	
+							</td>
+							<td class="week-head7">
+								<div class="week-head-days"></div>
+								<div class="week-head-title"></div>	
+							</td>
+						</tr>
+						<tr class="content morning">
+							<td>上午</td>
+							<td class="week-content1 td-val"></td>
+							<td class="week-content2 td-val"></td>
+							<td class="week-content3 td-val"></td>
+							<td class="week-content4 td-val"></td>
+							<td class="week-content5 td-val"></td>
+							<td class="week-content6 td-val"></td>
+							<td class="week-content7 td-val"></td>
+						</tr>
+						<tr class="content afternoon">
+							<td>下午</td>
+							<td class="week-content1 td-val"></td>
+							<td class="week-content2 td-val"></td>
+							<td class="week-content3 td-val"></td>
+							<td class="week-content4 td-val"></td>
+							<td class="week-content5 td-val"></td>
+							<td class="week-content6 td-val"></td>
+							<td class="week-content7 td-val"></td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+		</div>
+		<div class="layui-row bottom-change" style="text-align: center;border:none;" >
+			<img onClick = "GetHISDocDetInfo(-1)" id="BackButton" src="/WebAPP/themes/images/prev.png" />
+			<label  class="pagenum-c" id="currentPage">1</label>
+			<label  class="pagenum-t"id="pageNum">/2</label>		
+			<img onClick = "GetHISDocDetInfo(1)" id="NextButton" src="/WebAPP/themes/images/next.png" />
+		</div>
+	</div>
+	<script type="text/javascript" src="/WebAPP/js/prereg/doctordetails.js"></script>
+</body>
+</html>

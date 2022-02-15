@@ -1,0 +1,119 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script type="text/javascript" src="/WebAPP/plugin/hisui-0.1.0/dist/js/jquery-1.11.3.min.js"></script>
+	<script type="text/javascript" src="/WebAPP/js/sys/adapter.js" charset="utf-8"></script>
+	<script type='text/javascript' src='/WebAPP/plugin/echarts/echarts.min.js'></script>
+    <style>
+		body {
+			background-color: #293c55;
+			overflow: hidden;
+		}
+		.title {
+			background-color: #a52a2a;
+			width: 200px;
+		}
+		.title>h2 {
+			color: #fff8dc;
+		}
+    </style>
+</head>
+<body>
+    <div class="title">
+        <h2>自助服务人次</h2>
+    </div>
+    <div id="countEcharts" style="width: 100%;height: 300px;"></div>
+</body>
+<script type="text/javascript">
+	//常量
+	const CV = {
+		MoudleName: 'SelfServPy.Common.ss_eqlistdCtl',
+		ClassName: 'ELC'
+	};
+	//全局变量
+	var GV = {
+		Echarts: {}
+	}
+	$(function() {
+		//初始化ECharts实列
+		GV.Echarts = echarts.init($("#countEcharts")[0]);
+		//指定图表的配置项和数据
+		var option = {
+			title: {
+				text: '设备总投放数',
+				x: 'center',
+				y: '40%',
+				textStyle: {
+					fontWeight: 'normal',
+					fontSize: 16,
+					color: '#ffffff'
+				},  //标题
+				subtextStyle: {
+					fontWeight: 'normal',
+					fontSize: 40,
+					color: '#ffffff'
+				}   //副标题
+			},
+			tooltip: {
+				//show: false,                          //关闭悬浮提示
+				trigger: 'item',                        //设置触发类型，默认数据触发
+				formatter: "{a} <br/>{b}: {c} ({d}%)"   //设置提示框显示内容   {a}指series.data的name   {c}指series.data的value  {d}%指这一部分占总数的百分比
+			},
+			legend: {
+				orient: 'vertical',
+				x: 'left',
+				data: ['正常', '故障', '离线']
+			},
+			color: ['#32CD99', '#ffff00', 'gray'],
+			series: [{
+				name: '设备信息',
+				type: 'pie',
+				radius: ['50%', '80%'],       //第一个百分比设置内圈大小，第二个百分比设置外圈大小
+				//hoverAnimation: false,      //是否开启hover在扇形区上的放大动画效果
+				//silent: true,               //图形是否不响应和触发鼠标事件，默认为false，即响应和触发鼠标事件
+				//center: ['80%', '40%'],     //第一个百分比设置水平位置，第二个百分比设置垂直位置
+				label: {
+					show: false
+				}
+			}]
+		};
+		GV.Echarts.setOption(option);
+		
+		//从后台请求数据
+		var input = {};
+        input['TradeCode'] = "query^" + CV.MoudleName + "^" + CV.ClassName;
+        CallMethod(input, function(rtn) {
+			if (rtn.result != 0) {
+				return;
+			}
+			var eqCount = rtn.output.length;
+
+			var _opts = GV.Echarts.getOption();
+			$.extend(_opts, {
+				title: {
+					subtext: eqCount
+				},
+				series: [{
+					data: [
+						{value: 9, name: '正常'},
+						{value: 3, name: '故障'},
+						{value: 2, name: '离线'}
+					]
+				}]
+			});
+			GV.Echarts.setOption(_opts);
+        }, "DoMethod");
+	});
+	
+	/**
+	* 定时刷新，5分钟刷新
+	*/
+	var handler = setInterval(function() {
+		clearInterval(handler);
+		location = location;
+	}, 1000 * 60 * 5);
+ </script>
+</html>

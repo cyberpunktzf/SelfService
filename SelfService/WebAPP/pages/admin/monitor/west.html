@@ -1,0 +1,263 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<script type="text/javascript" src="/WebAPP/plugin/hisui-0.1.0/dist/js/jquery-1.11.3.min.js"></script>
+	<script type="text/javascript" src="/WebAPP/js/sys/adapter.js" charset="utf-8"></script>
+    <script type='text/javascript' src="/WebAPP/plugin/echarts/echarts.min.js" charset="utf-8"></script>
+	<style>
+		body {
+			background-color: #293c55;
+			overflow: hidden;
+		}
+		.title {
+			background-color: #a52a2a;
+			width: 200px;
+		}
+		.title>h2 {
+			color: #fff8dc;
+		}
+		.left-area {
+			width: 50%;
+			height: 150px;
+			float: left;
+		}
+		.right-area {
+			width: 50%;
+			height: 150px;
+			float: right;
+		}
+	</style>
+</head>
+<body>
+    <div class="title">
+        <h2>自助机服务人次</h2>
+    </div>
+	<div>
+		<div id="regEcharts" class="left-area"></div>
+		<div id="chgEcharts" class="right-area"></div>
+	</div>
+	<div>
+		<div id="appEcharts" class="left-area"></div>    <!--div设置浮动会将两个div显示在同行-->
+		<div id="tkNOEcharts" class="right-area"></div>
+	</div>
+</body>
+<script type="text/javascript">
+	//常量
+	const CV = {
+		TotalNum: 3000,      //总数
+		BlankNum: 500        //预留空白数
+	};
+	//全局变量
+	var GV = {
+		MoudleName: 'SelfServPy.Common.ss_eqlistdCtl',
+		ClassName: 'ELC',
+		RegEcharts: {},
+		ChgEcharts: {},
+		AppEcharts: {},
+		TkNOEcharts: {}
+	}
+	
+	$(function() {
+		//基于准备好的demo，初始化ECharts实列
+		GV.RegEcharts = echarts.init($("#regEcharts")[0]);
+		GV.ChgEcharts = echarts.init($("#chgEcharts")[0]);
+		GV.AppEcharts = echarts.init($("#appEcharts")[0]);
+		GV.TkNOEcharts = echarts.init($("#tkNOEcharts")[0]);
+		//指定图表的配置项和数据
+		var _opts = {
+			title: {
+				x: 'center',
+				y: '35%',
+				textStyle: {
+					fontWeight: 'normal',
+					fontSize: 16,
+					color: '#ffffff'
+				},  //标题
+				subtextStyle: {
+					fontWeight: 'normal',
+					fontSize: 16,
+					color: '#ffffff'
+				}   //副标题
+			},
+			tooltip: {
+				show: false,
+				trigger: 'item',
+				formatter: '{a} <br/>{b}: {c} ({d}%)'
+			},
+			color: ['#ffffff', '#5ba2e6'],
+			series: [
+			{
+				type: 'pie',
+				radius: ['60%', '70%'],    //第一个百分比设置内圈大小，第二个百分比设置外圈大小
+				center: ['50%', '50%'],    //第一个百分比设置水平位置，第二个百分比设置垂直位置
+				label: {
+					show: false
+				}
+			},
+			{
+				type: 'pie',
+				radius: ['60%', '70%'],
+				center: ['50%', '50%'],
+				label: {
+					show: false
+				}
+			}
+			]
+		};
+		
+		//挂号
+		var bizCount = 500;
+		$.extend(_opts, {
+			title: $.extend(_opts.title, {
+				text: '挂号',
+				subtext: bizCount,
+			}),
+			series: [$.extend(_opts.series[0], {
+						name: '挂号总数',
+						data: [
+								{value: CV.TotalNum, name: '挂号总数'},
+								{value: CV.BlankNum,
+								//不需要显示的数据，颜色设置成和背景一样
+								itemStyle: {
+									normal: {
+										color: 'transparent'
+									}
+								}}
+							]
+					}), $.extend(_opts.series[1], {
+						name: '挂号',
+						data: [
+								{value: bizCount, name: '挂号数'},
+								{value: CV.TotalNum - bizCount,
+								//不需要显示的数据，颜色设置成和背景一样
+								itemStyle: {
+									normal: {
+										color: 'transparent'
+									}
+								}}
+							]
+					})
+				]
+		});
+		GV.RegEcharts.setOption(_opts);
+	   
+		//缴费
+		var bizCount = 100;
+		$.extend(_opts, {
+			title: $.extend(_opts.title, {
+				text: '缴费',
+				subtext: bizCount,
+			}),
+			series: [$.extend(_opts.series[0], {
+						name: '缴费总数',
+						data: [
+								{value: CV.TotalNum, name: '缴费总数'},
+								{value: CV.BlankNum,
+								itemStyle: {
+									normal: {
+										color: 'transparent'   //不需要显示的数据，颜色设置成和背景一样
+									}
+								}}
+							]
+					}), $.extend(_opts.series[1], {
+						name: '缴费',
+						data: [
+								{value: bizCount, name: '缴费数'},
+								{value: CV.TotalNum - bizCount,
+								//不需要显示的数据，颜色设置成和背景一样
+								itemStyle: {
+									normal: {
+										color: 'transparent'
+									}
+								}}
+							]
+					})
+				]
+	   });
+	   GV.ChgEcharts.setOption(_opts);
+	   
+		//预约
+		var bizCount = 600;
+	    $.extend(_opts, {
+			title: $.extend(_opts.title, {
+				text: '预约',
+				subtext: bizCount,
+			}),
+			series: [$.extend(_opts.series[0], {
+						name: '预约总数',
+						data: [
+								{value: CV.TotalNum, name: '预约总数'},
+								{value: CV.BlankNum,
+								//不需要显示的数据，颜色设置成和背景一样
+								itemStyle: {
+									normal: {
+										color: 'transparent'
+									}
+								}}
+							]
+					}), $.extend(_opts.series[1], {
+						name: '预约',
+						data: [
+								{value: bizCount, name: '预约数'},
+								{value: CV.TotalNum - bizCount,
+								//不需要显示的数据，颜色设置成和背景一样
+								itemStyle: {
+									normal: {
+										color: 'transparent'
+									}
+								}}
+							]
+					})
+				]
+		});
+		GV.AppEcharts.setOption(_opts);
+	   
+		//取号
+		var bizCount = 400;
+		$.extend(_opts, {
+			title: $.extend(_opts.title, {
+				text: '取号',
+				subtext: bizCount,
+			}),
+			series: [$.extend(_opts.series[0], {
+						name: '取号总数',
+						data: [
+								{value: CV.TotalNum, name: '取号总数'},
+								{value: CV.BlankNum,
+								//不需要显示的数据，颜色设置成和背景一样
+								itemStyle: {
+									normal: {
+										color: 'transparent'
+									}
+								}}
+							]
+					}), $.extend(_opts.series[1], {
+						name: '取号',
+						data: [
+								{value: bizCount, name: '取号数'},
+								{value: CV.TotalNum - bizCount,
+								//不需要显示的数据，颜色设置成和背景一样
+								itemStyle: {
+									normal: {
+										color: 'transparent'
+									}
+								}}
+							]
+					})
+				]
+		});
+		GV.TkNOEcharts.setOption(_opts);
+	});
+	
+	/**
+	* 定时刷新，5分钟刷新
+	*/
+	var handler = setInterval(function() {
+		clearInterval(handler);
+		location = location;
+	}, 1000 * 60 * 5);
+</script>
+</html>

@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<!-- 
+* FileName: admin.sysconfig.html
+* Creator: tangzf 
+* Date: 2020-5-22
+* Description: 自助服务-系统字典维护
+-->
+<html>
+<head>
+	<meta charset="utf-8">
+
+	<script type="text/javascript" src="/WebAPP/js/admin/head.js" charset="utf-8"></script>
+
+	<style>
+		.layui-card-body .layui-table{
+			margin:0px !important;
+		}
+
+		.layui-card-header{
+			height:100px;
+		}
+		.layui-card-body{
+			float: left;
+		}
+	</style>
+</head>
+<body class="layui-fluid">	
+	<div class="layui-card" >
+		<div class="layui-card-header">
+			<form class="layui-form" action="">
+				<div class="layui-form-item">
+					<label class="layui-form-label" >字典类型</label>
+					<div class="layui-input-block">
+						
+						<select name="QDicCode" lay-filter="DicCode">
+							<option value=""></option>
+							<option value="0">写作</option>
+							<option value="1" selected="">阅读</option>
+							<option value="2">游戏</option>
+							<option value="3">音乐</option>
+							<option value="4">旅行</option>
+						  </select>
+					</div>
+				</div>
+			</form>
+		</div>
+		<div class="layui-card-body">	
+			<div >
+				<button class="layui-btn layuiadmin-btn-useradmin" data-type="batchdel">删除</button>
+				<button class="layui-btn layuiadmin-btn-useradmin" onclick="addDicInfo()">添加</button>
+			</div>
+			<table class="layui-table" id="dg" lay-filter="dg" ></table>
+		</div>
+	</div>
+	<div id="rowEditBar" hidden>
+		<a class="layui-btn layui-btn-xs" lay-event="save">保存</a>
+		<a class="layui-btn layui-btn-danger layui-btn-xs" lay-event="del">删除</a>
+	</div>
+	<div hidden class="addWindow" id="addWindow">
+		<div class="layui-form" lay-filter="layuiadmin-form-useradmin" id="layuiadmin-form-useradmin" style="padding: 20px 0 0 0;">
+			<div class="layui-form-item">
+				<label class="layui-form-label">字典类型</label>
+				<div class="layui-input-inline">
+					<select id="DicType" placeholder="请输入字典代码" class="layui-input">
+					</select>
+				</div>
+			</div>
+			<div class="layui-form-item">
+				<label class="layui-form-label">字典代码</label>
+				<div class="layui-input-inline">
+					<input type="text" id="DicCode"  placeholder="请输入字典代码" autocomplete="off" class="layui-input">
+				</div>
+			</div>
+			<div class="layui-form-item">
+				<label class="layui-form-label">字典描述</label>
+				<div class="layui-input-inline">
+					<input type="text" id="DicDesc"  placeholder="请输入字典描述" autocomplete="off" class="layui-input">
+				</div>
+			</div>
+			<div class="layui-form-item">
+				<label class="layui-form-label">字典值</label>
+				<div class="layui-input-inline">
+					<input type="text" id="Demo"  placeholder="请输入字典值" autocomplete="off" class="layui-input">
+				</div>
+			</div>
+			<div class="layui-form-item">
+				<label class="layui-form-label">业务</label>
+				<div class="layui-input-inline">
+					<input type="text" id="Business"  placeholder="请输入业务" autocomplete="off" class="layui-input">
+				</div>
+			</div>
+			<div class="layui-form-item layui-hide">
+				<input type="button" lay-submit="" lay-filter="LAY-user-front-submit" id="LAY-user-front-submit" value="确认">
+			</div>
+		</div>
+	</div>	
+	<script type="text/javascript" src="/WebAPP/js/admin/sysdicconfig.js" charset="utf-8"></script>
+</body>
+
+</html>

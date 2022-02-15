@@ -1,0 +1,268 @@
+﻿<!-- 
+ * FileName: query.opinv.csp
+ * Creator: tangzf 
+ * Date: 2020-3-26
+ * Description: 移动收费-门诊费用查询
+-->
+<html>
+	<head>
+			<script type="text/javascript" src="/WebAPP/plugin/jquery1.8.3/jquery.min.js" ></script>
+			<script type="text/javascript" src="/WebAPP/plugin/jquery1.8.3/jquery.easyui.min.js" ></script>
+			
+			<link rel="stylesheet" type="text/css" href="/WebAPP/plugin/layim-v3.7.8/dist/css/layui.css"/>
+			<script type="text/javascript" src="/WebAPP/plugin/layim-v3.7.8/dist/layui.js" charset="utf-8"></script>
+			<link rel="stylesheet" type="text/css" href="/WebAPP/plugin/layim-v3.7.8/dist/css/global.css"/>
+	
+			<script type="text/javascript" src="/WebAPP/plugin/xml2json/xml2json.min.js" charset="utf-8"></script>
+	
+			<link rel="stylesheet" type="text/css" href="/WebAPP/plugin/hisui-0.1.0/dist/css/hisui.css"/>
+			<script type="text/javascript" src="/WebAPP/plugin/hisui-0.1.0/dist/js/jquery-1.11.3.min.js" charset="utf-8"></script>
+			<script type="text/javascript" src="/WebAPP/plugin/hisui-0.1.0/dist/js/jquery.hisui.min.js" charset="utf-8"></script>
+	
+			<link rel="stylesheet" type="text/css" href="/WebAPP/themes/css/charge.main.css"/>
+			<link rel="stylesheet" type="text/css" href="/WebAPP/themes/css/default.css"/>
+			<script type="text/javascript" src="/WebAPP/js/sys/layout.js" charset="utf-8"></script>
+			<script type="text/javascript" src="/WebAPP/js/sys/parsedata.js" charset="utf-8"></script>
+			<script type="text/javascript" src="/WebAPP/js/sys/webservices.js" charset="utf-8"></script>
+			<script type="text/javascript" src="/WebAPP/js/sys/adapter.js" charset="utf-8"></script>
+			<script type="text/javascript" src="/WebAPP/js/sys/common.js" charset="utf-8"></script>
+			<script type="text/javascript" src="/WebAPP/js/sys/card.js" charset="utf-8"></script>
+	
+			<link rel="stylesheet" type="text/css" href="/WebAPP/themes/css/icons.css"/>
+			<link rel="stylesheet" type="text/css" href="/WebAPP/themes/css/sysbtn.css"/>
+			<link rel="stylesheet" type="text/css" href="/WebAPP/themes/css/syswindow.css"/>
+	
+			<script type="text/javascript" src="/WebAPP/js/sys/syswindow.js" charset="utf-8"></script>
+			<script type="text/javascript" src="/WebAPP/js/common/payservice.js" charset="utf-8"></script>
+			<script type="text/javascript" src="/WebAPP/plugin/lodop/LodopFuncs.js"></script>
+			<script type="text/javascript" src="/WebAPP/js/sys/print.js" charset="utf-8"></script>
+			
+			<script type="text/javascript" src="/WebAPP/js/sys/sysconfig.js" charset="utf-8"></script>
+			<script type="text/javascript" src="/WebAPP/js/sys/DHCInsuPort.js" charset="utf-8"></script>
+	<style>
+	.layui-carousel-arrow{
+		top:100%;
+	}
+	/*.TurnPlay .layui-row:not(:first-child){
+		margin-top: 20px;
+	}*/
+	.list-carousel-chg {
+		height: 300px !important;
+	}
+	.list-carousel-reg {
+		height: 200px !important;
+	}
+	.list-carousel-chg-bgj {
+		margin-left: 130px;
+		width: 10% !important;
+		height: 250px !important;
+	}
+	.list-carousel-reg-bgj {
+		margin-left: 130px;
+		width: 10% !important;
+		height: 120px !important;
+	}
+	/*doc div*/
+	.sys-white-defbutton{
+		width: 920px;
+		opacity: 1;
+		text-align: center;
+		border-radius: 0px;
+		display: flex;
+		border:0px;
+		
+	}
+	/*TABLE-TITLE*/
+	.sys-white-defbutton.table-title{
+		height: 47px;
+	}
+	.table-title .sys-white-defbutton-label{
+		width: 156px;
+		height: 20px;
+		opacity: 1;
+		font-size: 20px;
+		font-family: Source Han Sans CN, Source Han Sans CN-Regular;
+		font-weight: 400;
+		text-align: center;
+		line-height:16px;
+	}
+	.table-title .row-col{
+		margin-top: 14px;
+	}
+	/*cONTENT*/
+	.HISContent .sys-white-defbutton{
+		height: 27px;
+	}
+	.layui-this{
+		background: white !important;
+	}
+	.HISContent .sys-white-defbutton-label{
+		width: 156px;
+		height: 26px;
+		opacity: 1;
+		font-size: 19px;
+		font-family: Source Han Sans CN, Source Han Sans CN-Regular;
+		font-weight: 400;
+		text-align: center !important;
+		line-height:8px;
+		color: black;
+	}	
+	.HISContent{
+		border-radius: 0 0 20px 20px;
+		width: 920px !important;
+	}
+	.HISContent .layui-row{
+		margin-top: 20px;
+	}
+	.bgj .layui-row{
+		margin-top: 2px;
+		margin-bottom: 2px;
+	}
+	.bgj .sys-white-defbutton-label {
+		font-size: 14px;
+	}
+	/**/
+	.layui-carousel-ind,.layui-carousel-arrow{
+		display: none;
+	}
+	.sys-white-defbutton{
+		margin:0px;
+		
+	}
+	.foot img{
+		width: 170px;
+	}
+	</style>
+</head>
+
+<body>
+	<div class="layui-row pagetitle" title="缴费明细"></div>
+	<div class='layui-row charge' style="padding:0 80px 0 80px;">
+		<div class="layui-col-md12" style="height:360px;">
+			<div class="layui-carousel list-carousel-chg" id="TurnPlay" style="border-radius: 20px 20px 0 0;">
+				<div class='sys-white-defbutton table-title' style="background: #2C52D4;border-radius: 20px 20px 0 0;width:920px;">
+					<div class='row-col' style='width:120px;text-align: center;' >
+						<div>
+							<label  class='sys-white-defbutton-label' style="color:white;">门诊号</label>		
+						</div>
+					</div>
+					<div class='row-col' style='width:220px;text-align: center;'>
+						<div>
+							<label class='sys-white-defbutton-label' style="color:white;">收费项目</label>			
+						</div>
+					</div>
+					<div class='row-col' style='width:150px;text-align: center;'>
+						<div>
+							<label class='sys-white-defbutton-label' style="color:white;">单价</label>
+						</div>
+					</div>
+					<div class='row-col' style='width:120px;text-align: center;'>
+						<div>
+							<label class='sys-white-defbutton-label' style="color:white;">数量</label>
+						</div>
+					</div>
+					<div class='row-col' style='width:150px;text-align: center;'>
+						<div>
+							<label class='sys-white-defbutton-label' style="color:white;">总价</label>
+						</div>
+					</div>
+					<div class='row-col' style='width:120px;text-align: center;'>
+						<div>
+							<label class='sys-white-defbutton-label' style="color:white;">单位</label>
+						</div>
+					</div>
+					<div class='row-col' style='width:100px;text-align: center;'>
+						<div>
+							<label class='sys-white-defbutton-label' style="color:white;">状态</label>
+						</div>
+					</div>
+				</div>
+				<div carousel-item class="HISContent">
+				</div>
+			</div>	
+		</div>
+	</div>
+	<div class="layui-row foot" style="text-align: center;border:none;">
+		<img onClick="ChangePage('sub')" id="BackButton" src="/WebAPP/themes/images/prev.png"/>
+		<label  class="pagenum-c" id="currentPage">1</label>
+		<label  class="pagenum-t"id="pageNum"></label>
+		<img onClick = "ChangePage('add')" id="NextButton" src="/WebAPP/themes/images/next.png"/>
+	</div>
+	<!--div class="layui-row foot" style="text-align: center;border:none;">
+		<img onClick="ChangePage('sub', 'reg')" id="RegBackButton" src="/WebAPP/themes/images/prev.png"/>
+		<label class="pagenum-c" id="RegcurrentPage">1</label>
+		<label class="pagenum-t" id="RegpageNum"></label>
+		<img onClick = "ChangePage('add', 'reg')" id="RegNextButton" src="/WebAPP/themes/images/next.png"/>
+	</div-->
+	<!--Reg-->
+	<div class="layui-row pagetitle" title="挂号明细" style="padding-top:20px;"></div>
+	<div class='layui-row reg' style="padding:0 80px 0 80px;">
+		<div class="layui-col-md12" style="height:260px;">
+			<div class="layui-carousel list-carousel-reg" id="TurnPlay2" style="border-radius: 20px 20px 0 0;">
+				<div class='sys-white-defbutton table-title' style="background: #2C52D4;border-radius: 20px 20px 0 0;width:920px;">
+					<div class='row-col' style='width:180px;text-align: center;'>
+						<div>
+							<label class='sys-white-defbutton-label' style="color:white;">门诊号</label>
+						</div>
+					</div>
+					<div class='row-col' style='width:180px;text-align: center;'>
+						<div>
+							<label class='sys-white-defbutton-label' style="color:white;">科室</label>			
+						</div>
+					</div>
+					<div class='row-col' style='width:120px;text-align: center;'>
+						<div>
+							<label class='sys-white-defbutton-label' style="color:white;">号别</label>			
+						</div>
+					</div>
+					<div class='row-col' style='width:120px;text-align: center;'>
+						<div>
+							<label class='sys-white-defbutton-label' style="color:white;">总金额</label>			
+						</div>
+					</div>
+					<!--div class='row-col' style='width:150px;text-align: center;'>
+						<div>
+							<label class='sys-white-defbutton-label' style="color:white;">附加金额</label>
+						</div>
+					</div-->
+					<div class='row-col' style='width:120px;text-align: center;'>
+						<div>
+							<label class='sys-white-defbutton-label' style="color:white;">实际支付</label>
+						</div>
+					</div>
+					<!--div class='row-col' style='width:150px;text-align: center;'>
+						<div>
+							<label class='sys-white-defbutton-label' style="color:white;">挂号次数</label>
+						</div>
+					</div-->
+					<div class='row-col' style='width:120px;text-align: center;'>
+						<div>
+							<label class='sys-white-defbutton-label' style="color:white;">日期</label>
+						</div>
+					</div>
+					<div class='row-col' style='width:100px;text-align: center;'>
+						<div>
+							<label class='sys-white-defbutton-label' style="color:white;">状态</label>
+						</div>
+					</div>
+				</div>
+				<div carousel-item class="HISContent">
+				</div>
+			</div>	
+		</div>
+	</div>
+	<!--div class="layui-row foot" style="text-align: center;border:none;">
+		<img onClick="ChangePage('sub')" id="BackButton" src="/WebAPP/themes/images/prev.png"/>
+		<label  class="pagenum-c" id="currentPage">1</label>
+		<label  class="pagenum-t"id="pageNum"></label>
+		<img onClick = "ChangePage('add')" id="NextButton" src="/WebAPP/themes/images/next.png"/>
+	</div-->
+	<div class="layui-row foot" style="text-align: center;border:none;">
+		<img onClick="ChangePage('sub','reg')" id="RegBackButton" src="/WebAPP/themes/images/prev.png"/>
+		<label class="pagenum-c" id="RegcurrentPage">1</label>
+		<label class="pagenum-t" id="RegpageNum"></label>
+		<img onClick = "ChangePage('add','reg')" id="RegNextButton" src="/WebAPP/themes/images/next.png"/>
+	</div>
+	<script type="text/javascript" src="/WebAPP/js/query/opinv.js"></script>
+</body>
+</html>

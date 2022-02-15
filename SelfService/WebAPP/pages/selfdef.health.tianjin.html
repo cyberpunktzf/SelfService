@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<!-- 
+ * FileName: charge.readcard.show.html
+ * Creator: tangzf 
+ * Date: 2020-3-26
+ * Description: 移动收费-自定义-健康天津
+-->
+<html>
+<head>
+	<script type="text/javascript" src="/WebAPP/js/sys/jshead.js" charset="utf-8"></script>
+	<script type="text/javascript" src="/WebAPP/js/sys/DHCInsuPort.js" charset="utf-8"></script>
+	<style>		
+	</style>
+</head>
+<body>
+	<object ID='ClsBillPrint' WIDTH=0 HEIGHT=0 CLASSID='CLSID:F30DC1D4-5E29-4B89-902F-2E3DC81AE46D' CODEBASE='/WebAPP/plugin/DHCOPPrint.CAB#version=1,0,0,43' VIEWASTEXT></object>
+	<div class="layui-container">
+		<div class="layui-row" style="text-align: center;border:none;margin-bottom:67px;" >
+			<img class='content' data="1" src="/WebAPP/themes/images/P1.png" style="width: 920px;
+			height: 650px;
+			opacity: 1;
+			background: rgba(0,0,0,0.00);">
+		</div>		
+		<div class="layui-row" style="text-align: center;border:none;" >
+			<img onClick = "ChangePage('sub')" id="BackButton" src="/WebAPP/themes/images/prev.png" />
+			<label style="color:#067EFE" id="currentPage">1</label>
+			<label style="color:#7FB6F7" id="pageNum">/2</label>	
+			<img onClick = "ChangePage('add')" id="NextButton" src="/WebAPP/themes/images/next.png" />
+		</div>
+	</div>
+	<script type="text/javascript" src="/WebAPP/js/selfdef.health.tianjin.js"></script>
+</body>
+</html>

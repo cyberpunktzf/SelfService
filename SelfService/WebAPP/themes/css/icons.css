@@ -1,0 +1,47 @@
+/* image icon*/
+.icon-1 { /*取号*/
+	background: url('../images/menu/s1.png') no-repeat center center;
+}
+.icon-2 { /*预约*/
+	background: url('../images/menu/s2.png') no-repeat center center;
+}
+.icon-3 {/*取消预约*/
+	background: url('../images/menu/s3.png') no-repeat center center;
+}
+.icon-4 {/*健康天津*/
+	background: url('../images/menu/s4.png') no-repeat center center;
+}
+.icon-5 { /*当日挂号*/
+	background: url('../images/menu/s5.png') no-repeat center center;
+}
+.icon-6 {/*缴费*/
+	background: url('../images/menu/s6.png') no-repeat center center;
+}
+.icon-7 {/*凭条打印*/
+	background: url('../images/menu/s7.png') no-repeat center center;
+}
+.icon-8 { /*查询*/
+	background: url('../images/menu/s8.png') no-repeat center center;
+}
+.icon-9 { /*医生加号*/
+	background: url('../images/menu/s9.png') no-repeat center center;
+}
+.icon-10 { /*联合门诊*/
+	background: url('../images/menu/s10.png') no-repeat center center;
+}
+.icon-btn { 
+	width: 120px;
+	height: 120px;
+}
+.icon-btn-AlIPAY{
+	background: url('/WebAPP/themes/images/alipay.png') no-repeat center center;
+}
+.icon-btn-WECHAT{
+	background: url('/WebAPP/themes/images/wechat.png') no-repeat center center;
+}
+.icon-btn-JHZFYHK{
+	background: url('/WebAPP/themes/images/unionpay.png') no-repeat center center;
+}
+.icon-hourglass{
+	background: url('/WebAPP/themes/images/hourglass.png') no-repeat center center;
+}

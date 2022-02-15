@@ -1,0 +1,213 @@
+<!-- 
+ * FileName: divide.show.html
+ * Creator: tangzf 
+ * Date: 2020-3-26
+ * Description: 移动收费-读卡提示
+-->
+<!DOCTYPE html>
+<html>
+<head>
+	<head>
+		<link rel="stylesheet" type="text/css" href="/WebAPP/plugin/layim-v3.7.8/dist/css/layui.css"/>
+		<script type="text/javascript" src="/WebAPP/plugin/layim-v3.7.8/dist/layui.js" charset="utf-8"></script>
+		<link rel="stylesheet" type="text/css" href="/WebAPP/plugin/layim-v3.7.8/dist/css/global.css"/>
+
+		<script type="text/javascript" src="/WebAPP/plugin/xml2json/xml2json.min.js" charset="utf-8"></script>
+
+		<link rel="stylesheet" type="text/css" href="/WebAPP/plugin/hisui-0.1.0/dist/css/hisui.css"/>
+		<script type="text/javascript" src="/WebAPP/plugin/hisui-0.1.0/dist/js/jquery-1.11.3.min.js" charset="utf-8"></script>
+		<script type="text/javascript" src="/WebAPP/plugin/hisui-0.1.0/dist/js/jquery.hisui.min.js" charset="utf-8"></script>
+
+		<link rel="stylesheet" type="text/css" href="/WebAPP/themes/css/charge.main.css"/>
+		<link rel="stylesheet" type="text/css" href="/WebAPP/themes/css/default.css"/>
+		<script type="text/javascript" src="/WebAPP/js/sys/layout.js" charset="utf-8"></script>
+		<script type="text/javascript" src="/WebAPP/js/sys/parsedata.js" charset="utf-8"></script>
+		<script type="text/javascript" src="/WebAPP/js/sys/webservices.js" charset="utf-8"></script>
+		<script type="text/javascript" src="/WebAPP/js/sys/adapter.js" charset="utf-8"></script>
+		<script type="text/javascript" src="/WebAPP/js/sys/common.js" charset="utf-8"></script>
+		<script type="text/javascript" src="/WebAPP/js/sys/card.js" charset="utf-8"></script>
+
+		<link rel="stylesheet" type="text/css" href="/WebAPP/themes/css/icons.css"/>
+		<link rel="stylesheet" type="text/css" href="/WebAPP/themes/css/sysbtn.css"/>
+		<link rel="stylesheet" type="text/css" href="/WebAPP/themes/css/syswindow.css"/>
+
+		<script type="text/javascript" src="/WebAPP/js/sys/syswindow.js" charset="utf-8"></script>
+		<script type="text/javascript" src="/WebAPP/js/common/payservice.js" charset="utf-8"></script>
+		<script type="text/javascript" src="/WebAPP/plugin/lodop/LodopFuncs.js"></script>
+		<script type="text/javascript" src="/WebAPP/js/sys/print.js" charset="utf-8"></script>
+		
+		<script type="text/javascript" src="/WebAPP/js/sys/sysconfig.js" charset="utf-8"></script>
+		<script type="text/javascript" src="/WebAPP/js/sys/DHCInsuPort.js" charset="utf-8"></script>
+	</head>
+	<style>	
+		.divide-show{
+			background: white;
+			width: 713px;
+			height: 347px;
+			opacity: 1;
+			margin: 0px auto;
+			border-radius: 30px;
+		}
+
+		.divide-label{
+			width: 120px;
+			height: 30px;
+			opacity: 1;
+			border: 1px solid rgba(0,0,0,0.00);
+			font-size: 30px;
+			font-family: Source Han Sans CN, Source Han Sans CN-Regular;
+			font-weight: 400;
+			text-align: right;
+			color: #000000;
+		}
+		.divide-show-row:first-child{
+			padding-top: 46px;
+			
+		}
+		.divide-show-row:not(:first-child){
+			padding-top: 21px;
+			
+		}
+		/*Tips*/
+		.divide-middle-label{
+			width: 544px;
+			height: 30px;
+			opacity: 1;
+			border: 1px solid rgba(0,0,0,0.00);
+			font-size: 28px;
+			font-family: Source Han Sans CN, Source Han Sans CN-Regular;
+			font-weight: 400;
+			text-align: center;
+			color: #b4b4b4;
+		}
+		.divide-middle-row{
+			position: absolute;
+			top: 510px;
+    		left: 270px;
+		}
+		/*INSU*/
+		.divide-bottom-row{
+			position: absolute;
+			top: 470px;
+			background: white;
+			width: 713px;
+			height: 347px;
+			opacity: 1;
+			margin: 0px auto;
+			margin-left:180px;
+			border-radius: 30px;
+		}
+		.divide-bottom-label{
+			width: 150px;
+			height: 30px;
+			opacity: 1;
+			border: 1px solid rgba(0,0,0,0.00);
+			font-size: 30px;
+			font-family: Source Han Sans CN, Source Han Sans CN-Regular;
+			font-weight: 400;
+			text-align: right;
+			color: #000000;
+			line-height: 46px;
+		}
+		.divide-bottom-row .divide-show-row{
+			padding-top: 12px;
+		}
+		/*foot*/
+		.divide-foot-label{
+			width: 265px;
+			height: 32px;
+			opacity: 1;
+			border: 1px solid rgba(0,0,0,0.00);
+			font-size: 32px;
+			font-family: Source Han Sans CN, Source Han Sans CN-Bold;
+			font-weight: 700;
+			text-align: left;
+			color: #e33f5e !important;
+		}
+		.divide-foot-row{
+			position: absolute;
+			top: 715px;
+			left: 180px;
+			z-index: 9999;	
+		}
+		.sys-defbutton{
+			width: 220px;
+			height: 80px;
+			opacity: 1;
+		}
+	</style>
+</head>
+
+<body>
+	<div class="layui-row pagetitle" title="请确认缴费类型" style="padding-top:20px;color:white;"></div>
+	<div class="layui-row">
+		<label id="depDesc" style="color:white">
+		</label>
+	</div>
+	<div class="main-divide">
+		<div class="layui-row divide-show">
+			<div class="layui-row divide-show-row">
+				<div class="layui-col-md6">
+					<label class="divide-label"></label>
+				</div>
+				<div class="layui-col-md6">
+					<label class="divide-label"></label>
+				</div>			
+			</div>		
+			<div class="layui-row divide-show-row">
+				<div class="layui-col-md6">
+					<label class="divide-label"></label>
+				</div>
+				<div class="layui-col-md6">
+					<label class="divide-label"></label>
+				</div>			
+			</div>
+			<div class="layui-row divide-show-row">
+				<div class="layui-col-md6">
+					<label class="divide-label"></label>
+				</div>
+				<div class="layui-col-md6">
+					<label class="divide-label"></label>
+				</div>			
+			</div>	
+			<div class="layui-row divide-show-row">
+				<div class="layui-col-md6">
+					<label class="divide-label"></label>
+				</div>
+				<div class="layui-col-md6">
+					<label class="divide-label"></label>
+				</div>			
+			</div>	
+			<div class="layui-row divide-show-row">
+				<div class="layui-col-md6">
+					<label class="divide-label"></label>
+				</div>
+				<div class="layui-col-md6">
+					<label class="divide-label"></label>
+				</div>			
+			</div>	
+			<div class="layui-row divide-foot-row">
+				<div class="layui-col-md6">
+					<div class="sys-defbutton divide-btn" style="margin-left:240px;" title="缴费" onClick = "DivideConfirm()">
+					</div>
+				</div>
+			</div>	
+		</div>
+		<div class="layui-row divide-bottom-row">
+			<div class="layui-row divide-show-row">
+				<label class="divide-bottom-label">合计金额: </label><label class="divide-bottom-label totamt"></label>			
+			</div>
+			<div class="layui-row divide-show-row">
+				<label class="divide-bottom-label">医保支付: </label><label class="divide-bottom-label insupay"></label>			
+			</div>
+			<div class="layui-row divide-show-row">
+				<label class="divide-bottom-label">个人账户支付: </label><label class="divide-bottom-label acountpay"></label>			
+			</div>	
+			<div class="layui-row divide-show-row">
+				<label class="divide-foot-label"></label><label id="SelfAmt" style="color:red"></label>
+			</div>
+		</div>
+	</div>
+	<script type="text/javascript" src="/WebAPP/js/charge/divide.show.js"></script>
+</body>
+</html>

@@ -1,0 +1,63 @@
+
+.sys-window-btn a{
+	width: 250px;
+	height: 80px;
+	opacity: 1;
+	background: linear-gradient(126deg,#05adfe 9%, #0781fe 89%);
+	border-radius: 40px;
+}
+.sys-window-btn span{
+	font-size: 36px;
+    margin-top: 12px;
+}
+.sys-win-title{
+	height: 42px;
+	opacity: 1;
+	font-size: 42px;
+	font-family: Source Han Sans CN, Source Han Sans CN-Bold;
+	font-weight: 700;
+	text-align: center;
+	color: #707070;
+}
+.sys-win-msg{
+	height: 42px;
+	opacity: 1;
+	font-size: 40px;
+	font-family: Source Han Sans CN, Source Han Sans CN-Regular;
+	font-weight: 400;
+	text-align: center;
+	color: #000000;
+}
+/*弹窗按钮row*/
+.messager-button.sys-window-btn{
+	position: absolute;
+	top:255px;
+	left:238px;
+}
+.messager-button.sys-window-btn.sys-confirm-btn{
+	position: absolute;
+	top:255px;
+	left:128px;
+}
+/*弹窗标题row*/
+.sys-win-row.layui-row.sys-win-title{
+	text-align:center;
+	margin-top:20px;
+}
+/*弹窗内容row*/
+.sys-win-msg{
+	margin-top:30px;	
+}
+.window-shadow,.messager-window{
+	border-radius: 26px;
+}
+
+.osp-zz{
+	height:2000px !important;
+	width:2000px !important;
+	background: rgba(0, 0, 0, 0) !important;
+	border:0px !important;
+	padding:0px !important;
+	margin:0px !important;
+	pointer-events: all;
+}

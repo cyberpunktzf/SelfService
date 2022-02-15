@@ -1,0 +1,232 @@
+﻿<!-- 
+ * FileName: charge.text.input.html
+ * Creator: tangzf 
+ * Date: 2020-3-26
+ * Description: 移动收费-读卡提示
+-->
+<!DOCTYPE html>
+<html>
+<head>
+		<script type="text/javascript" src="/WebAPP/plugin/jquery1.8.3/jquery.min.js" ></script>
+		<script type="text/javascript" src="/WebAPP/plugin/jquery1.8.3/jquery.easyui.min.js" ></script>
+		
+		<link rel="stylesheet" type="text/css" href="/WebAPP/plugin/layim-v3.7.8/dist/css/layui.css"/>
+		<script type="text/javascript" src="/WebAPP/plugin/layim-v3.7.8/dist/layui.js" charset="utf-8"></script>
+		<link rel="stylesheet" type="text/css" href="/WebAPP/plugin/layim-v3.7.8/dist/css/global.css"/>
+
+		<script type="text/javascript" src="/WebAPP/plugin/xml2json/xml2json.min.js" charset="utf-8"></script>
+
+		<link rel="stylesheet" type="text/css" href="/WebAPP/plugin/hisui-0.1.0/dist/css/hisui.css"/>
+		<script type="text/javascript" src="/WebAPP/plugin/hisui-0.1.0/dist/js/jquery-1.11.3.min.js" charset="utf-8"></script>
+		<script type="text/javascript" src="/WebAPP/plugin/hisui-0.1.0/dist/js/jquery.hisui.min.js" charset="utf-8"></script>
+
+		<link rel="stylesheet" type="text/css" href="/WebAPP/themes/css/charge.main.css"/>
+		<link rel="stylesheet" type="text/css" href="/WebAPP/themes/css/default.css"/>
+		<script type="text/javascript" src="/WebAPP/js/sys/layout.js" charset="utf-8"></script>
+		<script type="text/javascript" src="/WebAPP/js/sys/parsedata.js" charset="utf-8"></script>
+		<script type="text/javascript" src="/WebAPP/js/sys/webservices.js" charset="utf-8"></script>
+		<script type="text/javascript" src="/WebAPP/js/sys/adapter.js" charset="utf-8"></script>
+		<script type="text/javascript" src="/WebAPP/js/sys/common.js" charset="utf-8"></script>
+		<script type="text/javascript" src="/WebAPP/js/sys/card.js" charset="utf-8"></script>
+
+		<link rel="stylesheet" type="text/css" href="/WebAPP/themes/css/icons.css"/>
+		<link rel="stylesheet" type="text/css" href="/WebAPP/themes/css/sysbtn.css"/>
+		<link rel="stylesheet" type="text/css" href="/WebAPP/themes/css/syswindow.css"/>
+
+		<script type="text/javascript" src="/WebAPP/js/sys/syswindow.js" charset="utf-8"></script>
+		<script type="text/javascript" src="/WebAPP/js/common/payservice.js" charset="utf-8"></script>
+		<script type="text/javascript" src="/WebAPP/plugin/lodop/LodopFuncs.js"></script>
+		<script type="text/javascript" src="/WebAPP/js/sys/print.js" charset="utf-8"></script>
+		
+		<script type="text/javascript" src="/WebAPP/js/sys/sysconfig.js" charset="utf-8"></script>
+		<script type="text/javascript" src="/WebAPP/js/sys/DHCInsuPort.js" charset="utf-8"></script>
+	<style>
+	.sys-white-defbutton{
+		border-radius: 54px;
+		width: 920px;
+		height: 108px;
+		opacity: 1;
+		box-shadow: 0px 0px 16px 0px rgba(0,7,170,0.16); 
+	}
+	/*keybord 键盘*/
+	.keybord-region .layui-row{
+		text-align: center;
+		justify-content:center;
+		display: flex;
+	}
+	.keybord-region .keybord:not(.confirm){
+		width:118px;
+		height:98px;
+		border:0px solid white;
+		background-color: white;
+		color:#2C5AB9;
+	}
+	.layui-btn-radius{
+		border-radius: 16px;
+	}
+	.sys-white-defbutton-label{
+		line-height: 108px;
+	}
+	</style>
+</head>
+
+<body>
+	<div class="layui-container">
+		<div class="layui-row pagetitle" title="请输入信息" style="padding-top:20px;"></div>
+		<div class="layui-row" style="margin-top:40px;margin-bottom:40px;">
+			<div class='sys-white-defbutton cardno'>
+				<label class='sys-white-defbutton-label' id="CardNo"></label>
+			</div>
+		</div>
+		<!--键盘-->
+		<div class="layui-container keybord-region" style="display:none;">
+			<div class="Number">
+				<div class="layui-row">
+					<div class="layui-col-md2">
+						<button class="layui-btn layui-btn-lg layui-btn-radius keybord">1</button>
+					</div>
+					<div class="layui-col-md2">
+						<button class="layui-btn layui-btn-lg layui-btn-radius keybord">2</button>
+					</div>
+					<div class="layui-col-md2">
+						<button class="layui-btn layui-btn-lg layui-btn-radius keybord">3</button>
+					</div>
+				</div>
+				<div class="layui-row" style="padding-top:20px" >
+					<div class="layui-col-md2">
+						<button class="layui-btn layui-btn-lg layui-btn-radius keybord">4</button>
+					</div>
+					<div class="layui-col-md2">
+						<button class="layui-btn layui-btn-lg layui-btn-radius keybord">5</button>
+					</div>
+					<div class="layui-col-md2">
+						<button class="layui-btn layui-btn-lg layui-btn-radius keybord">6</button>
+					</div>
+				</div>
+				<div class="layui-row" style="padding-top:20px">
+					<div class="layui-col-md2">
+						<button class="layui-btn layui-btn-lg layui-btn-radius keybord">7</button>
+					</div>
+					<div class="layui-col-md2">
+						<button class="layui-btn layui-btn-lg layui-btn-radius keybord">8</button>
+					</div>
+					<div class="layui-col-md2">
+						<button class="layui-btn layui-btn-lg layui-btn-radius keybord">9</button>
+					</div>
+				</div>
+				<div class="layui-row" style="padding-top:20px">
+					<div class="layui-col-md2">
+						<button class="layui-btn layui-btn-lg layui-btn-radius keybord" data="back">退格</button>
+					</div>
+					<div class="layui-col-md2">
+						<button class="layui-btn layui-btn-lg layui-btn-radius keybord">0</button>
+					</div>
+					<div class="layui-col-md2">
+						<button class="layui-btn layui-btn-lg layui-btn-radius keybord" data="clear">清空</button>
+					</div>
+				</div>
+			</div>
+			<div class="letter" style="display:none;">
+				<div class="layui-row">
+					<div class="layui-col-md2">
+						<button class="layui-btn layui-btn-lg layui-btn-radius keybord">A</button>
+					</div>
+					<div class="layui-col-md2">
+						<button class="layui-btn layui-btn-lg layui-btn-radius keybord">B</button>
+					</div>
+					<div class="layui-col-md2">
+						<button class="layui-btn layui-btn-lg layui-btn-radius keybord">C</button>
+					</div>
+					<div class="layui-col-md2">
+						<button class="layui-btn layui-btn-lg layui-btn-radius keybord">D</button>
+					</div>
+					<div class="layui-col-md2">
+						<button class="layui-btn layui-btn-lg layui-btn-radius keybord">E</button>
+					</div>
+					<div class="layui-col-md2">
+						<button class="layui-btn layui-btn-lg layui-btn-radius keybord">F</button>
+					</div>
+					<div class="layui-col-md2">
+						<button class="layui-btn layui-btn-lg layui-btn-radius keybord">G</button>
+					</div>
+				</div>
+				<div class="layui-row" style="padding-top:20px" >
+					<div class="layui-col-md2">
+						<button class="layui-btn layui-btn-lg layui-btn-radius keybord">H</button>
+					</div>
+					<div class="layui-col-md2">
+						<button class="layui-btn layui-btn-lg layui-btn-radius keybord">I</button>
+					</div>
+					<div class="layui-col-md2">
+						<button class="layui-btn layui-btn-lg layui-btn-radius keybord">J</button>
+					</div>
+					<div class="layui-col-md2">
+						<button class="layui-btn layui-btn-lg layui-btn-radius keybord">K</button>
+					</div>
+					<div class="layui-col-md2">
+						<button class="layui-btn layui-btn-lg layui-btn-radius keybord">L</button>
+					</div>
+					<div class="layui-col-md2">
+						<button class="layui-btn layui-btn-lg layui-btn-radius keybord">M</button>
+					</div>
+					<div class="layui-col-md2">
+						<button class="layui-btn layui-btn-lg layui-btn-radius keybord">N</button>
+					</div>
+				</div>
+				<div class="layui-row" style="padding-top:20px">
+					<div class="layui-col-md2">
+						<button class="layui-btn layui-btn-lg layui-btn-radius keybord">O</button>
+					</div>
+					<div class="layui-col-md2">
+						<button class="layui-btn layui-btn-lg layui-btn-radius keybord">P</button>
+					</div>
+					<div class="layui-col-md2">
+						<button class="layui-btn layui-btn-lg layui-btn-radius keybord">Q</button>
+					</div>
+					<div class="layui-col-md2">
+						<button class="layui-btn layui-btn-lg layui-btn-radius keybord">R</button>
+					</div>
+					<div class="layui-col-md2">
+						<button class="layui-btn layui-btn-lg layui-btn-radius keybord">S</button>
+					</div>
+					<div class="layui-col-md2">
+						<button class="layui-btn layui-btn-lg layui-btn-radius keybord">T</button>
+					</div>
+					<div class="layui-col-md2">
+						<button class="layui-btn layui-btn-lg layui-btn-radius keybord">U</button>
+					</div>
+				</div>
+				<div class="layui-row" style="padding-top:20px">
+					<div class="layui-col-md2">
+						<button class="layui-btn layui-btn-lg layui-btn-radius keybord">V</button>
+					</div>
+					<div class="layui-col-md2">
+						<button class="layui-btn layui-btn-lg layui-btn-radius keybord">W</button>
+					</div>
+					<div class="layui-col-md2">
+						<button class="layui-btn layui-btn-lg layui-btn-radius keybord">X</button>
+					</div>
+					<div class="layui-col-md2">
+						<button class="layui-btn layui-btn-lg layui-btn-radius keybord">Y</button>
+					</div>
+					<div class="layui-col-md2">
+						<button class="layui-btn layui-btn-lg layui-btn-radius keybord">Z</button>
+					</div>
+					<div class="layui-col-md2">
+						<button class="layui-btn layui-btn-lg layui-btn-radius keybord" data="back">退格</button>
+					</div>
+					<div class="layui-col-md2">
+						<button class="layui-btn layui-btn-lg layui-btn-radius keybord" data="clear">清空</button>
+					</div>
+				</div>
+			</div>
+			<!--确认-->
+			<div class="sys-defbutton modify-button confirm keybord" data="confirm" id= "confirm" style="margin-top: 40px;">
+				<label class="sys-defbutton-label confirm keybord" data="confirm">确认</label>
+			</div>
+			<!--键盘-->
+		</div>
+	</div>	
+	<script type="text/javascript" src="/WebAPP/js/common/text.input.js"></script>
+</body>
+</html>

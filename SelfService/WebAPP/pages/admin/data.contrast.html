@@ -1,0 +1,295 @@
+<!-- 
+ * FileName: dhcinsu.mi.main.csp
+ * Modify: tangzf 
+ * Date: 2021-02-02
+ * Description: 国家版-医保数据上传
+-->
+<!DOCTYPE html>
+
+<html>
+<head>
+<!--meta http-equiv="Content-Type" content="text/html;"-->
+<title>医保数据上传</title>
+<link rel="stylesheet" type="text/css" href="/WebAPP/plugin/layim-v3.7.8/dist/css/layui.css"/>
+<script type="text/javascript" src="/WebAPP/plugin/layim-v3.7.8/dist/layui.js" charset="utf-8"></script>
+<link rel="stylesheet" type="text/css" href="/WebAPP/plugin/layim-v3.7.8/dist/css/global.css"/>
+
+<link rel="stylesheet" type="text/css" href="/WebAPP/plugin/hisui-0.1.0/dist/css/hisui.css"/>
+<script type="text/javascript" src="/WebAPP/plugin/hisui-0.1.0/dist/js/jquery-1.11.3.min.js" charset="utf-8"></script>
+<script type="text/javascript" src="/WebAPP/plugin/hisui-0.1.0/dist/js/jquery.hisui.min.js" charset="utf-8"></script>
+<script type="text/javascript" src="/WebAPP/plugin/lodop/LodopFuncs.js"></script>
+<link rel="stylesheet" type="text/css" href="/WebAPP/themes/css/charge.main.css"/>
+<link rel="stylesheet" type="text/css" href="/WebAPP/themes/css/default.css"/>
+<script type="text/javascript" src="/WebAPP/js/sys/adapter.js" charset="utf-8"></script>
+
+<script type="text/javascript" src="/WebAPP/js/admin/data.contrast.common.js"></script>
+<script type="text/javascript" src="/WebAPP/js/admin/data.contrast.js"></script>
+
+ <style>
+.datagrid-wrap {
+	border-radius:0px !important;	
+	border-color:#cccccc !important;
+	border-top:0px !important;
+}
+.dg-class .datagrid-wrap{
+	border-radius:0px !important;	
+	border-color:#cccccc !important;
+	border-top:1px dashed #cccccc !important;	
+}
+.hisui-panel {
+	border-bottom:0px !important;	
+}
+.south-class .panel-noscroll{
+	border:0px !important;
+}
+.layout-panel-west {
+    padding-right: 10px;
+}
+.PortCom{
+	width:270px !important;	
+}
+.PubComWin .panel-body-noheader{
+	border-top:1px solid #cccccc !important;
+	border-radius:0px !important;			
+}
+#edgTB {
+    padding-bottom: 5px !important;
+    padding-top: 5px !important;
+}
+#addInfoParamShow input{
+	width:70px ;	
+}
+.tb300{
+	width:400px !important ;	
+}
+</style>
+</head>
+<script type="text/javascript">
+	var WESTDGWIDTH = 535; // 固定左下
+	var windHeight = $(window).height() * 0.55;
+	var windowWidth = $(window).width() - WESTDGWIDTH;
+	//var tmpJob=$.m({ClassName: "INSU.MI.PortConfig", MethodName: "SaveBrowseConfig", Height:windHeight,EDGwidth:windowWidth}, false);
+</script>
+
+<body style="padding:10px;">
+	<div class="hisui-layout" data-options="fit:true">
+   		<div data-options="region:'north',border:false" style="height:350px;">
+   			<div class="hisui-layout" data-options="fit:true">
+   				<div data-options="region:'north',title:'接口列表',headerCls:'panel-header-gray',iconCls:'icon-apply-check',collapsible:false" style="height:89px;border-bottom-style:dashed;">
+   					<table id="HisQueryTab" class='search-table'>
+						<tr>
+							<!--<td class="r-label td-first-col"><label class="clsRequired">医院</label></td>
+							<td><input id="Hospital" class="textbox"  /></td>-->
+							<td class="r-label"><label class="clsRequired" >医保类型</label></td>
+							<td><input id="InsuType" name="insuType" class="textbox"/></td>
+							<td class="r-label"><label>配置类型</label></td>
+							<td><input id="TYPE" Placeholder="1:线上，0:线下" class="textbox"/></td>
+							<td class="r-label"><label>审核标志</label></td>
+							<td><input id="AuditFlag" name="AuditFlag" class="textbox"/></td>
+							<td class="r-label"><label>接口信息</label></td>
+							<td><input id="ParamPortInfo" placeholder="代码/名称模糊检索" style="width:150px" class="textbox"/></td>
+						</tr>
+					</table>
+   				</div>
+   				<div data-options="region:'center',border:false" id="dg-Layout">
+					<div id="dg"></div> 
+				</div>
+   			</div>
+		</div>
+		<div data-options="region:'center',border:false" style="padding-top:10px;">		
+			<div class="hisui-layout" id="cc-layout" data-options="fit:true">
+				<div data-options="region:'west',title:'节点数据集设置',headerCls:'panel-header-gray',iconCls:'icon-apply-check',collapsible:false" style="width:500px">
+					<div id="wdg"></div>
+				</div>
+				<div data-options="region:'center',title:'数据集属性配置',headerCls:'panel-header-gray',iconCls:'icon-apply-check'">
+					<div id="edg"></div>
+				</div>
+			</div>
+     	</div>
+	</div> 
+	<!--接口列表toolbar-->
+	<div id="dgTB" class="hisui-toolbar" >
+		<table cellspacing="0" cellpadding="0">
+			<tbody>
+				<tr>
+					<td><a href="#" class="hisui-linkbutton" iconCls="icon-search" id="btnFind" plain="true"  >查询</a></td>
+					<td><a href="#" class="hisui-linkbutton" iconCls="icon-add" id="btnAdd" plain="true" >新增</a></td>
+					<td hidden><a href="#" class="hisui-linkbutton" iconCls="icon-write-order" id="btnStedit" plain="true">修改</a></td>
+					<td><a href="#" class="hisui-linkbutton changebtn" iconCls="icon-cancel" id="btnDelDG" plain="true"  >删除</a></td>
+					<td hidden ><a href="#" class="hisui-linkbutton changebtn" iconCls="icon-save" id="btnSaveSingle" plain="true" >保存</a></td>
+					<td ><a href="#" class="hisui-linkbutton changebtn" iconCls="icon-save" id="btnSaveAll" plain="true" >保存</a></td>
+					<td ><a href="#" class="hisui-linkbutton" iconCls="icon-save" id="btnAudit" plain="true" >审核</a></td>
+					<td><a href="#" class="hisui-linkbutton" iconCls="icon-batch-cfg" id="btnPubConfig" plain="true"  >公共参数配置</a></td>
+					<td><a href="#" class="hisui-linkbutton" iconCls="icon-paper-cfg" id="btnPointConfig" plain="true"  >根节点配置</a></td>
+					<td><a href="#" class="hisui-linkbutton changebtn" iconCls="icon-save" id="btnBuildData" plain="true"  >生成节点及参数</a></td>
+					<td><a href="#" class="hisui-linkbutton changebtn" iconCls="icon-import" id="btnImport" plain="true" >导入</a></td>
+					<td><a href="#" class="hisui-linkbutton" iconCls="icon-export" id="btnExport" plain="true" >导出</a></td>
+					<td><a href="#" class="hisui-linkbutton" iconCls="icon-paper-table" id="btnParamShow" plain="true" >参数展示</a></td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+	<!--内容节点toolbar-->
+	<div id="wdgTB" class="hisui-toolbar" >  
+		<table cellspacing="0" cellpadding="0">
+			<tbody>
+				<tr>
+					<td class='menu-no-icon'>
+						<a href="javascript:void(0)" id="btnPARNODETYPELabel" class="hisui-menubutton" data-options="menu:'#btnPARNODETYPE'">入参</a>
+			            <div id="btnPARNODETYPE"  data ="I" style="width:120px;">   
+			                <div onclick="SwitchPARNODETYPE('I|入参');">入参</div>   
+			                <div onclick="SwitchPARNODETYPE('O|出参');">出参</div>     
+			            </div>
+					</td>
+					<td hidden><a href="#" class="hisui-linkbutton" iconCls="icon-search" id="west-btnFind" plain="true">查询</a></td>
+					<td><a href="#" class="hisui-linkbutton changebtn" iconCls="icon-add" id="west-add" plain="true">新增</a></td>
+					<td hidden><a href="#" class="hisui-linkbutton changebtn" iconCls="icon-write-order" id="west-stedit" plain="true">修改</a></td>
+					<td hidden><a href="#" class="hisui-linkbutton changebtn" iconCls="icon-cancel" id="west-endEdit" plain="true">结束编辑</a></td>
+					<td><a href="#" class="hisui-linkbutton changebtn" iconCls="icon-save" id="west-save" plain="true">保存</a></td>
+					<td><a href="#" class="hisui-linkbutton changebtn" iconCls="icon-cancel" id="west-del" plain="true">删除</a></td>
+					<td hidden><a href="#" class="hisui-linkbutton changebtn" iconCls="icon-import" id="west-imp" plain="true">导入</a></td>
+					<td hidden><a href="#" class="hisui-linkbutton" iconCls="icon-export" id="west-exp" plain="true">导出</a></td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+	<!--数据关联toolbar-->
+	<div id='edgTB' class="hisui-toolbar" >  
+		<table cellspacing="0" cellpadding="0">
+			<tbody>
+				<tr>
+					<td><input id="edgKeyInput" style="width:100px;" class="textbox" placeholder="参数代码/参数名"  /></td>
+					<td hidden><a href="#" class="hisui-linkbutton" iconCls="icon-search" id="east-btnFind" plain="true">查询</a></td>
+					<td ><a href="#" class="hisui-linkbutton changebtn" iconCls="icon-add" id="east-add" plain="true">新增</a></td>
+					<td hidden><a href="#" class="hisui-linkbutton" iconCls="icon-write-order" id="east-stedit" plain="true">修改</a></td>
+					<td hidden><a href="#" class="hisui-linkbutton" iconCls="icon-cancel" id="east-endEdit" plain="true">结束编辑</a></td>
+					<td><a href="#" class="hisui-linkbutton changebtn" iconCls="icon-save" id="east-save" plain="true">保存</a></td>
+					<td hidden><a href="#" class="hisui-linkbutton" iconCls="icon-import" id="east-imp" plain="true">导入</a></td>
+					<td><a href="#" class="hisui-linkbutton changebtn" iconCls="icon-cancel" id="east-delete" plain="true">删除</a></td>
+					<td><a href="#" class="hisui-linkbutton changebtn" iconCls="icon-cancel" id="east-deleteCon" plain="true">删除数据源信息</a></td>
+					<td><a href="#" class="hisui-linkbutton changebtn" iconCls="icon-cancel" id="east-deleteALLCon" plain="true">删除全部数据源信息</a></td>
+					<td hidden><a href="#" class="hisui-linkbutton" iconCls="icon-export" id="east-exp" plain="true">导出</a></td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+	<!--公共参数配置弹窗-->
+	<div id="PubConfigWin">
+		<div id="PubConfigPan" class="hisui-panel"  style="fit:true;border:0px" data-options="closable:true,collapsible:true,minimizable:true,maximizable:true,modal:true">
+			<div data-options="region:'north',border:false"  style="height:210px;" >
+				<table class="search-table" id='addInfo'>
+					<tr>
+						<td class="r-label r-label-1"><label id="LabelINLOCXM" class="clsRequired">医院</label></td>
+						<td><input disabled id="PortCom-HOSPID" class="textbox  hisui-validatebox PortCom" required="required" missingMessage="该项不能为空"/></td>
+						<td class="r-label r-label-1"><label class="clsRequired">医保类型</label></td>
+						<td><input disabled id="PortCom-HITYPE" class="textbox PortCom"/></td>
+						<td class="r-label"><a href="#" class="hisui-linkbutton" iconCls="icon-w-save" onClick="SavePortCommon()" id="commonport-save" >保存</a></td>
+					</tr>
+					<tr>
+
+						<td class="r-label"><label id="HOSPID">就诊类型</label></td>
+						<td><input id="PortCom-MEDMDTRTTYPE" class="textbox PortCom"  /></td>
+						<td class="r-label"><label id="HOSPID">配置类型</label></td>
+						<td><input  id="PortCom-TYPE" class="textbox PortCom"  /></td>
+						<td class="r-label"><a href="#" class="hisui-linkbutton" iconCls="icon-w-cancel" onClick="DeletePortCommon()" id="commonport-delete" >删除</a></td>
+					</tr>
+					<tr>
+						<td class="r-label r-label-1"><label class="clsRequired">险种类型</label></td>
+						<td><input id="PortCom-INSUTYPE" class="textbox PortCom"/></td>
+						<td class="r-label"><label id="HOSPID">节点代码</label></td>
+						<td><input id="PortCom-NODECODE" class="textbox PortCom"  /></td>
+						<td class="r-label"><a href="#" class="hisui-linkbutton" iconCls="icon-w-clean" onClick="CleanPortPubCommon()" id="commonport-clean" >清屏</a></td>
+					</tr>
+					<tr>
+						<td class="r-label r-label-1"><label class="clsRequired">节点名称</label></td>
+						<td colspan=3><input id="PortCom-NODENAME" class="textbox PortCom"/></td>
+						<td class="r-label"><a href="#" class="hisui-linkbutton" iconCls="icon-w-find" onClick="LoadPubDG()" id="commonport-find" >查询</a></td>
+					</tr>
+					<tr>
+						<td class="r-label"><label id="HOSPID">配置信息</label></td>
+						<td colspan=9><input id="PortCom-CONINFO" class="textbox" style="width:629px" /></td>
+					</tr>
+				</table>
+			</div>
+			<div data-options="region:'center'" class="PubComWin">
+				<div id="PubDG" ></div>
+			</div>
+			<input hidden id="PortCom-ROWID" class="textbox"/>
+		</div>
+	</div>
+	<!---end 配置弹窗--->
+	<!--根节点数据弹窗-->
+	<div id="PointConfigWin">
+		<div id="PointConfigPan" class="hisui-panel"  style="fit:true;border:0px" data-options="closable:true,collapsible:true,minimizable:true,maximizable:true,modal:true">
+			<div data-options="region:'north',border:false"  style="height:210px;" >
+				<table class="search-table" id='addInfoRoot'>
+					<tr>
+						<td class="r-label r-label-1"><label class="clsRequired">医院</label></td>
+						<td><input disabled id="PortRoot-HOSPID" class="textbox  hisui-validatebox PortCom" required="required" missingMessage="该项不能为空"/></td>
+						<td class="r-label"><label>医保类型</label></td>
+						<td><input disabled id="PortRoot-HITYPE" class="textbox PortCom"  /></td>
+						<td class="r-label"><a href="#" style="width:102px" class="hisui-linkbutton changebtn" iconCls="icon-w-save" id="portroot-save" onClick="SavePortRootmon()" >保存</a></td>
+					</tr>
+					<tr>
+						<td class="r-label"><label>交易编号</label></td>
+						<td><input disabled id="PortRoot-INFNO" class="textbox PortCom"  /></td>
+						<td class="r-label r-label-1"><label class="clsRequired">交易名称</label></td>
+						<td><input disabled id="PortRoot-INFNAME" class="textbox PortCom"/></td>
+						<td class="r-label"><a href="#" style="width:102px" class="hisui-linkbutton changebtn" iconCls="icon-w-cancel" id="portroot-delete" onClick="DeletePortRootmon()">删除</a></td>
+					</tr>
+					<tr>
+						<td class="r-label r-label-1"><label class="clsRequired">节点类型</label></td>
+						<td><input id="PortRoot-PORTCODE" class="textbox PortCom"/></td>
+						<td class="r-label" ><label class="clsRequired">节点代码</label></td>
+						<td id="TDPortRoot-NODECODE"><input id="PortRoot-NODECODE" class="textbox PortCom"  /></td>
+						<td class="r-label"><a href="#" style="width:102px" class="hisui-linkbutton" iconCls="icon-w-clean" id="portroot-clean" onClick="Clean()">清屏</a></td>
+					</tr>
+					<tr>
+						<td class="r-label r-label-1"><label >节点名称</label></td>
+						<td colspan=3><input id="PortRoot-NODENAME" class="textbox" style="width:629px"/></td>
+						<td class="r-label"><a href="#" style="width:102px" class="hisui-linkbutton" iconCls="icon-w-find" id="portroot-find" onClick="LoadPortRoot()">查询</a></td>
+					</tr>
+					<tr>
+						<td class="r-label"><label id="HOSPID" >节点值</label></td>
+						<td colspan=3 id="TDPortRoot-CONINFO"><input id="PortRoot-CONINFO" class="textbox" style="width:629px" /></td>
+						<td class="r-label"><a href="#" style="width:102px" class="hisui-linkbutton" iconCls="icon-w-batch-cfg" id="portroot-paramCFG" onClick="paramCFGClick()">值配置</a></td>
+					</tr>
+				</table>
+			</div>
+			<div data-options="region:'center'" class="PubComWin">
+				<div id="PortRootDG" ></div>
+			</div>
+		</div>
+	</div>
+	<!---end 节点数据弹窗-->
+	<!--参数信息展示弹窗-->
+	<div id="ParamShowWin">
+		<div id="ParamShowPan" class="hisui-panel"  style="fit:true;border:0px" data-options="closable:true,collapsible:true,minimizable:true,maximizable:true,modal:true">
+			<div data-options="region:'center',border:false"   >
+				<table class="search-table" id='addInfoParamShow'>
+					
+				</table>
+				<table class="search-table" style="border-spacing:0px;">
+					<tr>
+						<td class='r-label td-first-col'>
+							<label>输出信息</label>
+						</td>
+						<td colspan=8>
+							<textarea style="width:882px;height:319px;" class="" id="OutPutParam"></textarea>
+						</td>
+					</tr>
+					<tr>
+						<td  style="text-align:center" class='r-label td-first-col' colspan=9>
+							<a href="#" class="hisui-linkbutton"  id="BuildParam" >生成</a>
+						</td>
+					</tr>
+				</table>
+			</div>
+		</div>
+	</div>
+	<!---end 参数信息展示弹窗-->
+	<script type="text/javascript" src="../scripts/dhcinsu/mi.portcommon.js"></script>
+	<script type="text/javascript" src="../scripts/dhcinsu/mi.portroot.js"></script>
+	<script type="text/javascript" src="../scripts/dhcinsu/mi.basedatacom.js"></script>
+</body>
+</html>

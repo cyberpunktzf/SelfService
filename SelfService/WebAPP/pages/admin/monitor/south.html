@@ -1,0 +1,154 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=IE11">
+	<script type="text/javascript" src="/WebAPP/plugin/hisui-0.1.0/dist/js/jquery-1.11.3.min.js"></script>
+	<script type="text/javascript" src="/WebAPP/js/sys/adapter.js" charset="utf-8"></script>
+    <style>
+		body {
+			background-color: #293c55;
+		}
+		.title {
+			background-color: #a52a2a;
+			width: 150px;
+		}
+		.title>h2 {
+			color: #fff8dc;
+		}
+		.container {
+		    width: 100%;
+			display: -webkit-flex;  /*Safari*/
+			-webkit-flex-wrap: wrap;   /*Safari 6.1+ */
+			display: flex;
+			flex-wrap: wrap;
+		}
+		.eq-area {
+		    margin: 8px;
+			width: 170px;
+			height: 270px;
+            background-color: #00bfff;
+			border-radius: 10px;
+		}
+		.eq-area-warning {
+			background-color: #ffff00;
+		}
+       .eq-name {
+			font-size: 16px;
+            line-height: 60px;
+			height: 60px;
+			text-align: center;
+       }
+	   .eq-status {
+			height: 180px;
+			background-color: #1e90ff;
+	   }
+	   .status-area {
+			width: 100%;
+			height: 40%;
+	   }
+	   .img-normal {
+			background: url("/WebAPP/themes/images/clock.png") no-repeat center bottom;
+	   }
+	   .status-warning {
+			padding-top: 5px;
+			font-size: 15px;
+			font-weight: 600;
+			color: #ffff00;
+			text-align: center;
+	   }
+	   .status-warning-tip {
+			padding-top: 5px;
+			font-size: 15px;
+			color: #ffff00;
+			text-align: center;
+	   }
+	   .status-warning-desc {
+			font-size: 15px;
+			color: #ffff00;
+			text-align: center;
+	   }
+       .eq-address {
+		    font-size: 12px;
+			line-height: 30px;
+            background-color: #6495ed;
+			border-radius: 0 0 10px 10px;
+			text-align: center;
+       }
+	   .eq-area-warning div:not(.eq-name) {
+			color: #ffff00;
+	   }
+    </style>
+</head>
+<body>
+    <div class="title">
+        <h2>自助信息</h2>
+    </div>
+    <div class="container">
+    </div>
+</body>
+<script type="text/javascript">
+	//常量
+	const CV = {
+		MoudleName: 'SelfServPy.Common.ss_eqlistdCtl',
+		ClassName: 'ELC'
+	};
+	//全局变量
+	var GV = {
+		FILEDS: {
+			'1':{'title':'设备编号','id':'ss_eqlistd_eqcode','seq':'1'},
+			'2':{'title':'设备名称','id':'ss_eqlistd_eqdesc','seq':'2'},
+			'3':{'title':'设备位置','id':'ss_eqlistd_address','seq':'3'},
+			'4':{'title':'设备规格','id':'ss_eqlistd_spec','seq':'4'},
+			'5':{'title':'设备单位','id':'ss_eqlistd_unit','seq':'5'},
+			'6':{'title':'设备分类编码','id':'ss_eqlistd_type','seq':'6'},
+			'7':{'title':'设备IP','id':'ss_eqlistd_ip','seq':'7'},
+			'8':{'title':'设备MAC','id':'ss_eqlistd_mac','seq':'8'},
+			'9':{'title':'设备角色代码','id':'ss_eqlistd_role','seq':'9'}
+		}
+	}
+    $(function() {
+		var input = {};
+        input['TradeCode'] = "query^" + CV.MoudleName + "^" + CV.ClassName;
+        CallMethod(input, function(rtn) {
+			if (rtn.result != 0) {
+				return;
+			}
+			var json = {};
+			var eqName = "";
+			var eqCode = "";
+			var eqAddress = "";
+			var html = "";
+			var isWarning = 1;
+			rtn.output.forEach(function(curValue, index) {
+				json = JSON.parse(curValue);
+				eqName = json.ss_eqlistd_eqdesc || "未维护设备名";
+				eqCode = json.ss_eqlistd_eqcode;
+				eqAddress = json.ss_eqlistd_address || "未维护设备地址";
+				html += "<div class='eq-area " + ((isWarning == 1) ? 'eq-area-warning' : '') + "'>";
+					html += "<div class='eq-name'>" + eqName + "</div>";
+					html += "<div class='eq-status'>";
+						html += "<div class='status-area " + 'img-normal' + "'></div>";
+						if (isWarning == 1) {
+							html += "<div class='status-warning'>" + eqName + eqCode + "</div>";
+							html += "<div class='status-warning-tip'>" + '故障描述' + "</div>";
+							html += "<div class='status-warning-desc'>" + '警告纸将尽' + "</div>";
+						}						
+					html += "</div>";
+					html += "<div class='eq-address'>" + eqAddress + "</div>";
+				html += "</div>";
+			});
+			$(".container").append(html);
+        }, "DoMethod");
+	});
+	
+	/**
+	* 定时刷新，5分钟刷新
+	*/
+	var handler = setInterval(function() {
+		clearInterval(handler);
+		location = location;
+	}, 1000 * 60 * 5);
+</script>
+</html>

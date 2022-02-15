@@ -1,0 +1,93 @@
+.layui-fluid{
+    padding:0px;	
+}
+.layui-form-item{
+    margin-bottom:0px !important;	
+}
+.layui-breadcrumb span{
+    margin:0px !important;
+    font-size: 20px !important;
+}
+li label{
+    font-size: 18px !important;
+}
+.osp-main-container{
+    height:900px;
+}
+.layui-breadcrumb a {
+    color: white !important;
+}
+.main-body{
+    background:url("/WebAPP/themes/images/main-deepblue.png") ;
+    background-repeat:no-repeat;
+    height:1918px;
+    width:1080px;
+}
+.main-body.bgj-body{
+    background:url("/WebAPP/themes/images/bgj_main.png") ;
+    background-repeat:no-repeat;
+    height:768px;
+    width:1366px;
+}
+/*倒计时*/
+#OSPSYSCountDown{ 
+    width: 186px;
+    height: 47px;
+    opacity: 1;
+    font-size: 36px;
+    font-family: MicrosoftYaHei;
+    text-align: left;
+    color: #067efe;
+    line-height: 182px;
+}
+#OSPSYSCountDownFix{
+    width: 186px;
+    height: 47px;
+    opacity: 1;
+    font-size: 36px;
+    font-family: MicrosoftYaHei;
+    text-align: left;
+    line-height: 182px;
+}
+/*系统时间*/
+#SysDate{
+    position: absolute;
+    left: 612px;
+    top: 1874px;
+    height: 22px;
+    opacity: 1;
+    font-size: 22px;
+    font-family: Source Han Sans CN, Source Han Sans CN-Regular;
+    font-weight: 400;
+    text-align: left;
+    color: #ffffff;
+    line-height: 26px;  
+}
+/*系统时间*/
+#SysDate.bgj{
+    position: absolute;
+    left: 1012px;
+    top: 124px;
+    height: 22px;
+    opacity: 1;
+    font-size: 22px;
+    font-family: Source Han Sans CN, Source Han Sans CN-Regular;
+    font-weight: 400;
+    text-align: left;
+    color: #ffffff;
+    line-height: 26px;  
+}
+/*主界面管理员按钮*/
+
+
+/*倒计时*/
+.OSPSYSCountDown{ /*def*/
+    position: absolute;
+    left: 90px;
+    top: 1692px;
+}
+.OSPSYSCountDown.bgj{
+    position: absolute;
+    left: 40px;
+    top: 610px;
+}

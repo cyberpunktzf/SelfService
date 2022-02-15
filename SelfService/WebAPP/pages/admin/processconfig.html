@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<!-- 
+* FileName: admin.sysconfig.html
+* Creator: tangzf 
+* Date: 2020-5-22
+* Description: 自助服务-设备列表维护
+-->
+<html>
+<head>
+	<meta charset="utf-8">
+
+	<script type="text/javascript" src="/WebAPP/js/admin/head.js" charset="utf-8"></script>
+
+	<style>
+		.layui-card-body .layui-table{
+			margin:0px !important;
+		}
+		.layui-table-tool-temp{
+			padding-right:0;
+		}
+		.layui-card-header{
+			height:100px;
+			padding:10px;
+		}
+		.layui-table-cell{
+			padding:0;
+		}
+		.layui-card-body{
+			float: left;
+		}
+	</style>
+</head>
+<body class="layui-fluid">	
+	<div class="layui-card" >
+		<div class="layui-card-header">
+			<form class="addTable layui-form" action="">
+				<div class='layui-row'>
+					<div class="layui-form-item">
+						<label class="layui-form-label title1" ></label>
+						<div class="layui-input-inline">
+							<input type="text" class='layui-input id1'>
+						</div>
+						<label class="layui-form-label title2" ></label>
+						<div class="layui-input-inline">
+							<input type="text" class='layui-input id2'>
+						</div>
+						<label class="layui-form-label title3" ></label>
+						<div class="layui-input-inline">
+							<input type="text" class='layui-input id3'>
+						</div>
+						<label class="layui-form-label title4" ></label>
+						<div class="layui-input-inline">
+							<input type="text" class='layui-input id4'>
+						</div>
+					</div>
+				</div>
+				<div class='layui-row'>
+					<div class="layui-form-item">
+						<label class="layui-form-label title6" ></label>
+						<div class="layui-input-inline">
+							<input type="text"  class='layui-input id6'>
+						</div>
+						<label class="layui-form-label title7"  ></label>
+						<div class="layui-input-inline">
+							<input type="text"  class='layui-input id7'>
+						</div>
+						<label style="font-size: 30px;color:red;">不许修改该界面数据!</label>
+					</div>
+				</div>									
+			</form>
+		</div>
+		<div class='layui-row'>
+			<div class="layui-col-md5">
+				<table class="layui-table" id="dg" lay-filter="dg" ></table>
+			</div>
+			<div class="layui-col-md7"  style='padding-left:10px'>
+				<table class="layui-table" id="rdg" lay-filter="rdg" ></table>
+			</div>
+		</div>
+	</div>
+	<script id ='RDGTB' type='text/html'>
+		<!--<button class="layui-btn layuiadmin-btn-useradmin" onclick='SaveRDG()' >保存</button>
+		<button class="layui-btn layuiadmin-btn-useradmin" onclick='AddRDG()' >新增</button>-->
+	</script>
+	<script id ='LDGTB' type='text/html'>
+		<button class="layui-btn layuiadmin-btn-useradmin" onclick='LoadDg()' >查询</button>
+		<!--<button class="layui-btn layuiadmin-btn-useradmin" onclick="SaveLDG()"  >保存</button>-->
+		<button class="layui-btn layuiadmin-btn-useradmin" onclick='Clear()'  >清屏</button>
+		<!--<button class="layui-btn layuiadmin-btn-useradmin" onclick='Del()'  >删除</button>-->
+	</script>
+	<!--<script id ='RDGOper' type='text/html'>
+		<button class="layui-btn layuiadmin-btn-useradmin" id="UP" onclick="UP()" style='width: 20px;
+		height: 20px;
+		padding: 0;
+		font-size: 10px;
+		line-height: 0;' >上</button>
+		<button class="layui-btn layuiadmin-btn-useradmin" id="DOWN" onclick="DOWN()" style='width: 20px;
+		height: 20px;
+		padding: 0;
+		font-size: 10px;
+		line-height: 0;' >下</button>
+	</script>
+	-->
+	<script type="text/javascript" src="/WebAPP/js/admin/processconfig.js" charset="utf-8"></script>
+</body>
+
+</html>
