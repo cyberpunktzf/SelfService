@@ -657,7 +657,7 @@ def GetMenuBtn(ClsHisOPObj):
         rtn = {}
         Input = {
             "ss_eqlistc_code" :ClientName,
-            "ss_eqlistc_cfgcode" : 'processcode'
+            "ss_eqlistc_cfgcode" : 'MainMenu'
 	    }
         PCCObj = ss_eqlistcfgCtl.ELCFG()
         PCCObj.query(Input)

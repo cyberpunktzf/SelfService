@@ -1348,6 +1348,18 @@ function PayServ_GetChgException(){
         "TradeCode" : "GetChgException"
     }
 	var rtn = CallMethod(InputObj,'',"CallPythonService","N");
+    if(rtn.output !=""){
+        if(rtn.output.indexOf("<Response>") > -1){
+            var jsonObj = OSPWebServicesXMLStr2Json(rtn.output);
+            if(jsonObj.ResultCode != "0"){
+                OSPAlert('',jsonObj.ResultMsg,'抱歉',function(){
+                    homePageClick();
+                    return;
+                });
+                return;
+            }
+        }  
+    }
     return rtn;
 }
 // 保存设备模块信息

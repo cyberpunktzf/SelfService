@@ -46,10 +46,6 @@
 </body>
 <script type="text/javascript">
 	//常量
-	const CV = {
-		TotalNum: 3000,      //总数
-		BlankNum: 500        //预留空白数
-	};
 	//全局变量
 	var GV = {
 		MoudleName: 'SelfServPy.Common.ss_eqlistdCtl',
@@ -59,8 +55,14 @@
 		AppEcharts: {},
 		TkNOEcharts: {}
 	}
-	
 	$(function() {
+		var TradeCode = "QueryMasterPersent^SelfServPy.Common.mysql_contral^mysqlsql" ;
+                        var input = {
+                            "TradeCode" : TradeCode
+                        }
+                        var output=CallMethod(input,function(){
+                        },"DoMethod","N");
+						var JsonObj=JSON.parse(output.output.ResultSql[0]);
 		//基于准备好的demo，初始化ECharts实列
 		GV.RegEcharts = echarts.init($("#regEcharts")[0]);
 		GV.ChgEcharts = echarts.init($("#chgEcharts")[0]);
@@ -83,7 +85,7 @@
 				}   //副标题
 			},
 			tooltip: {
-				show: false,
+				//show: false,
 				trigger: 'item',
 				formatter: '{a} <br/>{b}: {c} ({d}%)'
 			},
@@ -109,35 +111,35 @@
 		};
 		
 		//挂号
-		var bizCount = 500;
 		$.extend(_opts, {
 			title: $.extend(_opts.title, {
-				text: '挂号',
-				subtext: bizCount,
+				text: '挂号数',
+				subtext: JsonObj.Reg,
 			}),
 			series: [$.extend(_opts.series[0], {
-						name: '挂号总数',
-						data: [
-								{value: CV.TotalNum, name: '挂号总数'},
-								{value: CV.BlankNum,
+						name: '挂号',
+						data:
+						[
+								{value: JsonObj.Reg, name: '挂号数'},
+					 			{value: JsonObj.Reg -JsonObj.RegSeccsess,
 								//不需要显示的数据，颜色设置成和背景一样
 								itemStyle: {
 									normal: {
 										color: 'transparent'
 									}
-								}}
+								}}  
 							]
 					}), $.extend(_opts.series[1], {
 						name: '挂号',
 						data: [
-								{value: bizCount, name: '挂号数'},
-								{value: CV.TotalNum - bizCount,
+								{value: JsonObj.RegSeccsess, name: '挂号成功'},
+ 								{value: JsonObj.Reg -JsonObj.RegSeccsess,
 								//不需要显示的数据，颜色设置成和背景一样
 								itemStyle: {
 									normal: {
 										color: 'transparent'
 									}
-								}}
+								}} 
 							]
 					})
 				]
@@ -145,17 +147,16 @@
 		GV.RegEcharts.setOption(_opts);
 	   
 		//缴费
-		var bizCount = 100;
 		$.extend(_opts, {
 			title: $.extend(_opts.title, {
-				text: '缴费',
-				subtext: bizCount,
+				text: '缴费数',
+				subtext: JsonObj.Charge,
 			}),
 			series: [$.extend(_opts.series[0], {
-						name: '缴费总数',
+						name: '缴费',
 						data: [
-								{value: CV.TotalNum, name: '缴费总数'},
-								{value: CV.BlankNum,
+								{value:JsonObj.Charge, name: '缴费数'},
+								{value: JsonObj.Charge-JsonObj.ChargeSeccsess, 
 								itemStyle: {
 									normal: {
 										color: 'transparent'   //不需要显示的数据，颜色设置成和背景一样
@@ -165,8 +166,8 @@
 					}), $.extend(_opts.series[1], {
 						name: '缴费',
 						data: [
-								{value: bizCount, name: '缴费数'},
-								{value: CV.TotalNum - bizCount,
+								{value:JsonObj.ChargeSeccsess, name: '缴费成功'},
+								{value: JsonObj.Charge-JsonObj.ChargeSeccsess, 
 								//不需要显示的数据，颜色设置成和背景一样
 								itemStyle: {
 									normal: {
@@ -180,17 +181,16 @@
 	   GV.ChgEcharts.setOption(_opts);
 	   
 		//预约
-		var bizCount = 600;
 	    $.extend(_opts, {
 			title: $.extend(_opts.title, {
-				text: '预约',
-				subtext: bizCount,
+				text: '预约数',
+				subtext: JsonObj.ORDR,
 			}),
 			series: [$.extend(_opts.series[0], {
-						name: '预约总数',
+						name: '预约数',
 						data: [
-								{value: CV.TotalNum, name: '预约总数'},
-								{value: CV.BlankNum,
+								{value: JsonObj.ORDR, name: '预约数'},
+								{value: JsonObj.ORDR-JsonObj.ORDRSeccsess,
 								//不需要显示的数据，颜色设置成和背景一样
 								itemStyle: {
 									normal: {
@@ -201,8 +201,8 @@
 					}), $.extend(_opts.series[1], {
 						name: '预约',
 						data: [
-								{value: bizCount, name: '预约数'},
-								{value: CV.TotalNum - bizCount,
+								{value: JsonObj.ORDRSeccsess, name: '预约成功'},
+								{value: JsonObj.ORDR-JsonObj.ORDRSeccsess,
 								//不需要显示的数据，颜色设置成和背景一样
 								itemStyle: {
 									normal: {
@@ -216,17 +216,16 @@
 		GV.AppEcharts.setOption(_opts);
 	   
 		//取号
-		var bizCount = 400;
 		$.extend(_opts, {
 			title: $.extend(_opts.title, {
-				text: '取号',
-				subtext: bizCount,
+				text: '取号数',
+				subtext: JsonObj.OBTNO,
 			}),
 			series: [$.extend(_opts.series[0], {
-						name: '取号总数',
+						name: '取号数',
 						data: [
-								{value: CV.TotalNum, name: '取号总数'},
-								{value: CV.BlankNum,
+								{value: JsonObj.OBTNO, name: '取号数'},
+								{value: JsonObj.OBTNO-JsonObj.OBTNOSeccsess,
 								//不需要显示的数据，颜色设置成和背景一样
 								itemStyle: {
 									normal: {
@@ -237,8 +236,8 @@
 					}), $.extend(_opts.series[1], {
 						name: '取号',
 						data: [
-								{value: bizCount, name: '取号数'},
-								{value: CV.TotalNum - bizCount,
+								{value: JsonObj.OBTNOSeccsess, name: '取号成功'},
+								{value: JsonObj.OBTNO-JsonObj.OBTNOSeccsess,
 								//不需要显示的数据，颜色设置成和背景一样
 								itemStyle: {
 									normal: {

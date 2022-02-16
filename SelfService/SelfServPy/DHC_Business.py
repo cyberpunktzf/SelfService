@@ -248,7 +248,7 @@ class DHC:
             PatientType = '05' 
         Address =  ClsHisOPObj.patinfo_dict.get('Address')
         Mobile = Input.get('TelePhoneNo')
-        CardTypeCode = '03'
+        CardTypeCode = '01'
         IDNo = IDNO
         PatientName = PatName
 

@@ -25,10 +25,13 @@ def save_insu_portinfo(Input,ClsHisOPObj):
     BDObj.insert(Input)
 #此处做对照根据对照取 
 #处理医保类型
-def get_mi_type(ClsHisOPObj):
+def get_mi_type(ClsHisOPObj,Input):
     try:
         #print("get_mi_type")
-        rtn_mi_type = ClsHisOPObj.his_patinfo_dict['hi_type']
+        if ClsHisOPObj=='':
+            rtn_mi_type=Input
+        else :
+            rtn_mi_type = ClsHisOPObj.his_patinfo_dict['hi_type']
         #print("get_mi_type",ClsHisOPObj.his_patinfo_dict)
         if rtn_mi_type :
             return rtn_mi_type
@@ -36,13 +39,19 @@ def get_mi_type(ClsHisOPObj):
             raise Exception("-1^获取费别失败")  
     except Exception as e:
         print(str(e))
-
 #获取医保支付信息
 def GetInsuPayInfo(ClsHisOPObj):
     try:
         #自费的返回0
         #print("自费的返回0")
-        AdmReason = get_mi_type(ClsHisOPObj)
+                #自费的返回0
+        #print("自费的返回0")
+        if ClsHisOPObj.get("AdmReason"):
+            AdmReason = get_mi_type('',ClsHisOPObj.get("AdmReason"))
+        else :
+            AdmReason = get_mi_type(ClsHisOPObj)
+        if not AdmReason or AdmReason=='':
+            raise Exception(e)
         INSUZHZF = 0
         INSUTCZF = 0
         if(AdmReason == "1"):

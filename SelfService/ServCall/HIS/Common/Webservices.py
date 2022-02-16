@@ -40,8 +40,7 @@ def CallHISWS123(ParInput):
 
 '''
 #在用
-def CallHISWS(ParInput):  
-
+def CallHISWS(ParInput): 
     #ParInput = parse.quote(ParInput)
     #page = urllib.request.urlopen("http://www.webxml.com.cn/WebServices/WeatherWebService.asmx/getWeatherbyCityName?theCityName=58367")
 
@@ -72,7 +71,9 @@ def CallHISWS(ParInput):
     client = Client(url)
 
     client.set_options(wsse=security)
+    #print("ParInput=",ParInput)
     content = client.service.DHCSelfPay(ParInput)
+    #print("content=",content)
     return content
 #暂时不用  
 def CallHISWS2(ParInput):  

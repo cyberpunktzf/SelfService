@@ -141,11 +141,11 @@ function AddDepToHtml(jsonObj){
 		var DepDesc = JSON.parse(DepInfo).DepartmentName;
 
 		var DepartmentNotes = JSON.parse(DepInfo).DepartmentNotes;
-		if(DepartmentNotes !=""){
+		if(typeof DepartmentNotes !="undefined" && DepartmentNotes !=""){
 			OSPAlert('',DepartmentNotes,'提示');
 			return;
 		}
-		Disabled(this,'.sys-white-defbutton');
+		//Disabled(this,'.sys-white-defbutton');
 		var DepDesc = JSON.parse(DepInfo).DepartmentName;
 		//全自费科室标志
 		if(typeof JSON.parse(DepInfo).ATMZFFlag != "undefined"){

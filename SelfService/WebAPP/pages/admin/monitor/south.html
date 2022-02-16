@@ -120,7 +120,7 @@
 			var eqCode = "";
 			var eqAddress = "";
 			var html = "";
-			var isWarning = 1;
+			var isWarning = 0;
 			rtn.output.forEach(function(curValue, index) {
 				json = JSON.parse(curValue);
 				eqName = json.ss_eqlistd_eqdesc || "未维护设备名";
@@ -131,9 +131,13 @@
 					html += "<div class='eq-status'>";
 						html += "<div class='status-area " + 'img-normal' + "'></div>";
 						if (isWarning == 1) {
-							html += "<div class='status-warning'>" + eqName + eqCode + "</div>";
+							html += "<div class='status-warning'>" + eqName + "</div>";
 							html += "<div class='status-warning-tip'>" + '故障描述' + "</div>";
 							html += "<div class='status-warning-desc'>" + '警告纸将尽' + "</div>";
+						}	
+						if (isWarning == 0) {
+							html += "<div class='status-warning'>" + eqName + "</div>";
+							html += "<div class='status-warning-tip'>" + '正常运行' + "</div>";
 						}						
 					html += "</div>";
 					html += "<div class='eq-address'>" + eqAddress + "</div>";

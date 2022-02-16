@@ -22,9 +22,14 @@ function LoadPage(url,OpertType){
         }
     }
     let p = PayServ_SaveOption(url);
+    var tmpLeftTime = INSUGetRequest("lefttime",url);
+    if(typeof tmpLeftTime == "undefined" || tmpLeftTime == ""){
+        tmpLeftTime = OSPSYSCountDownLeftReset;
+    }
+
     p.then((data)=>{
         //alert('跳转')
-        OSPSetParentVal('SYSLeftTime',OSPSYSCountDownLeftReset);
+        OSPSetParentVal('SYSLeftTime',tmpLeftTime);
         //top.location.href=src;
         top.frames['main-content'].src = url;
         RemoveLoading();

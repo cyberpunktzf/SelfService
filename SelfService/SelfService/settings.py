@@ -87,16 +87,16 @@ DATABASES = {
         'NAME': 'selfservice',
         'USER': 'root',
         'PASSWORD': 'admin',#'CyberpunkTZF520!',
-        'HOST': '10.80.6.10',
-        'PORT': '8090'#
+        'HOST': '172.16.0.13',
+        'PORT': '3306'#
     },
     'db2':{
         'ENGINE': 'django.db.backends.mysql',  # 或者使用 mysql.connector.django
         'NAME': 'selfservice',
         'USER': 'root',
         'PASSWORD': 'admin',#'CyberpunkTZF520!',
-        'HOST': '10.80.6.10',
-        'PORT': '8090'#
+        'HOST': '172.16.0.13',
+        'PORT': '3306'#
     }
 }
 

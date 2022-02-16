@@ -37,10 +37,11 @@ def DoMethod(request):
                 del TmpInput['TradeCode']
                 if ReturnType!="":
                     del TmpInput['ReturnType']
-                if TmpInput.get('rows'):
-                    del TmpInput['rows']
-                if TmpInput.get('page'):
-                    del TmpInput['page']
+                if _moduleName != "SelfServPy.Common.mysql_contral":
+                    if TmpInput.get('rows'):
+                        del TmpInput['rows']
+                    if TmpInput.get('page'):
+                        del TmpInput['page']
                 #导入module
                 lib = __import__('importlib')
                 _module = lib.import_module(_moduleName)

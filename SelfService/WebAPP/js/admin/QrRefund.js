@@ -16,8 +16,8 @@ var GLOBAL = {
         '5':{'title':'订单号','id':'ss_ref_platno','seq':'5'},
         '6':{'title':'输入报文','id':'ss_ref_input','seq':'6'},
         '7':{'title':'输出报文','id':'ss_ref_output','seq':'7'},
-        '8':{'title':'输入时间','id':'ss_ref_createdate','seq':'8'},
-        '9':{'title':'输出时间','id':'ss_ref_creator','seq':'9'},
+        '8':{'title':'*订单时间','id':'ss_ref_createdate','seq':'8'},
+        '9':{'title':'更新时间','id':'ss_ref_creator','seq':'9'},
         '10':{'title':'his订单号','id':'ss_ref_hisno','seq':'10'},
         '11':{'title':'状态','id':'ss_ref_status','seq':'11'},
         '12':{'title':'支付方式','id':'ss_extd_channel','seq':'12'},
@@ -88,23 +88,23 @@ function init_btn(){
 function Refund(){
     var selectId = "";
     if(selectRow){
-        selectId = selectRow.data.id;
+        selectId = selectRow.data.ss_ref_platno;
     }else{
         layer.msg('没有选择要退费的数据');
         return;
     } 
-/*     layer.confirm('是否继续删除？',function(index){
+     layer.confirm('是否执行退费？',function(index){
         layer.close(index);
-        var TradeCode = "delete^"  + GLOBAL.MODULENAME + "^" + GLOBAL.CLASSNAME;
+        var TradeCode = "AutoRefund^"  + "SelfServPy.CheckSingle" + "^" + "CS";
         var input = {
             "TradeCode" : TradeCode,
-            'id':selectId
+            'ss_ref_platno':selectId
         }
         CallMethod(input,function(){
             layer.msg('删除成功');
             Clear();
         },"DoMethod");
-    });  */
+    });  
 }
 function Clear(){
     selectRow = null;
@@ -126,6 +126,13 @@ function LoadDg(){
     });
     init_dg(input);
    // CallMethod(input,init_dg,"DoMethod");
+}
+//回车事件
+document.onkeydown=function(e){
+    var ev=(typeof event!='undefined')?window.event:e;
+    if(ev.keyCode==13){
+        LoadDg();
+    }
 }
 function init_dg(jsonObj){
     try{
@@ -171,50 +178,46 @@ function init_dg(jsonObj){
                     {field: GLOBAL.FILEDS[3].id, title: GLOBAL.FILEDS[3].title,width:100},
                     {field: GLOBAL.FILEDS[4].id, title: GLOBAL.FILEDS[4].title,width:100},
                     {field: GLOBAL.FILEDS[5].id, title: GLOBAL.FILEDS[5].title,width:260},
-                    {field: GLOBAL.FILEDS[6].id, title: GLOBAL.FILEDS[6].title,width:260},
-                    {field: GLOBAL.FILEDS[7].id, title: GLOBAL.FILEDS[7].title,width:260},
-                    {field: GLOBAL.FILEDS[10].id, title: GLOBAL.FILEDS[10].title,width:80},
+                    {field: GLOBAL.FILEDS[8].id, title: GLOBAL.FILEDS[8].title,width:260},
+                    {field: GLOBAL.FILEDS[6].id, title: GLOBAL.FILEDS[6].title,width:140},
+                    {field: GLOBAL.FILEDS[7].id, title: GLOBAL.FILEDS[7].title,width:140},
+                    {field: GLOBAL.FILEDS[10].id, title: GLOBAL.FILEDS[10].title,width:150},
                     {field: GLOBAL.FILEDS[11].id, title: GLOBAL.FILEDS[11].title,width:100},
-                    {field: GLOBAL.FILEDS[12].id, title: GLOBAL.FILEDS[12].title,width:150},
+                    {field: GLOBAL.FILEDS[12].id, title: GLOBAL.FILEDS[12].title,width:100},
                 ]]
             });
             //监听行单击事件
             table.on('row(dg)', function(obj){
                 //动态添加背景色
-                if(selectRow && selectRow.data.id == obj.data.id){ // 取消选中
-                     selectRow = null;
-                      obj.tr.siblings().removeClass('layui-table-click');
-                     var formTable = $('.layui-form').find('input').not('#QueryBtn').not('#ClearBtn').not('#RefundBtn').not('#ss_ref_createdate');
-                    $.each(formTable,function(index,input){
-                        $(input).val('');
-                    });  
-                }else{
+                if(selectRow && selectRow.data.fk_businessmaster_id == obj.data.fk_businessmaster_id){ // 取消选中
+                    selectRow = null;
+                    obj.tr.removeClass('layui-table-click');
                     obj.tr.siblings().removeClass('layui-table-click');
-                    selectRow = obj;
-                    var formTable = $('.layui-form').find('input').not('#QueryBtn').not('#ClearBtn').not('#RefundBtn').not('#ss_ref_createdate');
+                   var formTable = $('.layui-form').find('input').not('#QueryBtn').not('#RefundBtn').not('#ClearBtn');
                     $.each(formTable,function(index,input){
-                        var id = $(input).attr('id');
-                        $(input).val(obj.data[id]);
-                    });  
-                }
-                if (selectRow) {
-                    obj.tr.addClass('layui-table-click');
-                    layui.use('form', function() {
-                        var form = layui.form;
-                        var formTable = $('.layui-form').find('select').not('#QueryBtn').not('#ClearBtn').not('#RefundBtn').not('#ss_ref_createdate');
-                        $.each(formTable,function(index,select){
-                            var id = $(select).attr('id');
-                            $(select).val(obj.data[id]);
-                            form.render("select");
-                        });
-                    });
-
-                    var input = {};
-                    input['TradeCode'] = "querybusiness_details^"  + GLOBALSon.MODULENAME + "^" + GLOBALSon.CLASSNAME;
-                    input['fk_businessmaster_id']=selectRow.data.businessId;
-                    init_rightDG(input);
-                    init_leftDG("");
-                }
+                       $(input).val('');
+                   }); 
+               }else{
+                   obj.tr.siblings().removeClass('layui-table-click');
+                   selectRow = obj;
+                   var formTable = $('.layui-form').find('input').not('#QueryBtn').not('#RefundBtn').not('#ClearBtn');
+                    $.each(formTable,function(index,input){
+                       var id = $(input).attr('id');
+                       $(input).val(obj.data[id]);
+                   }); 
+               }
+              if (selectRow) {
+                  obj.tr.addClass('layui-table-click');
+                   layui.use('form', function() {
+                      var form = layui.form;
+                      var formTable = $('.layui-form').find('select').not('#QueryBtn').not('#RefundBtn').not('#ClearBtn');
+                      $.each(formTable,function(index,select){
+                          var id = $(select).attr('id');
+                          $(select).val(obj.data[id]);
+                          form.render("select");
+                      }); 
+                  });
+              }
             });
         });
     }catch(e){

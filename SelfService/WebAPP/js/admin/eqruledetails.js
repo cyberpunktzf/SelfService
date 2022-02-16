@@ -5,19 +5,20 @@
  * Description: 设备列表维护
  */
 var GLOBAL = {
-    MODULENAME : 'SelfServPy.Common.ss_eqrdetailsCtl',
-    CLASSNAME :'ERC',
+    MODULENAME : 'SelfServPy.Common.mysql_contral',
+    CLASSNAME :'mysqlsql',
     FILEDS:{
-        '1':{'title':'规则分类','id':'ss_eqr_type','seq':'1'},
-        '2':{'title':'规则代码','id':'ss_eqr_code','seq':'2'},
-        '3':{'title':'规则描述','id':'ss_eqr_desc','seq':'3'},
-        '4':{'title':'规则备注','id':'ss_eqr_demo','seq':'4'},
-        '5':{'title':'生效日期','id':'ss_eqr_stdate','seq':'5'},
-        '6':{'title':'失效日期','id':'ss_eqr_enddate','seq':'6'},
-        '7':{'title':'保存模式','id':'ss_eqr_savemode','seq':'7'},
-        '8':{'title':'保存值','id':'ss_eqr_saveval','seq':'8'},
-        '9':{'title':'控制类型','id':'ss_eqr_conflag','seq':'9'},
-        '10':{'title':'生效标志','id':'ss_eqr_actflag','seq':'10'}
+        '1':{'title':'序号','id':'id','seq':'1'},
+        '2':{'title':'规则分类','id':'ss_eqrd_type','seq':'2'},
+        '3':{'title':'规则代码','id':'ss_eqrd_code','seq':'3'},
+        '4':{'title':'规则描述','id':'ss_eqrd_desc','seq':'4'},
+        '5':{'title':'创建日期','id':'ss_eqrd_createdate','seq':'5'},
+        '6':{'title':'更新日期','id':'ss_eqrd_update','seq':'6'},
+        '7':{'title':'开始日期','id':'ss_eqrd_stdate','seq':'7'},
+        '8':{'title':'结束日期','id':'ss_eqrd_enddate','seq':'8'},
+        '9':{'title':'生效标志','id':'ss_eqrd_actflag','seq':'9'},
+        '10':{'title':'分类名称','id':'ss_eqr_desc','seq':'10'},
+        '11':{'title':'规则名称','id':'ss_dic_desc','seq':'11'},
     }
 }
 var selectRow;
@@ -38,37 +39,51 @@ function init_input(){
         $('.title' + seq).text(title);
         $('.id' + seq).attr('id',id);
     });  
-    layui.use('laydate', function(){
-       var laydate = layui.laydate;
-           laydate.render({
-            elem: '#ss_eqr_stdate',
-            type: 'datetime'
-           });
-           laydate.render({
-            elem: '#ss_eqr_enddate',
-            type: 'datetime'
-           });
-    });
 }
+
 function init_btn(){
     $('#QueryBtn').on('click',function(){
         LoadDg();
     });
     $('#SaveBtn').on('click',function(){
         var input = {};
+        if($('#ss_eqrd_type').val() == ''){
+            layer.msg('规则分类不能为空');
+            return;
+        }
+        if($('#ss_eqrd_code').val() == ''){
+            layer.msg('规则代码不能为空');
+            return;
+        }
+        if($('#ss_eqrd_actflag').val() == ''){
+            layer.msg('生效标志不能为空');
+            return;
+        }
         // 字段赋值
-        input['TradeCode'] = "insert^"  + GLOBAL.MODULENAME + "^" + GLOBAL.CLASSNAME;
+        input['TradeCode'] = "UpdateEqrdetailsInfo^"  + GLOBAL.MODULENAME + "^" + GLOBAL.CLASSNAME;
         $.each(GLOBAL.FILEDS,function(index,key){
             input[key.id] = $('#' + key.id).val();
         });
-        //
         if(selectRow){
             input['id'] = selectRow.data.id;
+            layer.confirm('是否更新规则？',function(index){
+                layer.close(index);
+                CallMethod(input,function(){
+                    layer.msg('保存成功');
+                    LoadDg();
+                },"DoMethod");
+            }); 
         }
-        CallMethod(input,function(){
-            layer.msg('保存成功');
-            LoadDg();
-        },"DoMethod");
+        else if(selectRow==null){
+            input['id'] = '';
+            layer.confirm('是否新增规则？',function(index){
+                layer.close(index);
+                CallMethod(input,function(){
+                    layer.msg('保存成功');
+                    LoadDg();
+                },"DoMethod");
+            }); 
+        }
     });
     $('#DelBtn').on('click',function(){
         Del();
@@ -87,7 +102,7 @@ function Del(){
     } 
     layer.confirm('是否继续删除？',function(index){
         layer.close(index);
-        var TradeCode = "delete^"  + GLOBAL.MODULENAME + "^" + GLOBAL.CLASSNAME;
+        var TradeCode = "DeleteEqrdetailsInfo^"  + GLOBAL.MODULENAME + "^" + GLOBAL.CLASSNAME;
         var input = {
             "TradeCode" : TradeCode,
             'id':selectId
@@ -102,26 +117,23 @@ function Del(){
 function Clear(){
     selectRow = null;
     $('.layui-form').find('input').val('');
+    $('.layui-form').find('#ss_eqrd_actflag').val('');
     LoadDg();
 }
 function LoadDg(){
     selectRow = null;
     // 字段赋值
     var input = {};
-    input['TradeCode'] = "query^"  + GLOBAL.MODULENAME + "^" + GLOBAL.CLASSNAME;
+    input['TradeCode'] = "QueryEqrdetailsInfo^"  + GLOBAL.MODULENAME + "^" + GLOBAL.CLASSNAME;
     $.each(GLOBAL.FILEDS,function(index,key){
-        input[key.id] = $('#' + key.id).val();
+       input[key.id] = $('#' + key.id).val();
     });
-    //
-    CallMethod(input,init_dg,"DoMethod");
+    init_dg(input)
+    $('.layui-form').find('input').val('');
+    $('.layui-form').find('#ss_eqrd_actflag').val('');
 }
 function init_dg(jsonObj){
     try{
-        var tmpArr = [];
-        $.each(jsonObj.output,function(key,val){
-            var tmpObj = JSON.parse(val);
-            tmpArr.push(tmpObj)
-        });
         layui.use('table', function(){
             var table = layui.table;
             //第一个实例
@@ -131,17 +143,28 @@ function init_dg(jsonObj){
                 field:'id',
                 align:'center',
                 border:'',
-                size: 'lg', //表格尺寸 默认 sm
+                //toolbar: '',
+                //defaultToolbar:false,
+                toolbar:'#LDGTB',
+                size: 'sm', //表格尺寸 默认 sm
+                height: 750 ,//定义高度
                 even:false, //隔行背景
-                url:  PYTHONSERVER + 'CallSelfServPY', //数据接口
-                height:DGHeight,
+                url:  PYTHONSERVER + 'DoMethod', //数据接口
                 page: true,
-                limits:[50, 100, 150],
-                limit:50,
+                limits:[25, 50, 100],
+                limit:25,
+                where:jsonObj,
+                method:'post',
                 parseData: function(ret){
+                    var tmpArr = [];
+                    $.each(ret.output['ResultSql'],function(key,val){
+                        var tmpObj = JSON.parse(val);
+                        tmpArr.push(tmpObj)
+                    });
                     return {	
                         "code":200, //解析接口状态
-                        "count": jsonObj.output.length, //解析数据长度
+                        "count": ret.output['TableCount'], //解析数据长度
+                        //组织后台查询出来的数据
                         "data":tmpArr //解析数据列表
                       };
                 },
@@ -149,33 +172,48 @@ function init_dg(jsonObj){
                     statusCode: 200 //重新规定成功的状态码为 200，table 组件默认为 0
                   },
                 cols: [[ //表头
-                    {field: GLOBAL.FILEDS[1].id, title: GLOBAL.FILEDS[1].title,width:120},
-                    {field: GLOBAL.FILEDS[2].id, title: GLOBAL.FILEDS[2].title,width:120},
-                    {field: GLOBAL.FILEDS[3].id, title: GLOBAL.FILEDS[3].title,width:120},
-                    {field: GLOBAL.FILEDS[4].id, title: GLOBAL.FILEDS[4].title,width:120},
-                    {field: GLOBAL.FILEDS[5].id, title: GLOBAL.FILEDS[5].title,width:120},
-                    {field: GLOBAL.FILEDS[6].id, title: GLOBAL.FILEDS[6].title,width:120},
-                    {field: GLOBAL.FILEDS[7].id, title: GLOBAL.FILEDS[7].title,width:120},
-                    {field: GLOBAL.FILEDS[8].id, title: GLOBAL.FILEDS[8].title,width:120},
-                    {field: GLOBAL.FILEDS[9].id, title: GLOBAL.FILEDS[9].title,width:120},
-                    {field: GLOBAL.FILEDS[10].id, title: GLOBAL.FILEDS[10].title,width:120},
-                    {field: 'id', title: 'id',width:120}
+                    {field: GLOBAL.FILEDS[1].id, title: GLOBAL.FILEDS[1].title,width:80},//,sort:true 排序
+                    {field: GLOBAL.FILEDS[9].id, title: GLOBAL.FILEDS[9].title,width:80},
+                    {field: GLOBAL.FILEDS[10].id, title: GLOBAL.FILEDS[10].title,width:200},
+                    {field: GLOBAL.FILEDS[2].id, title: GLOBAL.FILEDS[2].title,width:150},
+                    {field: GLOBAL.FILEDS[11].id, title: GLOBAL.FILEDS[11].title,width:130},
+                    {field: GLOBAL.FILEDS[3].id, title: GLOBAL.FILEDS[3].title,width:150},
+                    {field: GLOBAL.FILEDS[4].id, title: GLOBAL.FILEDS[4].title,width:240},
+                    {field: GLOBAL.FILEDS[5].id, title: GLOBAL.FILEDS[5].title,width:150},
+                    {field: GLOBAL.FILEDS[6].id, title: GLOBAL.FILEDS[6].title,width:150},
+                    {field: GLOBAL.FILEDS[7].id, title: GLOBAL.FILEDS[7].title,width:150},
+                    {field: GLOBAL.FILEDS[8].id, title: GLOBAL.FILEDS[8].title,width:150},
                 ]]
             });
             //监听行单击事件
             table.on('row(dg)', function(obj){
-                if(selectRow && selectRow.data.id == obj.data.id){ // 取消选中
-                    selectRow = null;
-                    var formTable = $('.layui-form').find('input');
-                    $.each(formTable,function(index,input){
-                        $(input).val('');
-                    });
-                }else{
-                    selectRow = obj;
-                    var formTable = $('.layui-form').find('input');
-                    $.each(formTable,function(index,input){
-                        var id = $(input).attr('id');
-                        $(input).val(obj.data[id]);
+                //动态添加背景色
+                 if(selectRow && selectRow.data.id == obj.data.id){ // 取消选中
+                      selectRow = null;
+                      obj.tr.removeClass('layui-table-click');
+                     var formTable = $('.layui-form').find('input').not('#QueryBtn').not('#ClearBtn');
+                      $.each(formTable,function(index,input){
+                         $(input).val('');
+                     }); 
+                 }else{
+                     obj.tr.siblings().removeClass('layui-table-click');
+                     selectRow = obj;
+                     var formTable = $('.layui-form').find('input').not('#QueryBtn').not('#ClearBtn');
+                      $.each(formTable,function(index,input){
+                         var id = $(input).attr('id');
+                         $(input).val(obj.data[id]);
+                     }); 
+                 }
+                if (selectRow) {
+                    obj.tr.addClass('layui-table-click');
+                     layui.use('form', function() {
+                        var form = layui.form;
+                        var formTable = $('.layui-form').find('select').not('#QueryBtn').not('#ClearBtn');
+                        $.each(formTable,function(index,select){
+                            var id = $(select).attr('id');
+                            $(select).val(obj.data[id]);
+                            form.render("select");
+                        }); 
                     });
                 }
             });

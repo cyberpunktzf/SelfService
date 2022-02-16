@@ -179,6 +179,7 @@ function AddDocToHtml(jsonObj){
 			ChangePage("add");
 		},100);
 	}
+	// 按钮事件
 	$('.doc-defbutton').on("click",function(){
 		var tempCls = $(this).find('.nonum');
 		if(tempCls.length > 0){
@@ -198,7 +199,16 @@ function AddDocToHtml(jsonObj){
 		var LeftNum = "";   // DepArr[index].EffectiveSeqNo;
 		var BusinessType = OSPGetParentVal('BusinessType');		
 		if(BusinessType == "Reg"){
-			LeftNum = BtnObj.EffectiveSeqNo;		
+			LeftNum = BtnObj.EffectiveSeqNo;
+			// 接口返回值校验
+			if(typeof LeftNum == "undefined"){
+				OSPAlert('','HIS接口1013未返回EffectiveSeqNo','警告',function(){
+					var Param = "&Param=" + BtnData;
+					GoNextBusiness(Param);
+					return;	
+				});
+				return;
+			}		
 			if(!LeftNum) {
 				return;
 			}
@@ -228,7 +238,7 @@ function AddDocToHtml(jsonObj){
 		var LabelTitle = DepArr[index].DoctotLevelCode;
 		var WaitNum = 0;
 		var displayFlag = ";display:none;";
-		if(BusinessType == "Reg"){
+		if(BusinessType == "Reg"){ // 挂号部分
 			displayFlag = "";
 			LeftNum = DepArr[index].EffectiveSeqNo;	
 				
@@ -249,17 +259,23 @@ function AddDocToHtml(jsonObj){
 			if(LeftNum.split(':').length > 1){
 				LeftNum = LeftNum.split(':')[0] + ':' + LeftNum.split(':')[1];
 			}
-			if(DepArr[index].EffectiveSeqNo.split(':').length > 2){
+			if(typeof DepArr[index].EffectiveSeqNo !="undefined" && DepArr[index].EffectiveSeqNo.split(':').length > 2){
 				WaitNum = DepArr[index].EffectiveSeqNo.split(':')[2];
 			}
+			// 接口未返回 EffectiveSeqNo字段的
+			if(typeof DepArr[index].EffectiveSeqNo == "undefined"){
+				nonum = "";
+				LeftNum = "HIS接口1013未返回";
+				WaitNum = "HIS接口1013未返回";
+			}
 			//LeftNum = "剩余:" + LeftNum;
-		}else{
+		}else{ //预约部分
 			LeftNum = DepArr[index].DoctotLevelCode;
 			var LeftNum1 = DepArr[index].EffectiveSeqNo;					
 			if(!LeftNum1){
-				LeftNum1 = "无号";
-				LeftNum1 = "nonum"
+				LeftNum1 = "nonum";
 			}
+			// 默认无号
 			nonum = "nonum";
 			$.each(LeftNum1.split('^'),function(index,val){
 				if(LeftNum1.split(':').length > 1){
@@ -268,7 +284,11 @@ function AddDocToHtml(jsonObj){
 						nonum = "";
 					}
 				}
-			})
+			});
+			// 接口未返回 EffectiveSeqNo字段的
+			if(typeof DepArr[index].EffectiveSeqNo == "undefined"){
+				nonum = "";
+			}
 		}
 
 		var OutPut ={
@@ -298,9 +318,7 @@ function AddDocToHtml(jsonObj){
 			// 挂号
 			if (nonum !=""){
 				BtnLabelText = "无号"
-			}
-
-			
+			}	
 		}
 		var htmlStr = "<div class='doc-defbutton'>";
 			//img
@@ -334,7 +352,7 @@ function AddDocToHtml(jsonObj){
 		return htmlStr;
 	}
 	} catch (error) {
-		OSPAlert('','查询医生失败，请重试','提示',function(){
+		OSPAlert('','生成医生列表异常，请重试','提示',function(){
 			rebackClick();
 			return;
 		});

@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <!-- 
-* FileName: admin.extdetails.html
+* FileName: admin.sysconfig.html
 * Creator: tangzf 
 * Date: 2020-5-22
 * Description: 自助服务-设备列表维护
@@ -16,76 +16,67 @@
 			margin:0px !important;
 		}
 		.layui-card-header{
-			height:100px;
+			height:120px;
 			padding:10px;
-		}
+		}	
 		.layui-card-body{
 			float: left;
-		}
-		.layui-table-click{
-			background-color:yellow !important;
 		}
 	</style>
 </head>
 <body class="layui-fluid">	
 	<div class="layui-card" >
 		<div class="layui-card-header">
-			<form class="layui-form"  >
+			<form class="layui-form"   action="">
 				<div class='layui-row'>
 					<div class="layui-form-item">
-						<label class="layui-form-label title1"  ></label>
+						<label class="layui-form-label title1" style="width: 130px"></label>
 						<div class="layui-input-inline">
 							<input type="text"  class='layui-input id1'>
 						</div>
-						<label class="layui-form-label title2"></label>
+						<label class="layui-form-label title2" style="width: 130px" ></label>
 						<div class="layui-input-inline">
-								<select class="layui-input id2" lay-search>
-									<option value=""></option>
-									<option value="0">成功</option>
-									<option value="1">失败</option>
-							</select>
+							<select class="layui-input id2" lay-search>
+                                    <option value=""></option>
+                                    <option value="Pay">支付</option>
+                                    <option value="Query">查询</option>
+                                    <option value="Refund">退费</option>
+                            </select>
 						</div>
-						<label class="layui-form-label title3"></label>
+						<label class="layui-form-label title3" style="width: 130px"></label>
 						<div class="layui-input-inline">
-								<select class="layui-input id3" lay-search>
+							<select class="layui-input id3" lay-search>
 									<option value=""></option>
 									<option value="WxPay">微信</option>
 									<option value="AliPay">支付宝</option>
 							</select>
 						</div>
-						<label class="layui-form-label title4"></label>
-						<div class="layui-input-inline">
-							<input type="text"  class='layui-input id4'>
-						</div>
-						<input type="button" class="layui-btn" id="QueryBtn"  value="查询">
 					</div>
 				</div>
 				<div class="layui-row">	
 					<div class="layui-form-item">
-						<label class="layui-form-label title5" style="width:100px"></label>
+						<label class="layui-form-label title5" style="width:130px";></label>
 						<div class="layui-input-inline">
 							<input type="text"  class='layui-input id5'>
-						</div>
-						<label class="layui-form-label title6" style="width:100px"></label>
+                        </div>
+                        <label class="layui-form-label title6" style="width:130px"></label>
 						<div class="layui-input-inline">
 							<input type="text"  class='layui-input id6'>
-						</div>
-						<label class="layui-form-label title7" style="width:100px"></label>
+                        </div>
+						<label class="layui-form-label title6" style="width:130px"></label>
 						<div class="layui-input-inline">
 							<input type="text"  class='layui-input id7'>
 						</div>
-						<label class="layui-form-label title8" style="visibility: hidden;"></label>
-						<!-- <input type="button" class="layui-btn"  id="RefundBtn" value="订单退费" > -->
-						<input type="button" class="layui-btn"  id="ClearBtn" value="清屏" style="margin-left: 140px"><!--style="margin-left: 45px"-->
 					</div>
-				</div>										
+                </div>												
 			</form>
 		</div>
-		<div class='layui-row'style='top: 0%'>
-			<div class="layui-col-md" style='top: 0%'>
-				<table class="layui-table" id="dg" lay-filter="dg"></table>
+		<div class="layui-card-body">	
+			<div>
+				<button class="layui-btn layuiadmin-btn-useradmin" id="QueryBtn">查询</button>
 			</div>
-		</div>	
+		</div>
+		<table class="layui-table" id="dg" lay-filter="dg"></table>
 	</div>
 	<script type="text/javascript" src="/WebAPP/js/admin/extdetails.js" charset="utf-8"></script>
 </body>

@@ -1,7 +1,7 @@
 /**
  * FileName: admin.sysdicconfig.js
- * Anchor: tangzf
- * Date: 2020-3-23
+ * Anchor: Lizhi
+ * Date: 2020-10-23
  * Description: 设备列表维护
  */
 var GLOBAL = {
@@ -150,7 +150,8 @@ function init_dg(jsonObj){
                 field:'id',
                 align:'center',
                 border:'',
-                size: 'lg', //表格尺寸 默认 sm
+                size: 'sm', //表格尺寸 默认 sm
+                height: 750 ,//定义高度
                 even:false, //隔行背景
                 url:  PYTHONSERVER + 'CallSelfServPY', //数据接口
                 //height:DGHeight,
@@ -169,12 +170,12 @@ function init_dg(jsonObj){
                     statusCode: 200 //重新规定成功的状态码为 200，table 组件默认为 0
                   },
                 cols: [[ //表头
-                    {field: GLOBAL.FILEDS[1].id, title: GLOBAL.FILEDS[1].title,width:120},
-                    {field: GLOBAL.FILEDS[2].id, title: GLOBAL.FILEDS[2].title,width:120},
-                    {field: GLOBAL.FILEDS[3].id, title: GLOBAL.FILEDS[3].title,width:120},
-                    {field: GLOBAL.FILEDS[4].id, title: GLOBAL.FILEDS[4].title,width:120},
-                    {field: GLOBAL.FILEDS[5].id, title: GLOBAL.FILEDS[5].title,width:120},
-                    {field: GLOBAL.FILEDS[6].id, title: GLOBAL.FILEDS[6].title,width:120},
+                    {field: GLOBAL.FILEDS[1].id, title: GLOBAL.FILEDS[1].title,width:150},
+                    {field: GLOBAL.FILEDS[2].id, title: GLOBAL.FILEDS[2].title,width:150},
+                    {field: GLOBAL.FILEDS[3].id, title: GLOBAL.FILEDS[3].title,width:200},
+                    {field: GLOBAL.FILEDS[4].id, title: GLOBAL.FILEDS[4].title,width:200},
+                    {field: GLOBAL.FILEDS[5].id, title: GLOBAL.FILEDS[5].title,width:180},
+                    {field: GLOBAL.FILEDS[6].id, title: GLOBAL.FILEDS[6].title,width:180},
                     {field: GLOBAL.FILEDS[7].id, title: GLOBAL.FILEDS[7].title,width:120},
                     {field: GLOBAL.FILEDS[8].id, title: GLOBAL.FILEDS[8].title,width:120},
                     {field: GLOBAL.FILEDS[9].id, title: GLOBAL.FILEDS[9].title,width:120},
@@ -185,6 +186,8 @@ function init_dg(jsonObj){
             //监听行单击事件
             table.on('row(dg)', function(obj){
                 if(selectRow && selectRow.data.id == obj.data.id){ // 取消选中
+                    obj.tr.removeClass('layui-table-click');
+                    obj.tr.siblings().removeClass('layui-table-click');
                     selectRow = null;
                     var formTable = $('.layui-form').find('input');
                     $.each(formTable,function(index,input){
@@ -192,6 +195,8 @@ function init_dg(jsonObj){
                     });
                 }else{
                     selectRow = obj;
+                    obj.tr.removeClass('layui-table-click');
+                    obj.tr.siblings().removeClass('layui-table-click');
                     var formTable = $('.layui-form').find('input');
                     $.each(formTable,function(index,input){
                         var id = $(input).attr('id');
@@ -200,6 +205,7 @@ function init_dg(jsonObj){
                 }
                 if (selectRow){
                     var input = {};
+                    obj.tr.addClass('layui-table-click');
                     input['TradeCode'] = "query^"  + GLOBALSon.MODULENAME + "^" + GLOBALSon.CLASSNAME;
                     input['ss_eqrd_code']=selectRow.data.ss_eqr_code
                     CallMethod(input,init_rightDG,"DoMethod");
@@ -229,7 +235,7 @@ function init_rightDG(jsonObj){
                 toolbar:'',
                 defaultToolbar:false,
                 border:'',
-                size: 'lg', //表格尺寸 默认 sm
+                size: 'sm', //表格尺寸 默认 sm
                 even:false, //隔行背景
                 url:  PYTHONSERVER + 'CallSelfServPY', //数据接口
                 page: true,
@@ -263,7 +269,6 @@ function init_rightDG(jsonObj){
             });
             //监听行单击事件
             table.on('row(rdg)', function(obj){
-
             });
             //监听单元格事件
             table.on('edit(rdg)', function(obj){

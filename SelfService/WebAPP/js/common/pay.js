@@ -18,7 +18,13 @@ $(function () {
 		setTimeout(function(){
 			$('#mainBack',parent.document).css('display','block');
 		},(QueryTime + 1000));
-		OSPSetParentVal('SYSLeftTime','180');
+		//倒计时
+		var tmpLeftTime = INSUGetRequest("lefttime");
+		if(typeof tmpLeftTime == "undefined" || tmpLeftTime == ""){
+			tmpLeftTime = '180';
+		}
+		OSPSetParentVal('SYSLeftTime',tmpLeftTime);
+		//
 		$('#qrcode').css('display','none');
 		var role = OSPGetParentVal('client_dict', 'ss_eqlistd_role');
 		if (role == "role2"){

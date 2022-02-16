@@ -174,6 +174,7 @@ class HISGlobalInfo:
             IPStr = ParamRequest.META['REMOTE_ADDR']
             #print("开始生成根据客户端信息", IPStr)
             # 根据客户端名称 获取客户端配置信息
+            print("IPStr=",IPStr)
             ELCObj = ss_eqlistdCtl.ELC()
             queryParam = {'ss_eqlistd_ip':IPStr}   
             ELCObj.query(queryParam)

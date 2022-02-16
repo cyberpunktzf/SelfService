@@ -19,6 +19,9 @@
 			height:100px;
 			padding:10px;
 		}
+		.layui-table-click{
+			background-color:yellow !important;
+		}
 		.layui-card-body{
 			float: left;
 		}
@@ -30,11 +33,7 @@
 			<form class="layui-form"   action="">
 				<div class='layui-row'>
 					<div class="layui-form-item">
-						<label class="layui-form-label title1"  ></label>
-						<div class="layui-input-inline">
-							<input type="text"  class='layui-input id1'>
-						</div>
-						<label class="layui-form-label title2" ></label>
+						<label class="layui-form-label title2"  ></label>
 						<div class="layui-input-inline">
 							<input type="text"  class='layui-input id2'>
 						</div>
@@ -46,18 +45,18 @@
 						<div class="layui-input-inline">
 							<input type="text"  class='layui-input id4'>
 						</div>
-						<label class="layui-form-label title5"></label>
+						<label class="layui-form-label title5" ></label>
 						<div class="layui-input-inline">
 							<input type="text"  class='layui-input id5'>
+						</div>
+						<label class="layui-form-label title6"></label>
+						<div class="layui-input-inline">
+							<input type="text"  class='layui-input id6'>
 						</div>
 					</div>
 				</div>
 				<div class="layui-row">	
 					<div class="layui-form-item">
-						<label class="layui-form-label title6"></label>
-						<div class="layui-input-inline">
-							<input type="text"  class='layui-input id6'>
-						</div>
 						<label class="layui-form-label title7"></label>
 						<div class="layui-input-inline">
 							<input type="text"  class='layui-input id7'>
@@ -68,11 +67,11 @@
 						</div>
 						<label class="layui-form-label title9"></label>
 						<div class="layui-input-inline">
-							<input type="text"  class='layui-input id9'>
-						</div>
-						<label class="layui-form-label title10"></label>
-						<div class="layui-input-inline">
-							<input type="text"  class='layui-input id10'>
+							<select class="layui-input id9" lay-search>
+								<option value="">请选择</option>
+								<option value="Y">启动</option>
+								<option value="N">关闭</option>
+							</select>
 						</div>
 					</div>
 				</div>											

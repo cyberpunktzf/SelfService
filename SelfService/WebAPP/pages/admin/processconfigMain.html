@@ -10,7 +10,6 @@
 	<meta charset="utf-8">
 
 	<script type="text/javascript" src="/WebAPP/js/admin/head.js" charset="utf-8"></script>
-
 	<style>
 		.layui-card-body .layui-table{
 			margin:0px !important;
@@ -18,10 +17,10 @@
 		.layui-table-click{
 			background-color:yellow !important;
 		}
-		.layui-card-header{
+/* 		.layui-card-header{
 			height:50px;
 			padding:10px;
-		}	
+		}	 */
 		.layui-card-body{
 			float: left;
 		}
@@ -41,18 +40,20 @@
 </head>
 <body class="layui-fluid">	
 	<div class="layui-card" >   
-		<div class="layui-card-header">
+<!-- 		<div class="layui-card-header">
 			<form class="layui-form"   action="">
 				<div class='layui-row'>
 					<div class="layui-form-item">
 						<label class="layui-form-label title1"  ></label>
 						<div class="layui-input-inline">
-                            <select id="usercode">
-                            </select>
+							<select class="layui-input id1" lay-search>
+								<option value="Menu">主页配置</option>
+								<option value="Business">流程配置</option>
+						</select>
 						</div>
 				</div>
 			</form>
-		</div>
+		</div> -->
 		<div class='layui-row'>
 				<div class="layui-col-md5"style='width:55%;top: 0%'>
 					<table class="layui-table" id="dg" lay-filter="dg" ></table>
@@ -82,7 +83,7 @@
 		<a class="layui-btn layui-btn-xs" lay-event="save">保存</a>
 		<a class="layui-btn layui-btn-danger layui-btn-xs" lay-event="del">删除</a>
 	  </script>
-	<script type="text/javascript" src="/WebAPP/js/admin/eqlistconfig.js" charset="utf-8"></script>
+	<script type="text/javascript" src="/WebAPP/js/admin/processconfigMain.js" charset="utf-8"></script>
 </body>
 
 </html>

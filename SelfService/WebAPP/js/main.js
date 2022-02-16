@@ -37,12 +37,12 @@ var OSPPatGlobal = {
  $(function () {
 	//DHC_PrintByService("");
 	window.setInterval("BuildDatetime()",1000);
-	loadCLodop();
-	setTimeout(function(){
+	//loadCLodop();
+	/*setTimeout(function(){
 		var lodopObj = getLodop();
 		OSPPatGlobal.CPrintObj = lodopObj;
 		//alert(3 + "=" + lodopObj)
-	},1500)
+	},1500)*/
 	return;
 	for (key in GLOBALXMLConfig){
 		var tmpStr = "";

@@ -156,9 +156,12 @@ var Global={
 			init_title(INSUPreRegRtn);
 		},150);
 	 } catch (error) {
-		OSPAlert('confirm','获取挂号费用发生异常，请重启中间件并且重试','提示',function(r){
+		OSPAlert('confirm','获取挂号费用发生异常，是否重试','提示',function(r){
 			if(r){
 				location.href=location.href; 
+			}else{
+				homePageClick();
+				return false;
 			}
 		});
 	 }

@@ -112,7 +112,8 @@ function init_dg(jsonObj){
                 field:'id',
                 align:'center',
                 border:'',
-                size: 'lg', //表格尺寸 默认 sm
+                size: 'sm', //表格尺寸 默认 sm
+                height: 750 ,//定义高度
                 even:false, //隔行背景
                 url:  PYTHONSERVER + 'CallSelfServPY', //数据接口
                 page: true,
@@ -137,6 +138,8 @@ function init_dg(jsonObj){
             //监听行单击事件
             table.on('row(dg)', function(obj){
                 if(selectRow && selectRow.data.id == obj.data.id){ // 取消选中
+                    obj.tr.removeClass('layui-table-click');
+                    obj.tr.siblings().removeClass('layui-table-click');
                     selectRow = null;
                     var formTable = $('.layui-form').find('input');
                     $.each(formTable,function(index,input){
@@ -144,11 +147,16 @@ function init_dg(jsonObj){
                     });
                 }else{
                     selectRow = obj;
+                    obj.tr.removeClass('layui-table-click');
+                    obj.tr.siblings().removeClass('layui-table-click');
                     var formTable = $('.layui-form').find('input');
                     $.each(formTable,function(index,input){
                         var id = $(input).attr('id');
                         $(input).val(obj.data[id]);
                     });
+                }
+                if(selectRow){
+                    obj.tr.addClass('layui-table-click');
                 }
             });
         });

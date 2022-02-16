@@ -126,7 +126,8 @@ function init_dg(jsonObj){
                 field:'id',
                 align:'center',
                 border:'',
-                size: 'lg', //表格尺寸 默认 sm
+                size: 'sm', //表格尺寸 默认 sm
+                height: 750 ,//定义高度
                 even:false, //隔行背景
                 url:  PYTHONSERVER + 'CallSelfServPY', //数据接口
                 cellMinWidth:80,

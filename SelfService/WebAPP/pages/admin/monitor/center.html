@@ -38,6 +38,15 @@
 		Echarts: {}
 	}
 	$(function() {
+
+		var TradeCode = "QueryMasterPersent^SelfServPy.Common.mysql_contral^mysqlsql" ;
+                        var input = {
+                            "TradeCode" : TradeCode
+                        }
+                        var output=CallMethod(input,function(){
+                        },"DoMethod","N");
+						var JsonObj=JSON.parse(output.output.ResultSql[0]);
+
 		//初始化ECharts实列
 		GV.Echarts = echarts.init($("#regEcharts")[0]);
 		//指定图表的配置项和数据
@@ -75,7 +84,7 @@
 				name: '最大值',
 				type: 'bar',
 				barWidth: '20%',
-				data: [25, 20, 15, 10, 5],
+				data: [JsonObj.RegSeven, JsonObj.RegEight, JsonObj.RegNine, JsonObj.RegTen, JsonObj.RegEleven],
 				itemStyle: {
 					normal: {
 						color: '#FFFF00'
@@ -93,39 +102,6 @@
 			}]
 		};
 		GV.Echarts.setOption(option);
-		
-		//从后台请求数据
-		var input = {};
-        input['TradeCode'] = "query^" + CV.MoudleName + "^" + CV.ClassName;
-        CallMethod(input, function(rtn) {
-			if (rtn.result != 0) {
-				return;
-			}
-			var eqCount = rtn.output.length;
-			/*
-			$("#DeviceNum").text(eqCount);
-			
-			var _opts = GV.Echarts.getOption();
-			_opts.series = [{
-				data: [
-					{value: 9, name: '正常',
-					itemStyle: {
-						normal: {
-							color: '#32CD99'
-						}
-					}},
-					{value: 3, name: '故障',
-					itemStyle: {
-						normal: {
-							color: '#CC3299'
-						}
-					}},
-					{value: 2, name: '离线'}
-				]
-			}];
-			GV.Echarts.setOption(_opts);
-			*/
-        }, "DoMethod");
 	});
 	
 	/**

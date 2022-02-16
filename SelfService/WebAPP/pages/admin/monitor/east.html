@@ -23,7 +23,7 @@
 </head>
 <body>
     <div class="title">
-        <h2>自助服务人次</h2>
+        <h2>自助设备</h2>
     </div>
     <div id="countEcharts" style="width: 100%;height: 300px;"></div>
 </body>
@@ -38,6 +38,7 @@
 		Echarts: {}
 	}
 	$(function() {
+
 		//初始化ECharts实列
 		GV.Echarts = echarts.init($("#countEcharts")[0]);
 		//指定图表的配置项和数据
@@ -83,14 +84,14 @@
 		GV.Echarts.setOption(option);
 		
 		//从后台请求数据
-		var input = {};
-        input['TradeCode'] = "query^" + CV.MoudleName + "^" + CV.ClassName;
-        CallMethod(input, function(rtn) {
-			if (rtn.result != 0) {
-				return;
-			}
-			var eqCount = rtn.output.length;
-
+		var TradeCode = "QueryMasterPersent^SelfServPy.Common.mysql_contral^mysqlsql" ;
+                        var input = {
+                            "TradeCode" : TradeCode
+                        }
+                        var output=CallMethod(input,function(){
+                        },"DoMethod","N");
+						var JsonObj=JSON.parse(output.output.ResultSql[0]);
+			var eqCount = JsonObj.TerminalNum;
 			var _opts = GV.Echarts.getOption();
 			$.extend(_opts, {
 				title: {
@@ -105,7 +106,6 @@
 				}]
 			});
 			GV.Echarts.setOption(_opts);
-        }, "DoMethod");
 	});
 	
 	/**

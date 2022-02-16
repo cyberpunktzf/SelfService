@@ -103,8 +103,18 @@
 							<span class="layui-nav-more"></span>
 						</a>
 						<dl class="layui-nav-child">
-							<dd data-name="console" class="layui-this">
-								<a value="processconfig" lay-href="WebAPP/pages/admin/processconfig.html">自助机流程配置</a>				
+							<dd data-name="console" class="layui-this"></dd>
+							<dd>
+								<a value="dicdata" lay-href="WebAPP/pages/admin/dicdata.html">基础字典维护</a>
+							</dd>
+							<dd>
+								<a value="eqrole" lay-href="WebAPP/pages/admin/eqrole.html">设备角色维护</a>
+							</dd>	
+							<dd>
+								<a value="processconfigMain" lay-href="WebAPP/pages/admin/processconfigMain.html">自助机主页面配置</a>				
+							</dd>
+							<dd>
+								<a value="processconfigWorkflow" lay-href="WebAPP/pages/admin/processconfigWorkflow.html">自助机流程配置</a>			
 							</dd>
 							<dd>
 								<a value="eqrule" lay-href="WebAPP/pages/admin/eqrule.html">规则维护</a>
@@ -112,12 +122,7 @@
 							<dd>
 								<a value="eqruledetails" lay-href="WebAPP/pages/admin/eqruledetails.html">规则明细</a>
 							</dd>				
-							<dd>
-								<a value="dicdata" lay-href="WebAPP/pages/admin/dicdata.html">基础字典维护</a>
-							</dd>		
-							<dd>
-								<a value="eqrole" lay-href="WebAPP/pages/admin/eqrole.html">设备角色维护</a>
-							</dd>	
+									
 						</dl>
 					</li>
 					<li data-name="Query" class="layui-nav-item">
@@ -152,8 +157,11 @@
 							</a>
 							<dl class="layui-nav-child">
 								<dd data-name="console">
-									<a value="tradedetails" lay-href="/WebAPP/pages/admin/extdetails.html">账单查询</a>
+									<a value="tradedetails" lay-href="/WebAPP/pages/admin/extdetailsQrcode.html">扫码查询</a>
 								</dd>
+								<dd data-name="console">
+										<a value="tradedetails" lay-href="/WebAPP/pages/admin/extdetailsMedical.html">医保查询</a>
+									</dd>
 		 						<dd data-name="console">
 										<a value="QrRefund" lay-href="/WebAPP/pages/admin/QrRefund.html">扫码退费</a>
 								</dd> 

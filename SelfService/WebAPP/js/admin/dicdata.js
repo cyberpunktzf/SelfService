@@ -155,12 +155,15 @@ function init_dg(jsonObj){
             table.on('row(dg)', function(obj){
                 if(selectRow && selectRow.data.id == obj.data.id){ // 取消选中
                     selectRow = null;
+                    obj.tr.removeClass('layui-table-click');
+                    obj.tr.siblings().removeClass('layui-table-click');
                     var formTable = $('.layui-form').find('input');
                     $.each(formTable,function(index,input){
                         $(input).val('');
                     });
                 }else{
                     selectRow = obj;
+                    obj.tr.siblings().removeClass('layui-table-click');
                     var formTable = $('.layui-form').find('input');
                     $.each(formTable,function(index,input){
                         var id = $(input).attr('id');
@@ -168,6 +171,7 @@ function init_dg(jsonObj){
                     });
                 }
                 if (selectRow){
+                    obj.tr.addClass('layui-table-click');
                     layui.use('form', function() {
                         var form = layui.form;
                         var formTable = $('.layui-form').find('select');

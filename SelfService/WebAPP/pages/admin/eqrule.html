@@ -1,7 +1,7 @@
 ﻿<!-- 
 * FileName: admin.sysconfig.html
-* Creator: tangzf 
-* Date: 2020-5-22
+* Creator: Lizhi
+* Date: 2020-10-22
 * Description: 自助服务-设备列表维护
 -->
 <!DOCTYPE html>
@@ -27,6 +27,9 @@
 		}
 		.layui-card-body{
 			float: left;
+		}
+		.layui-table-click{
+			background-color:yellow !important;
 		}
 	</style>
 </head>
@@ -84,21 +87,27 @@
 				</div>		
 			</form>
 		</div>
-		<div class='layui-row'>
-			<div class="layui-col-md5">
-				<table class="layui-table" id="dg" lay-filter="dg"></table>
-			</div>
-			<div class="layui-col-md7"  style='padding-left:10px;'>
-				<table class="layui-table" id="rdg" lay-filter="rdg"></table>
+		<div class="layui-card-body">	
+			<div>
+				<button class="layui-btn layuiadmin-btn-useradmin" id="QueryBtn">查询</button>
+				<button class="layui-btn layuiadmin-btn-useradmin" id="SaveBtn" >保存</button>
+				<button class="layui-btn layuiadmin-btn-useradmin" id="ClearBtn" >清屏</button>
+				<button class="layui-btn layuiadmin-btn-useradmin" id="DelBtn" >删除</button>
 			</div>
 		</div>
+		<div class='layui-row'>
+			<div class="layui-col-md" style='top: 0%'>
+					<table class="layui-table" id="dg" lay-filter="dg"></table>
+				</div>
+		</div>
+
 	</div>
-	<script id ='LDGTB' type='text/html'>
+	<!-- <script id ='LDGTB' type='text/html'>
 		<button class="layui-btn layuiadmin-btn-useradmin" id="QueryBtn">查询</button>
 		<button class="layui-btn layuiadmin-btn-useradmin" id="SaveBtn" >保存</button>
 		<button class="layui-btn layuiadmin-btn-useradmin" id="ClearBtn" >清屏</button>
 		<button class="layui-btn layuiadmin-btn-useradmin" id="DelBtn" >删除</button>
-	</script>
+	</script> -->
 	<script>
 		layui.use('element',function(){
 			var element = layui.element;

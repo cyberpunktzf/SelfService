@@ -6,7 +6,11 @@
  */
 var SelfAmt;
 $(function () {
-	OSPSetParentVal('SYSLeftTime','180');
+	var tmpLeftTime = INSUGetRequest("lefttime");
+    if(typeof tmpLeftTime == "undefined" || tmpLeftTime == ""){
+        tmpLeftTime = '180';
+    }
+	OSPSetParentVal('SYSLeftTime',tmpLeftTime);
 	$(".sys-white-defbutton-icon").hide();
 	var role = OSPGetParentVal('client_dict', 'ss_eqlistd_role');
 	if (role == "role2") {

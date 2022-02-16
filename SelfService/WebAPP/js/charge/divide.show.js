@@ -138,11 +138,12 @@ function QueryOrdInfoCallBack(jsonObj){
 		$('.acountpay').text(formatAmt(INSUAcountPay));
 		$('.divide-btn').show();
 	} catch (error) {
-		OSPAlert('confirm','获取费用发生异常，请重启应用并重新结算','提示',function(r){
+		OSPAlert('confirm','获取费用发生异常，是否重试?','提示',function(r){
 			if(r){
 				location.href=location.href; 
 			}else{
 				homePageClick();
+				return;
 			}
 		});
 	}
